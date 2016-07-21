@@ -52,6 +52,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Vitiligo");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.tabs = 'first';
+        $scope.classp = 'active-tab';
+        $scope.classv = '';
+
+
+        $scope.tabchanges = function(tabs, a) {
+            //        console.log(tab);
+            $scope.tabs = tabs;
+            if (a == 1) {
+
+                $scope.classp = "active-tab";
+                $scope.classv = '';
+
+            } else {
+
+                $scope.classp = '';
+                $scope.classv = "active-tab";
+            }
+        };
     })
     .controller('TermConditionCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("term-condition");
