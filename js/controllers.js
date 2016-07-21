@@ -65,6 +65,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Doctor");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+        $scope.doctor=[{
+          img:"img/d1.jpg",
+          name:"Dr. Narendra J Pandya",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        },{
+          img:"img/d2.jpg",
+          name:"Dr. Zarna Parekh",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        },{
+          img:"img/d3.jpg",
+          name:"Dr. Sarvesh Brahme",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        },{
+          img:"img/d4.jpg",
+          name:"Dr. Harshit Shah",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        },{
+          img:"img/d4.jpg",
+          name:"Dr. Harshit Shah",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        },{
+          img:"img/d4.jpg",
+          name:"Dr. Harshit Shah",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        },{
+          img:"img/d4.jpg",
+          name:"Dr. Harshit Shah",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        },{
+          img:"img/d4.jpg",
+          name:"Dr. Harshit Shah",
+          spl:"(Dermatologist)",
+          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }]
     })
     .controller('BlogCtrl', function($scope, TemplateService, NavigationService) {
 
