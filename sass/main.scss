@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700,600,300);
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
@@ -6,48 +7,114 @@
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
 @import "../bower_components/swiper/dist/css/swiper.min.css";
 /* Bootstrap Variables Goes Here */
-$brand-primary: #0d9dff !default;
-$brand-success: #84ce3c !default;
+$brand-primary: #0090ff!default;
+$brand-success: #499c83 !default;
 $brand-warning: #ffec39 !default;
-$brand-danger:  #fc483f !default;
-$brand-info:    #000072 !default;
+$brand-danger: #fc483f !default;
+$brand-info: #000072 !default;
+$base-color:#161616 !default;
+$brown-color:#da8340 !default;
+$white: #fff !default;
+$font-family-sans-serif: "Titillium Web", sans-serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-body {
-}
+body {}
 img.loading {
-  text-align: center;
-  opacity: 1;
-  width: 32px !important;
-  height: auto;
+    text-align: center;
+    opacity: 1;
+    width: 32px !important;
+    height: auto;
 }
 img {
-  opacity: 0;
-  @include transition(all 300ms ease);
+    opacity: 0;
+    @include transition(all 300ms ease);
 }
 img.doneLoading {
-  opacity: 1;
+    opacity: 1;
 }
 nav li:hover .dropdown-menu {
-  display: block;
+    display: block;
 }
-a, .btn {
-  cursor: pointer;
-  @include transition(all ease 300ms);
+.btn,
+a {
+    cursor: pointer;
+    @include transition(all ease 300ms);
+}
+/* mixing*/
+@mixin placeholder {
+    $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+    @each $placeholder in $placeholders {
+        &:#{$placeholder}-placeholder {
+            @content;
+        }
+    }
+}
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+@mixin x-appearance ($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
 }
 //bootstrap forms
-.input-lg,
+.btn,
+.form-control,
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
-.btn,
-.form-control {
-  border-radius: 0;
-  @include box-shadow(none);
+.input-lg {
+    border-radius: 0;
+    @include box-shadow(none);
 }
 .form-control:focus {
-  border-color: $brand-primary;
-  outline: 0;
-  @include box-shadow(none);
+    border-color: $brand-primary;
+    outline: 0;
+    @include box-shadow(none);
+}
+.margin0 {
+    margin: 0;
+}
+.padding0 {
+    padding: 0;
+}
+.my-list {
+    ul {
+        display: block;
+        list-style: none;
+        li {
+            display: inline-block;
+        }
+    }
+}
+.display-inline{
+  display: inline-block;
+}
+.margin-auto{
+  margin: 0 auto;
+}
+.float-right{
+  float: right;
+}
+.float-left{
+  float:left;
+}
+.color-base{
+  color:$base-color;
+}
+.color-primary{
+  color:$brand-primary;
+}
+.color-success{
+  color:$brand-success;
+}
+.color-white{
+  color:$white;
+}
+.color-brown{
+  color:$brown-color;
 }
 //bootstrap forms
 /* Start writing sass here */
