@@ -45,6 +45,130 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.tabs = 'acre';
+        $scope.classa = 'active-tab';
+        $scope.classb = '';
+        $scope.classc = '';
+        $scope.classd = '';
+        $scope.classe = '';
+        $scope.classf = '';
+        $scope.classg = '';
+        $scope.classh = '';
+        $scope.classi = '';
+
+
+        $scope.tabchanges = function(tabs, a) {
+            //        console.log(tab);
+            $scope.tabs = tabs;
+            if (a == 1) {
+
+              $scope.classa = 'active-tab';
+              $scope.classb = '';
+              $scope.classc = '';
+              $scope.classd = '';
+              $scope.classe = '';
+              $scope.classf = '';
+              $scope.classg = '';
+              $scope.classh = '';
+              $scope.classi = '';
+
+            } else if (a == 2) {
+
+              $scope.classa = '';
+              $scope.classb = 'active-tab';
+              $scope.classc = '';
+              $scope.classd = '';
+              $scope.classe = '';
+              $scope.classf = '';
+              $scope.classg = '';
+              $scope.classh = '';
+              $scope.classi = '';
+            } else if (a == 3) {
+
+              $scope.classa = '';
+              $scope.classb = '';
+              $scope.classc = 'active-tab';
+              $scope.classd = '';
+              $scope.classe = '';
+              $scope.classf = '';
+              $scope.classg = '';
+              $scope.classh = '';
+              $scope.classi = '';
+            } else if (a == 4) {
+
+              $scope.classa = '';
+              $scope.classb = '';
+              $scope.classc = '';
+              $scope.classd = 'active-tab';
+              $scope.classe = '';
+              $scope.classf = '';
+              $scope.classg = '';
+              $scope.classh = '';
+              $scope.classi = '';
+            } else if (a == 5) {
+
+              $scope.classa = '';
+              $scope.classb = '';
+              $scope.classc = '';
+              $scope.classd = '';
+              $scope.classe = 'active-tab';
+              $scope.classf = '';
+              $scope.classg = '';
+              $scope.classh = '';
+              $scope.classi = '';
+            } else if (a == 6) {
+
+              $scope.classa = '';
+              $scope.classb = '';
+              $scope.classc = '';
+              $scope.classd = '';
+              $scope.classe = '';
+              $scope.classf = 'active-tab';
+              $scope.classg = '';
+              $scope.classh = '';
+              $scope.classi = '';
+            } else if (a == 7) {
+
+              $scope.classa = '';
+              $scope.classb = '';
+              $scope.classc = '';
+              $scope.classd = '';
+              $scope.classe = '';
+              $scope.classf = '';
+              $scope.classg = 'active-tab';
+              $scope.classh = '';
+              $scope.classi = '';
+            }else if (a == 8) {
+
+              $scope.classa = '';
+              $scope.classb = '';
+              $scope.classc = '';
+              $scope.classd = '';
+              $scope.classe = '';
+              $scope.classf = '';
+              $scope.classg = '';
+              $scope.classh = 'active-tab';
+              $scope.classi = '';
+            } else if (a == 9) {
+
+              $scope.classa = '';
+              $scope.classb = '';
+              $scope.classc = '';
+              $scope.classd = '';
+              $scope.classe = '';
+              $scope.classf = '';
+              $scope.classg = '';
+              $scope.classh = '';
+              $scope.classi = 'active-tab';
+            }
+        };
+    })
+    .controller('PrivacyCtrl', function($scope, TemplateService, NavigationService) {
+
+        $scope.template = TemplateService.changecontent("privacy");
+        $scope.menutitle = NavigationService.makeactive("Privacy");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
     })
     .controller('VitiligoCtrl', function($scope, TemplateService, NavigationService) {
 

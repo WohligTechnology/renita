@@ -49,7 +49,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'AboutUsCtrl'
         })
         .state('term-condition', {
-            url: "/term-condiation",
+            url: "/term-condition",
             templateUrl: "views/template.html",
             controller: 'TermConditionCtrl'
         })
