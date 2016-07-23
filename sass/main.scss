@@ -207,16 +207,53 @@ padding-bottom: 10px;
 }
 .footer-top{
   background-color: #252525;
+      padding: 16px 0px 10px 0px;
 }
 .footer-bottom{
   background-color: #b1b1b1;
+      padding: 5px 0px 0px 0px;
 }
 .footer-list{
   ul{
     list-style: none;
     li{
+      padding: 3px 0px;
       a{
         color: $white;
+      }
+    }
+  }
+}
+.subscribe{
+  .form-control{
+    height: 28px;
+font-size: 14px;
+
+color: $white;
+background-color: transparent;
+  }
+  .btn{
+    font-size: 10px;
+  }
+}
+.quara{
+  img{
+    vertical-align: baseline;
+margin-left: 88px;
+  }
+}
+.follow{
+  ul{
+    li{
+      // padding: 0px 3px;
+      i{
+        background: #fff;
+height: 26px;
+width: 26px;
+font-size: 18px;
+border-radius: 1px;
+text-align: center;
+line-height: 156%;
       }
     }
   }
