@@ -265,6 +265,11 @@ line-height: 156%;
 .pl20{
       padding-left: 20px;
 }
+.data-content{
+  a{
+    color: $brand-primary;
+  }
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
