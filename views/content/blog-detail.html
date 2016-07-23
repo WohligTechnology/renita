@@ -3,7 +3,7 @@
         <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive">
     </div>
 </section>
-<section>
+<section class="mt50">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -12,12 +12,12 @@
                         <img src="img/b1.jpg" alt="Dr Renita rajan" class="img-responsive">
                     </div>
                     <div class="blog-title">
-                        <h1>The expert route to getting the best lips in town!</h1>
+                        <h1 class="color-primary font-bold text-up">The expert route to getting the best lips in town!</h1>
                     </div>
                     <div class="blog-date">
-                        <span>Saturday, 23 January 2016</span>
+                        <span class="color-base">Saturday, 23 January 2016</span>
                     </div>
-                    <div class="blog-content">
+                    <div class="blog-content mt20">
                         <p>We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss!</p>
                         <p>Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night.</p>
                         <p>Some of us pamper our lips, while some abuse them - by smoking, picking or chewing the lips.</p>
@@ -38,11 +38,11 @@
                         <img src="img/b4.jpg" alt="Dr Renita rajan" class="img-responsive">
                     </div>
                 </div>
-                <div class="blog-share">
+                <div class="blog-share float-right my-list mt15">
                     <ul>
                         <li>
                             <div class="social-icon display-inline">
-                                <i class="fa fa-facebook"></i>
+                                <img src="img/fb.png" alt="">
                             </div>
                             <div class="count display-inline">
                                 <span>1</span>
@@ -50,7 +50,7 @@
                         </li>
                         <li>
                             <div class="social-icon display-inline">
-                                <i class="fa fa-twitter"></i>
+                                <img src="img/twitt.png" alt="">
                             </div>
                             <div class="count display-inline">
                                 <span>1</span>
@@ -58,7 +58,7 @@
                         </li>
                         <li>
                             <div class="social-icon display-inline">
-                                <i class="fa fa-google-plus"></i>
+                              <img src="img/google.png" alt="">
                             </div>
                             <div class="count display-inline">
                                 <span>1</span>
@@ -66,7 +66,7 @@
                         </li>
                         <li>
                             <div class="social-icon display-inline">
-                                <i class="fa fa-facebook"></i>
+                              <img src="img/mail.png" alt="">
                             </div>
                             <div class="count display-inline">
                                 <span>1</span>
@@ -74,33 +74,35 @@
                         </li>
                     </ul>
                 </div>
-                <div class="blog-pagination">
+                <div class="clearfix"></div>
+                <div class="blog-pagination mt20">
                     <div class="float-left">
-                        <button type="button" name="button">Previous Post</button>
+                        <button type="button" name="button" class="text-up outline-btn btn-padding">Previous Post</button>
                     </div>
                     <div class="float-right">
-                        <button type="button" name="button">Next Post</button>
+                        <button type="button" name="button" class="text-up outline-btn btn-padding">Next Post</button>
                     </div>
                 </div>
-                <div class="related-blog">
-                    <span>related Post</span>
+                <div class="clearfix"></div>
+                <div class="related-blog mt30 pb60">
+                    <h3 class="color-base font-bold text-up">related Post</h3>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="related-box text-center">
                                 <img src="img/bb1.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                <span>Do HCG injections really work for weight loss?</span>
+                                <span class="font-bold text-up">Do HCG injections really work for weight loss?</span>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="related-box text-center">
                                 <img src="img/bb2.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                <span>Body shaping made easy!</span>
+                                <span class="font-bold text-up">Body shaping made easy!</span>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="related-box text-center">
                                 <img src="img/bb3.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                <span>Should you stop Aspirin before going in to get your... </span>
+                                <span class="font-bold text-up">Should you stop Aspirin before going in to get your... </span>
                             </div>
                         </div>
                     </div>
@@ -109,77 +111,39 @@
             <div class="col-md-4">
                 <div class="blog-right-side">
                     <div class="blog-search">
+                      <div class="input-group">
+                         <input type="text" class="form-control" placeholder="Search">
+                         <span class="input-group-btn">
+                           <button class="btn search-btn" type="button"><i class="fa fa-search"></i></button>
+                         </span>
+                       </div>
+                    </div>
+                    <div class="blog-popular-tag mt30">
+                      <h4 class="color-base text-up font-bold">Popular post</h4>
+                        <div class="row mt20" ng-repeat="item in blog track by $index">
+                            <div class="col-md-3">
+                                <div class="p-img-box">
+                                    <img ng-src="{{item.img}}" alt="Dr Renita Rajan" class="img-responsive">
+                                </div>
+
+                            </div>
+                            <div class="col-md-9 padding0 border-btm">
+                                <div class="blog-p-title">
+                                    <h5 class="text-up color-base margin0 font-bold">{{item.name}}</h5>
+                                </div>
+                                <div class="blog-p-date">
+                                    <span class="color-base f12">{{item.date}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </div>
-                    <div class="blog-popular-tag">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="p-img-box">
-                                    <img src="img/p1.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                </div>
-
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog-p-title">
-                                    <h4>The expert route to getting the best lips in town!</h4>
-                                </div>
-                                <div class="blog-p-date">
-                                    <span>Saturday, 23 January 2016</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="p-img-box">
-                                    <img src="img/p2.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                </div>
-
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog-p-title">
-                                    <h4>Do HCG injections really work for weight loss?</h4>
-                                </div>
-                                <div class="blog-p-date">
-                                    <span>Saturday, 23 January 2016</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="p-img-box">
-                                    <img src="img/p3.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                </div>
-
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog-p-title">
-                                    <h4>Body shaping made easy!</h4>
-                                </div>
-                                <div class="blog-p-date">
-                                    <span>Saturday, 23 January 2016</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="p-img-box">
-                                    <img src="img/p4.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                </div>
-
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog-p-title">
-                                    <h4>Should you stop Aspirin before going in to get your... </h4>
-                                </div>
-                                <div class="blog-p-date">
-                                    <span>Saturday, 23 January 2016</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tags">
-                        <div class="all-tags my-list">
-                            <ul class="padding0">
+                    <div class="blog-popular-tag mt30">
+                      <h4 class="color-base text-up font-bold">tags</h4>
+                        <div class="all-tags my-list mt20">
+                            <ul class="padding0 font-ralway text-up color-base">
                                 <li>
                                     <span>Skin</span>
                                 </li>
@@ -241,8 +205,8 @@
                                     <span>facial</span>
                                 </li>
                             </ul>
-                            <div class="view-more">
-                              <span>view more</span>
+                            <div class="view-more mt30">
+                                <span class="text-up font-ralway">view more</span>
                             </div>
                         </div>
                     </div>

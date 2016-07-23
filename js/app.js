@@ -53,6 +53,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'TermConditionCtrl'
         })
+        .state('blog-detail', {
+            url: "/blog-detail",
+            templateUrl: "views/template.html",
+            controller: 'BlogDeatilCtrl'
+        })
         .state('blog', {
             url: "/blog",
             templateUrl: "views/template.html",

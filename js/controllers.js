@@ -289,7 +289,47 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           date:"Saturday, 23 January 2016",
           desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
         }]
-    
+
+    })
+    .controller('BlogDeatilCtrl', function($scope, TemplateService, NavigationService) {
+
+        $scope.template = TemplateService.changecontent("blog-detail");
+        $scope.menutitle = NavigationService.makeactive("Blog Detail");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.blog=[{
+          img:"img/bb4.jpg",
+          name:"The expert route to getting the best lips in town!",
+          date:"Saturday, 23 January 2016",
+          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        },{
+          img:"img/bb1.jpg",
+          name:"Do HCG injections really work for weight loss?",
+          date:"Saturday, 23 January 2016",
+          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        },{
+          img:"img/bb2.jpg",
+          name:"The expert route to getting the best lips in town!",
+          date:"Saturday, 23 January 2016",
+          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        },{
+          img:"img/bb4.jpg",
+          name:"The expert route to getting the best lips in town!",
+          date:"Saturday, 23 January 2016",
+          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        },{
+          img:"img/bb3.jpg",
+          name:"The expert route to getting the best lips in town!",
+          date:"Saturday, 23 January 2016",
+          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        },{
+          img:"img/bb4.jpg",
+          name:"The expert route to getting the best lips in town!",
+          date:"Saturday, 23 January 2016",
+          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }]
+
     })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {

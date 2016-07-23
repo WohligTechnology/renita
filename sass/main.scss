@@ -270,6 +270,41 @@ line-height: 156%;
     color: $brand-primary;
   }
 }
+.blog-content{
+  p{
+    font-size: 15px;
+  }
+}
+.blog-img{
+  padding-bottom: 20px;
+}
+.social-icon{
+
+  img{
+    width: 30px;
+  }
+
+}
+.count{
+  span{
+    font-size: 20px;
+    color:$brand-primary;
+  }
+}
+.blog-share{
+  ul{
+    li{
+      padding: 0px 3px;
+    }
+  }
+}
+.pb60{
+  padding-bottom: 60px;
+}
+.blog-left-side {
+    padding-bottom: 20px;
+    border-bottom: 2px solid grey;
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
