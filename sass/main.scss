@@ -39,6 +39,9 @@ nav li:hover .dropdown-menu {
 a {
     cursor: pointer;
     @include transition(all ease 300ms);
+    &:hover{
+      text-decoration: none;
+    }
 }
 /* mixing*/
 @mixin placeholder {
@@ -188,6 +191,33 @@ padding-bottom: 10px;
     padding: 4px 6px;
     margin: 3px 1px;
     cursor: pointer;
+    }
+  }
+}
+.font-normal{
+  font-weight: 400;
+}
+.font-semi{
+  font-weight: 600;
+}
+.contact-data{
+  p{
+    color:$base-color;
+  }
+}
+.footer-top{
+  background-color: #252525;
+}
+.footer-bottom{
+  background-color: #b1b1b1;
+}
+.footer-list{
+  ul{
+    list-style: none;
+    li{
+      a{
+        color: $white;
+      }
     }
   }
 }
