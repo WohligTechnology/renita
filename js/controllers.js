@@ -231,17 +231,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         },{
           img:"img/d4.jpg",
-          name:"Dr. Harshit Shah",
+          name:"Dr. Narendra Shah",
           spl:"(Dermatologist)",
           desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         },{
           img:"img/d4.jpg",
-          name:"Dr. Harshit Shah",
+          name:"Dr. Narendra Shah",
           spl:"(Dermatologist)",
           desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         },{
           img:"img/d4.jpg",
-          name:"Dr. Harshit Shah",
+          name:"Dr. Narendra Shah",
           spl:"(Dermatologist)",
           desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         },{

@@ -3,28 +3,30 @@
 <img src="img/doctor.jpg" alt="Dr Renita Rajan" class="img-responsive">
 </div>
 </section>
-<section>
+<section class="doctorpg">
   <div class="container">
     <div class="row">
       <div class="data">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
       </div>
       <div class="doctor-slider">
-        <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="300" item-margin="0" animationloop="true" move="1">
+        <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="292" item-margin="0" animationloop="false" reverse="false">
             <li>
                 <!-- <img ng-src="{{s}}" class="img-responsive"> -->
                 <div class="doctor-box text-center">
                   <div class="img-box">
-                    <img ng-src="{{item.img}}" alt="">
+                    <img ng-src="{{item.img}}" alt="" class="img-responsive">
                   </div>
-                  <div class="name">
-                    <h4>{{item.name}}</h4>
-                  </div>
-                  <div class="spl">
-                    <span>{{item.spl}}</span>
-                  </div>
-                  <div class="descp">
-                    <p>{{item.desc}}</p>
+                  <div class="docs-detail">
+                    <div class="name">
+                      <h4>{{item.name}}</h4>
+                    </div>
+                    <div class="spl">
+                      <span>{{item.spl}}</span>
+                    </div>
+                    <div class="descp">
+                      <p>{{item.desc}}</p>
+                    </div>
                   </div>
                 </div>
             </li>
