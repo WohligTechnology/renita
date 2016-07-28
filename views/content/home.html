@@ -7,11 +7,16 @@
     </flex-slider>
 
 </div> -->
-<section>
+<section class="landing">
   <div class="main-slider">
-    <flex-slider flex-slide="s in mySlides" prev-text="" next-text="">
+    <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
         <li auto-heightfixed>
-            <img ng-src="{{s}}" class="img-responsive" auto-height>
+          <div class="main-img">
+            <img ng-src="{{s.img}}" class="img-responsive" auto-height>
+            <div class="front-img">
+              <img ng-src="{{s.image}}" class="img-responsive" auto-height>
+            </div>
+          </div>
         </li>
     </flex-slider>
   </div>
