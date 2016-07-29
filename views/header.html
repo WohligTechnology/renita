@@ -1,18 +1,63 @@
 <header>
-   <nav class="navbar navbar-default navbar-fixed-top">
+   <nav class="navbar navbar-default navbar-fixed-top sticky-header" scroll>
     <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header"
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="logo" width="20"> </a>
+            <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="logo" width="150"> </a>
         </div>
 
         <div class="collapse navbar-collapse" id="nav-collapse">
-               <div ng-include="template.menu" class="template menu"></div>
+          <ul class="nav navbar-nav">
+            <li>
+              <a ui-sref="skin">Skin</a>
+              <div class="borpos borskin"></div>
+            </li>
+            <li>
+              <a>Hair &amp; Scalp</a>
+              <div class="borpos borhair"></div>
+              <div class="submenu">
+                <ul class="dropdown-menu">
+                  <li>
+                    <a>Hair Loss</a>
+                  </li>
+                  <li>
+                    <a>Dandruff</a>
+                  </li>
+                  <li>
+                    <a>Weathered Hair</a>
+                  </li>
+                  <li>
+                    <a>Hair Maintenance</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a>Body</a>
+              <div class="borpos borbody"></div>
+            </li>
+            <li>
+              <a>Men</a>
+              <div class="borpos bormen"></div>
+            </li>
+            <li>
+              <a>Treatments</a>
+              <div class="borpos bortreat"></div>
+            </li>
+            <li>
+              <a>Mummy Derm</a>
+              <div class="borpos borderm"></div>
+            </li>
+            <li>
+              <a ui-sref="vitiligo">Vitiligo</a>
+              <div class="borpos borviti"></div>
+            </li>
+          </ul>
         </div>
     </div>
 </nav>
