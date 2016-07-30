@@ -63,6 +63,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;
+        var get = false;
+        $scope.getslide = "menu-out";
+        $scope.getNav = function() {
+            if ($scope.getslide == "menu-in") {
+                $scope.getslide = "menu-out";
+                $scope.onebar = "";
+                $scope.secondbar = "";
+                $scope.thirdbar = "";
+                $scope.buttonpos = "";
+            } else {
+                $scope.getslide = "menu-in";
+                $scope.onebar = "firstbar";
+                $scope.secondbar = "secondbar";
+                $scope.thirdbar = "thirdbar";
+                $scope.buttonpos = "hidden";
+            }
+        };
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });

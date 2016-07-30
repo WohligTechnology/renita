@@ -11,65 +11,57 @@ var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function() {
   var navigation = [{
-    name: "Home",
-    classis: "active",
-    anchor: "/"
-  },{
     name: "Skin",
     classis: "active",
-    anchor: "skin"
+    anchor: "skin",
+    colours:"borskin"
   },{
     name: "Hair & Scalp",
     classis: "active",
-    anchor: "hairscalp"
+    anchor: "hairscalp",
+    colours:"borhair",
+    subnav: [{
+      name: "Hair Loss",
+      classis: "active",
+      anchor: "hair"
+    },{
+      name: "Dandruff",
+      classis: "active",
+      anchor: "dandruff"
+    },{
+      name: "Weathered Hair",
+      classis: "active",
+      anchor: "weatheredhair"
+    },{
+      name: "Hair Maintenance",
+      classis: "active",
+      anchor: "hairmaintenance"
+    }]
   },{
     name: "Body",
     classis: "active",
-    anchor: "body"
+    anchor: "body",
+    colours:"borbody"
+  },{
+    name: "Men",
+    classis: "active",
+    anchor: "men",
+    colours:"bormen"
+  },{
+    name: "Treatments",
+    classis: "active",
+    anchor: "treatment",
+    colours:"bortreat"
   },{
     name: "Mummy Derm",
     classis: "active",
-    anchor: "mummyderm"
+    anchor: "mummyderm",
+    colours:"borderm"
   },{
-    name: "About Us",
-    classis: "active",
-    anchor: "about-us"
-  },{
-    name: "Blog",
-    classis: "active",
-    anchor: "blog"
-  },{
-    name: "Before & After",
-    classis: "active",
-    anchor: "/"
-  },{
-    name: "Skin",
-    classis: "active",
-    anchor: "skin"
-  },{
-    name: "Hair",
-    classis: "active",
-    anchor: "/"
-  },{
-    name: "Diet",
-    classis: "active",
-    anchor: "/"
-  },{
-    name: "Treatment in Focus",
-    classis: "active",
-    anchor: "/"
-  },{
-    name: "Privacy Policy",
-    classis: "active",
-    anchor: "privacy"
-  },{
-    name: "Terms & Conditions",
-    classis: "active",
-    anchor: "term-condition"
-  },{
-    name: "Contact Us",
-    classis: "active",
-    anchor: "contact"
+    name: "Vitiligo",
+    classis: "actives",
+    anchor: "vitiligo",
+    colours:"borviti"
   }];
 
   return {
@@ -86,6 +78,5 @@ var navigationservice = angular.module('navigationservice', [])
       }
       return menuname;
     },
-
   };
 });

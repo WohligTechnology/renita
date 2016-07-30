@@ -67,14 +67,17 @@ a {
     -moz-appearance: $value;
     appearance: $value;
 }
-.navbar-fixed-top{
-  z-index: 10;
+.navbar-fixed-top {
+    z-index: 10;
+    -webkit-box-shadow: 0 0 10px 2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 10px 2px rgba(0,0,0,0.4);
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.4);
 }
 .sticky-header {
     margin-top: -70px;
     @include transition(all ease 300ms);
-    &.affix{
-      margin: 0;
+    &.affix {
+        margin: 0;
     }
 }
 .navbar {
@@ -94,6 +97,7 @@ a {
                 position: relative;
                 padding: 18px 15px;
                 margin: 0 5px;
+                cursor: pointer;
                 a {
                     padding: 0;
                     font-size: 18px;
@@ -169,6 +173,140 @@ a {
             }
         }
     }
+}
+.inline-block {
+    display: inline-block;
+}
+.renitamenu {
+    .menu-side {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .navbar-header {
+        h4 {
+            color: #fff;
+            margin: 0 20px;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+    }
+    .btn-hide {
+        padding: 0;
+        margin: 24px 0 0;
+        border: 0;
+        background: none;
+        vertical-align: text-bottom;
+        position: relative;
+        height: 30px;
+        width: 30px;
+        &:focus {
+            outline: 0;
+        }
+    }
+    .icon-bar {
+        width: 30px;
+        height: 2px;
+        background-color: #fff;
+        margin: 6px 0;
+        /* border: 0; */
+        display: block;
+    }
+}
+.menu-out {
+    height: 310px;
+    @include transform(translateX(-300px));
+    // @include transition(all 300ms linear);
+    position: fixed;
+    width: 300px;
+    z-index: 99;
+    left: 0;
+}
+.menu-in {
+    background-color: rgba(255, 255, 255, 0.8);
+    @include transform(translateX(0));
+    // @include transition(all 300ms linear);
+    position: fixed;
+    height: 100%;
+    width: 320px;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.icon-bar,
+.sidemenu,
+h4 {
+    @include transition(all 300ms ease);
+}
+.buttonpos {
+    position: relative;
+    z-index: 9999;
+    h4 {
+        color: black !important;
+    }
+    .icon-bar {
+        background-color: black;
+    }
+    .one {
+        @include transform(rotate(45deg));
+        margin-bottom: -20px;
+    }
+    .two {
+        opacity: 0;
+    }
+    .three {
+        @include transform(rotate(-45deg));
+        margin-top: 10px;
+    }
+}
+.firstbar {
+    @include transform(rotate(-45deg));
+    position: absolute;
+    left: 0;
+    top: 8px;
+    background-color: #000 !important;
+    cursor: pointer;
+}
+.secondbar {
+    opacity: 0;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.thirdbar {
+    @include transform(rotate(45deg));
+    position: absolute;
+    left: 0;
+    top: 8px;
+    background-color: #000 !important;
+    cursor: pointer;
+}
+.cross {
+  cursor: pointer;
+    .fa {
+        font-size: 20px;
+        margin-right: 12px;
+    }
+}
+.homeborder {
+    border-bottom: 2px solid #87888a;
+    margin: 0 36px 0 25px;
+}
+.nav-list{
+  padding: 24px 30px 0;
+  li {
+      padding: 12px 10px 0;
+      font-size: 16px;
+      a {
+          color: #161616;
+      }
+  }
+}
+.remaining{
+  margin: 0 36px 0 25px;
 }
 //bootstrap forms
 .btn,
@@ -651,6 +789,19 @@ a {
             animation-duration: 20s;
             animation-delay: 1s;
         }
+    }
+}
+.main-slider {
+    position: relative;
+    h4 {
+        position: absolute;
+        color: #fff;
+        top: 30px;
+        left: 130px;
+        font-size: 20px;
+        z-index: 2;
+        letter-spacing: 1px;
+        @include transform(translate(-50%,-50%));
     }
 }
 //bootstrap forms
