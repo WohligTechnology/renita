@@ -38,6 +38,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'SkinCtrl'
         })
+        .state('before', {
+            url: "/before-after",
+            templateUrl: "views/template.html",
+            controller: 'BeforeCtrl'
+        })
         .state('vitiligo', {
             url: "/vitiligo",
             templateUrl: "views/template.html",

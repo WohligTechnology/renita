@@ -16,6 +16,7 @@ $brand-info: #000072 !default;
 $base-color: #161616 !default;
 $brown-color: #da8340 !default;
 $menu-color: #343536 !default;
+$before-color:#52b3ff !default;
 $white: #fff !default;
 $font-family-sans-serif: "Titillium Web", "Raleway",sans-serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -362,6 +363,9 @@ h4 {
 .color-success {
     color: $brand-success;
 }
+.color-after{
+  color:$before-color;
+}
 .color-white {
     color: $white;
 }
@@ -551,6 +555,7 @@ h4 {
         list-style: none;
         li {
             padding: 8px 0;
+            border-bottom: 2px solid #da8340;
             a {
                 font-size: 18px;
                 font-weight: 500;
@@ -568,15 +573,37 @@ h4 {
     }
 }
 .tab-list {
-    border-bottom: 2px solid #da8340;
     display: inline-block;
 }
 .tab-list2 {
     @extend .tab-list;
-    border-bottom: 2px solid $brand-success;
     display: inline-block;
+    ul{
+      li{
+       border-color: $brand-success;
+      }
+    }
     .active-tab {
         background-color: $brand-success !important;
+        color: $white;
+        a {
+            color: $white;
+        }
+    }
+}
+.tab-list3 {
+    @extend .tab-list;
+    display: inline-block;
+    ul{
+      li{
+       border-color: $before-color;
+       .pigment{
+         padding:5px 0px 7px 20px;
+       }
+      }
+    }
+    .active-tab {
+        background-color: $before-color !important;
         color: $white;
         a {
             color: $white;
@@ -589,6 +616,9 @@ h4 {
 }
 .data-title2 {
     border-bottom: 1px solid $brand-success;
+}
+.data-title3 {
+    border-bottom: 1px solid $before-color;
 }
 .data-main {
     h4 {
@@ -803,6 +833,9 @@ h4 {
         letter-spacing: 1px;
         @include transform(translate(-50%,-50%));
     }
+}
+.imgbot{
+  margin-bottom: 25px;
 }
 //bootstrap forms
 /* Start writing sass here */

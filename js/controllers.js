@@ -8,49 +8,49 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
 
     $scope.mySlides = [{
-      img:"img/banner/b1.jpg",
-      image:"img/banner/b1-1.jpg"
-    },{
-      img:"img/banner/b2.jpg",
-      image:"img/banner/b2-2.jpg"
-    },{
-      img:"img/banner/b3.jpg",
-      image:"img/banner/b3-3.jpg"
-    },{
-      img:"img/banner/b4.jpg",
-      image:"img/banner/b4-4.jpg"
-    },{
-      img:"img/banner/b5.jpg",
-      image:"img/banner/b5-5.jpg"
-    },{
-      img:"img/banner/b6.jpg",
-      image:"img/banner/b6-6.jpg"
-    },{
-      img:"img/banner/b7.jpg",
-      image:"img/banner/b7-7.jpg"
-    }
-    //   {
-    //   img:"img/banner/b1.jpg",
-    //   image:"img/banner/b1_second.jpg"
-    // },{
-    //   img:"img/banner/b2.jpg",
-    //   image:"img/banner/b2_second.jpg"
-    // },{
-    //   img:"img/banner/b3.jpg",
-    //   image:"img/banner/b3_second.jpg"
-    // },{
-    //   img:"img/banner/b4.jpg",
-    //   image:"img/banner/b4_second.jpg"
-    // },{
-    //   img:"img/banner/b5.jpg",
-    //   image:"img/banner/b5_second.jpg"
-    // },{
-    //   img:"img/banner/b6.jpg",
-    //   image:"img/banner/b6_second.jpg"
-    // },{
-    //   img:"img/banner/b7.jpg",
-    //   image:"img/banner/b7_second.jpg"
-    // }
+            img: "img/banner/b1.jpg",
+            image: "img/banner/b1-1.jpg"
+        }, {
+            img: "img/banner/b2.jpg",
+            image: "img/banner/b2-2.jpg"
+        }, {
+            img: "img/banner/b3.jpg",
+            image: "img/banner/b3-3.jpg"
+        }, {
+            img: "img/banner/b4.jpg",
+            image: "img/banner/b4-4.jpg"
+        }, {
+            img: "img/banner/b5.jpg",
+            image: "img/banner/b5-5.jpg"
+        }, {
+            img: "img/banner/b6.jpg",
+            image: "img/banner/b6-6.jpg"
+        }, {
+            img: "img/banner/b7.jpg",
+            image: "img/banner/b7-7.jpg"
+        }
+        //   {
+        //   img:"img/banner/b1.jpg",
+        //   image:"img/banner/b1_second.jpg"
+        // },{
+        //   img:"img/banner/b2.jpg",
+        //   image:"img/banner/b2_second.jpg"
+        // },{
+        //   img:"img/banner/b3.jpg",
+        //   image:"img/banner/b3_second.jpg"
+        // },{
+        //   img:"img/banner/b4.jpg",
+        //   image:"img/banner/b4_second.jpg"
+        // },{
+        //   img:"img/banner/b5.jpg",
+        //   image:"img/banner/b5_second.jpg"
+        // },{
+        //   img:"img/banner/b6.jpg",
+        //   image:"img/banner/b6_second.jpg"
+        // },{
+        //   img:"img/banner/b7.jpg",
+        //   image:"img/banner/b7_second.jpg"
+        // }
         //'img/banner/b1.jpg',
         // 'img/banner/b2.jpg',
         // 'img/banner/b3.jpg',
@@ -122,104 +122,104 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.tabs = tabs;
             if (a == 1) {
 
-              $scope.classa = 'active-tab';
-              $scope.classb = '';
-              $scope.classc = '';
-              $scope.classd = '';
-              $scope.classe = '';
-              $scope.classf = '';
-              $scope.classg = '';
-              $scope.classh = '';
-              $scope.classi = '';
+                $scope.classa = 'active-tab';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
 
             } else if (a == 2) {
 
-              $scope.classa = '';
-              $scope.classb = 'active-tab';
-              $scope.classc = '';
-              $scope.classd = '';
-              $scope.classe = '';
-              $scope.classf = '';
-              $scope.classg = '';
-              $scope.classh = '';
-              $scope.classi = '';
+                $scope.classa = '';
+                $scope.classb = 'active-tab';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
             } else if (a == 3) {
 
-              $scope.classa = '';
-              $scope.classb = '';
-              $scope.classc = 'active-tab';
-              $scope.classd = '';
-              $scope.classe = '';
-              $scope.classf = '';
-              $scope.classg = '';
-              $scope.classh = '';
-              $scope.classi = '';
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = 'active-tab';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
             } else if (a == 4) {
 
-              $scope.classa = '';
-              $scope.classb = '';
-              $scope.classc = '';
-              $scope.classd = 'active-tab';
-              $scope.classe = '';
-              $scope.classf = '';
-              $scope.classg = '';
-              $scope.classh = '';
-              $scope.classi = '';
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = 'active-tab';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
             } else if (a == 5) {
 
-              $scope.classa = '';
-              $scope.classb = '';
-              $scope.classc = '';
-              $scope.classd = '';
-              $scope.classe = 'active-tab';
-              $scope.classf = '';
-              $scope.classg = '';
-              $scope.classh = '';
-              $scope.classi = '';
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = 'active-tab';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
             } else if (a == 6) {
 
-              $scope.classa = '';
-              $scope.classb = '';
-              $scope.classc = '';
-              $scope.classd = '';
-              $scope.classe = '';
-              $scope.classf = 'active-tab';
-              $scope.classg = '';
-              $scope.classh = '';
-              $scope.classi = '';
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = 'active-tab';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
             } else if (a == 7) {
 
-              $scope.classa = '';
-              $scope.classb = '';
-              $scope.classc = '';
-              $scope.classd = '';
-              $scope.classe = '';
-              $scope.classf = '';
-              $scope.classg = 'active-tab';
-              $scope.classh = '';
-              $scope.classi = '';
-            }else if (a == 8) {
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = 'active-tab';
+                $scope.classh = '';
+                $scope.classi = '';
+            } else if (a == 8) {
 
-              $scope.classa = '';
-              $scope.classb = '';
-              $scope.classc = '';
-              $scope.classd = '';
-              $scope.classe = '';
-              $scope.classf = '';
-              $scope.classg = '';
-              $scope.classh = 'active-tab';
-              $scope.classi = '';
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = 'active-tab';
+                $scope.classi = '';
             } else if (a == 9) {
 
-              $scope.classa = '';
-              $scope.classb = '';
-              $scope.classc = '';
-              $scope.classd = '';
-              $scope.classe = '';
-              $scope.classf = '';
-              $scope.classg = '';
-              $scope.classh = '';
-              $scope.classi = 'active-tab';
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = 'active-tab';
             }
         };
     })
@@ -256,6 +256,153 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         };
     })
+    .controller('BeforeCtrl', function($scope, TemplateService, NavigationService) {
+
+        $scope.template = TemplateService.changecontent("before");
+        $scope.menutitle = NavigationService.makeactive("Before & After");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        $scope.tabs = 'acne';
+        $scope.classa = 'active-tab';
+        $scope.classb = '';
+        $scope.classc = '';
+        $scope.classd = '';
+        $scope.classe = '';
+        $scope.classf = '';
+        $scope.classg = '';
+        $scope.classh = '';
+        $scope.classi = '';
+        $scope.classj = '';
+
+
+        $scope.tabchanges = function(tabs, a) {
+            //        console.log(tab);
+            $scope.tabs = tabs;
+            if (a == 1) {
+
+                $scope.classa = 'active-tab';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = '';
+
+            } else if (a == 2) {
+
+                $scope.classa = '';
+                $scope.classb = 'active-tab';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = '';
+            } else if (a == 3) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = 'active-tab';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = '';
+            } else if (a == 4) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = 'active-tab';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = '';
+            } else if (a == 5) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = 'active-tab';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = '';
+            } else if (a == 6) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = 'active-tab';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = '';
+            } else if (a == 7) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = 'active-tab';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = '';
+            } else if (a == 8) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = 'active-tab';
+                $scope.classi = '';
+                $scope.classj = '';
+            } else if (a == 9) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = 'active-tab';
+                $scope.classj = '';
+            } else if (a == 10) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+                $scope.classi = '';
+                $scope.classj = 'active-tab';
+            }
+
+        };
+    })
     .controller('TermConditionCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("term-condition");
         $scope.menutitle = NavigationService.makeactive("Term Condition");
@@ -269,46 +416,46 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.doctor=[{
-          img:"img/d1.jpg",
-          name:"Dr. Narendra J Pandya",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        },{
-          img:"img/d2.jpg",
-          name:"Dr. Zarna Parekh",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        },{
-          img:"img/d3.jpg",
-          name:"Dr. Sarvesh Brahme",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        },{
-          img:"img/d4.jpg",
-          name:"Dr. Harshit Shah",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        },{
-          img:"img/d4.jpg",
-          name:"Dr. Narendra Shah",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        },{
-          img:"img/d4.jpg",
-          name:"Dr. Narendra Shah",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        },{
-          img:"img/d4.jpg",
-          name:"Dr. Narendra Shah",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        },{
-          img:"img/d4.jpg",
-          name:"Dr. Harshit Shah",
-          spl:"(Dermatologist)",
-          desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        $scope.doctor = [{
+            img: "img/d1.jpg",
+            name: "Dr. Narendra J Pandya",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+            img: "img/d2.jpg",
+            name: "Dr. Zarna Parekh",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+            img: "img/d3.jpg",
+            name: "Dr. Sarvesh Brahme",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+            img: "img/d4.jpg",
+            name: "Dr. Harshit Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+            img: "img/d4.jpg",
+            name: "Dr. Narendra Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+            img: "img/d4.jpg",
+            name: "Dr. Narendra Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+            img: "img/d4.jpg",
+            name: "Dr. Narendra Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+            img: "img/d4.jpg",
+            name: "Dr. Harshit Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }]
     })
     .controller('BlogCtrl', function($scope, TemplateService, NavigationService) {
@@ -318,36 +465,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.blog=[{
-          img:"img/bb4.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb1.jpg",
-          name:"Do HCG injections really work for weight loss?",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb2.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb4.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb3.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb4.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        $scope.blog = [{
+            img: "img/bb4.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb1.jpg",
+            name: "Do HCG injections really work for weight loss?",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb2.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb4.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb3.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb4.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
         }]
 
     })
@@ -358,36 +505,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.blog=[{
-          img:"img/bb4.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb1.jpg",
-          name:"Do HCG injections really work for weight loss?",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb2.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb4.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb3.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        },{
-          img:"img/bb4.jpg",
-          name:"The expert route to getting the best lips in town!",
-          date:"Saturday, 23 January 2016",
-          desc:"We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        $scope.blog = [{
+            img: "img/bb4.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb1.jpg",
+            name: "Do HCG injections really work for weight loss?",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb2.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb4.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb3.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
+        }, {
+            img: "img/bb4.jpg",
+            name: "The expert route to getting the best lips in town!",
+            date: "Saturday, 23 January 2016",
+            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
         }]
 
     })
