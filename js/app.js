@@ -38,7 +38,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'SkinCtrl'
         })
-        .state('before', {
+        .state('before-after', {
             url: "/before-after",
             templateUrl: "views/template.html",
             controller: 'BeforeCtrl'

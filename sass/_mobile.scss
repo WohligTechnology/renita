@@ -1,8 +1,16 @@
+@media screen and (max-width: $screen-md-max) {
+    .tab-list2 ul li a {
+        padding: 5px 31px 7px 20px !important;
+    }
+    .navbar .collapse .navbar-nav li {
+        padding: 18px 14px;
+    }
+}
 @media screen and (max-width: $screen-sm-max) {
-    .doctorpg{
-      .flexslider{
-          width: 592px !important;
-          margin: 0 auto 60px;
+    .doctorpg {
+        .flexslider {
+            width: 592px !important;
+            margin: 0 auto 60px;
         }
     }
 }
