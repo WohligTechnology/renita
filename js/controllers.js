@@ -8,27 +8,46 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
 
     $scope.mySlides = [{
-            img: "img/banner/b1.jpg",
-            image: "img/banner/b1-1.jpg"
+            img: "img/banner/bo.jpg",
+            image: "img/banner/bo1.jpg"
         }, {
-            img: "img/banner/b2.jpg",
-            image: "img/banner/b2-2.jpg"
+            img: "img/banner/m1.jpg",
+            image: "img/banner/m1-2.jpg"
         }, {
-            img: "img/banner/b3.jpg",
-            image: "img/banner/b3-3.jpg"
+            img: "img/banner/md1.jpg",
+            image: "img/banner/md-2.jpg"
         }, {
-            img: "img/banner/b4.jpg",
-            image: "img/banner/b4-4.jpg"
+            img: "img/banner/s1.jpg",
+            image: "img/banner/s-2.jpg"
         }, {
-            img: "img/banner/b5.jpg",
-            image: "img/banner/b5-5.jpg"
+            img: "img/banner/t1.jpg",
+            image: "img/banner/t-2.jpg"
         }, {
-            img: "img/banner/b6.jpg",
-            image: "img/banner/b6-6.jpg"
-        }, {
-            img: "img/banner/b7.jpg",
-            image: "img/banner/b7-7.jpg"
+            img: "img/banner/v1.jpg",
+            image: "img/banner/v-2.jpg"
         }
+        // {
+        //       img: "img/banner/b1.jpg",
+        //       image: "img/banner/b1-1.jpg"
+        //   }, {
+        //       img: "img/banner/b2.jpg",
+        //       image: "img/banner/b2-2.jpg"
+        //   }, {
+        //       img: "img/banner/b3.jpg",
+        //       image: "img/banner/b3-3.jpg"
+        //   }, {
+        //       img: "img/banner/b4.jpg",
+        //       image: "img/banner/b4-4.jpg"
+        //   }, {
+        //       img: "img/banner/b5.jpg",
+        //       image: "img/banner/b5-5.jpg"
+        //   }, {
+        //       img: "img/banner/b6.jpg",
+        //       image: "img/banner/b6-6.jpg"
+        //   }, {
+        //       img: "img/banner/b7.jpg",
+        //       image: "img/banner/b7-7.jpg"
+        //   }
         //   {
         //   img:"img/banner/b1.jpg",
         //   image:"img/banner/b1_second.jpg"
