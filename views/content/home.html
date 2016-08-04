@@ -12,12 +12,14 @@
     <div class="main-slider">
         <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
             <li auto-height>
-                <div class="main-img">
-                    <img ng-src="{{s.img}}" auto-heightfixed>
-                    <div class="front-img">
-                        <img ng-src="{{s.image}}" auto-heightfixed>
+                <a ui-sref="{{s.link}}">
+                    <div class="main-img">
+                        <img ng-src="{{s.img}}" auto-heightfixed>
+                        <div class="front-img">
+                            <img ng-src="{{s.image}}" auto-heightfixed>
+                        </div>
                     </div>
-                </div>
+                </a>
             </li>
         </flex-slider>
         <h4>Dr. RENITA RAJAN</h4>

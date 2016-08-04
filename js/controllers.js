@@ -18,13 +18,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             image: "img/banner/md-2.jpg"
         }, {
             img: "img/banner/s1.jpg",
-            image: "img/banner/s-2.jpg"
+            image: "img/banner/s-2.jpg",
+            link: "skin"
         }, {
             img: "img/banner/t1.jpg",
             image: "img/banner/t-2.jpg"
         }, {
             img: "img/banner/v1.jpg",
-            image: "img/banner/v-2.jpg"
+            image: "img/banner/v-2.jpg",
+            link: "vitiligo"
         }
         // {
         //       img: "img/banner/b1.jpg",
