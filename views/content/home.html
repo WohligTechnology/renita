@@ -7,18 +7,20 @@
     </flex-slider>
 
 </div> -->
+<!-- <div class="container-fluid"> -->
 <section class="landing">
-  <div class="main-slider">
-    <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
-        <li auto-heightfixed>
-          <div class="main-img">
-            <img ng-src="{{s.img}}" class="img-responsive" auto-height>
-            <div class="front-img">
-              <img ng-src="{{s.image}}" class="img-responsive" auto-height>
-            </div>
-          </div>
-        </li>
-    </flex-slider>
-    <h4>Dr. RENITA RAJAN</h4>
-  </div>
+    <div class="main-slider">
+        <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
+            <li auto-height>
+                <div class="main-img">
+                    <img ng-src="{{s.img}}" auto-heightfixed>
+                    <div class="front-img">
+                        <img ng-src="{{s.image}}" auto-heightfixed>
+                    </div>
+                </div>
+            </li>
+        </flex-slider>
+        <h4>Dr. RENITA RAJAN</h4>
+    </div>
 </section>
+<!-- </div> -->

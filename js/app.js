@@ -98,7 +98,7 @@ firstapp.directive('autoHeightfixed', function($compile, $parse) {
         replace: false,
         link: function($scope, element, attrs) {
             var $element = $(element);
-            var windowHeight = $(window).height()-20;
+            var windowHeight = $(window).height();
             var addHeight = function() {
                 $element.css("height", windowHeight);
             };
@@ -146,17 +146,17 @@ firstapp.directive('fancyboxBox', function($document) {
 });
 
 firstapp.directive("scroll", function($window) {
-  return function(scope, element, attrs) {
-    angular.element($window).bind("scroll", function() {
-      var windowHeight = $(window).height();
-      if (this.pageYOffset >= windowHeight) {
-        // console.log(windowHeight);
-        element.addClass('affix');
-      } else {
-        element.removeClass('affix');
-      }
-    });
-  };
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+            var windowHeight = $(window).height();
+            if (this.pageYOffset >= windowHeight) {
+                // console.log(windowHeight);
+                element.addClass('affix');
+            } else {
+                element.removeClass('affix');
+            }
+        });
+    };
 });
 
 firstapp.config(function($translateProvider) {
