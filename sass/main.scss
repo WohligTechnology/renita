@@ -868,6 +868,20 @@ left: 50%;
 vertical-align: middle;
 margin: -10px 0px 0px 8px;
 }
+.bg-in {
+    background-color: #ebebeb;
+    display: inline-block;
+    padding: 20px;
+}
+.f18{
+  font-size: 18px;
+}
+.btn-padding2{
+      padding: 8px 26px;
+}
+.pb30{
+      padding-bottom: 30px;
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
