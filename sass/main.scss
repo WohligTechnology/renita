@@ -20,6 +20,11 @@ $before-color:#52b3ff !default;
 $white: #fff !default;
 $font-family-sans-serif: "Titillium Web", "Raleway",sans-serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@font-face {
+    font-family: 'swiss';
+    src: url("../fonts/Swiss721BlackBT.ttf?-m09hd") format("truetype");
+    font-weight: bold;
+}
 body {}
 img.loading {
     text-align: center;
@@ -746,10 +751,10 @@ h4 {
                 top: 46%;
                 // padding: 2px 46px !important;
                 &.flex-prev:before {
-                    content: url('../img/previous.png');
+                    content: url('../img/prevbtn.png');
                 }
                 &.flex-next:before {
-                    content: url('../img/next.png');
+                    content: url('../img/nextbtn.png');
                 }
             }
         }
@@ -820,7 +825,7 @@ h4 {
         }
         .front-img {
             animation-name: banner;
-            animation-duration: 18s;
+            animation-duration: 6.5s;
             animation-delay: 0s;
         }
     }
@@ -843,6 +848,25 @@ h4 {
 }
 .imgbot{
   margin-bottom: 25px;
+}
+.skin-top{
+  position: relative;
+top: -64px;
+left: 50%;
+}
+.top-left-logo {
+    position: absolute;
+    top: 10px;
+    left: 4%;
+    z-index: 999;
+    img{
+          width: 140px;
+    }
+}
+.em-logo{
+  width: 140px;
+vertical-align: middle;
+margin: -10px 0px 0px 8px;
 }
 //bootstrap forms
 /* Start writing sass here */
