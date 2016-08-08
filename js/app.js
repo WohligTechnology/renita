@@ -15,7 +15,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     $stateProvider
         .state('home', {
             url: "/",
-            templateUrl: "views/content/home.html",
+            templateUrl: "views/template.html",
             controller: 'HomeCtrl'
         })
         .state('doctor', {
