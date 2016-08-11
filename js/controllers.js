@@ -9,27 +9,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.mySlides = [{
             img: "img/banner/bo.jpg",
-            image: "img/banner/bo1.jpg",
+            image: "img/banner/1.png",
             link:""
         }, {
             img: "img/banner/m1.jpg",
-            image: "img/banner/m1-2.jpg",
+            image: "img/banner/5.png",
             link:""
         }, {
             img: "img/banner/md1.jpg",
-            image: "img/banner/md-2.jpg",
+            image: "img/banner/6.png",
             link:""
         }, {
             img: "img/banner/s1.jpg",
-            image: "img/banner/s-2.jpg",
+            image: "img/banner/3.png",
             link: "skin"
         }, {
             img: "img/banner/t1.jpg",
-            image: "img/banner/t-2.jpg",
+            image: "img/banner/2.png",
             link:""
         }, {
             img: "img/banner/v1.jpg",
-            image: "img/banner/v-2.jpg",
+            image: "img/banner/4.png",
             link: "vitiligo"
         }
         // {
