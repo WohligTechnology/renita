@@ -16,7 +16,7 @@ $brand-info: #000072 !default;
 $base-color: #161616 !default;
 $brown-color: #da8340 !default;
 $menu-color: #343536 !default;
-$before-color:#52b3ff !default;
+$before-color: #52b3ff !default;
 $white: #fff !default;
 $font-family-sans-serif: "Titillium Web", "Raleway",sans-serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -190,7 +190,7 @@ a {
         top: 0;
         left: 0;
         width: 100%;
-            z-index: 99;
+        z-index: 99;
     }
     .navbar-header {
         h4 {
@@ -292,7 +292,7 @@ h4 {
     cursor: pointer;
 }
 .cross {
-  cursor: pointer;
+    cursor: pointer;
     .fa {
         font-size: 20px;
         margin-right: 12px;
@@ -302,18 +302,18 @@ h4 {
     border-bottom: 2px solid #87888a;
     margin: 0 36px 0 25px;
 }
-.nav-list{
-  padding: 24px 30px 0;
-  li {
-      padding: 12px 10px 0;
-      font-size: 16px;
-      a {
-          color: #161616;
-      }
-  }
+.nav-list {
+    padding: 24px 30px 0;
+    li {
+        padding: 12px 10px 0;
+        font-size: 16px;
+        a {
+            color: #161616;
+        }
+    }
 }
-.remaining{
-  margin: 0 36px 0 25px;
+.remaining {
+    margin: 0 36px 0 25px;
 }
 //bootstrap forms
 .btn,
@@ -369,8 +369,8 @@ h4 {
 .color-success {
     color: $brand-success;
 }
-.color-after{
-  color:$before-color;
+.color-after {
+    color: $before-color;
 }
 .color-white {
     color: $white;
@@ -499,7 +499,7 @@ h4 {
 .follow {
     ul {
         li {
-            padding: 0px 3px;
+            padding: 0 3px;
             i {
                 background: #fff;
                 height: 26px;
@@ -518,8 +518,8 @@ h4 {
 .pl20 {
     padding-left: 20px;
 }
-.paddl{
-  padding-left: 10px;
+.paddl {
+    padding-left: 10px;
 }
 .data-content {
     a {
@@ -588,10 +588,10 @@ h4 {
 .tab-list2 {
     @extend .tab-list;
     display: inline-block;
-    ul{
-      li{
-       border-color: $brand-success;
-      }
+    ul {
+        li {
+            border-color: $brand-success;
+        }
     }
     .active-tab {
         background-color: $brand-success !important;
@@ -604,14 +604,14 @@ h4 {
 .tab-list3 {
     @extend .tab-list;
     display: inline-block;
-    ul{
-      li{
-       border-color: $before-color;
-       a{
-         display: inline-block;
-          padding:5px 0px 7px 18px;
-       }
-      }
+    ul {
+        li {
+            border-color: $before-color;
+            a {
+                display: inline-block;
+                padding: 5px 0 7px 18px;
+            }
+        }
     }
     .active-tab {
         background-color: $before-color !important;
@@ -665,9 +665,8 @@ h4 {
                 height: 47px;
                 text-align: center;
                 bottom: -48px;
-  top: inherit;
+                top: inherit;
                 margin: 0;
-
                 &.flex-prev:before {
                     content: url('../img/prev.png');
                 }
@@ -734,7 +733,7 @@ h4 {
     .flexslider {
         background: transparent;
         border-color: transparent;
-        margin:  0;
+        margin: 0;
         border: none;
         border-radius: 0;
         .flex-direction-nav {
@@ -846,49 +845,91 @@ h4 {
         letter-spacing: 1px;
         @include transform(translate(-50%,-50%));
     }
-    li{
-      // overflow: hidden;
+    li {
+        // overflow: hidden;
     }
 }
-.imgbot{
-  margin-bottom: 25px;
+.imgbot {
+    margin-bottom: 25px;
 }
-.skin-top{
-  position: relative;
-top: -64px;
-left: 50%;
+.skin-top {
+    position: relative;
+    top: -64px;
+    left: 50%;
 }
 .top-left-logo {
     position: absolute;
     top: 10px;
     left: 4%;
     z-index: 999;
-    img{
-          width: 140px;
+    img {
+        width: 140px;
     }
 }
-.em-logo{
-  width: 140px;
-vertical-align: middle;
-margin: -10px 0px 0px 8px;
+.em-logo {
+    width: 140px;
+    vertical-align: middle;
+    margin: -10px 0 0 8px;
 }
 .bg-in {
     background-color: #ebebeb;
     display: inline-block;
     padding: 20px;
 }
-.f18{
-  font-size: 18px;
+.f18 {
+    font-size: 18px;
 }
-.btn-padding2{
-      padding: 8px 26px;
+.btn-padding2 {
+    padding: 8px 26px;
 }
-.pb30{
-      padding-bottom: 30px;
+.pb30 {
+    padding-bottom: 30px;
 }
-.gulp-m{
-  margin: 0px 10px;
+.gulp-m {
+    margin: 0 10px;
 }
+.test-cont {
+    .flexslider {
+      h4{
+        color: #fff;
+      }
+      p{
+        color: #fff;
+      }
+
+      // .mgt100{
+      //   margin-top: 100px;
+      // }
+padding: 80px;
+      background-color: #0090ff;
+        .flex-control-nav {
+            display: none;
+        }
+        .flex-direction-nav a {
+
+          width: 50px;
+          height: 50px;
+            opacity: 1;
+            &.flex-prev:before {
+                content: url('../img/prev1.png');
+            }
+            &.flex-next:before {
+                content: url('../img/next1.png');
+            }
+      }
+      .flex-direction-nav {
+          .flex-prev {
+              right: auto;
+              left: 15px;
+          }
+          .flex-next {
+              right: 15px;
+              left: auto;
+          }
+    }
+}
+}
+
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";

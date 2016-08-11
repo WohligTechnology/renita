@@ -3,3 +3,29 @@
         <img src="img/about.jpg" alt="Dr Renita" class="img-responsive">
     </div>
 </section>
+<div class="container">
+    <h1 class="font-bold color-primary text-up mt20">Testimonails</h1>
+    <div class="test-cont">
+        <flex-slider flex-slide="item in testslide track by $index" prev-text="" next-text="">
+            <li>
+                <div class="row">
+                    <div class="col-md-12 mgt100">
+                        <div class="text-center">
+                            <h4 class="text-left">{{item.name}}</h4>
+                        </div>
+                        <p class="text-justify">{{item.desc}}</p>
+                    </div>
+                </div>
+            </li>
+            </flexi-slider>
+    </div>
+
+    <div class="mt30 pb30">
+        <div class="text-center">
+            <h4 class="color-primary font-semi">ALSO READ</h4>
+            <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="team">TEAM</button>
+            <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m" ui-sref="doctor">DOCTOR</button>
+            <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="testimonial">TESTIMONIALS</button>
+        </div>
+    </div>
+</div>
