@@ -124,6 +124,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
+    .controller('TestimonialCtrl', function($scope, TemplateService, NavigationService) {
+
+        $scope.template = TemplateService.changecontent("testimonial");
+        $scope.menutitle = NavigationService.makeactive("Testimonial");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
     .controller('TeamCtrl', function($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("team");
