@@ -1,18 +1,17 @@
 <section>
     <div class="head-top">
-        <img src="img/banner/skin-in.jpg" alt="Dr Renita" class="img-responsive">
+        <img ng-src="{{category[0].category.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
 
     </div>
-
 </section>
 <section class="mt50">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="data">
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                        dummy text.
+                    <p ng-bind-html="category[0].category.description">
+                        <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                        dummy text. -->
                     </p>
                 </div>
             </div>
@@ -21,29 +20,30 @@
             <div class="col-md-3">
                 <div class="tab-list2">
                     <ul class="padding0 margin0">
-                        <li class="{{classa}}" ng-click="tabchanges('acre',1)"><a href="">Acne</a></li>
-                        <li class="{{classb}}" ng-click="tabchanges('pig',2)"><a href="">Pigmentation</a></li>
+                        <li ng-class={'active-tab':data.activetab}  ng-click="tabActive(data._id,$index)" ng-repeat="data in category"><a href="">{{data.subCatName}}</a></li>
+                        <!-- <li class="{{classa}}" ng-click="tabchanges('acre',1)"><a href="">Acne</a></li>
+                         <li class="{{classb}}" ng-click="tabchanges('pig',2)"><a href="">Pigmentation</a></li>
                         <li class="{{classc}}" ng-click="tabchanges('tato',3)"><a href="">Tatoo Removal</a></li>
                         <li class="{{classd}}" ng-click="tabchanges('faci',4)"><a href="">Facial Contouring</a></li>
                         <li class="{{classe}}" ng-click="tabchanges('dull',5)"><a href="">Dull Skin</a></li>
                         <li class="{{classf}}" ng-click="tabchanges('anti',6)"><a href="">Anti - Ageing</a></li>
                         <li class="{{classg}}" ng-click="tabchanges('uneven',7)"><a href="">Uneven Skin</a></li>
                         <li class="{{classh}}" ng-click="tabchanges('skin',8)"><a href="">Skin Tags</a></li>
-                        <li class="{{classi}}" ng-click="tabchanges('general',9)"><a href="">General Dermatology</a></li>
+                        <li class="{{classi}}" ng-click="tabchanges('general',9)"><a href="">General Dermatology</a></li> -->
                     </ul>
                 </div>
             </div>
             <div class="col-md-9">
                 <div class="tabs">
-                    <div class="first" ng-if="tabs=='acre'">
+                    <div class="first">
                         <div class="data-title2">
-                            <h4 class="color-success font-semi">ACNE</h4>
+                            <h4 class="color-success font-semi">{{subCategory.subCatName}}</h4>
                         </div>
-                        <div class="data-main mt15">
-                            <p>Nearly every one of us faces this problem at some time or another. While for some it may be an easily identified problem such as doing one too many facials, for others it may be a more troublesome, chronic problem with multiple
+                        <div class="data-main mt15" ng-bind-html="subCategory.subCatDescription">
+                            <!-- <p>Nearly every one of us faces this problem at some time or another. While for some it may be an easily identified problem such as doing one too many facials, for others it may be a more troublesome, chronic problem with multiple
                                 underlying triggers. While some may develop acne during adolescence, for others, the first breakout may happen well into adulthood. Genetic factors, hormonal causes and environmental influences like diet – all have a role
-                                in producing, maintaining or exacerbating acne.</p>
-                            <div class="data-image">
+                                in producing, maintaining or exacerbating acne.</p> -->
+                            <!-- <div class="data-image">
                                 <div class="img-box1">
                                     <img src="img/a1.jpg" alt="Dr Renita Rajan" class="img-responsive">
                                 </div>
@@ -159,7 +159,7 @@
                                 is different from the time required to see the results of one session, before going for another. Often, it is not possible to predict how many sessions will be required, or how much time will be enough to give results,
                                 simply because a lot is dependent on the skin's ability to recover as well! And this ability differs from one person to another. So it is very important that patients have realistic expectations in terms of results, time
                                 and expenditure, considering the drawn out process of scar correction. However, scar revision is an evolving science - one that has grown rapidly in the last few years, and this makes it possible to deliver good results
-                                using the above techniques.</p>
+                                using the above techniques.</p> -->
                         </div>
                     </div>
                 </div>

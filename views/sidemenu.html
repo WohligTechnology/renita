@@ -28,10 +28,10 @@
                             </div>
                             <div class="homeborder">
                                 <ul class="list-unstyled">
-                                    <li><a>Skin</a></li>
-                                    <li><a>Hair &amp; Scalp</a></li>
+                                    <li ng-repeat="data in categories"><a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}</a></li>
+                                    <!-- <li><a>Hair &amp; Scalp</a></li>
                                     <li><a>Body</a></li>
-                                    <li><a>Mummy Derm</a></li>
+                                    <li><a>Mummy Derm</a></li> -->
                                 </ul>
                             </div>
                             <ul class="list-unstyled remaining">

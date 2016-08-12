@@ -1,3 +1,4 @@
+
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -9,7 +10,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     NavigationService.getHomeslider(function(data) {
         $scope.Homeslider = data.data;
-        console.log("$scope.Homeslider",$scope.Homeslider);
+        console.log("$scope.Homeslider", $scope.Homeslider);
 
     });
 
@@ -92,7 +93,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     ];
 })
 
-.controller('headerctrl', function($scope, TemplateService) {
+.controller('headerctrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         var get = false;
         $scope.getslide = "menu-out";
@@ -115,6 +116,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $(window).scrollTop(0);
         });
         $.fancybox.close(true);
+
+        NavigationService.getAllCategory(function(data) {
+            $scope.categories = data.data;
+            console.log("categories", $scope.categories);
+
+        })
     })
     .controller('ContactCtrl', function($scope, TemplateService, NavigationService) {
 
@@ -152,7 +159,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
-    .controller('SkinCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('SkinCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
 
         $scope.template = TemplateService.changecontent("skin");
         $scope.menutitle = NavigationService.makeactive("Skin");
@@ -171,7 +178,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.tabchanges = function(tabs, a) {
-            //        console.log(tab);
+            console.log(tabs);
             $scope.tabs = tabs;
             if (a == 1) {
 
@@ -275,6 +282,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.classi = 'active-tab';
             }
         };
+        // $scope.myid='';
+        NavigationService.getCatByName($stateParams.id, function(data) {
+            console.log();
+            $scope.category = data.data;
+              $scope.tabActive($scope.category[0]._id, 0);
+            // $scope.myid = data.data[0].subCatName;
+            console.log('myid', $scope.myid);
+            // console.log($scope.category[0]._id);
+            console.log("$scope.categoryBYname", $scope.category);
+        })
+        console.log('fgdyufgyudgyu');
+        console.log("dsfghdsfg", $scope.myid);
+        $scope.tabActive = function(id, indexid) {
+            $scope.subCatid = id;
+            _.each($scope.category, function(key) {
+                key.activetab = false;
+            });
+            $scope.category[indexid].activetab = true;
+            NavigationService.getSubCat(id, function(data) {
+                $scope.subCategory = data.data;
+                console.log("$scope.subCategory", $scope.subCategory);
+            })
+
+        };
+
     })
     .controller('PrivacyCtrl', function($scope, TemplateService, NavigationService) {
 

@@ -13,6 +13,7 @@ var uploadurl = imgurl;
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
+
   var navigation = [{
     name: "Skin",
     classis: "active",
@@ -71,6 +72,7 @@ var navigationservice = angular.module('navigationservice', [])
     getnav: function() {
       return navigation;
     },
+
     makeactive: function(menuname) {
       for (var i = 0; i < navigation.length; i++) {
         if (navigation[i].name == menuname) {
@@ -88,7 +90,33 @@ var navigationservice = angular.module('navigationservice', [])
             withCredentials: true
         }).success(callback);
     },
-
+    getAllCategory: function(callback) {
+            $http({
+            url: adminurl + 'Category/getAllCat',
+            method: 'POST',
+            withCredentials: true
+        }).success(callback);
+    },
+getCatByName:function(id,callback){
+  $http({
+    url:adminurl+'SubCategory/getCatByName',
+    method:'POST',
+    withCredentials:true,
+    data: {
+        _id: id
+    }
+  }).success(callback);
+},
+getSubCat:function(id,callback){
+  $http({
+    url:adminurl+'SubCategory/getOne',
+    method:'POST',
+    withCredentials:true,
+    data: {
+        _id: id
+    }
+  }).success(callback);
+},
 
 
 

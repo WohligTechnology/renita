@@ -44,7 +44,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             controller: 'PrivacyCtrl'
         })
         .state('skin', {
-            url: "/skin",
+            url: "/category/:name/:id",
             templateUrl: "views/template.html",
             controller: 'SkinCtrl'
         })
