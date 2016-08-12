@@ -10,13 +10,13 @@
 <!-- <div class="container-fluid"> -->
 <section class="landing">
     <div class="main-slider">
-        <flex-slider flex-slide="s in mySlides track by $index" prev-text="" next-text="">
+        <flex-slider flex-slide="s in Homeslider track by $index" prev-text="" next-text="">
             <li auto-height>
-                <a ui-sref="{{s.link}}">
+                <!-- <a ui-sref="{{s.link}}"> -->
                     <div class="main-img">
-                        <img ng-src="{{s.img}}" auto-heightfixed>
+                        <img ng-src="{{s.image1|uploadpath}}" auto-heightfixed>
                         <div class="front-img">
-                            <img ng-src="{{s.image}}" auto-heightfixed>
+                            <img ng-src="{{s.image2|uploadpath}}" auto-heightfixed>
                         </div>
                     </div>
                 </a>

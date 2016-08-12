@@ -7,6 +7,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
+    NavigationService.getHomeslider(function(data) {
+        $scope.Homeslider = data.data;
+        console.log("$scope.Homeslider",$scope.Homeslider);
+
+    });
+
     $scope.mySlides = [{
             img: "img/banner/bo.jpg",
             image: "img/banner/1.png",
