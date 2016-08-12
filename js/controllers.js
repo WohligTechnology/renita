@@ -1,5 +1,4 @@
-
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
 
@@ -286,7 +285,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getCatByName($stateParams.id, function(data) {
             console.log();
             $scope.category = data.data;
-              $scope.tabActive($scope.category[0]._id, 0);
+            $scope.tabActive($scope.category[0]._id, 0);
             // $scope.myid = data.data[0].subCatName;
             console.log('myid', $scope.myid);
             // console.log($scope.category[0]._id);
@@ -549,80 +548,108 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Blog");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        $scope.blogmsg = "Loading...";
+        $scope.popularmsg = "Loading...";
+        $scope.tagmsg = "Loading...";
 
-        $scope.blog = [{
-            img: "img/bb4.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb1.jpg",
-            name: "Do HCG injections really work for weight loss?",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb2.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb4.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb3.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb4.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }]
+        // GET ALL BLOG BY JAGRUTI
+        // BLOG PAGINATION
+        $scope.pagenumber = 1;
+        $scope.blog = [];
+        $scope.shouldscroll = false;
+        $scope.search = {};
+        $scope.search.search = "";
+        $scope.loadnotification = function(pageno) {
+            NavigationService.getAllBlog(pageno, $scope.search.search, function(data) {
 
-    })
-    .controller('BlogDeatilCtrl', function($scope, TemplateService, NavigationService) {
+                _.each(data.data.data, function(n) {
+                    $scope.blog.push(n);
+                })
 
-        $scope.template = TemplateService.changecontent("blog-detail");
-        $scope.menutitle = NavigationService.makeactive("Blog Detail");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+                if (data.data.data == "") {
+                    $scope.shouldscroll = true;
+                }
+                if ($scope.blog.length == 0) {
+                    $scope.blogmsg = "No Blogs.";
+                } else {
+                    $scope.blogmsg = "";
+                }
+            });
 
-        $scope.blog = [{
-            img: "img/bb4.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb1.jpg",
-            name: "Do HCG injections really work for weight loss?",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb2.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb4.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb3.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }, {
-            img: "img/bb4.jpg",
-            name: "The expert route to getting the best lips in town!",
-            date: "Saturday, 23 January 2016",
-            desc: "We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss! Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night...."
-        }]
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+            $scope.$broadcast('scroll.refreshComplete');
+        }
+
+        $scope.loadnotification(1);
+
+        $scope.loadMore = function() {
+            console.log("in notification");
+            $scope.loadnotification(++$scope.pagenumber);
+        };
+
+        //  SEARCH BLOG
+        $scope.doSearch = function() {
+            $scope.pagenumber = 1;
+            $scope.blog = [];
+            $scope.shouldscroll = false;
+            $scope.loadnotification(1);
+        }
+
+        //  POPULAR POST AND TAGS
+        $scope.post = [];
+        $scope.tags = [];
+        NavigationService.getPostTags(function(data) {
+            $scope.post = data.data.popularposts;
+            $scope.tags = data.data.tags;
+            if ($scope.post == '') {
+              $scope.popularmsg = "No Popular Posts."
+            }else {
+              $scope.popularmsg = "";
+            }
+            if ($scope.tags == '') {
+              $scope.tagmsg = "No Tags."
+            }else {
+              $scope.tagmsg = "";
+            }
+        });
+        // GET ALL BLOG BY JAGRUTI
 
     })
+
+.controller('BlogDeatilCtrl', function($scope, TemplateService, NavigationService, $state) {
+
+    $scope.template = TemplateService.changecontent("blog-detail");
+    $scope.menutitle = NavigationService.makeactive("Blog Detail");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.popularmsg = "Loading...";
+    $scope.tagmsg = "Loading...";
+
+    //  BLOG DETAIL BY JAGRUTI
+    $scope.popular = [];
+    $scope.blog = [];
+    //  GET BLOG DETAIL
+    NavigationService.getOneBlog($state.params.id, function(data) {
+        console.log(data);
+        $scope.blog = data.data;
+        if ($scope.blog.blog.tag == "") {
+          $scope.tagmsg = "No Tags.";
+        }else {
+          $scope.tagmsg = "";
+        }
+    });
+    //  GET POPULAR POST
+    NavigationService.getPopularPosts(function(data) {
+        $scope.popular = data.data;
+        if ($scope.popular == "") {
+          $scope.popularmsg = "No Popular Post.";
+        }else {
+          $scope.popularmsg = "";
+        }
+    });
+    //  BLOG DETAIL BY JAGRUTI
+
+})
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
 

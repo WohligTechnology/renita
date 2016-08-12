@@ -8,6 +8,9 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="blog-left-side">
+                  <div ng-if="blog.length === 0" style="min-height:667px;">
+                    <h4 class="text-center">{{blogmsg}}</h4>
+                  </div>
                     <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
                         <div class="col-md-6" ng-repeat="item in blog track by $index">
                             <div class="blog-box">
@@ -42,7 +45,7 @@
                 <div class="blog-right-side">
                     <div class="blog-search">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" ng-model="search.search">
+                            <input type="text" class="form-control" placeholder="Search" ng-model="search.search" ng-change="doSearch() ">
                             <span class="input-group-btn" ng-click="doSearch()">
                            <button class="btn search-btn" type="button"><i class="fa fa-search"></i></button>
                          </span>
@@ -50,6 +53,9 @@
                     </div>
                     <div class="blog-popular-tag mt30">
                         <h4 class="color-base text-up font-bold">Popular post</h4>
+                        <div ng-if="post.length === 0">
+                          <h4 class="text-center">{{popularmsg}}</h4>
+                        </div>
                         <div class="row mt20" ng-repeat="item in post track by $index">
                             <div class="col-md-3">
                                 <div class="p-img-box">
@@ -73,6 +79,9 @@
                     <div class="blog-popular-tag mt30">
                         <h4 class="color-base text-up font-bold">tags</h4>
                         <div class="all-tags my-list mt20">
+                          <div ng-if="tags.length === 0">
+                            <h4 class="text-center">{{tagmsg}}</h4>
+                          </div>
                             <ul class="padding0 font-ralway text-up color-base">
                                 <li ng-repeat="tag in tags">
                                     <span>{{tag.name}}</span>
