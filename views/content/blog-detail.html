@@ -1,6 +1,6 @@
 <section>
     <div class="head-top">
-        <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage==''">
+        <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage=='' || blog">
         <img src="{{blog.blog.bannerimage|serverimage}}" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage!=''">
     </div>
 </section>
@@ -49,7 +49,7 @@
                                 <img src="img/fb.png" alt="">
                             </div>
                             <div class="count display-inline">
-                                <span>1</span>
+                                <span>0</span>
                             </div>
                         </li>
                         <li>
@@ -57,7 +57,7 @@
                                 <img src="img/twitt.png" alt="">
                             </div>
                             <div class="count display-inline">
-                                <span>1</span>
+                                <span>0</span>
                             </div>
                         </li>
                         <li>
@@ -65,7 +65,7 @@
                               <img src="img/google.png" alt="">
                             </div>
                             <div class="count display-inline">
-                                <span>1</span>
+                                <span>0</span>
                             </div>
                         </li>
                         <li>
@@ -73,7 +73,7 @@
                               <img src="img/mail.png" alt="">
                             </div>
                             <div class="count display-inline">
-                                <span>1</span>
+                                <span>0</span>
                             </div>
                         </li>
                     </ul>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <div class="related-blog mt30 pb60">
+                <div class="related-blog mt30 pb60" ng-if="blog.related">
                     <h3 class="color-base font-bold text-up">related Post</h3>
                     <div class="row">
                         <div class="col-md-4" ng-repeat="related in blog.related" ui-sref="blog-detail({'id':related._id})">
@@ -104,7 +104,7 @@
                 <div class="blog-right-side">
                     <div class="blog-search">
                       <div class="input-group">
-                         <input type="text" class="form-control" placeholder="Search">
+                         <input type="text" class="form-control" ng-model="searchText" placeholder="Search">
                          <span class="input-group-btn">
                            <button class="btn search-btn" type="button"><i class="fa fa-search"></i></button>
                          </span>
@@ -112,7 +112,10 @@
                     </div>
                     <div class="blog-popular-tag mt30">
                       <h4 class="color-base text-up font-bold">Popular post</h4>
-                        <div class="row mt20" ng-repeat="item in popular track by $index" ui-sref="blog-detail({'id':item._id})">
+                      <div ng-if="popular.length === 0">
+                        <h4 class="text-center">{{popularmsg}}</h4>
+                      </div>
+                        <div class="row mt20" ng-repeat="item in popular | filter:searchText" ui-sref="blog-detail({'id':item._id})">
                             <div class="col-md-3">
                                 <div class="p-img-box">
                                     <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
@@ -130,6 +133,9 @@
                     </div>
                     <div class="blog-popular-tag mt30">
                       <h4 class="color-base text-up font-bold">tags</h4>
+                      <div ng-if="blog.blog.tags.length === 0">
+                        <h4 class="text-center">{{tagmsg}}</h4>
+                      </div>
                         <div class="all-tags my-list mt20">
                             <ul class="padding0 font-ralway text-up color-base">
                                 <li ng-repeat="tag in blog.blog.tags">
