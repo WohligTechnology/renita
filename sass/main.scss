@@ -20,11 +20,13 @@ $before-color: #52b3ff !default;
 $white: #fff !default;
 $font-family-sans-serif: "Titillium Web", "Raleway",sans-serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
 @font-face {
     font-family: 'swiss';
     src: url("../fonts/Swiss721BlackBT.ttf?-m09hd") format("truetype");
     font-weight: bold;
 }
+
 body {}
 img.loading {
     text-align: center;
@@ -488,8 +490,10 @@ h4 {
     }
     .btn {
         font-size: 10px;
+        border-radius: 4px;
     }
 }
+
 .quara {
     img {
         vertical-align: baseline;
@@ -892,15 +896,17 @@ h4 {
     .flexslider {
       h4{
         color: #fff;
+        font-family: $font-family-sans-serif;
+        font-weight: 600;
+        font-size: 25px;
       }
       p{
         color: #fff;
+        font-family: $font-family-sans-serif;
+        font-weight: 400;
+        font-size: 20px;
       }
-
-      // .mgt100{
-      //   margin-top: 100px;
-      // }
-padding: 80px;
+    padding: 80px;
       background-color: #0090ff;
         .flex-control-nav {
             display: none;
@@ -929,7 +935,11 @@ padding: 80px;
     }
 }
 }
-
+.sdm-logo{
+.navbar-brand {
+  padding: 0 25px;
+}
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
