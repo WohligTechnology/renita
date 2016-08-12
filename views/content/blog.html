@@ -8,31 +8,31 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="blog-left-side">
-                    <div class="row">
+                    <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
                         <div class="col-md-6" ng-repeat="item in blog track by $index">
-          <div class="blog-box">
-            <div class="blog-img">
-                <img ng-src="{{item.img}}" alt="Dr Renita rajan" class="img-responsive width100">
-            </div>
-            <div class="blog-title mt15">
-                <h4 class="font-bold color-primary text-up">{{item.name}}</h4>
-            </div>
-            <div class="blog-date color-base">
-                <span>{{item.date}}</span>
-            </div>
-            <div class="blog-content mt10 color-base">
-              <p>{{item.desc}}</p>
-            </div>
-            <div class="box-footer mt30">
-              <div class="float-left">
-                <button type="button" name="button" class="text-up outline-btn btn-padding" ui-sref="blog-detail">Read More</button>
-              </div>
-              <div class="float-right color-grey">
-                <i class="fa fa-eye"></i>25
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
+                            <div class="blog-box">
+                                <div class="blog-img">
+                                    <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100">
+                                </div>
+                                <div class="blog-title mt15">
+                                    <h4 class="font-bold color-primary text-up">{{item.name}}</h4>
+                                </div>
+                                <div class="blog-date color-base">
+                                    <span>{{item.date|date:'fullDate'}}</span>
+                                </div>
+                                <div class="blog-content mt10 color-base">
+                                    <p>{{item.desc}}</p>
+                                </div>
+                                <div class="box-footer mt30">
+                                    <div class="float-left">
+                                        <button type="button" name="button" class="text-up outline-btn btn-padding" ui-sref="blog-detail({'id':item._id})">Read More</button>
+                                    </div>
+                                    <div class="float-right color-grey">
+                                        <i class="fa fa-eye"></i>{{item.views}}
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -41,19 +41,19 @@
             <div class="col-md-4">
                 <div class="blog-right-side">
                     <div class="blog-search">
-                      <div class="input-group">
-                         <input type="text" class="form-control" placeholder="Search">
-                         <span class="input-group-btn">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" ng-model="search.search">
+                            <span class="input-group-btn" ng-click="doSearch()">
                            <button class="btn search-btn" type="button"><i class="fa fa-search"></i></button>
                          </span>
-                       </div>
+                        </div>
                     </div>
                     <div class="blog-popular-tag mt30">
-                      <h4 class="color-base text-up font-bold">Popular post</h4>
-                        <div class="row mt20" ng-repeat="item in blog track by $index">
+                        <h4 class="color-base text-up font-bold">Popular post</h4>
+                        <div class="row mt20" ng-repeat="item in post track by $index">
                             <div class="col-md-3">
                                 <div class="p-img-box">
-                                    <img ng-src="{{item.img}}" alt="Dr Renita Rajan" class="img-responsive">
+                                    <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
                                 </div>
 
                             </div>
@@ -62,7 +62,7 @@
                                     <h5 class="text-up color-base margin0 font-bold">{{item.name}}</h5>
                                 </div>
                                 <div class="blog-p-date">
-                                    <span class="color-base f12">{{item.date}}</span>
+                                    <span class="color-base f12">{{item.date|date:'fullDate'}}</span>
                                 </div>
                             </div>
                         </div>
@@ -71,71 +71,14 @@
 
                     </div>
                     <div class="blog-popular-tag mt30">
-                      <h4 class="color-base text-up font-bold">tags</h4>
+                        <h4 class="color-base text-up font-bold">tags</h4>
                         <div class="all-tags my-list mt20">
                             <ul class="padding0 font-ralway text-up color-base">
-                                <li>
-                                    <span>Skin</span>
-                                </li>
-                                <li>
-                                    <span>hair</span>
-                                </li>
-                                <li>
-                                    <span>scalp</span>
-                                </li>
-                                <li>
-                                    <span>body</span>
-                                </li>
-                                <li>
-                                    <span>acne</span>
-                                </li>
-                                <li>
-                                    <span>anti-ageing</span>
-                                </li>
-                                <li>
-                                    <span>facial</span>
-                                </li>
-                                <li>
-                                    <span>pigmentation</span>
-                                </li>
-                                <li>
-                                    <span>dull skin</span>
-                                </li>
-                                <li>
-                                    <span>dermatology</span>
-                                </li>
-                                <li>
-                                    <span>tatoo removal </span>
-                                </li>
-                                <li>
-                                    <span>body </span>
-                                </li>
-                                <li>
-                                    <span>acne </span>
-                                </li>
-                                <li>
-                                    <span>Skin</span>
-                                </li>
-                                <li>
-                                    <span>hair</span>
-                                </li>
-                                <li>
-                                    <span>scalp</span>
-                                </li>
-                                <li>
-                                    <span>body</span>
-                                </li>
-                                <li>
-                                    <span>acne</span>
-                                </li>
-                                <li>
-                                    <span>anti-ageing</span>
-                                </li>
-                                <li>
-                                    <span>facial</span>
+                                <li ng-repeat="tag in tags">
+                                    <span>{{tag.name}}</span>
                                 </li>
                             </ul>
-                            <div class="view-more mt30">
+                            <div class="view-more mt30" ng-if="tags.length>30">
                                 <span class="text-up font-ralway">view more</span>
                             </div>
                         </div>

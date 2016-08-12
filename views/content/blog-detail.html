@@ -1,6 +1,7 @@
 <section>
     <div class="head-top">
-        <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive">
+        <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage==''">
+        <img src="{{blog.blog.bannerimage|serverimage}}" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage!=''">
     </div>
 </section>
 <section class="mt50">
@@ -9,22 +10,25 @@
             <div class="col-md-8">
                 <div class="blog-left-side">
                     <div class="blog-img">
-                        <img src="img/b1.jpg" alt="Dr Renita rajan" class="img-responsive">
+                        <img ng-src="{{blog.blog.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive">
                     </div>
                     <div class="blog-title">
-                        <h1 class="color-primary font-bold text-up">The expert route to getting the best lips in town!</h1>
+                        <h1 class="color-primary font-bold text-up">{{blog.blog.name}}</h1>
                     </div>
                     <div class="blog-date">
-                        <span class="color-base">Saturday, 23 January 2016</span>
+                        <span class="color-base">{{blog.blog.date|date:'fullDate'}}</span>
                     </div>
-                    <div class="blog-content mt20">
+                    <!-- <div class="blog-content mt20">
                         <p>We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss!</p>
                         <p>Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night.</p>
                         <p>Some of us pamper our lips, while some abuse them - by smoking, picking or chewing the lips.</p>
                         <p>A person's lips can be a huge enhancement to his / her features, and it is no wonder that lip balms and lip colors are huge in the cosmetic industry.</p>
                         <p>With all this hype, do you know what it really takes to get and maintain healthy, luscious and alluring lips?</p>
+                    </div> -->
+                    <div ng-bind-html="blog.blog.description">
+
                     </div>
-                    <div class="blog-img">
+                    <!-- <div class="blog-img">
                         <img src="img/b2.jpg" alt="Dr Renita rajan" class="img-responsive">
                     </div>
                     <div class="blog-img">
@@ -36,7 +40,7 @@
                     </div>
                     <div class="blog-img">
                         <img src="img/b4.jpg" alt="Dr Renita rajan" class="img-responsive">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="blog-share float-right my-list mt15">
                     <ul>
@@ -87,22 +91,10 @@
                 <div class="related-blog mt30 pb60">
                     <h3 class="color-base font-bold text-up">related Post</h3>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4" ng-repeat="related in blog.related" ui-sref="blog-detail({'id':related._id})">
                             <div class="related-box text-center">
-                                <img src="img/bb1.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                <span class="font-bold text-up">Do HCG injections really work for weight loss?</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="related-box text-center">
-                                <img src="img/bb2.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                <span class="font-bold text-up">Body shaping made easy!</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="related-box text-center">
-                                <img src="img/bb3.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                <span class="font-bold text-up">Should you stop Aspirin before going in to get your... </span>
+                                <img src="{{related.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
+                                <span class="font-bold text-up">{{related.name}}</span>
                             </div>
                         </div>
                     </div>
@@ -120,92 +112,31 @@
                     </div>
                     <div class="blog-popular-tag mt30">
                       <h4 class="color-base text-up font-bold">Popular post</h4>
-                        <div class="row mt20" ng-repeat="item in blog track by $index">
+                        <div class="row mt20" ng-repeat="item in popular track by $index" ui-sref="blog-detail({'id':item._id})">
                             <div class="col-md-3">
                                 <div class="p-img-box">
-                                    <img ng-src="{{item.img}}" alt="Dr Renita Rajan" class="img-responsive">
+                                    <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
                                 </div>
-
                             </div>
                             <div class="col-md-9 padding0 border-btm">
                                 <div class="blog-p-title">
                                     <h5 class="text-up color-base margin0 font-bold">{{item.name}}</h5>
                                 </div>
                                 <div class="blog-p-date">
-                                    <span class="color-base f12">{{item.date}}</span>
+                                    <span class="color-base f12">{{item.date|date:'fullDate'}}</span>
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                     <div class="blog-popular-tag mt30">
                       <h4 class="color-base text-up font-bold">tags</h4>
                         <div class="all-tags my-list mt20">
                             <ul class="padding0 font-ralway text-up color-base">
-                                <li>
-                                    <span>Skin</span>
-                                </li>
-                                <li>
-                                    <span>hair</span>
-                                </li>
-                                <li>
-                                    <span>scalp</span>
-                                </li>
-                                <li>
-                                    <span>body</span>
-                                </li>
-                                <li>
-                                    <span>acne</span>
-                                </li>
-                                <li>
-                                    <span>anti-ageing</span>
-                                </li>
-                                <li>
-                                    <span>facial</span>
-                                </li>
-                                <li>
-                                    <span>pigmentation</span>
-                                </li>
-                                <li>
-                                    <span>dull skin</span>
-                                </li>
-                                <li>
-                                    <span>dermatology</span>
-                                </li>
-                                <li>
-                                    <span>tatoo removal </span>
-                                </li>
-                                <li>
-                                    <span>body </span>
-                                </li>
-                                <li>
-                                    <span>acne </span>
-                                </li>
-                                <li>
-                                    <span>Skin</span>
-                                </li>
-                                <li>
-                                    <span>hair</span>
-                                </li>
-                                <li>
-                                    <span>scalp</span>
-                                </li>
-                                <li>
-                                    <span>body</span>
-                                </li>
-                                <li>
-                                    <span>acne</span>
-                                </li>
-                                <li>
-                                    <span>anti-ageing</span>
-                                </li>
-                                <li>
-                                    <span>facial</span>
+                                <li ng-repeat="tag in blog.blog.tags">
+                                    <span>{{tag.name}}</span>
                                 </li>
                             </ul>
-                            <div class="view-more mt30">
+                            <div class="view-more mt30" ng-if="blog.blog.tags>20">
                                 <span class="text-up font-ralway">view more</span>
                             </div>
                         </div>

@@ -16,6 +16,7 @@ var jsArray = [
     './bower_components/angulartics/dist/angulartics.min.js',
     './bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
     './bower_components/angular-swiper/dist/angular-swiper.js',
+    './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
     './js/app.js',
     './js/language.js',
     './js/controllers.js',
@@ -32,7 +33,7 @@ var ftpString = "U2FsdGVkX19KJ4w0W1pxaUyRsJcjQO5RL98s2rfWnmpoGlaoPfxb8Ibdl0yu5No
 
 var uploadingFolder = "renita";
 var password = "";
- 
+
 
 
 //Do not change anything below
