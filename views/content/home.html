@@ -9,10 +9,10 @@
 </div> -->
 <!-- <div class="container-fluid"> -->
 <section class="landing">
-    <div class="main-slider">
+    <div class="main-slider" ng-if="Homeslider.length>0">
         <flex-slider flex-slide="s in Homeslider track by $index" prev-text="" next-text="">
             <li auto-height>
-                <a ui-sref="{{s.url}}">
+                <a href="{{s.url}}">
                     <div class="main-img">
                         <img ng-src="{{s.image1|uploadpath}}" auto-heightfixed>
                         <div class="front-img">
