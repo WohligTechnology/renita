@@ -95,7 +95,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // 'img/banner/b7.jpg'
     ];
 })
-
+.controller('navCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService;
+    NavigationService.getnav(function(data) {
+        $scope.navigation = data;
+    });
+})
 .controller('headerctrl', function($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService;
     var get = false;
@@ -188,13 +193,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("skin");
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
-        NavigationService.getnav(function(data) {
-            $scope.navigation = data;
-        });
-        console.log($scope.navigation);
-        $timeout(function() {
-            console.log($scope.navigation);
-        }, 3000);
+
         $scope.tabs = 'acre';
         $scope.classa = 'active-tab';
         $scope.classb = '';
