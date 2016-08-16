@@ -1,19 +1,19 @@
 <section>
     <div class="head-top">
-        <img src="img/about.jpg" alt="Dr Renita" class="img-responsive">
+        <img src="{{testimonialHeader.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
     </div>
 </section>
 <div class="container">
     <h1 class="font-bold color-primary text-up mt20">Testimonails</h1>
     <div class="test-cont">
-        <flex-slider flex-slide="item in testslide track by $index" prev-text="" next-text="">
+        <flex-slider flex-slide="item in Testimonial track by $index" prev-text="" next-text="">
             <li>
                 <div class="row">
                     <div class="col-md-12 mgt100">
                         <div class="text-center">
                             <h4 class="text-left">{{item.name}}</h4>
                         </div>
-                        <p class="text-justify">{{item.desc}}</p>
+                        <p class="text-justify">{{item.description}}</p>
                     </div>
                 </div>
             </li>

@@ -1,6 +1,6 @@
 <section>
     <div class="head-top">
-        <img src="img/before.jpg" alt="Dr Renita" class="img-responsive">
+        <img src="{{headerBefore.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
     </div>
 </section>
 <section class="mt50">
@@ -8,9 +8,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="data">
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                        dummy text.
+                    <p ng-bind-html="headerBefore.description">
+                        <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                        dummy text. -->
                     </p>
                 </div>
             </div>
@@ -19,7 +19,8 @@
             <div class="col-md-3">
                 <div class="tab-list3">
                     <ul class="padding0 margin0">
-                        <li class="{{classa}}" ng-click="tabchanges('acne',1)"><a href="">Acne Treatment</a></li>
+                        <li ng-class={'active-tab':data.activetab}   ng-click="tabActive(data._id,$index)" ng-repeat="data in before"><a href="">{{data.name}}</a></li>
+                        <!-- <li class="{{classa}}" ng-click="tabchanges('acne',1)"><a href="">Acne Treatment</a></li>
                         <li class="{{classb}}" ng-click="tabchanges('corr',2)"><a href="">Acne scar correction</a></li>
                         <li class="{{classc}}" ng-click="tabchanges('scar',3)"><a href="">Scar revision results</a></li>
                         <li class="{{classd}}" ng-click="tabchanges('cos',4)"><a href="">Cosmetic Mole excision</a></li>
@@ -28,7 +29,7 @@
                         <li class="{{classg}}" ng-click="tabchanges('hair',7)"><a href="">Hair transplantation</a></li>
                         <li class="{{classh}}" ng-click="tabchanges('pigment',8)"><a href="">Pigment removal treatment</a></li>
                         <li class="{{classi}}" ng-click="tabchanges('keloid',9)"><a href="">Keloid treatment</a></li>
-                        <li class="{{classj}}" ng-click="tabchanges('grow',10)"><a href="">Scarless excision of small skin growth (DPN)</a></li>
+                        <li class="{{classj}}" ng-click="tabchanges('grow',10)"><a href="">Scarless excision of small skin growth (DPN)</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -36,13 +37,13 @@
                 <div class="tabs">
                     <div class="first" ng-if="tabs=='acne'">
                         <div class="data-title3">
-                            <h4 class="color-after font-semi">Acne Treatment Results - BEFORE and AFTER</h4>
+                            <h4 class="color-after font-semi">{{subCategoryBefore.name}}</h4>
                         </div>
-                        <div class="data-main mt15">
-                            <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne. Once active
-                                acne has been controlled, it is possible to focus on revising scars caused by acne</p>
+                        <div class="data-main mt15" ng-bind-html="subCategoryBefore.description">
+                            <!-- <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne. Once active
+                                acne has been controlled, it is possible to focus on revising scars caused by acne</p> -->
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                           <div class="col-md-6">
                             <div class="img-box1 imgbot">
                                 <img src="img/before/1.jpg" alt="Dr Renita Rajan" class="img-responsive">
@@ -101,7 +102,7 @@
                                 <img src="img/before/10.jpg" alt="Dr Renita Rajan" class="img-responsive">
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="first" ng-if="tabs=='corr'">
