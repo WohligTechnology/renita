@@ -943,6 +943,16 @@ h4 {
     padding: 0 25px;
   }
 }
+.doctor-box{
+  .img-box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img{
+          height: 274px;
+    }
+  }
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";

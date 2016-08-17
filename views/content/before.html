@@ -35,11 +35,13 @@
             </div>
             <div class="col-md-9">
                 <div class="tabs">
-                    <div class="first" ng-if="tabs=='acne'">
+                    <div class="first">
                         <div class="data-title3">
                             <h4 class="color-after font-semi">{{subCategoryBefore.name}}</h4>
                         </div>
+                        <div ng-if="subCategoryBefore.description.length==0"><h1>No Data Found</h1></div>
                         <div class="data-main mt15" ng-bind-html="subCategoryBefore.description">
+
                             <!-- <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne. Once active
                                 acne has been controlled, it is possible to focus on revising scars caused by acne</p> -->
                         </div>
@@ -125,6 +127,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     </div>
 </section>

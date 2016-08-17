@@ -1,5 +1,5 @@
 <section>
-    <div class="head-top">
+    <div class="head-top" ng-if="category.length!=0">
         <img ng-src="{{category[0].category.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
 
     </div>
@@ -8,6 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+              <div ng-if="category.length==0"><h1>No Data Found</h1></div>
                 <div class="data">
                     <p ng-bind-html="category[0].category.description">
                         <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
@@ -20,7 +21,7 @@
             <div class="col-md-3">
                 <div class="tab-list2">
                     <ul class="padding0 margin0">
-                        <li ng-class={'active-tab':data.activetab}  ng-click="tabActive(data._id,$index)" ng-repeat="data in category"><a href="">{{data.subCatName}}</a></li>
+                        <li ng-class={'active-tab':data.activetab}  ng-click="tabActive(data._id,$index)" ng-repeat="data in category" ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a href="">{{data.subCatName}}</a></li>
                         <!-- <li class="{{classa}}" ng-click="tabchanges('acre',1)"><a href="">Acne</a></li>
                          <li class="{{classb}}" ng-click="tabchanges('pig',2)"><a href="">Pigmentation</a></li>
                         <li class="{{classc}}" ng-click="tabchanges('tato',3)"><a href="">Tatoo Removal</a></li>
@@ -38,8 +39,13 @@
                     <div class="first">
                         <div class="data-title2">
                             <h4 class="color-success font-semi">{{subCategory.subCatName}}</h4>
+
+
                         </div>
+                        <div ng-if="subCategory.subCatDescription.length==0"><h1>No Data Found</h1></div>
                         <div class="data-main mt15" ng-bind-html="subCategory.subCatDescription">
+                          <pre>{{subCategory.subCatDescription.length}}</pre>
+
                             <!-- <p>Nearly every one of us faces this problem at some time or another. While for some it may be an easily identified problem such as doing one too many facials, for others it may be a more troublesome, chronic problem with multiple
                                 underlying triggers. While some may develop acne during adolescence, for others, the first breakout may happen well into adulthood. Genetic factors, hormonal causes and environmental influences like diet – all have a role
                                 in producing, maintaining or exacerbating acne.</p> -->
@@ -163,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <div ng-if="subCategory.length==0"><h1>No data Found</h1></div>
+
                 <div class="first" ng-if="tabs=='pig'">
                 </div>
                 <div class="first" ng-if="tabs=='tato'">

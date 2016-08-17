@@ -1,5 +1,5 @@
 var adminurl = "http://104.154.89.21:80/";
-var adminurl = "http://192.168.0.105:1337/";
+// var adminurl = "http://192.168.0.111:1337/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
@@ -14,75 +14,14 @@ var uploadurl = imgurl;
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
-
-
-
     var navigation = [];
     return {
         getnav: function(callback) {
             $http({
                 url: adminurl + 'category/getAllCategory',
                 method: 'POST'
-            }).success(function(data) {
-                navigation = data.data;
-                console.log(navigation);
-                callback(navigation);
-            });
-            // var navigation = [{
-            //   name: "Skin",
-            //   classis: "active",
-            //   anchor: "skin",
-            //   colours: "borskin"
-            // }, {
-            //   name: "Hair & Scalp",
-            //   classis: "active",
-            //   anchor: "hairscalp",
-            //   colours: "borhair",
-            //   subnav: [{
-            //     name: "Hair Loss",
-            //     classis: "active",
-            //     anchor: "hair"
-            //   }, {
-            //     name: "Dandruff",
-            //     classis: "active",
-            //     anchor: "dandruff"
-            //   }, {
-            //     name: "Weathered Hair",
-            //     classis: "active",
-            //     anchor: "weatheredhair"
-            //   }, {
-            //     name: "Hair Maintenance",
-            //     classis: "active",
-            //     anchor: "hairmaintenance"
-            //   }]
-            // }, {
-            //   name: "Body",
-            //   classis: "active",
-            //   anchor: "body",
-            //   colours: "borbody"
-            // }, {
-            //   name: "Men",
-            //   classis: "active",
-            //   anchor: "men",
-            //   colours: "bormen"
-            // }, {
-            //   name: "Treatments",
-            //   classis: "active",
-            //   anchor: "treatment",
-            //   colours: "bortreat"
-            // }, {
-            //   name: "Mummy Derm",
-            //   classis: "active",
-            //   anchor: "mummyderm",
-            //   colours: "borderm"
-            // }, {
-            //   name: "Vitiligo",
-            //   classis: "active",
-            //   anchor: "vitiligo",
-            //   colours: "borviti"
-            // }];
+            }).success(callback);
         },
-
         makeactive: function(menuname) {
             for (var i = 0; i < navigation.length; i++) {
                 if (navigation[i].name == menuname) {
@@ -271,6 +210,6 @@ var navigationservice = angular.module('navigationservice', [])
                 },
                 withCredentials: true
             }).success(callback);
-        },
+        }
     };
 });

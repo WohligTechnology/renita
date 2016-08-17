@@ -1,141 +1,143 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll'])
 
+
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
 
-    $scope.template = TemplateService.changecontent("home");
-    $scope.menutitle = NavigationService.makeactive("Home");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+        $scope.template = TemplateService.changecontent("home");
+        $scope.menutitle = NavigationService.makeactive("Home");
+        TemplateService.title = $scope.menutitle;
+        // $scope.navigation = NavigationService.getnav();
 
-    NavigationService.getHomeslider(function(data) {
-        $scope.Homeslider = data.data;
-        console.log("$scope.Homeslider", $scope.Homeslider.length);
-        // _.each($scope.Homeslider,function(key){
-        //   key.url=key.url.split('/');
-        //   console.log("key.url",key.url);
-        // })
+        NavigationService.getHomeslider(function(data) {
+            $scope.Homeslider = data.data;
+            console.log("$scope.Homeslider", $scope.Homeslider.length);
+            // _.each($scope.Homeslider,function(key){
+            //   key.url=key.url.split('/');
+            //   console.log("key.url",key.url);
+            // })
 
-    });
+        });
 
-    $scope.mySlides = [{
-            img: "img/banner/bo.jpg",
-            image: "img/banner/1.png",
-            link: ""
-        }, {
-            img: "img/banner/m1.jpg",
-            image: "img/banner/5.png",
-            link: ""
-        }, {
-            img: "img/banner/md1.jpg",
-            image: "img/banner/6.png",
-            link: ""
-        }, {
-            img: "img/banner/s1.jpg",
-            image: "img/banner/3.png",
-            link: "skin"
-        }, {
-            img: "img/banner/t1.jpg",
-            image: "img/banner/2.png",
-            link: ""
-        }, {
-            img: "img/banner/v1.jpg",
-            image: "img/banner/4.png",
-            link: "vitiligo"
-        }
-        // {
-        //       img: "img/banner/b1.jpg",
-        //       image: "img/banner/b1-1.jpg"
-        //   }, {
-        //       img: "img/banner/b2.jpg",
-        //       image: "img/banner/b2-2.jpg"
-        //   }, {
-        //       img: "img/banner/b3.jpg",
-        //       image: "img/banner/b3-3.jpg"
-        //   }, {
-        //       img: "img/banner/b4.jpg",
-        //       image: "img/banner/b4-4.jpg"
-        //   }, {
-        //       img: "img/banner/b5.jpg",
-        //       image: "img/banner/b5-5.jpg"
-        //   }, {
-        //       img: "img/banner/b6.jpg",
-        //       image: "img/banner/b6-6.jpg"
-        //   }, {
-        //       img: "img/banner/b7.jpg",
-        //       image: "img/banner/b7-7.jpg"
-        //   }
-        //   {
-        //   img:"img/banner/b1.jpg",
-        //   image:"img/banner/b1_second.jpg"
-        // },{
-        //   img:"img/banner/b2.jpg",
-        //   image:"img/banner/b2_second.jpg"
-        // },{
-        //   img:"img/banner/b3.jpg",
-        //   image:"img/banner/b3_second.jpg"
-        // },{
-        //   img:"img/banner/b4.jpg",
-        //   image:"img/banner/b4_second.jpg"
-        // },{
-        //   img:"img/banner/b5.jpg",
-        //   image:"img/banner/b5_second.jpg"
-        // },{
-        //   img:"img/banner/b6.jpg",
-        //   image:"img/banner/b6_second.jpg"
-        // },{
-        //   img:"img/banner/b7.jpg",
-        //   image:"img/banner/b7_second.jpg"
-        // }
-        //'img/banner/b1.jpg',
-        // 'img/banner/b2.jpg',
-        // 'img/banner/b3.jpg',
-        // 'img/banner/b4.jpg',
-        // 'img/banner/b5.jpg',
-        // 'img/banner/b6.jpg',
-        // 'img/banner/b7.jpg'
-    ];
-})
-.controller('navCtrl', function($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService;
-    NavigationService.getnav(function(data) {
-        $scope.navigation = data;
-    });
-})
-.controller('headerctrl', function($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService;
-    var get = false;
-    $scope.getslide = "menu-out";
-    $scope.getNav = function() {
-        if ($scope.getslide == "menu-in") {
-            $scope.getslide = "menu-out";
-            $scope.onebar = "";
-            $scope.secondbar = "";
-            $scope.thirdbar = "";
-            $scope.buttonpos = "";
-        } else {
-            $scope.getslide = "menu-in";
-            $scope.onebar = "firstbar";
-            $scope.secondbar = "secondbar";
-            $scope.thirdbar = "thirdbar";
-            $scope.buttonpos = "hidden";
-        }
-    };
-    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        $(window).scrollTop(0);
-    });
-    $.fancybox.close(true);
-
-    NavigationService.getAllCategory(function(data) {
-        $scope.categories = data.data;
+        $scope.mySlides = [{
+                img: "img/banner/bo.jpg",
+                image: "img/banner/1.png",
+                link: ""
+            }, {
+                img: "img/banner/m1.jpg",
+                image: "img/banner/5.png",
+                link: ""
+            }, {
+                img: "img/banner/md1.jpg",
+                image: "img/banner/6.png",
+                link: ""
+            }, {
+                img: "img/banner/s1.jpg",
+                image: "img/banner/3.png",
+                link: "skin"
+            }, {
+                img: "img/banner/t1.jpg",
+                image: "img/banner/2.png",
+                link: ""
+            }, {
+                img: "img/banner/v1.jpg",
+                image: "img/banner/4.png",
+                link: "vitiligo"
+            }
+            // {
+            //       img: "img/banner/b1.jpg",
+            //       image: "img/banner/b1-1.jpg"
+            //   }, {
+            //       img: "img/banner/b2.jpg",
+            //       image: "img/banner/b2-2.jpg"
+            //   }, {
+            //       img: "img/banner/b3.jpg",
+            //       image: "img/banner/b3-3.jpg"
+            //   }, {
+            //       img: "img/banner/b4.jpg",
+            //       image: "img/banner/b4-4.jpg"
+            //   }, {
+            //       img: "img/banner/b5.jpg",
+            //       image: "img/banner/b5-5.jpg"
+            //   }, {
+            //       img: "img/banner/b6.jpg",
+            //       image: "img/banner/b6-6.jpg"
+            //   }, {
+            //       img: "img/banner/b7.jpg",
+            //       image: "img/banner/b7-7.jpg"
+            //   }
+            //   {
+            //   img:"img/banner/b1.jpg",
+            //   image:"img/banner/b1_second.jpg"
+            // },{
+            //   img:"img/banner/b2.jpg",
+            //   image:"img/banner/b2_second.jpg"
+            // },{
+            //   img:"img/banner/b3.jpg",
+            //   image:"img/banner/b3_second.jpg"
+            // },{
+            //   img:"img/banner/b4.jpg",
+            //   image:"img/banner/b4_second.jpg"
+            // },{
+            //   img:"img/banner/b5.jpg",
+            //   image:"img/banner/b5_second.jpg"
+            // },{
+            //   img:"img/banner/b6.jpg",
+            //   image:"img/banner/b6_second.jpg"
+            // },{
+            //   img:"img/banner/b7.jpg",
+            //   image:"img/banner/b7_second.jpg"
+            // }
+            //'img/banner/b1.jpg',
+            // 'img/banner/b2.jpg',
+            // 'img/banner/b3.jpg',
+            // 'img/banner/b4.jpg',
+            // 'img/banner/b5.jpg',
+            // 'img/banner/b6.jpg',
+            // 'img/banner/b7.jpg'
+        ];
     })
-})
+    .controller('navCtrl', function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        NavigationService.getnav(function(data) {
+            $scope.navigation = data.data;
+            console.log("  $scope.navigation", $scope.navigation);
+        });
+    })
+    .controller('headerctrl', function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        var get = false;
+        $scope.getslide = "menu-out";
+        $scope.getNav = function() {
+            if ($scope.getslide == "menu-in") {
+                $scope.getslide = "menu-out";
+                $scope.onebar = "";
+                $scope.secondbar = "";
+                $scope.thirdbar = "";
+                $scope.buttonpos = "";
+            } else {
+                $scope.getslide = "menu-in";
+                $scope.onebar = "firstbar";
+                $scope.secondbar = "secondbar";
+                $scope.thirdbar = "thirdbar";
+                $scope.buttonpos = "hidden";
+            }
+        };
+        $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+            $(window).scrollTop(0);
+        });
+        $.fancybox.close(true);
+
+        NavigationService.getAllCategory(function(data) {
+            $scope.categories = data.data;
+        })
+    })
 
 .controller('ContactCtrl', function($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
 
         NavigationService.getHeaderContact(function(data) {
             $scope.conatctHeader = data.data;
@@ -147,7 +149,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("about-us");
         $scope.menutitle = NavigationService.makeactive("About Us");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
         NavigationService.getHeaderAbout(function(data) {
             $scope.headerAbout = data.data;
             console.log("$scope.headerAbout", $scope.headerAbout);
@@ -158,15 +160,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("testimonial");
         $scope.menutitle = NavigationService.makeactive("Testimonial");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
 
         NavigationService.getHeaderTestimonial(function(data) {
             $scope.testimonialHeader = data.data;
-            console.log("  $scope.testimonialHeader", $scope.testimonialHeader);
+
         });
         NavigationService.getTestimonial(function(data) {
             $scope.Testimonial = data.data;
-            console.log("$scope.Testimonial", $scope.Testimonial);
+
         })
 
         $scope.testslide = [{
@@ -182,156 +184,49 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("team");
         $scope.menutitle = NavigationService.makeactive("Team");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
         NavigationService.getHeaderTeam(function(data) {
             $scope.teamHeader = data.data;
-            console.log("$scope.teamHeadersdfghj", $scope.teamHeader);
+
         })
     })
 
-.controller('SkinCtrl', function($scope, TemplateService, NavigationService, $stateParams, $timeout) {
+.controller('SkinCtrl', function($scope, TemplateService, NavigationService, $stateParams, $timeout, $state) {
         $scope.template = TemplateService.changecontent("skin");
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
-
-        $scope.tabs = 'acre';
-        $scope.classa = 'active-tab';
-        $scope.classb = '';
-        $scope.classc = '';
-        $scope.classd = '';
-        $scope.classe = '';
-        $scope.classf = '';
-        $scope.classg = '';
-        $scope.classh = '';
-        $scope.classi = '';
-
-
-        $scope.tabchanges = function(tabs, a) {
-            console.log(tabs);
-            $scope.tabs = tabs;
-            if (a == 1) {
-
-                $scope.classa = 'active-tab';
-                $scope.classb = '';
-                $scope.classc = '';
-                $scope.classd = '';
-                $scope.classe = '';
-                $scope.classf = '';
-                $scope.classg = '';
-                $scope.classh = '';
-                $scope.classi = '';
-
-            } else if (a == 2) {
-
-                $scope.classa = '';
-                $scope.classb = 'active-tab';
-                $scope.classc = '';
-                $scope.classd = '';
-                $scope.classe = '';
-                $scope.classf = '';
-                $scope.classg = '';
-                $scope.classh = '';
-                $scope.classi = '';
-            } else if (a == 3) {
-
-                $scope.classa = '';
-                $scope.classb = '';
-                $scope.classc = 'active-tab';
-                $scope.classd = '';
-                $scope.classe = '';
-                $scope.classf = '';
-                $scope.classg = '';
-                $scope.classh = '';
-                $scope.classi = '';
-            } else if (a == 4) {
-
-                $scope.classa = '';
-                $scope.classb = '';
-                $scope.classc = '';
-                $scope.classd = 'active-tab';
-                $scope.classe = '';
-                $scope.classf = '';
-                $scope.classg = '';
-                $scope.classh = '';
-                $scope.classi = '';
-            } else if (a == 5) {
-
-                $scope.classa = '';
-                $scope.classb = '';
-                $scope.classc = '';
-                $scope.classd = '';
-                $scope.classe = 'active-tab';
-                $scope.classf = '';
-                $scope.classg = '';
-                $scope.classh = '';
-                $scope.classi = '';
-            } else if (a == 6) {
-
-                $scope.classa = '';
-                $scope.classb = '';
-                $scope.classc = '';
-                $scope.classd = '';
-                $scope.classe = '';
-                $scope.classf = 'active-tab';
-                $scope.classg = '';
-                $scope.classh = '';
-                $scope.classi = '';
-            } else if (a == 7) {
-
-                $scope.classa = '';
-                $scope.classb = '';
-                $scope.classc = '';
-                $scope.classd = '';
-                $scope.classe = '';
-                $scope.classf = '';
-                $scope.classg = 'active-tab';
-                $scope.classh = '';
-                $scope.classi = '';
-            } else if (a == 8) {
-
-                $scope.classa = '';
-                $scope.classb = '';
-                $scope.classc = '';
-                $scope.classd = '';
-                $scope.classe = '';
-                $scope.classf = '';
-                $scope.classg = '';
-                $scope.classh = 'active-tab';
-                $scope.classi = '';
-            } else if (a == 9) {
-
-                $scope.classa = '';
-                $scope.classb = '';
-                $scope.classc = '';
-                $scope.classd = '';
-                $scope.classe = '';
-                $scope.classf = '';
-                $scope.classg = '';
-                $scope.classh = '';
-                $scope.classi = 'active-tab';
-            }
-        };
-        // $scope.myid='';
         NavigationService.getCatByName($stateParams.id, function(data) {
-            console.log();
-            $scope.category = data.data;
-            $scope.tabActive($scope.category[0]._id, 0);
-            // $scope.myid = data.data[0].subCatName;
-            console.log('myid', $scope.myid);
-            // console.log($scope.category[0]._id);
-            console.log("$scope.categoryBYname", $scope.category);
+            console.log(data.data.length);
+            if (data.data != '' && data.value) {
+                $scope.category = data.data;
+                console.log("$scope.category",$scope.category);
+                console.log("innn", $stateParams.subid);
+                if ($stateParams.subid) {
+                    $scope.tabActive($stateParams.subid, 0);
+                } else {
+                    $scope.tabActive($scope.category[0]._id, 0);
+                }
+
+            } else {
+                $state.go('home');
+            }
         })
-        console.log('fgdyufgyudgyu');
-        console.log("dsfghdsfg", $scope.myid);
         $scope.tabActive = function(id, indexid) {
             $scope.subCatid = id;
             _.each($scope.category, function(key) {
+              if(key._id == id){
+                  key.activetab=true;
+              }else{
                 key.activetab = false;
+
+              }
             });
-            $scope.category[indexid].activetab = true;
+              // $scope.category[indexid].activetab = true;
+
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
-                console.log("$scope.subCategory", $scope.subCategory);
+                console.log("  $scope.subCategory ", $scope.subCategory);
+
             })
 
         };
@@ -342,14 +237,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("privacy");
         $scope.menutitle = NavigationService.makeactive("Privacy");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
     })
     .controller('VitiligoCtrl', function($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("vitiligo");
         $scope.menutitle = NavigationService.makeactive("Vitiligo");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
         $scope.tabs = 'first';
         $scope.classp = 'active-tab';
         $scope.classv = '';
@@ -375,7 +270,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("before");
         $scope.menutitle = NavigationService.makeactive("Before & After");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
         $scope.tabs = 'acne';
         $scope.classa = 'active-tab';
         $scope.classb = '';
@@ -390,7 +285,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getHeaderBefore(function(data) {
             $scope.headerBefore = data.data;
-            console.log("$scope.headerBefore", $scope.headerBefore);
+
         })
 
         NavigationService.getAllBefore(function(data) {
@@ -407,7 +302,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.before[indexid].activetab = true;
             NavigationService.getOnebeforeafter(id, function(data) {
                 $scope.subCategoryBefore = data.data;
-                console.log("$scope.subCategoryBefore", $scope.subCategoryBefore);
+
             })
 
         };
@@ -547,14 +442,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("term-condition");
         $scope.menutitle = NavigationService.makeactive("Term Condition");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
     })
     .controller('DoctorCtrl', function($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("doctor");
         $scope.menutitle = NavigationService.makeactive("Doctor");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
 
         NavigationService.getAllDoctor(function(data) {
             $scope.doctor = data.data;
@@ -614,7 +509,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("blog");
         $scope.menutitle = NavigationService.makeactive("Blog");
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+        // $scope.navigation = NavigationService.getnav();
         $scope.blogmsg = "Loading...";
         $scope.popularmsg = "Loading...";
         $scope.tagmsg = "Loading...";
@@ -693,7 +588,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template = TemplateService.changecontent("blog-detail");
     $scope.menutitle = NavigationService.makeactive("Blog Detail");
     TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+    // $scope.navigation = NavigationService.getnav();
     $scope.popularmsg = "Loading...";
     $scope.tagmsg = "Loading...";
 
