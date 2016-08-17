@@ -18,6 +18,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         });
 
+
         $scope.mySlides = [{
                 img: "img/banner/bo.jpg",
                 image: "img/banner/1.png",
@@ -130,6 +131,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getAllCategory(function(data) {
             $scope.categories = data.data;
         })
+
     })
 
 .controller('ContactCtrl', function($scope, TemplateService, NavigationService) {
@@ -617,6 +619,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //  BLOG DETAIL BY JAGRUTI
 
 })
+
+.controller('footerctrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService;
+    NavigationService.getAllCategory(function(data){
+    $scope.footer=data.data;
+    console.log("$scope.footer",  $scope.footer);
+    })
+  })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
 

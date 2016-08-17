@@ -1,17 +1,17 @@
 <footer>
-    <div class="footer-top">
+    <div class="footer-top" ng-controller="footerctrl">
         <div class="container">
 
             <div class="row">
                 <div class="col-md-3">
                     <div class="footer-list">
                         <ul class="padding0">
-                            <li>
-                                <a ui-sref="skin">
-SKIN
+                            <li ng-repeat="data in footer">
+                                <a ui-sref="skin({name:data.name,id:data._id})">
+{{data.name}}
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="">
 HAIR & SCALP
                                 </a>
@@ -35,7 +35,7 @@ TREATMENT
                                 <a href="">
 MUMMY DERM
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
