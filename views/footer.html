@@ -1,148 +1,101 @@
 <footer>
-    <div class="footer-top" ng-controller="footerctrl">
-        <div class="container">
+  <div class="footer-top" ng-controller="footerctrl">
+    <div class="container">
 
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-list">
-                        <ul class="padding0">
-                            <li ng-repeat="data in footer">
-                                <a ui-sref="skin({name:data.name,id:data._id})">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="footer-list">
+            <ul class="padding0">
+              <li ng-repeat="data in footer">
+                <a ui-sref="skin({name:data.name,id:data._id})">
 {{data.name}}
                                 </a>
-                            </li>
-                            <!-- <li>
-                                <a href="">
-HAIR & SCALP
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-BODY
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-MEN
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-TREATMENT
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-MUMMY DERM
-                                </a>
-                            </li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-list">
-                        <ul class="padding0">
-                            <li>
-                                <a ui-sref="about-us">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-list">
+            <ul class="padding0">
+              <li>
+                <a ui-sref="about-us">
                               ABOUT US
                             </a>
-                            </li>
-                            <li>
-                                <a ui-sref="team">
+              </li>
+              <li>
+                <a ui-sref="team">
                                 TEAM
                               </a>
-                            </li>
-                            <li>
-                                <a ui-sref="doctor">
-DOCTORS
-                                </a>
-                            </li>
-                            <li>
-                                <a ui-sref="blog">
+              </li>
+              <li><a ui-sref="consultant">Consultant</a></li>
+              <li><a ui-sref="before-after">Before &amp; After</a></li>
+              <li><a ui-sref="testimonial">Testimonials</a></li>
+              <li>
+                <a ui-sref="blog">
 BLOG
                                 </a>
-                            </li>
-                            <li>
-                                <a ui-sref="term-condition">
-            TERMS & CONDITIONS
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-list">
+            <ul class="padding0">
+              <li>
+                <a ui-sref="clinic-policy">
+            Clinic Policy
           </a>
-                            </li>
-                            <li>
-                                <a ui-sref="contact">
+              </li>
+              <li>
+                <a ui-sref="contact">
           CONTACT US
           </a>
-                            </li>
-                            <!-- <li>
-                                <a ui-sref="before-after">
-BEFORE & AFTER
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-SKIN | HAIR | DIET
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-TREATMENT IN FOCUS
-                                </a>
-                            </li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-list">
-                        <ul class="padding0">
-                            <!-- <li>
-                                <a ui-sref="privacy">
-            PRIVACY POLICY
-          </a>
-                            </li> -->
+              </li>
 
-                        </ul>
-                    </div>
-                    <!-- <div class="help-number">
+            </ul>
+          </div>
+          <!-- <div class="help-number">
                         <span class="color-white">HEALTHLINE: 1800-1022-733</span>
                     </div> -->
-                </div>
-                <div class="col-md-3">
-                    <div class="subscribe">
-                        <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
-                        <form class="form-inline mt15">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail2">
-                            </div>
-                            <button type="submit" class="btn btn-default">SUBSCRIBE</button>
-                        </form>
-                    </div>
-                    <div class="follow my-list mt15 display-inline">
-                        <span class="color-white">Follow us on</span>
-                        <ul class="padding0 color-base mt10">
-                            <li><i class="fa fa-facebook"></i></li>
-                            <li><i class="fa fa-google-plus"></i></li>
-                            <li><i class="fa fa-twitter"></i></li>
-                        </ul>
-                    </div>
-                    <div class="quara display-inline">
-                        <img src="img/quara.jpg" alt="Dr Renira Rajan">
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>Copyright &copy; {{template.year}}. Dr. Renita Rajan</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="pull-right">
-                        <p>Deisgned by <a href="http://ting.in/" target="_blank" class="color-base">Ting</a>.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-3">
+          <div class="subscribe">
+            <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
+            <form class="form-inline mt15">
+              <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail2">
+              </div>
+              <button type="submit" class="btn btn-default">SUBSCRIBE</button>
+            </form>
+          </div>
+          <div class="follow my-list mt15 display-inline">
+            <span class="color-white">Follow us on</span>
+            <ul class="padding0 color-base mt10">
+              <li><i class="fa fa-facebook"></i></li>
+              <li><i class="fa fa-google-plus"></i></li>
+              <li><i class="fa fa-twitter"></i></li>
+            </ul>
+          </div>
+          <div class="quara display-inline">
+            <img src="img/quara.jpg" alt="Dr Renira Rajan">
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Copyright &copy; {{template.year}}. Dr. Renita Rajan</p>
+        </div>
+        <div class="col-md-6">
+          <div class="pull-right">
+            <p>Deisgned by <a href="http://ting.in/" target="_blank" class="color-base">Ting</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </footer>

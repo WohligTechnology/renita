@@ -430,6 +430,9 @@ h4 {
 .mt20 {
   margin-top: 20px;
 }
+.mb20 {
+  margin-bottom: 20px;
+}
 .f12 {
   font-size: 12px;
 }
@@ -881,7 +884,7 @@ h4 {
   }
 }
 .em-logo {
-  width: 140px;
+  width: 190px;
   vertical-align: middle;
   margin: -10px 0 0 8px;
 }
@@ -949,19 +952,20 @@ h4 {
     padding: 0 25px;
   }
 }
-.doctor-box{
-  .img-box{
+.doctor-box {
+  margin: 0 10px;
+  .img-box {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    img{
-          height: 274px;
+    img {
+      height: 274px;
     }
   }
 }
-.w100{
-  width: 100%
-  }
+.w100 {
+  width: 100%;
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
