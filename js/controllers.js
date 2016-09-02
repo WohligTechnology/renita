@@ -455,13 +455,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     NavigationService.getAllDoctor(function(data) {
       $scope.doctor = data.data;
-      console.log("doctorasxdfghj", $scope.doctor);
+      // console.log("doctorasxdfghj", $scope.doctor);
 
     });
 
     NavigationService.getHeaderDoctor(function(data) {
       $scope.doctorHeader = data.data;
-      console.log("  $scope.doctorHeader", $scope.doctorHeader);
+      // console.log("  $scope.doctorHeader", $scope.doctorHeader);
     })
 
     // $scope.doctor = [{

@@ -15,8 +15,9 @@
                 <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="292" item-margin="0" animationloop="false" reverse="false">
                     <li>
                         <!-- <img ng-src="{{s}}" class="img-responsive"> -->
-                        <div class="doctor-box text-center">
+                        <div class="doctor-box text-center " fancybox-box  data-fancybox-type="iframe" href="views/directive/fancybox.html" >
                             <div class="img-box">
+                              <!-- <a class="various" >Iframe</a> -->
                                 <img ng-src="{{item.image|uploadpath}}" alt="" class="img-responsive">
                             </div>
                             <div class="docs-detail">
