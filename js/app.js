@@ -152,9 +152,9 @@ firstapp.directive('fancyboxBox', function($document) {
         openEffect: 'fade',
         closeEffect: 'fade',
         closeBtn: true,
-        // autoPlay : true,
-        //  playSpeed : 3000,
-        //  loop:true,
+        autoPlay : true,
+         playSpeed : 3000,
+         loop:true,
         helpers: {
           media: {}
         }
