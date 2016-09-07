@@ -1,41 +1,53 @@
 <section>
-    <div class="head-top">
-        <img src="{{testimonialHeader.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
-    </div>
+   <div class="head-top">
+      <img src="{{testimonialHeader.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
+   </div>
 </section>
-<div class="container">
-    <h1 class="font-bold color-primary text-up mt20">Testimonails</h1>
-    <div class="test-cont">
-        <flex-slider flex-slide="item in Testimonial track by $index" prev-text="" next-text="">
-            <li>
-                <div class="row">
-                    <div class="col-md-6 mgt100">
-                      <div class="vid-box">
-                        <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1">
-                  <img ng-src="http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg" alt="" src="http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg" class="doneLoading" draggable="false">
-                  <div class="circle">
-                    <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false">
-                  </div>
-                </a>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mgt100">
-                        <div class="text-center">
-                            <h4 class="text-left">{{item.name}}</h4>
-                        </div>
-                        <p class="text-justify">{{item.description}}</p>
-                    </div>
-                </div>
-            </li>
-            </flexi-slider>
-    </div>
 
-    <div class="mt30 pb30">
-        <div class="text-center">
-            <h4 class="color-primary font-semi">ALSO READ</h4>
-            <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="about-us">ABOUT US</button>
-            <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m" ui-sref="doctor">TEAM</button>
-            <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="testimonial">TESTIMONIALS</button>
-        </div>
-    </div>
+
+<div class="brand-video">
+   <div class="row" ng-if="dessange.videourl">
+      <div class="salon-video fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{dessange.videourl |youtubethumb:true}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1">
+         <img ng-src="http://img.youtube.com/vi/{{dessange.videourl}}/maxresdefault.jpg" class="img-responsive" alt="Video">
+         <i class="fa fa-play"></i>
+      </div>
+   </div>
+</div>
+
+
+<div class="container">
+   <h1 class="font-bold color-primary text-up mt20">Testimonails</h1>
+   <div class="test-cont">
+      <flex-slider flex-slide="item in Testimonial track by $index" prev-text="" next-text="">
+         <li>
+            <div class="row">
+               <div class="col-md-6 mgt100">
+                  <div class="vid-box">
+                     <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
+                        <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="" src="http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg" class="doneLoading" draggable="false">
+                        <div class="circle">
+                           <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false">
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <div class="col-md-6 mgt100">
+                  <div class="text-center">
+                     <h4 class="text-left">{{item.name}}</h4>
+                  </div>
+                  <p class="text-justify">{{item.description}}</p>
+               </div>
+            </div>
+         </li>
+         </flexi-slider>
+   </div>
+
+   <div class="mt30 pb30">
+      <div class="text-center">
+         <h4 class="color-primary font-semi">ALSO READ</h4>
+         <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="about-us">ABOUT US</button>
+         <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m" ui-sref="doctor">TEAM</button>
+         <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="testimonial">TESTIMONIALS</button>
+      </div>
+   </div>
 </div>

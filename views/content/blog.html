@@ -11,14 +11,18 @@
                <div ng-if="blog.length === 0" style="min-height:667px;">
                   <h4 class="text-center">{{blogmsg}}</h4>
                </div>
-               <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
+
+
+
+            <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
                   <div class="col-md-6" ng-repeat="item in blog track by $index">
                      <div class="blog-box">
-                       <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/dnmzOqhu62k?autoplay=1">
+                       <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
                         <div class="blog-img relate">
-                           <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100">
+                           <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100" ng-show="item.video">
+                           <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video">
                            <div class="circle">
-                              <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false">
+                              <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false" ng-if="item.video">
                            </div>
                         </div>
                       </a>
