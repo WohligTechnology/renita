@@ -14,18 +14,31 @@
 
 
 
-            <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
+               <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
                   <div class="col-md-6" ng-repeat="item in blog track by $index">
                      <div class="blog-box">
-                       <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
-                        <div class="blog-img relate">
-                           <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100" ng-if="item.video">
-                           <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video">
-                           <div class="circle">
-                              <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false" ng-if="item.video">
-                           </div>
+                        <div ng-if="item.video">
+                           <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
+                              <div class="blog-img relate">
+                                 <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100" ng-if="item.video">
+                                 <!-- <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video"> -->
+                                 <div class="circle">
+                                    <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false" ng-if="item.video">
+                                 </div>
+                              </div>
+                           </a>
                         </div>
-                      </a>
+                        <div ng-if="item.image && !item.video">
+                           <a class="various fancybox.iframe" fancybox-box href="{{item.image|serverimage}}">
+                              <div class="blog-img relate">
+                                 <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100" ng-if="item.video">
+                                 <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video">
+                                 <div class="circle">
+                                    <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false" ng-if="item.video">
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
                         <div class="blog-title mt15">
                            <h4 class="font-bold color-primary text-up">{{item.name}}</h4>
                         </div>
