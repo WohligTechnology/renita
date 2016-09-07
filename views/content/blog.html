@@ -19,7 +19,7 @@
                      <div class="blog-box">
                        <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
                         <div class="blog-img relate">
-                           <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100" ng-show="item.video">
+                           <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100" ng-if="item.video">
                            <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video">
                            <div class="circle">
                               <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false" ng-if="item.video">
