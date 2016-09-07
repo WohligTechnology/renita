@@ -1,4 +1,5 @@
 var adminurl = "http://104.154.89.21:86/";
+// var adminurl = "http://192.168.1.116:1337/";
 // var adminurl = "http://192.168.1.113:84/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
@@ -210,6 +211,13 @@ var navigationservice = angular.module('navigationservice', [])
                 },
                 withCredentials: true
             }).success(callback);
+        },
+        getDoctorSlider:function(callback){
+          $http({
+              url: adminurl + 'doctor/getAll',
+              method: 'POST',
+              withCredentials: true
+          }).success(callback);
         }
     };
 });

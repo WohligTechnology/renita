@@ -22,7 +22,7 @@
       <div class="col-md-3">
         <div class="tab-list2">
           <ul class="padding0 margin0">
-            <li ng-class={ 'active-tab':data.activetab} ng-click="tabActive(data._id,$index)" ng-repeat="data in category" ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a href="">{{data.subCatName}}</a></li>
+            <li ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category" ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a href="">{{data.subCatName}}</a></li>
             <!-- <li class="{{classa}}" ng-click="tabchanges('acre',1)"><a href="">Acne</a></li>
                          <li class="{{classb}}" ng-click="tabchanges('pig',2)"><a href="">Pigmentation</a></li>
                         <li class="{{classc}}" ng-click="tabchanges('tato',3)"><a href="">Tatoo Removal</a></li>

@@ -974,7 +974,20 @@ h4 {
 .fancy-image{
     text-align: center !important;
 }
+.vid-box{
+  position: relative;
 
+}
+.relate{
+  position: relative;
+}
+.circle{
+  position: absolute;
+  top:50%;
+  left:50%;
+  @include transform(translate(-50%,-50%));
+  cursor: pointer;
+}
 // .pops{
 //   .slider-text{
 //     .fancy-imagetext{
