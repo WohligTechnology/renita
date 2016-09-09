@@ -22,7 +22,8 @@
       <div class="col-md-3">
         <div class="tab-list2">
           <ul class="padding0 margin0">
-            <li ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category" ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a href="">{{data.subCatName}}</a></li>
+            <!-- <li ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category"{{data}} ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})" style="background-color:{{data.color}}"><a href="">{{data.subCatName}}</a></li> -->
+            <li ng-style= "data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category"{{data}} ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
             <!-- <li class="{{classa}}" ng-click="tabchanges('acre',1)"><a href="">Acne</a></li>
                          <li class="{{classb}}" ng-click="tabchanges('pig',2)"><a href="">Pigmentation</a></li>
                         <li class="{{classc}}" ng-click="tabchanges('tato',3)"><a href="">Tatoo Removal</a></li>
@@ -38,8 +39,8 @@
       <div class="col-md-9">
         <div class="tabs">
           <div class="first">
-            <div class="data-title2">
-              <h4 class="color-success font-semi">{{subCategory.subCatName}}</h4>
+            <div class="data-title2" style="border-bottom: 1px solid {{subCategory.color;}}">
+              <h4 class="color-success font-semi" style="color:{{subCategory.color;}}">{{subCategory.subCatName}}</h4>
 
 
             </div>

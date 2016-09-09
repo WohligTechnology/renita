@@ -199,7 +199,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
         NavigationService.getCatByName($stateParams.id, function(data) {
-            console.log(data.data.length);
+            console.log(data.data);
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
                 console.log("$scope.category", $scope.category);
@@ -213,24 +213,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $state.go('home');
             }
-        })
+        });
         $scope.tabActive = function(id, indexid) {
+          NavigationService.getSubCat(id, function(data) {
+              $scope.subCategory = data.data;
             $scope.subCatid = id;
             _.each($scope.category, function(key) {
+              key.style = {};
+              key.stylea = {};
                 if (key._id == id) {
                     key.activetab = true;
+                    key.style = {
+                      "background-color" : $scope.subCategory.color
+                    };
+                    key.stylea = {
+                      "color":"black"
+                    };
                 } else {
                     key.activetab = false;
+                    key.style ={};
 
                 }
             });
             // $scope.category[indexid].activetab = true;
 
-            NavigationService.getSubCat(id, function(data) {
-                $scope.subCategory = data.data;
+
                 console.log("  $scope.subCategory ", $scope.subCategory);
 
-            })
+            });
 
         };
 
