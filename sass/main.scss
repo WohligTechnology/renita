@@ -1002,7 +1002,9 @@ h4 {
 //   }
 // }
 
-
+.modal.and.carousel {
+  position: absolute; // Needed because the carousel overrides the position property
+}
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";

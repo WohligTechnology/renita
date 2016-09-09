@@ -457,12 +457,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
     })
-    .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService,$uibModal) {
 
         $scope.template = TemplateService.changecontent("consultant");
         $scope.menutitle = NavigationService.makeactive("Consultant");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
+        $scope.myInterval = 5000;
+        $scope.noWrapSlides = false;
+        $scope.active = 0;
+        var slides = $scope.slides = [];
+        var currIndex = 0;
 
         NavigationService.getAllDoctor(function(data) {
             $scope.doctor = data.data;
@@ -479,6 +484,47 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("$scope.doctorSlider", $scope.doctorSlider);
         });
 
+        $scope.doctors = [{
+          img: "img/d1.jpg",
+          name: "Dr. Narendra J Pandya",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+          img: "img/d2.jpg",
+          name: "Dr. Zarna Parekh",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+          img: "img/d3.jpg",
+          name: "Dr. Sarvesh Brahme",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+          img: "img/d4.jpg",
+          name: "Dr. Harshit Shah",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+          img: "img/d4.jpg",
+          name: "Dr. Narendra Shah",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+          img: "img/d4.jpg",
+          name: "Dr. Narendra Shah",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+          img: "img/d4.jpg",
+          name: "Dr. Narendra Shah",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }, {
+          img: "img/d4.jpg",
+          name: "Dr. Harshit Shah",
+          spl: "(Dermatologist)",
+          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+        }]
         // $scope.doctor = [{
         //   img: "img/d1.jpg",
         //   name: "Dr. Narendra J Pandya",
@@ -520,6 +566,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   spl: "(Dermatologist)",
         //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         // }]
+
+        $scope.openModal = function() {
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'views/modal/slider.html',
+                controller: 'ConsultantCtrl',
+                size: 'lg',
+                windowClass: 'slider-modal',
+            });
+        };
     })
     .controller('BlogCtrl', function($scope, TemplateService, NavigationService) {
 
