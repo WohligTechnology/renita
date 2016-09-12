@@ -566,12 +566,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   spl: "(Dermatologist)",
         //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         // }]
+        $scope.nextDoctor = function () {
+          var newarr = $scope.allDocs;
+          var startArr = _.slice(newarr, 0, 1);
+          var endArr = _.slice(newarr, 1);
+          $scope.allDocs = _.union(endArr,startArr);
+          _.each($scope.allDocs,function (key) {
+            key.active = false;
+          });
+          $scope.allDocs[0].active = true;
+        };
+        $scope.openModal = function(index) {
+          console.log($scope.doctorSlider);
+          $scope.doctorSliders = $scope.doctorSlider;
+          var startArr = _.slice($scope.doctorSliders, 0, index);
+          var endArr = _.slice($scope.doctorSliders, index);
 
-        $scope.openModal = function() {
+
+          $scope.allDocs = _.union(endArr, startArr);
+          console.log($scope.allDocs);
+          _.each($scope.allDocs,function (key) {
+            key.active = false;
+          });
+          $scope.allDocs[0].active = true;
+          console.log($scope.allDocs);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/modal/slider.html',
-                controller: 'ConsultantCtrl',
+                // controller: 'ConsultantCtrl',
+                scope:$scope.$new(),
                 size: 'lg',
                 windowClass: 'slider-modal',
             });

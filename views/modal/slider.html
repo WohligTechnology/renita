@@ -7,101 +7,39 @@
 
 
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
+                    <div class="carousel-inner" ng-repeat="doc in allDocs track by doc._id">
+                      <!-- {{allDocs}} -->
+                        <div class="item" ng-class="{'active': doc.active}" >
+                          <!-- {{doc}} -->
                             <div class="slider-text">
-                                <div class="fancy-top" style="border-bottom:2px solid #0089f5">
+                                <div class="fancy-top" style="">
                                     <div class="fancy-image" style="text-align:center">
-                                        <img src="img/lad.png" class="img-responsive" alt="lady" style="height:150px;width:auto">
+                                        <img ng-src="{{doc.image | uploadpath}}" class="img-responsive" alt="lady" style="height:150px;width:auto">
                                         <div class="fancy-imagetext" style="padding:10px 0">
-                                            <p style="margin:0; color:#0089f5;font-size: 24px;font-weight: 700;">Dr. Zarna</p>
-                                            <p style="margin:0;color:#0089f5">Specialist</p>
+                                            <p style="margin:0; color:#0089f5;font-size: 24px;font-weight: 700;">{{doc.name}}</p>
+                                            <p style="margin:0;color:#0089f5">{{doc.specialist}}</p>
                                         </div>
                                     </div>
-                                    <div class="fancyimage-text text-center">
+                                    <!-- <div class="fancyimage-text text-center">
                                         <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne.
                                             Once active acne has been controlled, it is possible to focus on revising scars caused by acne.</p>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="fancy-bottom">
-                                    <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne.
-                                        Once active acne has been controlled, it is possible to focus on revising scars caused by acne.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et distinctio impedit officiis quia harum at cupiditate reprehenderit eos voluptatibus, error libero quod expedita earum doloremque, similique maiores amet provident,
-                                        cum?</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, animi, esse. A veniam magnam labore, hic mollitia autem cum unde, aspernatur doloribus porro sit reprehenderit molestias rerum sequi consequatur provident.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem minus repudiandae sed, eum, aspernatur illum in eveniet. Iusto porro eos ex, nobis fuga obcaecati. Perferendis necessitatibus illum, eveniet earum accusantium?</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, nobis eligendi excepturi doloribus dolorem possimus eos nam, cupiditate, debitis accusantium sint consectetur cum? Autem, facere. Atque eaque vitae nostrum
-                                        deserunt!</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sint reprehenderit facere, ipsum impedit nemo consectetur quidem, eligendi, nulla voluptate velit veritatis enim inventore quis minus ut doloremque amet
-                                        unde.</p>
+                                  <div ng-bind-html="doc.description">
+
+                                  </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="slider-text">
-                                <div class="fancy-top" style="border-bottom:2px solid #0089f5">
-                                    <div class="fancy-image" style="text-align:center">
-                                        <img src="img/lad.png" class="img-responsive" alt="lady" style="height:150px;width:auto">
-                                        <div class="fancy-imagetext" style="padding:10px 0">
-                                            <p style="margin:0; color:#0089f5;font-size: 24px;font-weight: 700;">Dr. Zarna</p>
-                                            <p style="margin:0;color:#0089f5">Specialist</p>
-                                        </div>
-                                    </div>
-                                    <div class="fancyimage-text text-center">
-                                        <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne.
-                                            Once active acne has been controlled, it is possible to focus on revising scars caused by acne.</p>
-                                    </div>
-                                </div>
-                                <div class="fancy-bottom">
-                                    <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne.
-                                        Once active acne has been controlled, it is possible to focus on revising scars caused by acne.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et distinctio impedit officiis quia harum at cupiditate reprehenderit eos voluptatibus, error libero quod expedita earum doloremque, similique maiores amet provident,
-                                        cum?</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, animi, esse. A veniam magnam labore, hic mollitia autem cum unde, aspernatur doloribus porro sit reprehenderit molestias rerum sequi consequatur provident.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem minus repudiandae sed, eum, aspernatur illum in eveniet. Iusto porro eos ex, nobis fuga obcaecati. Perferendis necessitatibus illum, eveniet earum accusantium?</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, nobis eligendi excepturi doloribus dolorem possimus eos nam, cupiditate, debitis accusantium sint consectetur cum? Autem, facere. Atque eaque vitae nostrum
-                                        deserunt!</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sint reprehenderit facere, ipsum impedit nemo consectetur quidem, eligendi, nulla voluptate velit veritatis enim inventore quis minus ut doloremque amet
-                                        unde.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="slider-text">
-                                <div class="fancy-top" style="border-bottom:2px solid #0089f5">
-                                    <div class="fancy-image" style="text-align:center">
-                                        <img src="img/lad.png" class="img-responsive" alt="lady" style="height:150px;width:auto">
-                                        <div class="fancy-imagetext" style="padding:10px 0">
-                                            <p style="margin:0; color:#0089f5;font-size: 24px;font-weight: 700;">Dr. Zarna</p>
-                                            <p style="margin:0;color:#0089f5">Specialist</p>
-                                        </div>
-                                    </div>
-                                    <div class="fancyimage-text text-center">
-                                        <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne.
-                                            Once active acne has been controlled, it is possible to focus on revising scars caused by acne.</p>
-                                    </div>
-                                </div>
-                                <div class="fancy-bottom">
-                                    <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne.
-                                        Once active acne has been controlled, it is possible to focus on revising scars caused by acne.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et distinctio impedit officiis quia harum at cupiditate reprehenderit eos voluptatibus, error libero quod expedita earum doloremque, similique maiores amet provident,
-                                        cum?</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, animi, esse. A veniam magnam labore, hic mollitia autem cum unde, aspernatur doloribus porro sit reprehenderit molestias rerum sequi consequatur provident.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem minus repudiandae sed, eum, aspernatur illum in eveniet. Iusto porro eos ex, nobis fuga obcaecati. Perferendis necessitatibus illum, eveniet earum accusantium?</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, nobis eligendi excepturi doloribus dolorem possimus eos nam, cupiditate, debitis accusantium sint consectetur cum? Autem, facere. Atque eaque vitae nostrum
-                                        deserunt!</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sint reprehenderit facere, ipsum impedit nemo consectetur quidem, eligendi, nulla voluptate velit veritatis enim inventore quis minus ut doloremque amet
-                                        unde.</p>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                     <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <a class="left carousel-control" ng-click="" role="button">
                       <span class="fa fa-chevron-left" aria-hidden="true"></span>
                     </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <a class="right carousel-control" ng-click="nextDoctor()" role="button" >
                         <span class="fa fa-chevron-right" aria-hidden="true"></span>
                     </a>
                 </div>
