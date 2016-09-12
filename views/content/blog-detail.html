@@ -1,10 +1,14 @@
+<section scrolldown>
 <section>
     <div class="head-top">
         <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage=='' || blog">
         <img src="{{blog.blog.bannerimage|serverimage}}" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage!=''">
+        <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+            <img src="img/scroll-down.png" alt="Renita">
+        </div>
     </div>
 </section>
-<section class="mt50">
+<section class="mt50 second">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -151,4 +155,5 @@
             </div>
         </div>
     </div>
+</section>
 </section>

@@ -233,6 +233,21 @@ firstapp.filter('youtubethumb', function() {
         }
     };
 });
+firstapp.directive('scrolldown', function($compile, $parse) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      $scope.scrollDown = function() {
+        $('html,body').animate({
+            scrollTop: $(".second").offset().top
+          },
+          'slow');
+      };
+    }
+  };
+});
 
 // firstapp.filter('uploadpath', function() {
 //     return function(input, width, height, style) {

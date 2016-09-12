@@ -1,6 +1,10 @@
+<section scrolldown>
 <section>
    <div class="head-top">
       <img src="{{testimonialHeader.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
+      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+          <img src="img/scroll-down.png" alt="Renita">
+      </div>
    </div>
 </section>
 
@@ -8,7 +12,7 @@
 
 
 
-<div class="container">
+<div class="container second">
    <h1 class="font-bold color-primary text-up mt20">Testimonails</h1>
    <div class="test-cont">
       <flex-slider flex-slide="item in Testimonial track by $index" prev-text="" next-text="">
@@ -44,3 +48,4 @@
       </div>
    </div>
 </div>
+</section>

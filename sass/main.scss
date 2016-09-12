@@ -805,6 +805,14 @@ h4 {
     img {
         width: 100%;
     }
+    .mouse-scrolldown {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    @include transform(translateX(-50%));
+    font-size: 12px;
+    cursor: pointer;
+}
 }
 
 .doctorpg {
