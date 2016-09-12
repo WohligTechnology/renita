@@ -233,7 +233,7 @@ a {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 99;
+        z-index: 9;
     }
 
     .navbar-header {
@@ -1225,6 +1225,7 @@ h4 {
 
     .modal-body {
         background: #fff;
+        padding: 20px;
     }
 
     .fancy-bottom {
@@ -1235,6 +1236,8 @@ h4 {
         background: transparent;
         font-size: 45px;
         left: -130px;
+        height: 60px;
+        top: 50%;
 
         .fa {
             top: 50%;
@@ -1250,9 +1253,11 @@ h4 {
 
     .fancyimage-text {
         width: 40%;
-        px;
         margin: 0 auto 15px;
     }
+  //   .modal {
+  //   z-index: !important;
+  // }
 }
 //bootstrap forms
 /* Start writing sass here */
