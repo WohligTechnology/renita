@@ -20,9 +20,10 @@
                     <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="292" item-margin="0" animationloop="false" reverse="false">
                         <li>
                             <!-- <img ng-src="{{s}}" class="img-responsive"> -->
-                            <div class="doctor-box text-center ">
+                            <a ng-click=openModal($index);>
+                                <div class="doctor-box text-center ">
 
-                                <a ng-click=openModal($index);>
+
                                     <div class="img-box">
                                         <!-- <a fancybox-box data-fancybox-type="iframe" rel="group" href="views/content/fancybox.html"> -->
 
@@ -34,19 +35,19 @@
                         <a fancybox-box data-fancybox-type="iframe" rel="group" href="views/content/fancybox2.html">
                         </a> -->
                                     </div>
-                                </a>
-                                <div class="docs-detail">
-                                    <div class="name">
-                                        <h4>{{item.name}}</h4>
-                                    </div>
-                                    <div class="spl">
-                                        <span>{{item.specialist}}</span>
-                                    </div>
-                                    <div class="descp">
-                                        <p ng-bind-html="item.description" class="text-justify scroll-min"></p>
+                                    <div class="docs-detail">
+                                        <div class="name">
+                                            <h4>{{item.name}}</h4>
+                                        </div>
+                                        <div class="spl">
+                                            <span>{{item.specialist}}</span>
+                                        </div>
+                                        <div class="descp">
+                                            <div ng-bind-html="item.description" class="text-justify scroll-min"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                     </flex-slider>
                 </div>

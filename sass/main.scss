@@ -802,18 +802,20 @@ h4 {
 }
 
 .head-top {
-  position: relative;
+    position: relative;
+
     img {
         width: 100%;
     }
+
     .mouse-scrolldown {
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    @include transform(translateX(-50%));
-    font-size: 12px;
-    cursor: pointer;
-}
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        @include transform(translateX(-50%));
+        font-size: 12px;
+        cursor: pointer;
+    }
 }
 
 .doctorpg {
@@ -1239,6 +1241,11 @@ h4 {
 
     .fancy-bottom {
         margin-top: 10px;
+        height: calc(100vh - 350px);
+        overflow: scroll;
+        p{
+          text-align: justify;
+        }
     }
 
     .carousel-control {
@@ -1264,12 +1271,18 @@ h4 {
         width: 40%;
         margin: 0 auto 15px;
     }
-  //   .modal {
-  //   z-index: !important;
-  // }
+    //   .modal {
+    //   z-index: !important;
+    // }
+    .fancy-top {
+        height: 240px;
+        overflow: hidden;
+        border-bottom: 1px solid #b2dbfb;
+    }
 }
+
 .descp .scroll-min {
-    height: 118px;
+    height: 115px;
     overflow: hidden;
 }
 //bootstrap forms
