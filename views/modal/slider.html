@@ -7,17 +7,17 @@
 
 
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner" ng-repeat="doc in allDocs track by doc._id">
+                    <div class="carousel-inner" >
                       <!-- {{allDocs}} -->
-                        <div class="item" ng-class="{'active': doc.active}" >
+                        <div class="item active">
                           <!-- {{doc}} -->
                             <div class="slider-text">
                                 <div class="fancy-top" style="">
                                     <div class="fancy-image" style="text-align:center">
-                                        <img ng-src="{{doc.image | uploadpath}}" class="img-responsive" alt="lady" style="height:150px;width:auto">
+                                        <img ng-src="{{allDocs[0].image | uploadpath}}" class="img-responsive" alt="lady" style="height:150px;width:auto">
                                         <div class="fancy-imagetext" style="padding:10px 0">
-                                            <p style="margin:0; color:#0089f5;font-size: 24px;font-weight: 700;">{{doc.name}}</p>
-                                            <p style="margin:0;color:#0089f5">{{doc.specialist}}</p>
+                                            <p style="margin:0; color:#0089f5;font-size: 24px;font-weight: 700;">{{allDocs[0].name}}</p>
+                                            <p style="margin:0;color:#0089f5">{{allDocs[0].specialist}}</p>
                                         </div>
                                     </div>
                                     <!-- <div class="fancyimage-text text-center">
@@ -26,7 +26,7 @@
                                     </div> -->
                                 </div>
                                 <div class="fancy-bottom">
-                                  <div ng-bind-html="doc.description">
+                                  <div ng-bind-html="allDocs[0].description">
 
                                   </div>
                                 </div>
@@ -36,10 +36,10 @@
                     </div>
 
                     <!-- Controls -->
-                    <a class="left carousel-control" ng-click="" role="button">
+                    <a class="left carousel-control" ng-click="reAssemble(allDocs.length-1,true)" role="button">
                       <span class="fa fa-chevron-left" aria-hidden="true"></span>
                     </a>
-                    <a class="right carousel-control" ng-click="nextDoctor()" role="button" >
+                    <a class="right carousel-control" ng-click="reAssemble(1,true)" role="button" >
                         <span class="fa fa-chevron-right" aria-hidden="true"></span>
                     </a>
                 </div>

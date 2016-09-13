@@ -457,7 +457,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
     })
-    .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService,$uibModal) {
+    .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService,$uibModal,$timeout) {
 
         $scope.template = TemplateService.changecontent("consultant");
         $scope.menutitle = NavigationService.makeactive("Consultant");
@@ -481,6 +481,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         NavigationService.getDoctorSlider(function(data) {
             $scope.doctorSlider = data.data;
+            $scope.allDocs = _.cloneDeep($scope.doctorSlider);
             console.log("$scope.doctorSlider", $scope.doctorSlider);
         });
 
@@ -524,7 +525,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           name: "Dr. Harshit Shah",
           spl: "(Dermatologist)",
           desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
-        }]
+        }];
         // $scope.doctor = [{
         //   img: "img/d1.jpg",
         //   name: "Dr. Narendra J Pandya",
@@ -576,19 +577,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           });
           $scope.allDocs[0].active = true;
         };
-        $scope.openModal = function(index) {
-          console.log($scope.doctorSlider);
-          $scope.doctorSliders = $scope.doctorSlider;
+        $scope.reAssemble = function (index,inSlider) {
+          if(inSlider){
+            $scope.doctorSliders = $scope.allDocs;
+          }else{
+            $scope.doctorSliders = $scope.doctorSlider;
+          }
           var startArr = _.slice($scope.doctorSliders, 0, index);
           var endArr = _.slice($scope.doctorSliders, index);
-
-
           $scope.allDocs = _.union(endArr, startArr);
-          console.log($scope.allDocs);
-          _.each($scope.allDocs,function (key) {
-            key.active = false;
-          });
-          $scope.allDocs[0].active = true;
+        };
+        $scope.openModal = function(index) {
+          $scope.reAssemble(index,false);
           console.log($scope.allDocs);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
