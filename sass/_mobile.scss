@@ -2,6 +2,11 @@
 
 
 @media screen and (max-width: $screen-sm-max) {
+  .mob-min-s{
+    text-align: center;
+    margin: 10px auto 0;
+    display: block;
+  }
   .head-top .mouse-scrolldown {
     bottom: 5px;
 
@@ -26,6 +31,11 @@
 }
 }
 @media screen and (max-width: $screen-xs-max) {
+  .mob-min-s{
+    text-align: center;
+    margin: 10px auto 0;
+    display: block;
+  }
     .tab-list2 ul li a {
         padding: 5px 31px 7px 20px !important;
     }
@@ -34,6 +44,9 @@
     }
 }
 @media (max-width:480px){
+  .no-data{
+    min-height: 200px;
+  }
   .em-logo {
     width: 140px;
 

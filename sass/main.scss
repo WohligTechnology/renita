@@ -1310,11 +1310,20 @@ img{
     overflow: hidden;
 }
 .mobile-ui{
+        margin: 20px 0px 20px 10px;
   li{
 a{
   font-size: 18px;
 font-weight: 500;
 color: #161616 !important;
+width:240px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+display: inline-block;
+padding: 12px 10px 8px 10px;
+    margin: -4px;
+
 }
   }
   .flex-direction-nav {
@@ -1323,6 +1332,17 @@ color: #161616 !important;
 .flex-control-nav {
     display: none;
 }
+.flexslider {
+    margin: 0 0 0px;
+      border-bottom: 2px solid #2fa992;
+  }
+}
+a.active-tab {
+    background: #2fa992;
+
+}
+.no-data{
+  min-height: 500px;
 }
 //bootstrap forms
 /* Start writing sass here */

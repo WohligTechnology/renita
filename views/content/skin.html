@@ -39,14 +39,14 @@
         <div class="col-md-9 col-sm-9">
           <div class="tabs">
             <div class="first">
-              <div class="data-title2" style="border-bottom: 1px solid {{subCategory.color;}}">
+              <div class="data-title2 " style="border-bottom: 1px solid {{subCategory.color;}}">
                 <h4 class="color-success font-semi" style="color:{{subCategory.color;}}">{{subCategory.subCatName}}</h4>
 
 
               </div>
-              <div ng-if="subCategory.subCatDescription.length==0">
+              <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
                 <h1>No Data Found</h1></div>
-              <div class="data-main mt15" ng-bind-html="subCategory.subCatDescription">
+              <div class="data-main mt15 no-data" ng-bind-html="subCategory.subCatDescription">
                 <pre>{{subCategory.subCatDescription.length}}</pre>
 
               </div>
@@ -88,10 +88,10 @@
     <div class="hidden-lg hidden-md hidden-sm">
       <div class="container">
         <div class="row">
-          <div class="mobile-ui">
-            <flex-slider flex-slide="item in tabing track by $index" animation="slide" item-width="160" item-margin="10" animationloop="true" move="2">
+          <div class="mobile-ui ">
+            <flex-slider flex-slide="item in tabing track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
           <li class="text-center">
-                  <a href="" ng-class="{{item.class}}"  ng-click="tabchange(item.tab)" ng-style="data.stylea">{{item.name}}</a>
+                  <a href="" class="{{item.class}}"  ng-click="tabchange(item.tab,$index)">{{item.name}}</a>
                 </li>
             </flex-slider>
           </div>
@@ -100,7 +100,19 @@
 <div class="col-xs-12">
   <div class="data-center">
     <div class="first" ng-if="tab=='tab1'">
-      tab1
+      <p>
+        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
+      </p>
+      <p>
+        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
+      </p>
+      <p>
+        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
+      </p>
+      <p>
+        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
+      </p>
+      <img src="img/a4.jpg" alt="" class="img-responsive">
     </div>
     <div class="first" ng-if="tab=='tab2'">
       tab2
