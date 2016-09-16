@@ -1,12 +1,20 @@
 <section scrolldown>
     <section>
-        <div class="head-top">
+        <div class="head-top hidden-xs">
             <img src="{{doctorHeader.image|uploadpath}}" alt="Dr Renita Rajan" class="img-responsive">
             <!-- <img ng-src="img/our-team.png" alt="" class="img-responsive"> -->
             <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
                 <img src="img/scroll-down.png" alt="Renita">
             </div>
         </div>
+    </section>
+    <section class="hidden-lg hidden-md hidden-sm">
+      <div class="head-top" >
+        <img src="img/m-bn.jpg" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
+        <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+        <img src="img/scroll-down.png" alt="Renita">
+      </div>
+      </div>
     </section>
     <section class="doctorpg second">
         <div class="container">
@@ -17,7 +25,7 @@
                     standard dummy text.</p> -->
                 </div>
                 <div class="doctor-slider">
-                    <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="292" item-margin="0" animationloop="false" reverse="false">
+                    <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="292" item-margin="0" >
                         <li>
                             <!-- <img ng-src="{{s}}" class="img-responsive"> -->
                             <a ng-click=openModal($index);>
@@ -59,7 +67,7 @@
                         <div class="text-center">
                             <h4 class="color-primary font-semi">ALSO READ</h4>
                             <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="team">ABOUT US</button>
-                            <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m" ui-sref="doctor">TEAM</button>
+                            <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m mob-mtp" ui-sref="doctor">TEAM</button>
                             <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="testimonial">TESTIMONIALS</button>
                         </div>
                     </div>

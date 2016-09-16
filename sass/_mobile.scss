@@ -2,10 +2,12 @@
   p{
     font-size: 14px;
   }
+
 }
 
 
 @media screen and (max-width: $screen-sm-max) {
+
   .mob-min-s{
     text-align: center;
     margin: 10px auto 0;
@@ -17,7 +19,7 @@
 }
     .doctorpg {
         .flexslider {
-            width: 592px !important;
+            width: 320px !important;
             margin: 0 auto 60px;
         }
     }
@@ -33,8 +35,16 @@
 .m-mb-0{
   margin-top: 0px;
 }
+.slider-modal .carousel-control.right {
+    left: auto;
+    right: -100px;
+    background: transparent;
+}
 }
 @media screen and (max-width: $screen-xs-max) {
+  .slider-modal .modal-dialog {
+   width: auto;
+}
   .mob-min-s{
     text-align: center;
     margin: 10px auto 0;
@@ -74,6 +84,20 @@
     }
 }
 @media (max-width:480px){
+  .slider-modal .fancy-bottom {
+    overflow: overlay;
+    padding: 30px;
+}
+  .slider-modal .carousel-control.right {
+
+    right: -25px;
+
+}
+  .slider-modal .carousel-control {
+
+    left: -50px;
+
+}
   .test-cont .flexslider {
         padding: 10px;
     h4 {
