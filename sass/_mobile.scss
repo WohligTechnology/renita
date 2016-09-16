@@ -1,11 +1,6 @@
-@media screen and (max-width: $screen-md-max) {
-    .tab-list2 ul li a {
-        padding: 5px 31px 7px 20px !important;
-    }
-    .navbar .collapse .navbar-nav li {
-        padding: 18px 14px;
-    }
-}
+@media (max-width:1200px) {}
+
+
 @media screen and (max-width: $screen-sm-max) {
     .doctorpg {
         .flexslider {
@@ -13,4 +8,81 @@
             margin: 0 auto 60px;
         }
     }
+}
+@media screen and (max-width: $screen-xs-max) {
+    .tab-list2 ul li a {
+        padding: 5px 31px 7px 20px !important;
+    }
+    .navbar .collapse .navbar-nav li {
+        padding: 18px 14px;
+    }
+}
+@media (max-width:480px){
+  .em-logo {
+    width: 140px;
+
+}
+  .renitamenu .btn-hide {
+    margin: 15px 0px 0 15px;
+
+}
+  .main-img {
+      position: relative;
+      width: auto;
+overflow: hidden;
+img{
+width: 100% !important;
+}
+  }
+  .landing .flexslider .flex-direction-nav .flex-next {
+    right: 10px;
+    left: auto;
+}
+  .landing .flexslider .flex-direction-nav .flex-prev {
+    left: 10px;
+    left: auto;
+}
+.flexslider {
+  &:hover {
+      .flex-direction-nav {
+          .flex-prev {
+              left: 10px;
+              right: auto;
+          }
+
+          .flex-next {
+              right: 10px;
+              left: auto;
+          }
+
+      }
+  }
+    .flex-direction-nav {
+      .flex-prev {
+
+          left: 10px;
+      }
+
+      .flex-next {
+          right: 10px;
+
+      }
+      a {
+
+          width: 50px !important;
+
+          // padding: 2px 46px !important;
+          &.flex-prev:before {
+              content: url('../img/prevbtn.png');
+              transform: scale(0.5);
+          }
+
+          &.flex-next:before {
+              content: url('../img/nextbtn.png');
+                transform: scale(0.5);
+          }
+      }
+    }
+
+}
 }

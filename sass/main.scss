@@ -660,6 +660,25 @@ h4 {
 
 .blog-img {
     padding-bottom: 20px;
+
+
+}
+.blog-img-front{
+  height: 203px;
+  overflow: hidden;
+  display: block;
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,-50%));
+  }
+}
+.p-img-box {
+  position: relative;
+  @extend .blog-img-front;
+    height: 50px;
+
 }
 
 .social-icon {
@@ -944,7 +963,7 @@ h4 {
                 height: 65px;
                 text-align: center;
                 margin: 0;
-                top: 46%;
+                top: 46%; 
                 // padding: 2px 46px !important;
                 &.flex-prev:before {
                     content: url('../img/prevbtn.png');
@@ -977,6 +996,11 @@ h4 {
 
     .main-img {
         position: relative;
+        width: auto;
+overflow: hidden;
+img{
+  width: auto;
+}
     }
 
     .front-img {

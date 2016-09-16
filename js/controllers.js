@@ -44,57 +44,32 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 image: "img/banner/4.png",
                 link: "vitiligo"
             }
-            // {
-            //       img: "img/banner/b1.jpg",
-            //       image: "img/banner/b1-1.jpg"
-            //   }, {
-            //       img: "img/banner/b2.jpg",
-            //       image: "img/banner/b2-2.jpg"
-            //   }, {
-            //       img: "img/banner/b3.jpg",
-            //       image: "img/banner/b3-3.jpg"
-            //   }, {
-            //       img: "img/banner/b4.jpg",
-            //       image: "img/banner/b4-4.jpg"
-            //   }, {
-            //       img: "img/banner/b5.jpg",
-            //       image: "img/banner/b5-5.jpg"
-            //   }, {
-            //       img: "img/banner/b6.jpg",
-            //       image: "img/banner/b6-6.jpg"
-            //   }, {
-            //       img: "img/banner/b7.jpg",
-            //       image: "img/banner/b7-7.jpg"
-            //   }
-            //   {
-            //   img:"img/banner/b1.jpg",
-            //   image:"img/banner/b1_second.jpg"
-            // },{
-            //   img:"img/banner/b2.jpg",
-            //   image:"img/banner/b2_second.jpg"
-            // },{
-            //   img:"img/banner/b3.jpg",
-            //   image:"img/banner/b3_second.jpg"
-            // },{
-            //   img:"img/banner/b4.jpg",
-            //   image:"img/banner/b4_second.jpg"
-            // },{
-            //   img:"img/banner/b5.jpg",
-            //   image:"img/banner/b5_second.jpg"
-            // },{
-            //   img:"img/banner/b6.jpg",
-            //   image:"img/banner/b6_second.jpg"
-            // },{
-            //   img:"img/banner/b7.jpg",
-            //   image:"img/banner/b7_second.jpg"
-            // }
-            //'img/banner/b1.jpg',
-            // 'img/banner/b2.jpg',
-            // 'img/banner/b3.jpg',
-            // 'img/banner/b4.jpg',
-            // 'img/banner/b5.jpg',
-            // 'img/banner/b6.jpg',
-            // 'img/banner/b7.jpg'
+        ];
+        $scope.homes = [{
+                img: "img/1.jpg",
+                image: "img/banner/1.png",
+                link: ""
+            }, {
+                img: "img/1.jpg",
+                image: "img/banner/5.png",
+                link: ""
+            }, {
+                img: "img/1.jpg",
+                image: "img/banner/6.png",
+                link: ""
+            }, {
+                img: "img/1.jpg",
+                image: "img/banner/3.png",
+                link: "skin"
+            }, {
+                img: "img/1.jpg",
+                image: "img/banner/2.png",
+                link: ""
+            }, {
+                img: "img/1.jpg",
+                image: "img/banner/4.png",
+                link: "vitiligo"
+            }
         ];
     })
     .controller('navCtrl', function($scope, TemplateService, NavigationService) {
