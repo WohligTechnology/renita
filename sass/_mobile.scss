@@ -2,12 +2,28 @@
 
 
 @media screen and (max-width: $screen-sm-max) {
+  .head-top .mouse-scrolldown {
+    bottom: 5px;
+
+}
     .doctorpg {
         .flexslider {
             width: 592px !important;
             margin: 0 auto 60px;
         }
     }
+    .tab-list ul li a, .tab-list2 ul li a, .tab-list3 ul li a {
+      font-size: 14px;
+      padding: 0px 15px 0px 10px;
+      display: inherit;
+      width: 155px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
+.m-mb-0{
+  margin-top: 0px;
+}
 }
 @media screen and (max-width: $screen-xs-max) {
     .tab-list2 ul li a {

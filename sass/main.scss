@@ -829,7 +829,7 @@ h4 {
 
     .mouse-scrolldown {
         position: absolute;
-        bottom: 5px;
+        bottom: 25px;
         left: 50%;
         @include transform(translateX(-50%));
         font-size: 12px;
@@ -963,7 +963,7 @@ h4 {
                 height: 65px;
                 text-align: center;
                 margin: 0;
-                top: 46%; 
+                top: 46%;
                 // padding: 2px 46px !important;
                 &.flex-prev:before {
                     content: url('../img/prevbtn.png');
@@ -1308,6 +1308,21 @@ img{
 .descp .scroll-min {
     height: 115px;
     overflow: hidden;
+}
+.mobile-ui{
+  li{
+a{
+  font-size: 18px;
+font-weight: 500;
+color: #161616 !important;
+}
+  }
+  .flex-direction-nav {
+    display: none;
+}
+.flex-control-nav {
+    display: none;
+}
 }
 //bootstrap forms
 /* Start writing sass here */

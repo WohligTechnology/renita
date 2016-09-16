@@ -20,57 +20,55 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.mySlides = [{
-                img: "img/banner/bo.jpg",
-                image: "img/banner/1.png",
-                link: ""
-            }, {
-                img: "img/banner/m1.jpg",
-                image: "img/banner/5.png",
-                link: ""
-            }, {
-                img: "img/banner/md1.jpg",
-                image: "img/banner/6.png",
-                link: ""
-            }, {
-                img: "img/banner/s1.jpg",
-                image: "img/banner/3.png",
-                link: "skin"
-            }, {
-                img: "img/banner/t1.jpg",
-                image: "img/banner/2.png",
-                link: ""
-            }, {
-                img: "img/banner/v1.jpg",
-                image: "img/banner/4.png",
-                link: "vitiligo"
-            }
-        ];
+            img: "img/banner/bo.jpg",
+            image: "img/banner/1.png",
+            link: ""
+        }, {
+            img: "img/banner/m1.jpg",
+            image: "img/banner/5.png",
+            link: ""
+        }, {
+            img: "img/banner/md1.jpg",
+            image: "img/banner/6.png",
+            link: ""
+        }, {
+            img: "img/banner/s1.jpg",
+            image: "img/banner/3.png",
+            link: "skin"
+        }, {
+            img: "img/banner/t1.jpg",
+            image: "img/banner/2.png",
+            link: ""
+        }, {
+            img: "img/banner/v1.jpg",
+            image: "img/banner/4.png",
+            link: "vitiligo"
+        }];
         $scope.homes = [{
-                img: "img/1.jpg",
-                image: "img/banner/1.png",
-                link: ""
-            }, {
-                img: "img/1.jpg",
-                image: "img/banner/5.png",
-                link: ""
-            }, {
-                img: "img/1.jpg",
-                image: "img/banner/6.png",
-                link: ""
-            }, {
-                img: "img/1.jpg",
-                image: "img/banner/3.png",
-                link: "skin"
-            }, {
-                img: "img/1.jpg",
-                image: "img/banner/2.png",
-                link: ""
-            }, {
-                img: "img/1.jpg",
-                image: "img/banner/4.png",
-                link: "vitiligo"
-            }
-        ];
+            img: "img/1.jpg",
+            image: "img/banner/1.png",
+            link: ""
+        }, {
+            img: "img/1.jpg",
+            image: "img/banner/5.png",
+            link: ""
+        }, {
+            img: "img/1.jpg",
+            image: "img/banner/6.png",
+            link: ""
+        }, {
+            img: "img/1.jpg",
+            image: "img/banner/3.png",
+            link: "skin"
+        }, {
+            img: "img/1.jpg",
+            image: "img/banner/2.png",
+            link: ""
+        }, {
+            img: "img/1.jpg",
+            image: "img/banner/4.png",
+            link: "vitiligo"
+        }];
     })
     .controller('navCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
@@ -145,7 +143,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         NavigationService.getTestimonial(function(data) {
             $scope.Testimonial = data.data;
-            console.log("Testimonial",$scope.Testimonial);
+            console.log("Testimonial", $scope.Testimonial);
 
         })
 
@@ -190,27 +188,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
         $scope.tabActive = function(id, indexid) {
-          NavigationService.getSubCat(id, function(data) {
-              $scope.subCategory = data.data;
-            $scope.subCatid = id;
-            _.each($scope.category, function(key) {
-              key.style = {};
-              key.stylea = {};
-                if (key._id == id) {
-                    key.activetab = true;
-                    key.style = {
-                      "background-color" : $scope.subCategory.color
-                    };
-                    key.stylea = {
-                      "color":"black"
-                    };
-                } else {
-                    key.activetab = false;
-                    key.style ={};
+            NavigationService.getSubCat(id, function(data) {
+                $scope.subCategory = data.data;
+                $scope.subCatid = id;
+                _.each($scope.category, function(key) {
+                    key.style = {};
+                    key.stylea = {};
+                    if (key._id == id) {
+                        key.activetab = true;
+                        key.style = {
+                            "background-color": $scope.subCategory.color
+                        };
+                        key.stylea = {
+                            "color": "black"
+                        };
+                    } else {
+                        key.activetab = false;
+                        key.style = {};
 
-                }
-            });
-            // $scope.category[indexid].activetab = true;
+                    }
+                });
+                // $scope.category[indexid].activetab = true;
 
 
                 console.log("  $scope.subCategory ", $scope.subCategory);
@@ -218,6 +216,167 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
 
         };
+
+        $scope.tab = 'tab1';
+        $scope.classa = 'active-tab';
+        $scope.classb = '';
+        $scope.classc = '';
+        $scope.classd = '';
+        $scope.classe = '';
+        $scope.classf = '';
+        $scope.classg = '';
+        $scope.classh = '';
+
+      $scope.tabchange = function(tab, a, id) {
+        $scope.tab = tab;
+            if (a == 1) {
+            $scope.classa = "active-tab";
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+            } else if (a == 2) {
+
+                $scope.classa = '';
+                $scope.classb = "active-tab";
+                $scope.classc = "";
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+            } else if (a == 3) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = "active-tab";
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+            } else if (a == 4) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = "";
+                $scope.classd = 'active-tab';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+            } else if (a == 5) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = "";
+                $scope.classd = '';
+                $scope.classe = 'active-tab';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = '';
+            } else if (a == 6) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = "";
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = 'active-tab';
+                $scope.classg = '';
+                $scope.classh = '';
+            } else if (a == 7) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = "";
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = 'active-tab';
+                $scope.classh = '';
+            } else if (a == 8) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = "";
+                $scope.classd = '';
+                $scope.classe = '';
+                $scope.classf = '';
+                $scope.classg = '';
+                $scope.classh = 'active-tab';
+            }
+        };
+        $scope.tabing = [{
+            name: "Tanning and Pigmentation",
+            class: "classa",
+            tab: "tab1",
+            id: "1",
+            ngclass: "movieSynopsisAndNote.synopsis ==''",
+            ngdisabled: "movieSynopsisAndNote.synopsis ==''",
+            index: 0
+        }, {
+            name: "Excessive Sweating",
+            class: "classb",
+            tab: "tab2",
+            id: "2",
+            ngclass: "movieCast.length<=0",
+            ngdisabled: "movieCast.length<=0",
+            index: 1
+        }, {
+            name: "Uneven Skin tone",
+            class: "classc",
+            tab: "tab3",
+            id: "3",
+            ngclass: "movieNews.length<=0",
+            ngdisabled: "movieNews.length<=0",
+            index: 2,
+            nghide: "movieNews.length<=0"
+        }, {
+            name: "Body Shaping",
+            class: "classd",
+            tab: "tab4",
+            id: "4",
+            ngclass: "MovieGal.length<=0",
+            ngdisabled: "MovieGal.length<=0",
+            index: 3
+        }, {
+            name: "Post baby body treatments",
+            class: "classe",
+            tab: "tab5",
+            id: "5",
+            ngclass: "movieBehindTheScenes.length<=0",
+            ngdisabled: "movieBehindTheScenes.length<=0",
+            index: 4
+        }, {
+            name: "Excessive Body Hair",
+            class: "classf",
+            tab: "tab6",
+            id: "6",
+            ngclass: "movieVideo10.length<=0",
+            ngdisabled: "movieVideo10.length<=0",
+            index: 5
+        }, {
+            name: "Excessive Body Hair",
+            class: "classg",
+            tab: "tab7",
+            id: "7",
+            ngclass: "movieWallpaper.length<=0",
+            ngdisabled: "movieWallpaper.length<=0",
+            index: 6
+        }, {
+            name: "Excessive Body Hair",
+            class: "classh",
+            tab: "tab8",
+            id: "8",
+            ngclass: "MovieAwards.length  == 0",
+            ngdisabled: "MovieAwards.length  == 0",
+            index: 7,
+            nghide: "MovieAwards.length  == 0"
+        }];
 
     })
     .controller('PrivacyCtrl', function($scope, TemplateService, NavigationService) {
@@ -432,7 +591,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
     })
-    .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService,$uibModal,$timeout) {
+    .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService, $uibModal, $timeout) {
 
         $scope.template = TemplateService.changecontent("consultant");
         $scope.menutitle = NavigationService.makeactive("Consultant");
@@ -461,45 +620,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.doctors = [{
-          img: "img/d1.jpg",
-          name: "Dr. Narendra J Pandya",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d1.jpg",
+            name: "Dr. Narendra J Pandya",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }, {
-          img: "img/d2.jpg",
-          name: "Dr. Zarna Parekh",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d2.jpg",
+            name: "Dr. Zarna Parekh",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }, {
-          img: "img/d3.jpg",
-          name: "Dr. Sarvesh Brahme",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d3.jpg",
+            name: "Dr. Sarvesh Brahme",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }, {
-          img: "img/d4.jpg",
-          name: "Dr. Harshit Shah",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d4.jpg",
+            name: "Dr. Harshit Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }, {
-          img: "img/d4.jpg",
-          name: "Dr. Narendra Shah",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d4.jpg",
+            name: "Dr. Narendra Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }, {
-          img: "img/d4.jpg",
-          name: "Dr. Narendra Shah",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d4.jpg",
+            name: "Dr. Narendra Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }, {
-          img: "img/d4.jpg",
-          name: "Dr. Narendra Shah",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d4.jpg",
+            name: "Dr. Narendra Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }, {
-          img: "img/d4.jpg",
-          name: "Dr. Harshit Shah",
-          spl: "(Dermatologist)",
-          desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+            img: "img/d4.jpg",
+            name: "Dr. Harshit Shah",
+            spl: "(Dermatologist)",
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         }];
         // $scope.doctor = [{
         //   img: "img/d1.jpg",
@@ -542,34 +701,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   spl: "(Dermatologist)",
         //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         // }]
-        $scope.nextDoctor = function () {
-          var newarr = $scope.allDocs;
-          var startArr = _.slice(newarr, 0, 1);
-          var endArr = _.slice(newarr, 1);
-          $scope.allDocs = _.union(endArr,startArr);
-          _.each($scope.allDocs,function (key) {
-            key.active = false;
-          });
-          $scope.allDocs[0].active = true;
+        $scope.nextDoctor = function() {
+            var newarr = $scope.allDocs;
+            var startArr = _.slice(newarr, 0, 1);
+            var endArr = _.slice(newarr, 1);
+            $scope.allDocs = _.union(endArr, startArr);
+            _.each($scope.allDocs, function(key) {
+                key.active = false;
+            });
+            $scope.allDocs[0].active = true;
         };
-        $scope.reAssemble = function (index,inSlider) {
-          if(inSlider){
-            $scope.doctorSliders = $scope.allDocs;
-          }else{
-            $scope.doctorSliders = $scope.doctorSlider;
-          }
-          var startArr = _.slice($scope.doctorSliders, 0, index);
-          var endArr = _.slice($scope.doctorSliders, index);
-          $scope.allDocs = _.union(endArr, startArr);
+        $scope.reAssemble = function(index, inSlider) {
+            if (inSlider) {
+                $scope.doctorSliders = $scope.allDocs;
+            } else {
+                $scope.doctorSliders = $scope.doctorSlider;
+            }
+            var startArr = _.slice($scope.doctorSliders, 0, index);
+            var endArr = _.slice($scope.doctorSliders, index);
+            $scope.allDocs = _.union(endArr, startArr);
         };
         $scope.openModal = function(index) {
-          $scope.reAssemble(index,false);
-          console.log($scope.allDocs);
+            $scope.reAssemble(index, false);
+            console.log($scope.allDocs);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/modal/slider.html',
                 // controller: 'ConsultantCtrl',
-                scope:$scope.$new(),
+                scope: $scope.$new(),
                 size: 'lg',
                 windowClass: 'slider-modal',
             });

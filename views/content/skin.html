@@ -1,5 +1,5 @@
 <section scrolldown>
-  <section>
+  <section class="hidden-xs">
     <div class="head-top" ng-if="category.length!=0">
       <img ng-src="{{category[0].category.image|uploadpath}}" alt="Dr Renita" class="img-responsive w100">
       <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
@@ -7,7 +7,16 @@
     </div>
     </div>
   </section>
-  <section class="mt50 second">
+  <section class="hidden-lg hidden-md hidden-sm">
+    <div class="head-top" >
+      <img src="img/m-bn.jpg" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
+      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+      <img src="img/scroll-down.png" alt="Renita">
+    </div>
+    </div>
+  </section>
+  <section class="mt50 second m-mb-0">
+    <div class="hidden-xs">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -15,31 +24,19 @@
             <h1>No Data Found</h1></div>
           <div class="data">
             <p ng-bind-html="category[0].category.description">
-              <!-- Lorem Ipsum is simply dummy text of the printin and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                          dummy text. -->
             </p>
           </div>
         </div>
       </div>
       <div class="row mt20 mb20">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3">
           <div class="tab-list2">
             <ul class="padding0 margin0">
-              <!-- <li ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category"{{data}} ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})" style="background-color:{{data.color}}"><a href="">{{data.subCatName}}</a></li> -->
               <li ng-style= "data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category"{{data}} ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
-              <!-- <li class="{{classa}}" ng-click="tabchanges('acre',1)"><a href="">Acne</a></li>
-                           <li class="{{classb}}" ng-click="tabchanges('pig',2)"><a href="">Pigmentation</a></li>
-                          <li class="{{classc}}" ng-click="tabchanges('tato',3)"><a href="">Tatoo Removal</a></li>
-                          <li class="{{classd}}" ng-click="tabchanges('faci',4)"><a href="">Facial Contouring</a></li>
-                          <li class="{{classe}}" ng-click="tabchanges('dull',5)"><a href="">Dull Skin</a></li>
-                          <li class="{{classf}}" ng-click="tabchanges('anti',6)"><a href="">Anti - Ageing</a></li>
-                          <li class="{{classg}}" ng-click="tabchanges('uneven',7)"><a href="">Uneven Skin</a></li>
-                          <li class="{{classh}}" ng-click="tabchanges('skin',8)"><a href="">Skin Tags</a></li>
-                          <li class="{{classi}}" ng-click="tabchanges('general',9)"><a href="">General Dermatology</a></li> -->
             </ul>
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-9">
           <div class="tabs">
             <div class="first">
               <div class="data-title2" style="border-bottom: 1px solid {{subCategory.color;}}">
@@ -52,126 +49,6 @@
               <div class="data-main mt15" ng-bind-html="subCategory.subCatDescription">
                 <pre>{{subCategory.subCatDescription.length}}</pre>
 
-                <!-- <p>Nearly every one of us faces this problem at some time or another. While for some it may be an easily identified problem such as doing one too many facials, for others it may be a more troublesome, chronic problem with multiple
-                                  underlying triggers. While some may develop acne during adolescence, for others, the first breakout may happen well into adulthood. Genetic factors, hormonal causes and environmental influences like diet – all have a role
-                                  in producing, maintaining or exacerbating acne.</p> -->
-                <!-- <div class="data-image">
-                                  <div class="img-box1">
-                                      <img src="img/a1.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                  </div>
-                              </div>
-                              <p>The biggest concern about acne is about the scars that are left behind, often for life. This makes it highly important to begin treating acne as early as possible, as effectively as possible. </p>
-                              <p>Dr Renita Rajan is an expert in acne treatment, and specializes in combining medical treatments for acne while simultaneously targeting and preventing acne scars using procedural treatments like chemical peels and lasers. This
-                                  approach gives results faster, with less downtime – so that you can get back to life, more quickly than ever! </p>
-                              <div class="data-image">
-                                  <div class="img-box1">
-                                      <img src="img/a2.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                  </div>
-                              </div>
-                              <p>Acne treatments are individualised depending on the grade of acne, possibility for scarring, existing scarring, potential for side effects and so on. These treatments are often structured in graded manner, so that a person
-                                  with acne, begins with the most basic rung of treatment, and proceeds to higher levels only if required. This protocol minimises the number of procedures, and assists the body in the recovery process, without having to
-                                  resort to strong/ high doses of medicines rightaway. </p>
-                              <p>Considering a consultation at Dr Renita Rajan Skin & Hair Clinic for acne?</p>
-                              <p>As specialists in acne management, we have helped hundreds of individuals beat acne and get back their confidence. It is very important that you participate in the treatment as much as possible, because after the initial intensive
-                                  phase of treatment, you will be on a maintenance protocol, which is usually an at home, DIY regimen. </p>
-                              <p>If you are a smoker, consider quitting at the earliest, as there are links tying smoking to acne, and smoking directly interferes with treatment results.</p>
-                              <p>
-                                  In women with acne, there is a strong underlying link to hormonal causes – evaluation for this may require blood workup and /or ultrasonogram tests. If you have any tests done earlier, do bring them along with you to the consultation. Also, if you have
-                                  been on treatments for your acne in the past,make sure to bring the details withyou, regardless ofwhether the treatments worked for you or not.
-                              </p>
-                              <p>
-                                  Sunscreen use is mandatory to get good results while treating acne. Your Case Manager at Dr Renita Rajan Skin And Hair Clinic will help you choose the sunscreen that will suit you best. She will also help you understand your medicines, and coach you on
-                                  the way to use them, whilst setting up your follow up appointments as per your chosen treatment protocol.
-                              </p>
-                              <h4>Acne Scars</h4>
-                              <p>
-                                  Dr Renita Rajan Skin & Hair Clinic is one of the few clinics in India, to provide comprehensive acne scar management, using both dermatosurgery and device based technologies. Dr Renita Rajan’s innovations in scar surgery have been showcased in the Innovation
-                                  Award Section of the ACSI Annual Conference, 2014 and 2016.Our extensive expertise in scar management comes from our passion for treating acne scars!
-                              </p>
-                              <div class="data-image">
-                                  <div class="img-box1">
-                                      <img src="img/a3.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                  </div>
-                              </div>
-                              <p>
-
-                                  Acne scar surgery is an art, and requires multiple modalities to get the best results. We have access to established and emerging technology in managing acne scars and commonly use devices such as fractional CO2 Laser and radiofrequency needling, in combination
-                                  with gold standard dermatosurgery procedures like subcision –to provide maximum results in minimum number of sessions.
-                              </p>
-                              <p>
-                                  Scar revision or correction can be done in many ways.The outcome of the treatment and the choice of the treatment depend on the characteristics of the scar. These factors include skin type of the patient, extent of scarring, duration of the scar, cause
-                                  of the scar – acne,post surgery, chicken pox etc, depth of the scar, and type of the scar itself. Also, it is important to know whether there are keloids/ exuberant scars elsewhere on the body. Similarly, it is important
-                                  to assess the general health of the person undergoing scar correction, since all these factors are important in achieving good results. Scars due to acne are broadly classified as elevated or raised and depressed scars.
-                                  In medical terms, that would be hypertrophic and atrophic scars, respectively. Atrophic scars are far more common than hypertrophic scars, but the latter are much more difficult to treat. Atrophic acne scars can be further
-                                  divided into rolling, boxcar and icepick scars.Treatment options for acne scars include the following.
-                              </p>
-                              <div class="data-image">
-                                  <div class="img-box1">
-                                      <img src="img/a4.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                  </div>
-                              </div>
-                              <p>
-
-                                  <span>Subcision -</span> where a needle is used to lift the floor of the scar, and release the scar from its attachment to the surrounding skin. This is the best option for rolling scars, and works even better when combined
-                                  with suction. Dr Renita Rajan pioneered the use of Vicryl threads for advanced Subcision of acne scars – this innovation gives thorough and better volumetric correction of acne scars.
-                              </p>
-                              <p>
-                                  <span>Dermaroller -</span> where multiple needles mounted on a hand held device, are used to create tiny wounds in the skin, which when they heal, lift up the acne scars with them.
-                              </p>
-                              <p>
-                                  <span>TCA CROSS - </span>this is a popular and easy technique, where a high concentration of TCA is applied to the base of the scar to lift it. This is a great option for very deep scars like ice pick scars, and also is
-                                  very useful in smoothening the scar edge, which can be a problem with boxcar scars.
-                              </p>
-                              <p>
-                                  CROSS stands for Chemical Reconstruction of Skin Scars, and TCA stands for Trichloroacetic acid, which is the chemical used in the treatment. The concentration of TCA used for this treatment is usually high, from 50% even upto 100%. The procedure itself
-                                  is painless, quick and among the most economical options available to treat acne scars. However, there is a significant downtime of 3 -4 days, when the scabs are present after the treatment. After 3-4 days, the scabs fall
-                                  away leaving behind pink skin which slowly returns to normal colour over a period of 4 -6 weeks. Results continue to improve over 3- 6 months, even after a single session, as collagen remodeling continues. The crucial requirement
-                                  is complete and strict sun protection, after a treatment session. If for any reason, that patient cannot/ does not want to use sun protection, the TCA CROSS is not a suitable option. It should be used with caution in patients
-                                  with keloidal and abnormal scarring tendency. However, the high accuracy of treatment delivery possible with this treatment is unmatched.
-                              </p>
-                              <div class="data-image">
-                                  <div class="img-box1">
-                                      <img src="img/a5.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                  </div>
-                              </div>
-                              <p>
-                                  <span>Dermabrasion -</span> where a manual/ motor dermabrader is used to remove the superficial layers of the skin in a controlled fashion, to improve the textural aberrations caused by acne. This procedure involves some
-                                  downtime, and so needs to be planned with that in mind.
-                              </p>
-                              <p>
-                                  <span>Microdermabrasion -</span> is often used in combination, or as a finishing procedure in a series of  acne scar revision treatments. Used alone, this technique requires several sittings to see significant results.
-                                  Also, for scar resurfacing, a higher setting needs to be used than for indications like rejuvenation.
-                              </p>
-                              <p>
-                                  <span>Chemical peels -</span> are very useful in managing superficial scars, and often require to be combined with another procedure for deeper scar correction. They can also be used in combination with procedures like
-                                  subcision and after dermaroller, to improve the final outcome.
-                              </p>
-                              <p>
-                                  <span>  Chemabrasion -</span> this involves the use of chemical peels in combination with a dermabrasion/ microdermabrasion procedure.
-                              </p>
-                              <p><span>Fractional resurfacing -</span> this involves the use of LASER/ radiofrequency energy to create tiny wounds in the skin, which lift the scars as they heal.</p>
-                              <p><span>Scar excision -</span> sometimes, a scar can be easily removed, while still maintaining the cosmetic outcome. </p>
-                              <p><span>Punch floatation -</span> in deep scars, the floor of the scar is raised using this technique.</p>
-                              <p><span>Filler therapy - </span>this technique involves the use of hyaluronic acid fillers/ fat/ silikon to lift the scar base.</p>
-                              <div class="data-image">
-                                  <div class="img-box1">
-                                      <img src="img/a6.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                                  </div>
-                              </div>
-                              <p>Platelet Rich Plasma (PRP) therapy is one of the latest advances in scar revision techniques. While thismodality can be used as stand alone treatment for antiageing, wrinkle reduction and hair growth on the scalp, its true
-                                  potential lies in its ability to step up the results of other resurfacing procedures like subscision, radiofrequency needling, LASERs and so on. About 20 ml of blood is adequate for one session of PRP rejuvenation for the
-                                  cheeks and the forehead. This blood collected from the patient, then undergoes a process of differential centrifugation to yield the platelet rich component. This is then injected into the scars, or into the deeper dermis
-                                  in the case of rejuvenation using special cannulae, that are specifically designed to minimize trauma to deeper vessels and nerves. Since scar tissue has disordered blood supply, infusing growth factors and remodeling agents
-                                  found in blood into the scarred area, helps tissue remodeling and promotes scar revision significantly. Adequate local anesthesis helps to minimise pain greatly, and so the treated area may feel numb for upto an hour after
-                                  leaving the Clinic. There may be some swelling of the treated area for upto 24 hours, but this hardly interferes with routine activities. Patients resume work the same day of the treatment on most cases. </p>
-                              <p>An ideal course of treatment for scar reduction involves a session every month for about 4- 6 months. Results will typically start to be apparent within a week to ten days after the procedure, but maximum results will continue
-                                  to accrue over a period of 6 - 8 months. Since the tissue for rejuvenation comes from the patient, this treatment is much less expensive than fillers.Given that the field of scar revision is rapidly increasing, this technique
-                                  has gathered popularity rapidly, and seems to be promising on the clinical front as well. The above images show the results after one session of PRP/ RF therapy, and the results (at 4 weeks) seem quite encouraging and significant.</p>
-                              <p>Often, it is not possible to use one single technique to treat all the scars, that a person has. A combination is often required. Further, scar correction is not an overnight process. Procedures may require downtime, which
-                                  is different from the time required to see the results of one session, before going for another. Often, it is not possible to predict how many sessions will be required, or how much time will be enough to give results,
-                                  simply because a lot is dependent on the skin's ability to recover as well! And this ability differs from one person to another. So it is very important that patients have realistic expectations in terms of results, time
-                                  and expenditure, considering the drawn out process of scar correction. However, scar revision is an evolving science - one that has grown rapidly in the last few years, and this makes it possible to deliver good results
-                                  using the above techniques.</p> -->
               </div>
             </div>
           </div>
@@ -207,6 +84,48 @@
         </div>
       </div>
     </div>
+    </div>
+    <div class="hidden-lg hidden-md hidden-sm">
+      <div class="container">
+        <div class="row">
+          <div class="mobile-ui">
+            <flex-slider flex-slide="item in tabing track by $index" animation="slide" item-width="160" item-margin="10" animationloop="true" move="2">
+          <li class="text-center">
+                  <a href="" ng-class="{{item.class}}"  ng-click="tabchange(item.tab)" ng-style="data.stylea">{{item.name}}</a>
+                </li>
+            </flex-slider>
+          </div>
+        </div>
+        <div class="row">
+<div class="col-xs-12">
+  <div class="data-center">
+    <div class="first" ng-if="tab=='tab1'">
+      tab1
+    </div>
+    <div class="first" ng-if="tab=='tab2'">
+      tab2
+    </div>
+    <div class="first" ng-if="tab=='tab3'">
+      tab3
+    </div>
+    <div class="first" ng-if="tab=='tab4'">
+      tab4
+    </div>
+    <div class="first" ng-if="tab=='tab5'">
+      tab5
+    </div>
+    <div class="first" ng-if="tab=='tab6'">
+    </div>
+    <div class="first" ng-if="tab=='tab7'">
+    </div>
+    <div class="first" ng-if="tab=='tab8'">
+    </div>
+    <div class="first" ng-if="tab=='tab1'">
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
     </div>
   </section>
 
