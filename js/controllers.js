@@ -197,14 +197,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     if (key._id == id) {
                         key.activetab = true;
                         key.style = {
-                            "background-color": $scope.subCategory.color
+                            "background-color": $scope.category[0].category.color,
+                            "border-color": $scope.category[0].category.color
                         };
                         key.stylea = {
                             "color": "black"
                         };
                     } else {
                         key.activetab = false;
-                        key.style = {};
+                        key.style = {
+                          "border-color": $scope.category[0].category.color
+                        };
 
                     }
                 });
