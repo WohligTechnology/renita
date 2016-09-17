@@ -46,7 +46,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }];
         $scope.homes = [{
             img: "img/1.jpg",
-            image: "img/banner/1.png",
+            image: "img/banner/mb1.jpg",
             link: ""
         }, {
             img: "img/1.jpg",
