@@ -1,144 +1,159 @@
 <section scrolldown>
-  <section class="hidden-xs">
-    <div class="head-top" ng-if="category.length!=0">
-      <img ng-src="{{category[0].category.image|uploadpath}}" alt="Dr Renita" class="img-responsive w100">
-      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
-      <img src="img/scroll-down.png" alt="Renita">
-    </div>
-    </div>
-  </section>
-  <section class="hidden-lg hidden-md hidden-sm">
-    <div class="head-top" >
-      <img src="img/m-bn.jpg" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
-      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
-      <img src="img/scroll-down.png" alt="Renita">
-    </div>
-    </div>
-  </section>
-  <section class="mt50 second m-mb-0">
-    <div class="hidden-xs">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div ng-if="category.length == 0">
-            <h1>No Data Found</h1></div>
-          <div class="data">
-            <p ng-bind-html="category[0].category.description">
-            </p>
-          </div>
-        </div>
+   <section class="hidden-xs">
+      <div class="head-top" ng-if="category.length!=0">
+         <img ng-src="{{category[0].category.image|uploadpath}}" alt="Dr Renita" class="img-responsive w100">
+         <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+            <img src="img/scroll-down.png" alt="Renita">
+         </div>
       </div>
-      <div class="row mt20 mb20">
-        <div class="col-md-3 col-sm-3">
-          <div class="tab-list2">
-            <ul class="padding0 margin0">
-              <li ng-style= "data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category"{{data}} ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-9 col-sm-9">
-          <div class="tabs">
-            <div class="first">
-              <div class="data-title2 " style="border-bottom: 1px solid {{category[0].category.color}}">
-                <h4 class="color-success font-semi" style="color:{{category[0].category.color}}">{{subCategory.subCatName}}</h4>
-
-
-              </div>
-              <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
-                <h1>No Data Found</h1></div>
-              <div class="data-main mt15 no-data" ng-bind-html="subCategory.subCatDescription">
-                <pre>{{subCategory.subCatDescription.length}}</pre>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="first" ng-if="tabs=='pig'">
-          </div>
-          <div class="first" ng-if="tabs=='tato'">
-            <div class="data-title2">
-              <h4 class="color-success font-semi">TATOO REMOVAL</h4>
-            </div>
-            <div class="data-main mt15">
-              <p>The PICOWAY is called the Ferrari of Tattoo Removal – and works great for both coloured and black tattoos. You will be happy to watch your tattoos fade away in half the time as with other lasers, and with much less discomfort. Truly, nothing
-                needs to last forever.</p>
-              <div class="data-image">
-                <div class="img-box1">
-                  <img src="img/tatoo.jpg" alt="Dr Renita Rajan" class="img-responsive">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="first" ng-if="tabs=='faci'">
-          </div>
-          <div class="first" ng-if="tabs=='dull'">
-          </div>
-          <div class="first" ng-if="tabs=='anti'">
-          </div>
-          <div class="first" ng-if="tabs=='uneven'">
-          </div>
-          <div class="first" ng-if="tabs=='skin'">
-          </div>
-          <div class="first" ng-if="tabs=='general'">
-          </div>
-        </div>
+   </section>
+   <section class="hidden-lg hidden-md hidden-sm">
+      <div class="head-top">
+         <img src="img/m-bn.jpg" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
+         <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+            <img src="img/scroll-down.png" alt="Renita">
+         </div>
       </div>
-    </div>
-    </div>
-    <div class="hidden-lg hidden-md hidden-sm">
-      <div class="container">
-        <div class="row">
-          <div class="mobile-ui ">
-            <flex-slider flex-slide="item in tabing track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
+   </section>
+   <section class="mt50 second m-mb-0">
+      <div class="hidden-xs">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div ng-if="category.length == 0">
+                     <h1>No Data Found</h1></div>
+                  <div class="data">
+                     <p ng-bind-html="category[0].category.description">
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row mt20 mb20">
+               <div class="col-md-3 col-sm-3">
+                  <div class="tab-list2">
+                     <ul class="padding0 margin0">
+                        <li ng-style="data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category" {{data}} ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-md-9 col-sm-9">
+                  <div class="tabs">
+                     <div class="first">
+                        <div class="data-title2 " style="border-bottom: 1px solid {{category[0].category.color}}">
+                           <h4 class="color-success font-semi" style="color:{{category[0].category.color}}">{{subCategory.subCatName}}</h4>
+
+
+                        </div>
+                        <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
+                           <h1>No Data Found</h1></div>
+                        <div class="data-main mt15 no-data" ng-bind-html="subCategory.subCatDescription">
+                           <!-- <pre>{{subCategory.subCatDescription.length}}</pre> -->
+
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="first" ng-if="tabs=='pig'">
+                  </div>
+                  <div class="first" ng-if="tabs=='tato'">
+                     <div class="data-title2">
+                        <h4 class="color-success font-semi">TATOO REMOVAL</h4>
+                     </div>
+                     <div class="data-main mt15">
+                        <p>The PICOWAY is called the Ferrari of Tattoo Removal – and works great for both coloured and black tattoos. You will be happy to watch your tattoos fade away in half the time as with other lasers, and with much less discomfort.
+                           Truly, nothing needs to last forever.</p>
+                        <div class="data-image">
+                           <div class="img-box1">
+                              <img src="img/tatoo.jpg" alt="Dr Renita Rajan" class="img-responsive">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="first" ng-if="tabs=='faci'">
+                  </div>
+                  <div class="first" ng-if="tabs=='dull'">
+                  </div>
+                  <div class="first" ng-if="tabs=='anti'">
+                  </div>
+                  <div class="first" ng-if="tabs=='uneven'">
+                  </div>
+                  <div class="first" ng-if="tabs=='skin'">
+                  </div>
+                  <div class="first" ng-if="tabs=='general'">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="hidden-lg hidden-md hidden-sm">
+         <div class="container">
+            <div class="row">
+               <div class="mobile-ui ">
+                  <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
+                     <li class="text-center" ng-style="item.stylea" ng-class="{'active-tab':item.activetab}" ng-click="tabActive(item._id,$index)" ui-sref="subCat({id:item.category._id,subcatname:item.subCatName,subid:item._id})">
+                        <a ng-style="item.stylea">
+                    {{item.subCatName}}</a>
+                     </li>
+                  </flex-slider>
+                  <!-- <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
           <li class="text-center">
-                  <a href="" class="{{item.class}}"  ng-click="tabchange(item.tab,$index)">{{item.name}}</a>
+                  <a href="" class="{{item.class}}"  ng-click="tabchange(item.tab,$index)">{{item.subCatName}}</a>
                 </li>
-            </flex-slider>
-          </div>
-        </div>
-        <div class="row">
-<div class="col-xs-12">
-  <div class="data-center">
-    <div class="first" ng-if="tab=='tab1'">
-      <p>
-        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
-      </p>
-      <p>
-        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
-      </p>
-      <p>
-        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
-      </p>
-      <p>
-        Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis, or simply, excessive sweating.
-      </p>
-      <img src="img/a4.jpg" alt="" class="img-responsive">
-    </div>
-    <div class="first" ng-if="tab=='tab2'">
-      tab2
-    </div>
-    <div class="first" ng-if="tab=='tab3'">
-      tab3
-    </div>
-    <div class="first" ng-if="tab=='tab4'">
-      tab4
-    </div>
-    <div class="first" ng-if="tab=='tab5'">
-      tab5
-    </div>
-    <div class="first" ng-if="tab=='tab6'">
-    </div>
-    <div class="first" ng-if="tab=='tab7'">
-    </div>
-    <div class="first" ng-if="tab=='tab8'">
-    </div>
-    <div class="first" ng-if="tab=='tab1'">
-    </div>
-  </div>
-</div>
-        </div>
+            </flex-slider> -->
+               </div>
+            </div>
+
+
+
+            <div class="row">
+               <div class="col-xs-12">
+                  <div class="data-center">
+                    <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
+                       <h4>No Data Found</h4></div>
+                     <div class="first" ng-if="tab=='tab1'" ng-bind-html="subCategory.subCatDescription">
+                        <p>
+                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
+                           or simply, excessive sweating.
+                        </p>
+                        <p>
+                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
+                           or simply, excessive sweating.
+                        </p>
+                        <p>
+                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
+                           or simply, excessive sweating.
+                        </p>
+                        <p>
+                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
+                           or simply, excessive sweating.
+                        </p>
+                        <img src="img/a4.jpg" alt="" class="img-responsive">
+                     </div>
+                     <div class="first" ng-if="tab=='tab2'">
+                        tab2
+                     </div>
+                     <div class="first" ng-if="tab=='tab3'">
+                        tab3
+                     </div>
+                     <div class="first" ng-if="tab=='tab4'">
+                        tab4
+                     </div>
+                     <div class="first" ng-if="tab=='tab5'">
+                        tab5
+                     </div>
+                     <div class="first" ng-if="tab=='tab6'">
+                     </div>
+                     <div class="first" ng-if="tab=='tab7'">
+                     </div>
+                     <div class="first" ng-if="tab=='tab8'">
+                     </div>
+                     <div class="first" ng-if="tab=='tab1'">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </section>
+   </section>
 
 </section>

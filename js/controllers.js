@@ -190,6 +190,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tabActive = function(id, indexid) {
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
+                console.log("$scope.subCategory",$scope.subCategory);
                 $scope.subCatid = id;
                 _.each($scope.category, function(key) {
                     key.style = {};
@@ -380,6 +381,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             index: 7,
             nghide: "MovieAwards.length  == 0"
         }];
+      
 
     })
     .controller('PrivacyCtrl', function($scope, TemplateService, NavigationService) {
