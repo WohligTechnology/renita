@@ -1,11 +1,19 @@
 <section scrolldown>
 <section>
-   <div class="head-top">
+   <div class="head-top hidden-xs">
       <img ng-src="{{blogHeader.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
       <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
           <img src="img/scroll-down.png" alt="Renita">
       </div>
    </div>
+</section>
+<section class="hidden-lg hidden-md hidden-sm">
+  <div class="head-top" >
+    <img src="img/m-bn.jpg" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
+    <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+    <img src="img/scroll-down.png" alt="Renita">
+  </div>
+  </div>
 </section>
 <section class="mt50 second">
    <div class="container">
@@ -87,13 +95,13 @@
                      <h4 class="text-center">{{popularmsg}}</h4>
                   </div>
                   <div class="row mt20" ng-repeat="item in post track by $index">
-                     <div class="col-md-3">
+                     <div class="col-md-3 col-xs-3">
                         <div class="p-img-box">
                            <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
                         </div>
 
                      </div>
-                     <div class="col-md-9 padding0 border-btm">
+                     <div class="col-md-9 padding0 border-btm col-xs-9">
                         <div class="blog-p-title">
                            <h5 class="text-up color-base margin0 font-bold">{{item.name}}</h5>
                         </div>

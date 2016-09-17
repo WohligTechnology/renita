@@ -87,7 +87,7 @@
                 <div class="related-blog mt30 pb60" ng-if="blog.related">
                     <h3 class="color-base font-bold text-up">related Post</h3>
                     <div class="row">
-                        <div class="col-md-4" ng-repeat="related in blog.related" ui-sref="blog-detail({'id':related._id})">
+                        <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="related in blog.related" ui-sref="blog-detail({'id':related._id})">
                             <div class="related-box text-center">
                                 <img src="{{related.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
                                 <span class="font-bold text-up">{{related.name}}</span>
@@ -112,12 +112,12 @@
                         <h4 class="text-center">{{popularmsg}}</h4>
                       </div>
                         <div class="row mt20" ng-repeat="item in popular | filter:searchText" ui-sref="blog-detail({'id':item._id})">
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-xs-3">
                                 <div class="p-img-box">
                                     <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
                                 </div>
                             </div>
-                            <div class="col-md-9 padding0 border-btm">
+                            <div class="col-md-9 padding0 border-btm col-xs-9">
                                 <div class="blog-p-title">
                                     <h5 class="text-up color-base margin0 font-bold">{{item.name}}</h5>
                                 </div>

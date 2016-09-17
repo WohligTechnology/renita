@@ -82,8 +82,26 @@
         font-size: 15px;
     }
     }
+    .menu-in {
+
+      overflow: scroll;
+  }
+  .related-box {
+    margin-bottom: 30px;
+}
 }
 @media (max-width:480px){
+  .related-box {
+    margin-bottom: 30px;
+}
+  .menu-in {
+
+    overflow: scroll;
+}
+  .blog-popular-tag {
+
+    margin-bottom: 30px;
+}
   .slider-modal .fancy-bottom {
     overflow: overlay;
     padding: 30px;
