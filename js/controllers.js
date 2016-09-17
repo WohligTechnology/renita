@@ -184,7 +184,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
 
             } else {
-                $state.go('home');
+                // $state.go('home');
             }
         });
         $scope.tabActive = function(id, indexid) {
