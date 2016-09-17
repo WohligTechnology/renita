@@ -172,7 +172,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
         NavigationService.getCatByName($stateParams.id, function(data) {
-            console.log(data.data);
+            console.log("categoryData",data.data);
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
                 console.log("$scope.category", $scope.category);
@@ -184,7 +184,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
 
             } else {
-                $state.go('home');
+                // $state.go('home');
             }
         });
         $scope.tabActive = function(id, indexid) {
