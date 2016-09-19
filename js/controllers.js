@@ -1,7 +1,9 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar'])
 
-
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+        cfpLoadingBarProvider.includeSpinner = false;
+    }])
+    .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
 
         $scope.template = TemplateService.changecontent("home");
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -172,7 +174,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
         NavigationService.getCatByName($stateParams.id, function(data) {
-            console.log("categoryData",data.data);
+            console.log("categoryData", data.data);
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
                 console.log("$scope.category", $scope.category);
@@ -190,7 +192,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tabActive = function(id, indexid) {
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
-                console.log("$scope.subCategory",$scope.subCategory);
+                console.log("$scope.subCategory", $scope.subCategory);
                 $scope.subCatid = id;
                 _.each($scope.category, function(key) {
                     key.style = {};
@@ -207,7 +209,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     } else {
                         key.activetab = false;
                         key.style = {
-                          "border-color": $scope.category[0].category.color
+                            "border-color": $scope.category[0].category.color
                         };
 
                     }
@@ -231,10 +233,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.classg = '';
         $scope.classh = '';
 
-      $scope.tabchange = function(tab, a, id) {
-        $scope.tab = tab;
+        $scope.tabchange = function(tab, a, id) {
+            $scope.tab = tab;
             if (a == 1) {
-            $scope.classa = "active-tab";
+                $scope.classa = "active-tab";
                 $scope.classb = '';
                 $scope.classc = '';
                 $scope.classd = '';
@@ -810,11 +812,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
         // GET ALL BLOG BY JAGRUTI
-          $scope.t = {};
-            $scope.t.showTag =false;
-            $scope.showTag = function(flag){
-              $scope.t.showTag = flag;
-            };
+        $scope.t = {};
+        $scope.t.showTag = false;
+        $scope.showTag = function(flag) {
+            $scope.t.showTag = flag;
+        };
 
         NavigationService.getHeaderBlog(function(data) {
             $scope.blogHeader = data.data;
@@ -866,12 +868,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('footerctrl', function($scope, TemplateService, NavigationService) {
+.controller('footerctrl', function($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService;
     NavigationService.getAllCategory(function(data) {
         $scope.footer = data.data;
         console.log("$scope.footer", $scope.footer);
-    })
+    });
+
+    $scope.formData = {};
+    $scope.formComplete = false;
+    $scope.emailExist = false;
+    $scope.subscribe = function(formData) {
+        if ($scope.formData) {
+            NavigationService.subscribe($scope.formData, function(data) {
+                console.log(data);
+                if (data.value === true) {
+                    $scope.formComplete = true;
+                    $scope.emailExist = false;
+                    $timeout(function() {
+                        $scope.formComplete = false;
+                        $scope.emailExist = false;
+                        $scope.formData = {};
+                    }, 2000);
+
+                } else if (data.value === false) {
+                    $scope.emailExist = true;
+                }
+            })
+
+        }
+    }
+
 })
 
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {

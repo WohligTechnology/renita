@@ -218,6 +218,17 @@ var navigationservice = angular.module('navigationservice', [])
               method: 'POST',
               withCredentials: true
           }).success(callback);
-        }
+        },
+        subscribe: function(signupData, callback) {
+
+            $http({
+                url: adminurl + 'subscribe/saveData',
+                method: 'POST',
+                withCredentials: true,
+                data: signupData
+
+            }).success(callback);
+        },
+
     };
 });

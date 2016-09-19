@@ -61,12 +61,14 @@ BLOG
         <div class="col-md-3 col-sm-3">
           <div class="subscribe">
             <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
-            <form class="form-inline mt15">
+            <form class="form-inline mt15" ng-submit="subscribe()" ng-if="!formComplete">
               <div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail2">
+                <input type="email" class="form-control" id="exampleInputEmail2" ng-model="formData.email" required>
               </div>
               <button type="submit" class="btn btn-default mob-min-s">SUBSCRIBE</button>
             </form>
+            <div ng-if="formComplete" >Thank you for Subscribing.</div>
+            <div ng-if="emailExist">Email Already Exist</div>
           </div>
           <div class="follow my-list mt15 display-inline">
             <span class="color-white">Follow us on</span>
