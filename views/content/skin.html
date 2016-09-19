@@ -6,10 +6,11 @@
             <img src="img/scroll-down.png" alt="Renita">
          </div>
       </div>
+
    </section>
    <section class="hidden-lg hidden-md hidden-sm">
       <div class="head-top">
-         <img src="img/m-bn.jpg" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
+         <img ng-src="{{category[0].category.image1|uploadpath}}" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
          <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
             <img src="img/scroll-down.png" alt="Renita">
          </div>
@@ -90,10 +91,11 @@
             <div class="row">
                <div class="mobile-ui ">
                   <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
-                     <li class="text-center" ng-style="item.stylea" ng-class="{'active-tab':item.activetab}" ng-click="tabActive(item._id,$index)" ui-sref="subCat({id:item.category._id,subcatname:item.subCatName,subid:item._id})">
+                     <li class="text-center" ng-style="item.style" ng-class="{'active-tab':item.activetab}" ng-click="tabActive(item._id,$index)" ui-sref="subCat({id:item.category._id,subcatname:item.subCatName,subid:item._id})">
                         <a ng-style="item.stylea">
                     {{item.subCatName}}</a>
                      </li>
+
                   </flex-slider>
                   <!-- <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
           <li class="text-center">
@@ -108,8 +110,8 @@
             <div class="row">
                <div class="col-xs-12">
                   <div class="data-center">
-                    <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
-                       <h4>No Data Found</h4></div>
+                     <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
+                        <h4>No Data Found</h4></div>
                      <div class="first" ng-if="tab=='tab1'" ng-bind-html="subCategory.subCatDescription">
                         <!-- <p>
                            Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
