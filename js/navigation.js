@@ -1,5 +1,5 @@
 var adminurl = "http://104.154.89.21:86/";  //server
-// var adminurl = "http://10.0.0.70:1337/";
+// var adminurl = "http://192.168.43.156:1337/";
 // var adminurl = "http://192.168.1.113:84/";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
@@ -117,6 +117,16 @@ var navigationservice = angular.module('navigationservice', [])
                 method: 'POST',
                 data: {
                     "name": "Doctor"
+                },
+                withCredentials: true
+            }).success(callback);
+        },
+        getClinicPolicy: function(callback) {
+            $http({
+                url: adminurl + 'Header/getHeader',
+                method: 'POST',
+                data: {
+                    "name": "Clinic"
                 },
                 withCredentials: true
             }).success(callback);

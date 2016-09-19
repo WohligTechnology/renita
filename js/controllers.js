@@ -597,6 +597,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("clinic-policy");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
+        NavigationService.getClinicPolicy(function(data) {
+            $scope.clinicPolicy = data.data;
+            console.log("  $scope.clinicPolicy", $scope.clinicPolicy);
+        });
     })
     .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService, $uibModal, $timeout) {
 
