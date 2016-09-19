@@ -593,7 +593,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
     })
     .controller('ClinicPolicyCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("Clinic-Policy");
+        $scope.template = TemplateService.changecontent("clinic-policy");
         $scope.menutitle = NavigationService.makeactive("Clinic Policy");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
