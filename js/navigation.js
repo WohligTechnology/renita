@@ -19,7 +19,7 @@ var navigationservice = angular.module('navigationservice', [])
     return {
         getnav: function(callback) {
             $http({
-                url: adminurl + 'category/getAllCategory',
+                url: adminurl + 'category/getAllCat',
                 method: 'POST'
             }).success(callback);
         },
