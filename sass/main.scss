@@ -234,7 +234,7 @@ a {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 9;
+        // z-index: 9;
     }
 
     .navbar-header {
@@ -282,7 +282,7 @@ a {
 }
 
 .menu-in {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #fff;
     @include transform(translateX(0));
     // @include transition(all 300ms linear);
     position: fixed;
