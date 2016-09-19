@@ -89,8 +89,14 @@
   .related-box {
     margin-bottom: 30px;
 }
+.navbar {
+  display: none;
+}
 }
 @media (max-width:480px){
+  .navbar {
+    display: none;
+}
   .related-box {
     margin-bottom: 30px;
 }
