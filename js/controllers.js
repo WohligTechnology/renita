@@ -381,7 +381,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             index: 7,
             nghide: "MovieAwards.length  == 0"
         }];
-      
+
 
     })
     .controller('PrivacyCtrl', function($scope, TemplateService, NavigationService) {
@@ -810,6 +810,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
         // GET ALL BLOG BY JAGRUTI
+          $scope.t = {};
+            $scope.t.showTag =false;
+            $scope.showTag = function(flag){
+              $scope.t.showTag = flag;
+            };
+
         NavigationService.getHeaderBlog(function(data) {
             $scope.blogHeader = data.data;
             console.log("$scope.blogHeader", $scope.blogHeader);
