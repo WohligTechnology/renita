@@ -282,7 +282,7 @@ a {
 }
 
 .menu-in {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #fff;
     @include transform(translateX(0));
     // @include transition(all 300ms linear);
     position: fixed;
@@ -1347,6 +1347,15 @@ a.active-tab {
 .no-data{
   min-height: 500px;
 }
+
+.active-tab {
+     background-color: $brand-success;
+     color: $white;
+
+     a {
+         color: $white;
+     }
+ }
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
