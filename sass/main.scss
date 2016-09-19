@@ -234,7 +234,7 @@ a {
         top: 0;
         left: 0;
         width: 100%;
-        // z-index: 9;
+        z-index: 9;
     }
 
     .navbar-header {
@@ -1347,6 +1347,15 @@ a.active-tab {
 .no-data{
   min-height: 500px;
 }
+
+.active-tab {
+     background-color: $brand-success;
+     color: $white;
+
+     a {
+         color: $white;
+     }
+ }
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
