@@ -120,6 +120,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.conatctHeader = data.data;
             console.log("$scope.conatctHeader", $scope.conatctHeader);
         })
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
     })
     .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService) {
 
@@ -131,6 +138,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.headerAbout = data.data;
             console.log("$scope.headerAbout", $scope.headerAbout);
         })
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
     })
     .controller('TestimonialCtrl', function($scope, TemplateService, NavigationService) {
 
@@ -167,6 +181,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.teamHeader = data.data;
 
         })
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
     })
 
 .controller('SkinCtrl', function($scope, TemplateService, NavigationService, $stateParams, $timeout, $state) {
@@ -189,6 +210,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 // $state.go('home');
             }
         });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
+
         $scope.tabActive = function(id, indexid) {
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
@@ -392,6 +421,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Privacy");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
     })
     .controller('VitiligoCtrl', function($scope, TemplateService, NavigationService) {
 
@@ -462,7 +499,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
 
-
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
 
         $scope.tabchanges = function(tabs, a) {
             //        console.log(tab);
@@ -600,6 +643,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getClinicPolicy(function(data) {
             $scope.clinicPolicy = data.data;
             console.log("  $scope.clinicPolicy", $scope.clinicPolicy);
+        });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
         });
     })
     .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService, $uibModal, $timeout) {
@@ -744,6 +794,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 windowClass: 'slider-modal',
             });
         };
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
     })
     .controller('BlogCtrl', function($scope, TemplateService, NavigationService) {
 
@@ -754,6 +812,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.blogmsg = "Loading...";
         $scope.popularmsg = "Loading...";
         $scope.tagmsg = "Loading...";
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
 
         // GET ALL BLOG BY JAGRUTI
         // BLOG PAGINATION
@@ -845,7 +911,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // $scope.navigation = NavigationService.getnav();
     $scope.popularmsg = "Loading...";
     $scope.tagmsg = "Loading...";
-
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('.back-to-top ').fadeIn();
+        } else {
+            $('.back-to-top ').fadeOut();
+        }
+    });
     //  BLOG DETAIL BY JAGRUTI
     $scope.popular = [];
     $scope.blog = [];

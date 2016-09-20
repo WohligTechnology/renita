@@ -1359,6 +1359,14 @@ a.active-tab {
          color: $white;
      }
  }
+ .back-to-top {
+     position: fixed;
+     bottom: 20px;
+     right: 15px;
+     cursor: pointer;
+     display: none;
+     z-index: 99;
+ }
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
