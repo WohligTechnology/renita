@@ -1,8 +1,8 @@
 <section scrolldown>
 <section>
     <div class="head-top hidden-xs">
-        <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage=='' || blog">
-        <img ng-src="{{blog.blog.bannerimage|serverimage}}" alt="Dr Renita" class="img-responsive" ng-if="blog.blog.bannerimage!=''">
+        <img src="img/blog.jpg" alt="Dr Renita" class="img-responsive" ng-if="blogHeader.image=='' || blog">
+        <img ng-src="{{blogHeader.image|uploadpath}}" alt="Dr Renita" class="img-responsive" ng-if="blogHeader.image!=''">
         <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
             <img src="img/scroll-down.png" alt="Renita">
         </div>
@@ -10,7 +10,7 @@
 </section>
 <section class="hidden-lg hidden-md hidden-sm">
   <div class="head-top" >
-    <img ng-src="{{blogHeader.image1|uploadpath}}" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
+    <img ng-src="{{blogHeader.image1|uploadpath}}" alt="Dr Renita" class="img-responsive w100" auto-heightfixed ng-if="blogHeader.image1">
     <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
     <img src="img/scroll-down.png" alt="Renita">
   </div>

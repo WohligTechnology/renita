@@ -474,10 +474,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.classi = '';
         $scope.classj = '';
 
-        NavigationService.getHeaderBefore(function(data) {
-            $scope.headerBefore = data.data;
-
-        })
+        // NavigationService.getHeaderBefore(function(data) {
+        //     $scope.headerBefore = data.data;
+        //
+        // })
+         NavigationService.getheaderBefore(function(data) {
+              $scope.headerBefore = data.data;
+              console.log("$scope.headerBefore", $scope.headerBefore);
+          })
 
         NavigationService.getAllBefore(function(data) {
             $scope.before = data.data;
@@ -941,6 +945,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     });
     //  BLOG DETAIL BY JAGRUTI
+    NavigationService.getHeaderBlog(function(data) {
+        $scope.blogHeader = data.data;
+        console.log("$scope.blogHeader", $scope.blogHeader);
+    })
 
 })
 

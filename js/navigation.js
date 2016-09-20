@@ -141,6 +141,16 @@ var navigationservice = angular.module('navigationservice', [])
                 withCredentials: true
             }).success(callback);
         },
+        getheaderBefore: function(callback) {
+            $http({
+                url: adminurl + 'Header/getHeader',
+                method: 'POST',
+                data: {
+                    "name": "Before"
+                },
+                withCredentials: true
+            }).success(callback);
+        },
         getHeaderAbout: function(callback) {
             $http({
                 url: adminurl + 'Header/getHeader',
