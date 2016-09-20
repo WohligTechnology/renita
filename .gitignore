@@ -33,6 +33,7 @@ w/
 .sass-cache/
 *.tar
 production/
+!production/app.yaml
 *.zip
 css/
 # Thumbnails
