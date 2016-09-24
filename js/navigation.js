@@ -1,4 +1,4 @@
-var adminurl = "http://104.154.89.21:86/";  //server
+var adminurl = "http://104.155.129.33:86/";  //serverhttp://104.155.129.33:86
 // var adminurl = "http://192.168.43.156:1337/";
 // var adminurl = "http://192.168.1.113:84/";
 var imgurl = adminurl + "upload/";

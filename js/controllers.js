@@ -12,10 +12,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getHomeslider(function(data) {
             $scope.Homeslider = data.data;
-            console.log("$scope.Homeslider", $scope.Homeslider.length);
             // _.each($scope.Homeslider,function(key){
             //   key.url=key.url.split('/');
-            //   console.log("key.url",key.url);
             // })
 
         });
@@ -76,7 +74,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService;
         NavigationService.getnav(function(data) {
             $scope.navigation = data.data;
-            console.log("  $scope.navigation", $scope.navigation);
         });
     })
     .controller('headerctrl', function($scope, TemplateService, NavigationService) {
@@ -118,7 +115,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getHeaderContact(function(data) {
             $scope.conatctHeader = data.data;
-            console.log("$scope.conatctHeader", $scope.conatctHeader);
         })
         $(window).scroll(function() {
             if ($(this).scrollTop() > 500) {
@@ -136,7 +132,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // $scope.navigation = NavigationService.getnav();
         NavigationService.getHeaderAbout(function(data) {
             $scope.headerAbout = data.data;
-            console.log("$scope.headerAbout", $scope.headerAbout);
         })
         $(window).scroll(function() {
             if ($(this).scrollTop() > 500) {
@@ -159,7 +154,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
         NavigationService.getTestimonial(function(data) {
             $scope.Testimonial = data.data;
-            console.log("Testimonial", $scope.Testimonial);
 
         })
 
@@ -194,12 +188,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("skin");
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
-        NavigationService.getCatByName($stateParams.id, function(data) {
-            console.log("categoryData", data.data);
+          NavigationService.getCatByName($stateParams.id, function(data) {
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
-                console.log("$scope.category", $scope.category);
-                console.log("innn", $stateParams.subid);
                 if ($stateParams.subid) {
                     $scope.tabActive($stateParams.subid, 0);
                 } else {
@@ -219,15 +210,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.tabActive = function(id, indexid) {
+          _.each($scope.category, function(key) {
+if (key._id == id) {
+                  key.activetab = true;
+} else {
+                  key.activetab = false;
+
+              }
+          });
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
-                console.log("$scope.subCategory", $scope.subCategory);
                 $scope.subCatid = id;
                 _.each($scope.category, function(key) {
                     key.style = {};
                     key.stylea = {};
                     if (key._id == id) {
-                        key.activetab = true;
+                        // key.activetab = true;
                         key.style = {
                             "background-color": $scope.category[0].category.color,
                             "border-color": $scope.category[0].category.color
@@ -236,7 +234,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                             "color": "black"
                         };
                     } else {
-                        key.activetab = false;
+                        // key.activetab = false;
                         key.style = {
                             "border-color": $scope.category[0].category.color
                         };
@@ -246,7 +244,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 // $scope.category[indexid].activetab = true;
 
 
-                console.log("  $scope.subCategory ", $scope.subCategory);
 
             });
 
@@ -442,7 +439,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.tabchanges = function(tabs, a) {
-            //        console.log(tab);
             $scope.tabs = tabs;
             if (a == 1) {
 
@@ -480,12 +476,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // })
          NavigationService.getheaderBefore(function(data) {
               $scope.headerBefore = data.data;
-              console.log("$scope.headerBefore", $scope.headerBefore);
           })
 
         NavigationService.getAllBefore(function(data) {
             $scope.before = data.data;
-            console.log("  $scope.before", $scope.before);
             $scope.tabActive($scope.before[0]._id, 0);
         })
 
@@ -512,7 +506,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.tabchanges = function(tabs, a) {
-            //        console.log(tab);
             $scope.tabs = tabs;
             if (a == 1) {
 
@@ -646,7 +639,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // $scope.navigation = NavigationService.getnav();
         NavigationService.getClinicPolicy(function(data) {
             $scope.clinicPolicy = data.data;
-            console.log("  $scope.clinicPolicy", $scope.clinicPolicy);
         });
         $(window).scroll(function() {
             if ($(this).scrollTop() > 500) {
@@ -670,18 +662,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getAllDoctor(function(data) {
             $scope.doctor = data.data;
-            // console.log("doctorasxdfghj", $scope.doctor);
 
         });
 
         NavigationService.getHeaderDoctor(function(data) {
             $scope.doctorHeader = data.data;
-            // console.log("  $scope.doctorHeader", $scope.doctorHeader);
         });
         NavigationService.getDoctorSlider(function(data) {
             $scope.doctorSlider = data.data;
             $scope.allDocs = _.cloneDeep($scope.doctorSlider);
-            console.log("$scope.doctorSlider", $scope.doctorSlider);
         });
 
         $scope.doctors = [{
@@ -788,7 +777,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
         $scope.openModal = function(index) {
             $scope.reAssemble(index, false);
-            console.log($scope.allDocs);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/modal/slider.html',
@@ -856,7 +844,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.loadnotification(1);
 
         $scope.loadMore = function() {
-            console.log("in notification");
             $scope.loadnotification(++$scope.pagenumber);
         };
 
@@ -894,7 +881,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getHeaderBlog(function(data) {
             $scope.blogHeader = data.data;
-            console.log("$scope.blogHeader", $scope.blogHeader);
         })
         $(window).scroll(function() {
             if ($(this).scrollTop() > 500) {
@@ -927,7 +913,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.blog = [];
     //  GET BLOG DETAIL
     NavigationService.getOneBlog($state.params.id, function(data) {
-        console.log(data);
         $scope.blog = data.data;
         if ($scope.blog.blog.tag == "") {
             $scope.tagmsg = "No Tags.";
@@ -947,7 +932,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //  BLOG DETAIL BY JAGRUTI
     NavigationService.getHeaderBlog(function(data) {
         $scope.blogHeader = data.data;
-        console.log("$scope.blogHeader", $scope.blogHeader);
     })
 
 })
@@ -956,7 +940,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template = TemplateService;
     NavigationService.getAllCategory(function(data) {
         $scope.footer = data.data;
-        console.log("$scope.footer", $scope.footer);
     });
 
     $scope.formData = {};
@@ -965,7 +948,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.subscribe = function(formData) {
         if ($scope.formData) {
             NavigationService.subscribe($scope.formData, function(data) {
-                console.log(data);
                 if (data.value === true) {
                     $scope.formComplete = true;
                     $scope.emailExist = false;
@@ -988,7 +970,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
 
     $scope.changeLanguage = function() {
-        console.log("Language CLicked");
 
         if (!$.jStorage.get("language")) {
             $translate.use("hi");
