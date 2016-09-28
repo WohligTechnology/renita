@@ -34,7 +34,7 @@
                <div class="col-md-3 col-sm-3">
                   <div class="tab-list2">
                      <ul class="padding0 margin0">
-                        <li ng-style="data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category" {{data}} ui-sref="subCat({id:data.category._id,subcatname:data.subCatName,subid:data._id})"><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
+                        <li ng-style="data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category" {{data}} ><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
                      </ul>
                   </div>
                </div>
@@ -92,7 +92,7 @@
             <div class="row">
                <div class="mobile-ui ">
                   <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
-                     <li class="text-center" ng-style="item.style" ng-class="{'active-tab':item.activetab}" ng-click="tabActive(item._id,$index)" ui-sref="subCat({id:item.category._id,subcatname:item.subCatName,subid:item._id})">
+                     <li class="text-center" ng-style="item.style" ng-class="{'active-tab':item.activetab}" ng-click="tabActive(item._id,$index)">
                         <a ng-style="item.stylea">
                     {{item.subCatName}}</a>
                      </li>
