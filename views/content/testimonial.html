@@ -1,70 +1,70 @@
 <section scrolldown>
-<section>
-   <div class="head-top hidden-xs">
-      <img ng-src="{{testimonialHeader.image|uploadpath}}" alt="Dr Renita" class="img-responsive">
+  <section>
+    <div class="head-top hidden-xs">
+      <img ng-src="{{testimonialHeader.image|uploadpath}}" alt="" class="img-responsive give-height">
       <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
-          <img src="img/scroll-down.png" alt="Renita">
+        <img src="img/scroll-down.png" alt="">
       </div>
-   </div>
-</section>
-<section class="hidden-lg hidden-md hidden-sm">
-  <div class="head-top" >
-    <img ng-src="{{testimonialHeader.image1|uploadpath}}" alt="Dr Renita" class="img-responsive w100" auto-heightfixed>
-    <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
-    <img src="img/scroll-down.png" alt="Renita">
-  </div>
-  </div>
-</section>
+    </div>
+  </section>
+  <section class="hidden-lg hidden-md hidden-sm">
+    <div class="head-top">
+      <img ng-src="{{testimonialHeader.image1|uploadpath}}" alt="" class="img-responsive w100 " auto-heightfixed>
+      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+        <img src="img/scroll-down.png" alt="">
+      </div>
+    </div>
+  </section>
   <div id="top-scroll"></div>
-<div class="container second mt50">
-   <h1 class="font-bold color-primary text-up mt20">Testimonials</h1>
-   <div class="test-cont mt20">
+  <div class="container second mt50">
+    <h1 class="font-bold color-primary text-up mt20">Testimonials</h1>
+    <div class="test-cont mt20">
       <flex-slider flex-slide="item in Testimonial track by $index" prev-text="" next-text="">
-         <li>
-            <div class="row" >
-               <div class="col-md-6 mgt100 col-xs-12">
-                  <div class="vid-box">
+        <li>
+          <div class="row">
+            <div class="col-md-6 mgt100 col-xs-12">
+              <div class="vid-box">
                 <div class="only-img" ng-if="!item.video && item.image">
-                      <img ng-src="{{item.image|uploadpath}}" alt="">
+                  <img ng-src="{{item.image|uploadpath}}" alt="">
                 </div>
-                  <div class="only-video" ng-if="item.video">
-                    <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
-                       <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="" src="http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg" class="doneLoading" draggable="false">
-                       <div class="circle">
-                          <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false">
-                       </div>
-                    </a>
-                  </div>
-                  </div>
-               </div>
-               <div class="col-md-6 mgt100 col-xs-12" ng-if="item.video||item.image">
-                  <div class="text-center">
-                     <h4 class="text-left">{{item.name}}</h4>
-                  </div>
-                  <p class="text-justify">{{item.description}}</p>
-               </div>
+                <div class="only-video" ng-if="item.video">
+                  <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
+                    <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="" src="http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg"
+                      class="doneLoading" draggable="false">
+                    <div class="circle">
+                      <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false">
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="row" ng-if="!item.video && !item.image">
-          <div class="col-md-12">
-            <div class="text-center">
-               <h4 class="text-left">{{item.name}}</h4>
+            <div class="col-md-6 mgt100 col-xs-12" ng-if="item.video||item.image">
+              <div class="text-center">
+                <h4 class="text-left">{{item.name}}</h4>
+              </div>
+              <p class="text-justify">{{item.description}}</p>
             </div>
-            <p class="text-justify">{{item.description}}</p>
           </div>
-        </div>
-         </li>
-         </flexi-slider>
-   </div>
-
-   <div class="mt30 pb30">
+          <div class="row" ng-if="!item.video && !item.image">
+            <div class="col-md-12">
+              <div class="text-center">
+                <h4 class="text-left">{{item.name}}</h4>
+              </div>
+              <p class="text-justify">{{item.description}}</p>
+            </div>
+          </div>
+        </li>
+        </flexi-slider>
+    </div>
+    <div class="mt30 pb30">
       <div class="text-center">
-         <h4 class="color-primary font-semi">ALSO READ</h4>
-         <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="about-us">ABOUT US</button>
-         <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m mob-mtp" ui-sref="team">TEAM</button>
-      <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="consultant">CONSULTANT</button>
+        <h4 class="color-primary font-semi">ALSO READ</h4>
+        <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="about-us">ABOUT US</button>
+        <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m mob-mtp" ui-sref="team">TEAM</button>
+        <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="consultant">CONSULTANT</button>
       </div>
-   </div>
-</div>
-<div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Dharma Productions">
-</div>
+    </div>
+  </div>
+  <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Dharma Productions">
+  </div>
 </section>
