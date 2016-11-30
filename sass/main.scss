@@ -49,6 +49,7 @@ p {
     font-size: 16px;
     img {
         width: 100%;
+        margin: 5px 0;
     }
 }
 
@@ -276,6 +277,7 @@ a {
     left: 0;
     top: 0;
     bottom: 0;
+    overflow: scroll;
 }
 
 .icon-bar,
@@ -694,23 +696,27 @@ h4 {
     ul {
         list-style: none;
         li {
-            padding: 8px 0;
             border-bottom: 2px solid #da8340;
             cursor: pointer;
+            @include transition (all ease 300ms);
             a {
                 font-size: 18px;
                 font-weight: 500;
                 color: $base-color;
-                padding: 5px 15px 7px 20px;
+                padding: 0px 15px 0px 20px;
+                width: 100%;
+                padding: 8px 15px;
+                display: block;
+                   @include transition (all ease 300ms);
             }
         }
-        .active-tab {
-            background-color: $brown-color;
-            color: $white;
-            a {
-                color: $white;
-            }
-        }
+        // .active-tab {
+        //     // background-color: $brown-color;
+        //     color: $white;
+        //     a {
+        //         color: $white;
+        //     }
+        // }
     }
 }
 
@@ -726,13 +732,13 @@ h4 {
             border-color: $brand-success;
         }
     }
-    .active-tab {
-        background-color: $brand-success;
-        color: $white;
-        a {
-            color: $white;
-        }
-    }
+    // .active-tab {
+    //     // background-color: $brand-success;
+    //     color: $white;
+    //     a {
+    //         color: $white;
+    //     }
+    // }
 }
 
 .tab-list3 {
@@ -747,7 +753,7 @@ h4 {
             }
         }
     }
-    .active-tab {
+    .active-tabs {
         background-color: $before-color !important;
         color: $white;
         a {
@@ -943,7 +949,7 @@ h4 {
         width: auto;
         overflow: hidden;
         img {
-            width: auto;
+            width: 100%;
         }
     }
     .front-img {
@@ -1238,16 +1244,17 @@ h4 {
     margin: 20px 0px 20px 10px;
     li {
         a {
-            font-size: 18px;
-            font-weight: 500;
-            color: #161616 !important;
-            width: 240px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: inline-block;
-            padding: 12px 10px 8px 10px;
-            margin: -4px;
+          font-size: 14px;
+    font-weight: 500;
+    color: #161616;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    padding: 8px 0px 8px;
+    margin: 0;
+    text-align: center;
         }
     }
     .flex-direction-nav {
@@ -1258,20 +1265,21 @@ h4 {
     }
     .flexslider {
         margin: 0 0 0px;
-        border-bottom: 2px solid #2fa992;
+            padding: 3px 0;
+        border-bottom: 1px solid #161616;
     }
 }
 
-a.active-tab {
-    background: #2fa992;
-}
+// a.active-tab {
+//     background: #2fa992;
+// }
 
 .no-data {
     min-height: 500px;
 }
 
 .active-tab {
-    background-color: $brand-success;
+    // background-color: $brand-success;
     color: $white;
     a {
         color: $white;

@@ -35,7 +35,7 @@
             <div class="tab-list2">
               <ul class="padding0 margin0">
                 <li ng-style="data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category"
-                  {{data}}><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
+                  {{data}}><a ng-style="data.stylea"  href="">{{data.subCatName}}</a></li>
               </ul>
             </div>
           </div>
@@ -90,7 +90,7 @@
       <div class="container">
         <div class="row">
           <div class="mobile-ui ">
-            <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true"
+            <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="150" item-margin="10" animationloop="true"
               move="2">
               <li class="text-center" ng-style="item.style" ng-class="{'active-tab':item.activetab}" ng-click="tabActive(item._id,$index)">
                 <a ng-style="item.stylea">
@@ -111,23 +111,6 @@
                 <h4>No Data Found</h4>
               </div>
               <div class="first" ng-if="tab=='tab1'" ng-bind-html="subCategory.subCatDescription">
-                <!-- <p>
-                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
-                           or simply, excessive sweating.
-                        </p>
-                        <p>
-                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
-                           or simply, excessive sweating.
-                        </p>
-                        <p>
-                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
-                           or simply, excessive sweating.
-                        </p>
-                        <p>
-                           Sweating is a normal reflex of the body to certain signals like ambient temperature or physical exertion. However, when the sweating happens beyond the normal physiological levels, and not always in response to a stimulus, it is termed as hyperhidrosis,
-                           or simply, excessive sweating.
-                        </p>
-                        <img src="img/a4.jpg" alt="" class="img-responsive"> -->
               </div>
               <div class="first" ng-if="tab=='tab2'">
                 tab2
