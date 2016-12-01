@@ -28,40 +28,15 @@
                 </ul>
               </div>
               <div class="homeborder">
-
-    <!--<uib-accordion close-others="oneAtATime">
-        <div uib-accordion-group class="panel-default" is-open="status[data.name]" ng-repeat="data in categories">
-            <uib-accordion-heading>
-                <!--<a class="menu-nav-mobile" ui-sref="skin({name:data.name,id:data._id})" ui-sref-active="active" ng-if="!n.subnav">-->
-                   <a class="menu-nav-mobile" ui-sref-active="active">
-                  {{data.name}}
-                  </a>
-                <!--<span ng-if="n.subnav">-->
-                      <span>
-                <!--{{data.name}}-->
-                </span>
-                 <i class="pull-right fa icon color-white" ng-class="{'fa-caret-up':(status[data.name]), 'fa-caret-down': (!status[data.name])}"></i>
-            </uib-accordion-heading>
-            <!--<ul class="nav-submenu list-unstyled" ng-if="n.subnav">-->
-                          <ul class="nav-submenu list-unstyled">
-                <!--<li ng-repeat="s in n.subnav">-->
-                   <li ng-repeat="data in categories">
-                  <a ui-sref="">{{data.name}}</a>
-                  </li>
-            </ul>
-        </div>
-    </uib-accordion>-->
-
-
                 <ul class="list-unstyled">
                   <li ng-repeat="data in categories"><a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}
                     </a>
-                    <ul>
+                    <!--<ul>
                       <li ng-repeat="data in categories">
                         <a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}
                     </a>
                       </li>
-                    </ul>
+                    </ul>-->
                     </li>
                 </ul>
               </div>
