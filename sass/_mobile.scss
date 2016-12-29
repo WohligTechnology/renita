@@ -25,7 +25,7 @@
     }
     .tab-list ul li a, .tab-list2 ul li a, .tab-list3 ul li a {
       font-size: 14px;
-      padding: 0px 15px 0px 10px;
+      padding: 8px 15px 8px 10px;
       display: inherit;
       width: 155px;
       white-space: nowrap;
@@ -44,6 +44,9 @@
 @media screen and (max-width: $screen-xs-max) {
   .slider-modal .modal-dialog {
    width: auto;
+}
+.renitamenu .btn-hide {
+    margin: 24px 0px 0 15px;
 }
   .mob-min-s{
     text-align: center;

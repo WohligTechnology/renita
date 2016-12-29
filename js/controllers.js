@@ -80,6 +80,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('headerctrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         var get = false;
+            $scope.oneAtATime = true;
+    $scope.status = {
+        isCustomHeaderOpen: false,
+        isFirstOpen: true,
+        isFirstDisabled: false
+    };
         $scope.getslide = "menu-out";
         $scope.getNav = function() {
             if ($scope.getslide == "menu-in") {
@@ -210,6 +216,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
 
+$scope.onOver = function (indexid) {
+    
+  }
         $scope.tabActive = function(id, indexid) {
           _.each($scope.category, function(key) {
 if (key._id == id) {
@@ -232,7 +241,7 @@ if (key._id == id) {
                             "border-color": $scope.category[0].category.color
                         };
                         key.stylea = {
-                            "color": "black"
+                            "color": "white"
                         };
                     } else {
                         // key.activetab = false;

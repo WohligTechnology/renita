@@ -29,10 +29,15 @@
               </div>
               <div class="homeborder">
                 <ul class="list-unstyled">
-                  <li ng-repeat="data in categories"><a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}</a></li>
-                  <!-- <li><a>Hair &amp; Scalp</a></li>
-                                    <li><a>Body</a></li>
-                                    <li><a>Mummy Derm</a></li> -->
+                  <li ng-repeat="data in categories"><a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}
+                    </a>
+                    <!--<ul>
+                      <li ng-repeat="data in categories">
+                        <a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}
+                    </a>
+                      </li>
+                    </ul>-->
+                    </li>
                 </ul>
               </div>
               <ul class="list-unstyled remaining">
@@ -44,12 +49,6 @@
                 <li><a ui-sref="blog">Blog</a></li>
                 <li><a ui-sref="clinic-policy">Clinic Policy</a></li>
                 <li><a ui-sref="contact">Contact Us</a></li>
-
-                <!-- <li><a>Skin</a></li>
-                                <li><a>Hair</a></li>
-                                <li><a>Diet</a></li>
-                                <li><a>Treatment in Focus</a></li> -->
-                <!-- <li><a ui-sref="privacy">Privacy Policy</a></li> -->
               </ul>
             </div>
           </div>
@@ -58,64 +57,3 @@
     </div>
   </div>
 </section>
-<!-- {
-  name: "Home",
-  classis: "active",
-  anchor: "/"
-},{
-  name: "Skin",
-  classis: "active",
-  anchor: "skin"
-},{
-  name: "Hair & Scalp",
-  classis: "active",
-  anchor: "hairscalp"
-},{
-  name: "Body",
-  classis: "active",
-  anchor: "body"
-},{
-  name: "Mummy Derm",
-  classis: "active",
-  anchor: "mummyderm"
-},{
-  name: "About Us",
-  classis: "active",
-  anchor: "about-us"
-},{
-  name: "Blog",
-  classis: "active",
-  anchor: "blog"
-},{
-  name: "Before & After",
-  classis: "active",
-  anchor: "/"
-},{
-  name: "Skin",
-  classis: "active",
-  anchor: "skin"
-},{
-  name: "Hair",
-  classis: "active",
-  anchor: "/"
-},{
-  name: "Diet",
-  classis: "active",
-  anchor: "/"
-},{
-  name: "Treatment in Focus",
-  classis: "active",
-  anchor: "/"
-},{
-  name: "Privacy Policy",
-  classis: "active",
-  anchor: "privacy"
-},{
-  name: "Terms & Conditions",
-  classis: "active",
-  anchor: "term-condition"
-},{
-  name: "Contact Us",
-  classis: "active",
-  anchor: "contact"
-} -->

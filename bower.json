@@ -1,5 +1,5 @@
 {
-  "name": "Dr Renita",
+  "name": "dr-renita",
   "description": "Dr Renita",
   "main": "gulpfile.js",
   "authors": [
@@ -37,5 +37,8 @@
   },
   "devDependencies": {
     "angular-translate": "^2.11.0"
+  },
+  "resolutions": {
+    "angular": ">=1.3"
   }
 }
