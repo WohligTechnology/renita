@@ -12,6 +12,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getHomeslider(function(data) {
             $scope.Homeslider = data.data;
+            console.log("Homeslider",  $scope.Homeslider);
             // _.each($scope.Homeslider,function(key){
             //   key.url=key.url.split('/');
             // })
