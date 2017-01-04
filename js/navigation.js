@@ -1,18 +1,10 @@
 
+// var adminurl = "http://www.wohlig.co.in/renitabackend/";
 var adminurl = "http://104.155.129.33:86/";
-// var adminurl = "http://104.155.129.33:86/";
-// var adminurl = "http://192.168.43.156:1337/";
-// var adminurl = "http://192.168.1.113:84/";
+
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
-// if(isproduction)
-// {
-//   adminURL =  "http://www.wohlig.co.in/demo/index.php";
-// }
-// else {
-//   adminURL = "http://localhost/demo/index.php";
-// }
 
 var navigationservice = angular.module('navigationservice', [])
 
