@@ -1,19 +1,32 @@
 <section scrolldown>
     <section>
-        <div class="head-top hidden-xs">
+        <div class="head-top hidden-xs" ng-if="blogHeader.image">
             <img src="img/blog.jpg" alt="" class="img-responsive" ng-if="!blogHeader.image">
             <img ng-src="{{blogHeader.image|uploadpath}}" alt="" class="img-responsive give-height" ng-if="blogHeader.image">
             <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
                 <img src="img/scroll-down.png" alt="Renita">
             </div>
         </div>
+        <div class="head-top hidden-xs" ng-if="!blogHeader.image">
+          <iframe width="640" height="360" src="https://www.youtube.com/embed/8unGk1Epz10" frameborder="0" allowfullscreen  style="
+           width: 100%;
+           height: 100vh;">
+
+           </iframe>
+        </div>
     </section>
     <section class="hidden-lg hidden-md hidden-sm">
-        <div class="head-top">
+        <div class="head-top" ng-if="blogHeader.image">
             <img ng-src="{{blogHeader.image1|uploadpath}}" alt="" class="img-responsive w100 " auto-heightfixed ng-if="blogHeader.image1">
             <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
                 <img src="img/scroll-down.png" alt="Renita">
             </div>
+        </div>
+        <div class="head-top" ng-if="!blogHeader.image">
+           <iframe width="640" height="360" src="https://www.youtube.com/embed/8unGk1Epz10" frameborder="0" allowfullscreen  style="
+           width: 100%;
+           height: 100vh;">
+             </iframe>
         </div>
     </section>
     <div id="top-scroll"></div>
