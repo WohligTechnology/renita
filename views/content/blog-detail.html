@@ -1,8 +1,8 @@
 <section scrolldown>
     <section>
         <div class="head-top hidden-xs">
-            <img src="img/blog.jpg" alt="" class="img-responsive" ng-if="blogHeader.image=='' || blog">
-            <img ng-src="{{blogHeader.image|uploadpath}}" alt="" class="img-responsive give-height" ng-if="blogHeader.image!=''">
+            <img src="img/blog.jpg" alt="" class="img-responsive" ng-if="!blogHeader.image">
+            <img ng-src="{{blogHeader.image|uploadpath}}" alt="" class="img-responsive give-height" ng-if="blogHeader.image">
             <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
                 <img src="img/scroll-down.png" alt="Renita">
             </div>
