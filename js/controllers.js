@@ -12,7 +12,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getHomeslider(function(data) {
             $scope.Homeslider = data.data;
-            console.log("Homeslider",  $scope.Homeslider);
+            console.log("Homeslider", $scope.Homeslider);
             // _.each($scope.Homeslider,function(key){
             //   key.url=key.url.split('/');
             // })
@@ -80,12 +80,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('headerctrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         var get = false;
-            $scope.oneAtATime = true;
-    $scope.status = {
-        isCustomHeaderOpen: false,
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
+        $scope.oneAtATime = true;
+        $scope.status = {
+            isCustomHeaderOpen: false,
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
         $scope.getslide = "menu-out";
         $scope.getNav = function() {
             if ($scope.getslide == "menu-in") {
@@ -195,7 +195,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("skin");
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
-          NavigationService.getCatByName($stateParams.id, function(data) {
+        NavigationService.getCatByName($stateParams.id, function(data) {
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
                 if ($stateParams.subid) {
@@ -216,18 +216,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
 
-$scope.onOver = function (indexid) {
-    
-  }
-        $scope.tabActive = function(id, indexid) {
-          _.each($scope.category, function(key) {
-if (key._id == id) {
-                  key.activetab = true;
-} else {
-                  key.activetab = false;
+        $scope.onOver = function(indexid) {
 
-              }
-          });
+        }
+        $scope.tabActive = function(id, indexid) {
+            _.each($scope.category, function(key) {
+                if (key._id == id) {
+                    key.activetab = true;
+                } else {
+                    key.activetab = false;
+
+                }
+            });
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
                 $scope.subCatid = id;
@@ -419,6 +419,12 @@ if (key._id == id) {
             index: 7,
             nghide: "MovieAwards.length  == 0"
         }];
+        $scope.oneAtATime = true;
+
+        $scope.groups = {
+            title: 'Dynamic Group Header - 1'
+
+        };
 
 
     })
@@ -484,9 +490,9 @@ if (key._id == id) {
         //     $scope.headerBefore = data.data;
         //
         // })
-         NavigationService.getheaderBefore(function(data) {
-              $scope.headerBefore = data.data;
-          })
+        NavigationService.getheaderBefore(function(data) {
+            $scope.headerBefore = data.data;
+        })
 
         NavigationService.getAllBefore(function(data) {
             $scope.before = data.data;

@@ -42,6 +42,34 @@
 }
 }
 @media screen and (max-width: $screen-xs-max) {
+  // accordion for skin page
+  .sub-cat{
+    padding: 0;
+    li{
+      border-bottom: 1px solid #499c83;
+      width: 100%;
+      padding: 10px;
+      a{
+        text-align: left;
+        font-size: 20px;
+      }
+    }
+    li:hover{
+      background-color: #499c83;
+    }
+    li:last-child{
+      border-bottom:none;
+    }
+  }
+  .panel-title{
+      font-weight: 600;
+  }
+  .panel-default{
+    .panel-heading{
+        background-color:  #499c83 ;
+    }
+  }
+  // End od css for accordion skin page
   .slider-modal .modal-dialog {
    width: auto;
 }
