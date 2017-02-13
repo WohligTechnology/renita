@@ -98,18 +98,21 @@
 
 
                   <uib-accordion close-others="true" ng-if="subCategory.subCatName">
+                          <i class="fa fa-angle-down" aria-hidden="true"></i>
 
                       <div uib-accordion-group class="panel-default">
+
                             <uib-accordion-heading ng-style="item.style" ng-class="{'panel-default':item.activetab}">
 
 
-                                {{subCategory.subCatName}}
+                                {{subCategory.subCatName}} {{subCategory.style}}
 
 
                             </uib-accordion-heading>
                             <ul class="sub-cat">
                               <li ng-repeat="item in category">
                                 <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index)">{{item.subCatName}}</a>
+                                <!-- <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index)">{{item.subCatName}}</a> -->
                               </li>
 
                             </ul>
