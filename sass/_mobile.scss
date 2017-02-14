@@ -69,13 +69,29 @@
         background-color:  #499c83 ;
     }
   }
-
-.fa-angle-down:before {
-  position: absolute;
-  right:  51px;
-  font-size: 40px;
-  color:#fff;
+.cat-menu{
+  .fa{
+    font-size: 30px;
+    margin-top: -0.2em;
+  }
+  .panel-heading {
+    padding: 1px 15px;
+    cursor: pointer;
+  }
+  .fa-angle-down:before {
+    // position: absolute;
+    // right:  51px;
+    // font-size: 40px;
+    color:#fff;
+  }
+  .fa-angle-up:before {
+    // position: absolute;
+    // right:  51px;
+    // font-size: 40px;
+    color:#fff;
+  }
 }
+
 
   // End od css for accordion skin page
   .slider-modal .modal-dialog {

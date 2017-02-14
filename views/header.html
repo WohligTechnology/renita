@@ -1,22 +1,40 @@
 <header>
-    <nav class="navbar navbar-default navbar-fixed-top sticky-header" scroll>
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="logo" width="150"> </a>
-            </div>
+   <nav class="navbar navbar-default navbar-fixed-top sticky-header" scroll>
+      <div class="container" ng-controller="headerctrl">
+         <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="logo" width="150"> </a>
+         </div>
 
-            <div class="collapse navbar-collapse" id="nav-collapse">
-                <div ng-include="template.menu" class="template menu"></div>
-                <div class="serach">
-                  <img src="img/search.png" alt="">
-                </div>
+         <div class="collapse navbar-collapse" id="nav-collapse">
+            <div ng-include="template.menu" class="template menu"></div>
+            <!-- search image -->
+            <div class="serach">
+               <img src="img/search.png" alt="">
             </div>
-            <div class="searchbox">
+            <!--End of  search image -->
+         </div>
+
+
+         <!-- UI with ui-select -->
+
+         <ui-select ng-model="selected.value" class="custom-select">
+            <ui-select-match>
+               <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+               <span ng-bind="item.name"></span>
+            </ui-select-choices>
+         </ui-select>
+
+         <!-- End of UI with ui-select -->
+
+
+         <!-- <div class="searchbox">
               <input type="text" placeholder="Search">
-            </div>
+            </div> -->
 
-        </div>
-    </nav>
+      </div>
+   </nav>
 </header>
 <!-- <header>
    <nav class="navbar navbar-default navbar-fixed-top sticky-header" scroll>

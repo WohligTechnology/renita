@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar','ui.select'])
 
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
@@ -109,7 +109,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.getAllCategory(function(data) {
             $scope.categories = data.data;
-        })
+        });
+        $scope.itemArray = [
+               {id: 1, name: 'Skin'},
+               {id: 2, name: 'Hair Loss treatments'},
+               {id: 3, name: 'scalp'},
+               {id: 4, name: 'Mommy Derm'},
+               {id: 5, name: 'Treatments'},
+           ];
+
+           $scope.selected = { value: $scope.itemArray[0] };
+
+
 
     })
 

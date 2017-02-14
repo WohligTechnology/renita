@@ -31,14 +31,14 @@
                </div>
             </div>
             <div class="row mt20 mb20">
-               <div class="col-md-3 col-sm-3">
+               <div class="col-md-3 col-sm-3" ng-if="category.length>0">
                   <div class="tab-list2">
                      <ul class="padding0 margin0">
                         <li ng-style="data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category" {{data}}><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
                      </ul>
                   </div>
                </div>
-               <div class="col-md-9 col-sm-9">
+               <div class="col-md-9 col-sm-9" ng-if="subCategory.subCatName">
                   <div class="tabs">
                      <div class="first">
                         <div class="data-title2 " style="border-bottom: 1px solid {{category[0].category.color}}">
@@ -97,30 +97,46 @@
             </flex-slider> -->
 
 
-                  <uib-accordion close-others="true" ng-if="subCategory.subCatName">
-                          <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <!-- uib accordion new mobile Ui -->
 
-                      <div uib-accordion-group class="panel-default">
+                  <uib-accordion close-others="true" class="cat-menu" ng-if="subCategory.subCatName">
+                    <div uib-accordion-group is-open=status.open1>
+                                                   <uib-accordion-heading>
+                                                       <h4><span>{{subCategory.subCatName}}</span>
+                                                           <i class="pull-right fa" ng-class="{'fa-angle-up': status.open1, 'fa-angle-down': !status.open1}"></i>
+                                                       </h4>
+                                                   </uib-accordion-heading>
+                                                   <div>
+                                                     <ul class="sub-cat">
+                                                       <li ng-repeat="item in category">
+                                                         <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index)">{{item.subCatName}}</a>
 
-                            <uib-accordion-heading ng-style="item.style" ng-class="{'panel-default':item.activetab}">
+                                                       </li>
+
+                                                     </ul>
+                                                   </div>
+                                               </div>
+
+                      <!-- <div uib-accordion-group class="panel-default">
+                        <uib-accordion-heading ng-style="item.style" ng-class="{'panel-default':item.activetab}">
 
 
-                                {{subCategory.subCatName}} {{subCategory.style}}
+                                <i class="fa fa-angle-down" aria-expand="false" aria-selected="false" aria-hidden="true" ng-if="subCategory.subCatName"></i>
 
 
                             </uib-accordion-heading>
                             <ul class="sub-cat">
                               <li ng-repeat="item in category">
                                 <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index)">{{item.subCatName}}</a>
-                                <!-- <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index)">{{item.subCatName}}</a> -->
+
                               </li>
 
                             </ul>
-                          </div>
+                          </div> -->
 
                       </uib-accordion>
 
-
+<!-- uib accordion new mobile Ui -->
 
 
                </div>

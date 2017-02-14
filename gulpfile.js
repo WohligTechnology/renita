@@ -18,6 +18,7 @@ var jsArray = [
     './bower_components/angular-swiper/dist/angular-swiper.js',
     './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
     './bower_components/angular-loading-bar/build/loading-bar.min.js',
+    './bower_components/angular-ui-select/dist/select.js',
     './js/app.js',
     './js/language.js',
     './js/controllers.js',
@@ -30,7 +31,8 @@ var jsArray = [
 var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
 
-var ftpString = "U2FsdGVkX19KJ4w0W1pxaUyRsJcjQO5RL98s2rfWnmpoGlaoPfxb8Ibdl0yu5NoHaLfSDmk2WnqRVpQfIAB8wv/Srsy/Y9OUyx5gs3ZutJ2MdGMlS8IaMJmfLSp77xVx1yuRD4aFlRuo0yQ/Ldy2pA==";
+var ftpString = "U2FsdGVkX1+biVN325A4sdlYzcJ15z1hRSBMMttkkPsfPkLX/t40MH3sWTtmmGKdM71c1ELu9TAUvrpyzOxcg7+fBreC6vNh5hIlRvkN5JGjHBYsku6fKnz4O52y2nPkm1QzO3sD+jG7HAUtYO/SVg==";
+
 var uploadingFolder = "tingdumb/renita";
 var password = "";
 
