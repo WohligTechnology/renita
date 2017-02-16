@@ -206,9 +206,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("skin");
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
+
         NavigationService.getCatByName($stateParams.id, function(data) {
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
+                console.log("    $scope.category",    $scope.category);
                 if ($stateParams.subid) {
                     $scope.tabActive($stateParams.subid, 0);
                 } else {
@@ -230,8 +232,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.onOver = function(indexid) {
 
         }
-        $scope.tabActive = function(id, indexid) {
-            _.each($scope.category, function(key) {
+        $scope.tabActive = function(id, indexid,item) {
+          _.each($scope.category, function(key) {
                 if (key._id == id) {
                     key.activetab = true;
                 } else {
@@ -241,6 +243,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
+                $scope.subCategory.style={
+                  "background-color": $scope.category[0].category.color,
+                  "border-color": $scope.category[0].category.color
+                }
+
+                $scope.subCategory.stylea={
+                  "color": "white" 
+                }
+
                 $scope.subCatid = id;
                 _.each($scope.category, function(key) {
                     key.style = {};
