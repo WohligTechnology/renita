@@ -102,11 +102,11 @@
 
                   <!-- uib accordion new mobile Ui -->
 
-                  <uib-accordion close-others="true" class="cat-menu" ng-if="subCategory.subCatName">
-                     <div uib-accordion-group is-open=status.open1>
-                        <uib-accordion-heading >
+                  <uib-accordion close-others="true" class="cat-menu" ng-if="category.length>=1">
+                     <div uib-accordion-group is-open=status.open1 >
+                        <uib-accordion-heading>
                            <h4 ng-style="subCategory.style" class="sub_cat_head"><span>{{subCategory.subCatName}}</span>
-                          <i class="pull-right fa" ng-class="{'fa-angle-up': status.open1, 'fa-angle-down': !status.open1}"></i>
+                          <i ng-if="category.length>1" class="pull-right fa" ng-class="{'fa-angle-up': status.open1, 'fa-angle-down': !status.open1}" ></i>
                           </h4>
                         </uib-accordion-heading>
                         <div>
