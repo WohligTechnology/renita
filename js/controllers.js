@@ -142,6 +142,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
     })
+.controller('BookingCtrl', function($scope, TemplateService, NavigationService) {
+
+        $scope.template = TemplateService.changecontent("booking");
+        $scope.menutitle = NavigationService.makeactive("Booking");
+        TemplateService.title = $scope.menutitle;
+        // $scope.navigation = NavigationService.getnav();
+
+
+    })
     .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("about-us");
@@ -249,7 +258,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
 
                 $scope.subCategory.stylea={
-                  "color": "white" 
+                  "color": "white"
                 }
 
                 $scope.subCatid = id;
@@ -1001,6 +1010,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             })
 
         }
+    }
+
+    $scope.bookingFun=function(){
+      $scope.bookTab=!$scope.bookTab;
+      console.log("im in");
+    };
+    $scope.contactForm={};
+    $scope.submitForm=function(contactForm){
+      console.log("contactForm",contactForm);
     }
 
 })

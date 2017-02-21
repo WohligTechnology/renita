@@ -61,6 +61,63 @@ nav li:hover .dropdown-menu {
     display: block;
 }
 
+.panel-heading {
+  padding: 0px !important;
+  cursor: pointer;
+}
+.center-text{
+  font-weight: 600;
+  text-align: center;
+}
+.error-msg{
+  color: red;
+  text-align: center;
+}
+.gender{
+
+border-bottom: 1px solid #ccc;
+  padding: 5px;
+  background-color: white;
+  label{
+      padding-left: 10px;
+      color: #cccccc;
+  }
+  .gender-mar{
+    margin-left: 10px;
+    display: inline;
+  }
+}
+.custom-form{
+  .form-group{
+    margin-bottom: 0px;
+    .form-control{
+      border: none;
+    border-bottom: 1px solid #ccc;
+    }
+    textarea{
+
+  border: 1px solid #ccc !important;
+  resize: none;
+
+
+    }
+  }
+}
+.super-form{
+  background-color: white;
+padding:10px 10px 20px;
+
+}
+
+.button-sub{
+    padding-top: 20px;
+    button{
+      width: 38%;
+      height: 40px;
+    }
+}
+
+
 .btn,
 a {
     cursor: pointer;
@@ -555,6 +612,7 @@ h4 {
 .footer-top {
     background-color: #252525;
     padding: 16px 0 10px;
+
 }
 
 .footer-bottom {
@@ -1217,9 +1275,9 @@ h4 {
   //   right: 15px;
   // }
 }
-input{
-  display: none;
-}
+// input{
+//   display: none;
+// }
 .custom-select .caret { display: none; }
 // .pops{
 //   .slider-text{
@@ -1423,6 +1481,35 @@ ul.myclass {
 .give-height {
     height: 100vh !important;
 }
+.book-tab{
+  position: fixed;
+  right: 65px;
+  bottom: 37px;
+  z-index: 1;
+    width: 322px;
+    transition: width ease 4s;
+  transform: translateY(calc(100% - 0px))
+}
+.openbook{
+  transform: translateY(39px);
+}
+.book_app{
+  font-weight: 600;
+color: #fff;
+font-family: 'OpenSans-Bold';
+background-color: #499c83 ;
+padding: 10px 20px;
+width:100%;
+cursor: pointer;
+.fa{
+  position: absolute;
+  right: 25px;
+  top:10px;
+  font-size: 20px;
+}
+}
+
+
 
 
 /* Start writing sass here */

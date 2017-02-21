@@ -111,9 +111,7 @@
                         </uib-accordion-heading>
                         <div>
                            <ul class="sub-cat">
-                             <!-- <div>
-                               <p>{{category}}</p>
-                             </div> -->
+                             
                               <li ng-repeat="item in category" ng-if="subCategory.subCatName!=item.subCatName">
                                  <a ng-click="tabActive(item._id,$index,item)">{{item.subCatName}}</a>
                                  <!-- <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index,item)">{{item.subCatName}}</a> -->
@@ -123,22 +121,6 @@
                         </div>
                      </div>
 
-                     <!-- <div uib-accordion-group class="panel-default">
-                        <uib-accordion-heading ng-style="item.style" ng-class="{'panel-default':item.activetab}">
-
-
-                                <i class="fa fa-angle-down" aria-expand="false" aria-selected="false" aria-hidden="true" ng-if="subCategory.subCatName"></i>
-
-
-                            </uib-accordion-heading>
-                            <ul class="sub-cat">
-                              <li ng-repeat="item in category">
-                                <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index)">{{item.subCatName}}</a>
-
-                              </li>
-
-                            </ul>
-                          </div> -->
 
                   </uib-accordion>
 

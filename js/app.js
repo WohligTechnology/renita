@@ -33,6 +33,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       templateUrl: "views/template.html",
       controller: 'ContactCtrl'
     })
+    .state('booking', {
+      url: "/booking",
+      templateUrl: "views/template.html",
+      controller: 'BookingCtrl'
+    })
     .state('team', {
       url: "/team",
       templateUrl: "views/template.html",
@@ -263,6 +268,35 @@ firstapp.directive('scrolldown', function($compile, $parse) {
     }
   };
 });
+firstapp.directive('onlyDigits', function() {
+    return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function(scope, element, attr, ctrl) {
+            var digits;
+
+            function inputValue(val) {
+                if (val) {
+                    if (attr.type == "tel") {
+                        digits = val.replace(/[^0-9\+\\]/g, '');
+                    } else {
+                        digits = val.replace(/[^0-9\-\\]/g, '');
+                    }
+
+
+                    if (digits !== val) {
+                        ctrl.$setViewValue(digits);
+                        ctrl.$render();
+                    }
+                    return parseInt(digits, 10);
+                }
+                return undefined;
+            }
+            ctrl.$parsers.push(inputValue);
+        }
+    };
+});
+
 
 // firstapp.filter('uploadpath', function() {
 //     return function(input, width, height, style) {
