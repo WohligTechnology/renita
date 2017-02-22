@@ -983,7 +983,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('footerctrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('footerctrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal,$timeout ) {
     $scope.template = TemplateService;
     NavigationService.getAllCategory(function(data) {
         $scope.footer = data.data;
@@ -1019,6 +1019,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.contactForm={};
     $scope.submitForm=function(contactForm){
       console.log("contactForm",contactForm);
+      NavigationService.booking(contactForm,function(data){
+        console.log("data",data);
+        if (data.value) {
+          console.log("im true");
+          // $scope.bookingFormComplete= true;
+            // $scope.bookTab=false;
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'views/modal/thankyou.html',
+                backdropClass: "backcolor"
+            });
+            $timeout(function() {
+                    $scope.bookTab=false;
+                  $scope.contactForm={};
+            }, 2000);
+
+        }else {
+          console.log("im false");
+        }
+      })
     }
 
 })

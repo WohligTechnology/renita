@@ -1,6 +1,7 @@
 
 // var adminurl = "http://www.wohlig.co.in/renitabackend/";
 var adminurl = "http://104.155.129.33:86/";
+var bookingUrl ="http://192.168.0.7:1337/"
 
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
@@ -237,6 +238,16 @@ var navigationservice = angular.module('navigationservice', [])
 
             $http({
                 url: adminurl + 'subscribe/saveData',
+                method: 'POST',
+                withCredentials: true,
+                data: signupData
+
+            }).success(callback);
+        },
+        booking: function(signupData, callback) {
+
+            $http({
+                url: bookingUrl + 'Booking/saveData',
                 method: 'POST',
                 withCredentials: true,
                 data: signupData

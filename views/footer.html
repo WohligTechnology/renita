@@ -92,8 +92,8 @@ BLOG
                <i class="fa fa-minus" ng-if="bookTab" aria-hidden="true"></i>
                <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
             </div>
-            <div class="bookForm">
-               <form name="user" ng-submit="submitForm(contactForm)" class="super-form">
+            <div class="bookForm" >
+               <form name="user" ng-submit="submitForm(contactForm)" class="super-form" >
                   <div>
                      <div class="custom-form">
                         <div class="form-group">
@@ -108,8 +108,8 @@ BLOG
                            <div class="gender">
                               <label for="">Gender</label>
                               <div class="gender-mar">
-                                 <input type="radio" name="gender" value="male" ng-model="contactForm.gender" checked required>Male
-                                 <input type="radio" name="gender" value="female" ng-model="contactForm.gender" required> Female
+                                 <input type="radio" name="gender" value="Male" ng-model="contactForm.gender" checked required>Male
+                                 <input type="radio" name="gender" value="Female" ng-model="contactForm.gender" required> Female
                               </div>
 
 
@@ -117,11 +117,11 @@ BLOG
                            </div>
                         </div>
                         <div class="form-group">
-                           <input type="text" class="form-control" name="telephone" placeholder="Mobile Number" ng-model="contactForm.telephone" only-digits required minlength="10" maxlength="10">
+                           <input type="text" class="form-control" name="telephone" placeholder="Mobile Number" ng-model="contactForm.mobile" only-digits required minlength="10" maxlength="10">
                            <!-- <div class="error-msg" ng-show="user.telephone.$error.required && user.telephone.$touched">Please Enter Your Telephone Number</div> -->
                         </div>
                         <div class="form-group">
-                           <input type="text" class="form-control" name="alternateContact" placeholder="Alternate Contact Number" ng-model="contactForm.alternate" only-digits required minlength="10" maxlength="10">
+                           <input type="text" class="form-control" name="alternateContact" placeholder="Alternate Contact Number" ng-model="contactForm.alternateMobile" only-digits required minlength="10" maxlength="10">
                            <!-- <div class="error-msg" ng-show="user.alternateContact.$error.required && user.alternateContact.$touched">Please Enter Your Alternate Contact Number</div> -->
 
                         </div>
@@ -137,7 +137,7 @@ BLOG
 
                         </div>
                         <div class="form-group">
-                           <select name="categorydata" class="form-control" ng-model="formData.occasion" required>
+                           <select name="categorydata" class="form-control" ng-model="contactForm.country" required>
                               <option ng-selected="true" value="">Select Country</option>
                               <option value="in">INDIA</option>
                               <option value="usa">USA</option>
@@ -147,10 +147,10 @@ BLOG
                            <div class="gender">
                               <label for="">Subject</label>
                               <div>
-                                 <input type="radio" name="appointment" value="appointment" required>Request for appointment
+                                 <input type="radio" name="appointment" value="appointment" required ng-model="contactForm.appointment">Request for appointment
                                  <br/>
-                                 <input type="radio" name="appointment" value="feedback" required>Feedback/Suggestion</br>
-                                 <input type="radio" name="appointment" value="complaint" required>Complaint</br>
+                                 <input type="radio" name="appointment" value="feedback" required ng-model="contactForm.feedback">Feedback/Suggestion</br>
+                                 <input type="radio" name="appointment" value="complaint" required ng-model="contactForm.complaint">Complaint</br>
                               </div>
 
 
@@ -175,7 +175,9 @@ BLOG
                      </div>
                   </div>
                </form>
+                 <!-- <h3 ng-if="bookingFormComplete">Thank you.</h3> -->
             </div>
+
          </div>
 
       </div>
