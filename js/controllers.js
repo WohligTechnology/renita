@@ -117,14 +117,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.categories = data.data;
         });
 
-        // $scope.subCatFun = function(name, id) {
-        //         if (name && id) {
-        //             $state.go('skin', {
-        //                 name: name,
-        //                 id: id
-        //             });
-        //         }
-        //     }
+        $scope.DoSearch = function(name, id) {
+          console.log("im in do search");
+                if (name && id) {
+                    $state.go('skin', {
+                        name: name,
+                        id: id
+                    });
+                }
+            };
+            $scope.myfun=function(){
+              console.log("im ij");
+            }
 
 
             $scope.itemArray = [

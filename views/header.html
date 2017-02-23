@@ -15,7 +15,7 @@
 
 
 
-            <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id)" style="width: 100%;" title="Search cat">
+            <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id);" style="width: 100%;" title="Search cat">
                 <ui-select-match class="serach-box" placeholder="Search...">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="item in navigation | filter: {name:$select.search}">
 

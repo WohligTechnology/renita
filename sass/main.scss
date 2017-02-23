@@ -1571,8 +1571,11 @@ cursor: pointer;
 }
 }
 
-input#focusser-0 {
+input#focusser-0,input#focusser-9,input#focusser-8,ui-select-focusser ui-select-offscreen, input#focusser-1,input#focusser-2,input#focusser-3,input#focusser-4,input#focusser-5,input#focusser-6,input#focusser-7 {
     display: none;
+}
+ui-select-focusser ui-select-offscreen{
+  display: none;
 }
 
 .serach-box{
