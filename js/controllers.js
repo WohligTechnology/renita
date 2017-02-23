@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar','ui.select'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar', 'ui.select'])
 
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
@@ -77,7 +77,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.navigation = data.data;
         });
     })
-    .controller('headerctrl', function($scope, TemplateService, NavigationService) {
+    .controller('headerctrl', function($scope, TemplateService, NavigationService, $state) {
         $scope.template = TemplateService;
         var get = false;
         $scope.oneAtATime = true;
@@ -106,19 +106,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $(window).scrollTop(0);
         });
         $.fancybox.close(true);
+        NavigationService.getnav(function(data) {
+            $scope.navigation = data.data;
+            // console.log($scope.navigation[0] ,"$scope.navigation[0] ");
+              //  $scope.selected = { value: $scope.navigation[0] };
+              //  console.log(" $scope.selected ", $scope.selected );
+        });
 
         NavigationService.getAllCategory(function(data) {
             $scope.categories = data.data;
         });
-        $scope.itemArray = [
-               {id: 1, name: 'Skin'},
-               {id: 2, name: 'Hair Loss treatments'},
-               {id: 3, name: 'scalp'},
-               {id: 4, name: 'Mommy Derm'},
-               {id: 5, name: 'Treatments'},
-           ];
 
-           $scope.selected = { value: $scope.itemArray[0] };
+        // $scope.subCatFun = function(name, id) {
+        //         if (name && id) {
+        //             $state.go('skin', {
+        //                 name: name,
+        //                 id: id
+        //             });
+        //         }
+        //     }
+
+
+            $scope.itemArray = [
+                   {id: 1, name: 'Skin'},
+                   {id: 2, name: 'Hair Loss treatments'},
+                   {id: 3, name: 'scalp'},
+                   {id: 4, name: 'Mommy Derm'},
+                   {id: 5, name: 'Treatments'},
+               ];
+
+               $scope.selected = { value: $scope.itemArray[0] };
+
 
 
 
@@ -142,7 +160,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
     })
-.controller('BookingCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('BookingCtrl', function($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("booking");
         $scope.menutitle = NavigationService.makeactive("Booking");
@@ -219,7 +237,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getCatByName($stateParams.id, function(data) {
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
-                console.log("    $scope.category",    $scope.category);
+                console.log("    $scope.category", $scope.category);
                 if ($stateParams.subid) {
                     $scope.tabActive($stateParams.subid, 0);
                 } else {
@@ -241,8 +259,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.onOver = function(indexid) {
 
         }
-        $scope.tabActive = function(id, indexid,item) {
-          _.each($scope.category, function(key) {
+        $scope.tabActive = function(id, indexid, item) {
+            _.each($scope.category, function(key) {
                 if (key._id == id) {
                     key.activetab = true;
                 } else {
@@ -252,13 +270,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
-                $scope.subCategory.style={
-                  "background-color": $scope.category[0].category.color,
-                  "border-color": $scope.category[0].category.color
+                $scope.subCategory.style = {
+                    "background-color": $scope.category[0].category.color,
+                    "border-color": $scope.category[0].category.color
                 }
 
-                $scope.subCategory.stylea={
-                  "color": "white"
+                $scope.subCategory.stylea = {
+                    "color": "white"
                 }
 
                 $scope.subCatid = id;
@@ -983,7 +1001,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('footerctrl', function($scope, TemplateService, NavigationService, $timeout,$uibModal,$timeout ) {
+.controller('footerctrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $timeout) {
     $scope.template = TemplateService;
     NavigationService.getAllCategory(function(data) {
         $scope.footer = data.data;
@@ -1012,33 +1030,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     }
 
-    $scope.bookingFun=function(){
-      $scope.bookTab=!$scope.bookTab;
-      console.log("im in");
+    $scope.bookingFun = function() {
+        $scope.bookTab = !$scope.bookTab;
+        console.log("im in");
     };
-    $scope.contactForm={};
-    $scope.submitForm=function(contactForm){
-      console.log("contactForm",contactForm);
-      NavigationService.booking(contactForm,function(data){
-        console.log("data",data);
-        if (data.value) {
-          console.log("im true");
-          // $scope.bookingFormComplete= true;
-            // $scope.bookTab=false;
-            $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/thankyou.html',
-                backdropClass: "backcolor"
-            });
-            $timeout(function() {
-                    $scope.bookTab=false;
-                  $scope.contactForm={};
-            }, 2000);
+    $scope.contactForm = {};
+    $scope.submitForm = function(contactForm) {
+        console.log("contactForm", contactForm);
+        NavigationService.booking(contactForm, function(data) {
+            console.log("data", data);
+            if (data.value) {
+                console.log("im true");
+                // $scope.bookingFormComplete= true;
+                // $scope.bookTab=false;
+                $uibModal.open({
+                    animation: true,
+                    templateUrl: 'views/modal/thankyou.html',
+                    backdropClass: "backcolor"
+                });
+                $timeout(function() {
+                    $scope.bookTab = false;
+                    $scope.contactForm = {};
+                }, 2000);
 
-        }else {
-          console.log("im false");
-        }
-      })
+            } else {
+                console.log("im false");
+            }
+        })
     }
 
 })

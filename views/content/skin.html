@@ -111,8 +111,9 @@
                         </uib-accordion-heading>
                         <div>
                            <ul class="sub-cat">
-                             
-                              <li ng-repeat="item in category" ng-if="subCategory.subCatName!=item.subCatName">
+
+                              <li ng-repeat="item in category" class ="accrordio-li"
+                               ng-if="subCategory.subCatName!=item.subCatName">
                                  <a ng-click="tabActive(item._id,$index,item)">{{item.subCatName}}</a>
                                  <!-- <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index,item)">{{item.subCatName}}</a> -->
                                </li>

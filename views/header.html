@@ -11,20 +11,64 @@
             <div class="serach">
                <img src="img/search.png" alt="">
             </div>
+            <div class="dropdown before-triangle">
+
+
+
+            <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id)" style="width: 100%;" title="Search cat">
+                <ui-select-match class="serach-box" placeholder="Search...">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="item in navigation | filter: {name:$select.search}">
+
+
+                        <div >
+                            <span ng-bind-html="item.name"></span>
+
+                        </div>
+
+                </ui-select-choices>
+            </ui-select>
+    </div>
             <!--End of  search image -->
          </div>
 
 
          <!-- UI with ui-select -->
 
-         <ui-select ng-model="selected.value" class="custom-select">
+         <!-- <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name,movie.selected._id)" style="width: 100%;" title="Search Movie" class="search-drop">
+             <ui-select-match placeholder="Search for a Movie">{{$select.selected.name}}</ui-select-match>
+             <ui-select-choices repeat="movie in allMovieName | filter: {name:$select.search}">
+                 <div class="movi-src-rslt">
+                     <div class="display-inline w60">
+
+                         <img ng-src="{{movie.smallImage|uploadpath}}" alt="" ng-if="movie.releaseType=='Past'">
+                         <img ng-src="{{movie.recentSmall|uploadpath}}" alt="" ng-if="movie.releaseType=='Recent'">
+                         <img ng-src="{{movie.upcomingSmall|uploadpath}}" alt="" ng-if="movie.releaseType=='Upcoming'">
+                     </div>
+                     <div class="display-inline ml15">
+                         <span ng-bind-html="movie.name | highlight: $select.search"></span>
+                         <span ng-if="movie.year">({{movie.year}})</span>
+                     </div>
+                 </div>
+             </ui-select-choices>
+         </ui-select> -->
+
+         <!-- <ui-select ng-model="selected.value" class="custom-select">
+            <ui-select-match>
+               <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="item in navigation | filter : $select.search track by item._id">
+               <span ng-bind="item.name"></span>
+            </ui-select-choices>
+         </ui-select> -->
+
+         <!-- <ui-select ng-model="selected.value" class="custom-select">
             <ui-select-match>
                <span ng-bind="$select.selected.name"></span>
             </ui-select-match>
             <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
-               <span ng-bind="item.name"></span>
+               <span ng-bind="item.name" ng-click="myfun(item);"></span>
             </ui-select-choices>
-         </ui-select>
+         </ui-select> -->
 
          <!-- End of UI with ui-select -->
 

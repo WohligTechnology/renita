@@ -103,7 +103,59 @@ border-bottom: 1px solid #ccc;
     }
   }
 }
+// .select.searchEnabled{
+//   float: right;
+//   width: 20%;
+// }
+// .serach-box {
+//   float: right;
+//   // width: 20%;
+//   .ui-select-search{
+//     float: right;
+//     // width: 20%;
+//     input{
+//       float: right;
+//       // width: 20%;
+//     }
+//   }
+// }
 
+// .serach-box:focus{
+//   float: right;
+//   // width: 20%;
+// }
+
+.dropdown {
+    position: absolute;
+    width: 44%;
+    bottom: -64%;
+    right: 0;
+    input.form-control.ui-select-search.ng-valid.ng-touched.ng-dirty.ng-valid-parse.ng-empty{
+      width:54% !important;
+      float: none !important;
+    }
+    span.btn.btn-default.form-control.ui-select-toggle{
+      width:54%;
+      text-align: left;
+      background: #ccc;
+    }
+    .ui-select-search{
+      width:54%;
+    }
+}
+.before-triangle{
+  &:before{
+    content: "";
+    top: -43px;
+    left: 50%;
+    z-index: 20;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ccc;
+    transform: translateX(-50%);
+  }
+}
 .modal-backdrop.backcolor {
   opacity: 0.93;
 }
@@ -1263,12 +1315,13 @@ h4 {
   }
 }
 .custom-select
-.dropup, .dropdown {
+.dropup {
       // background-color: #eee;
   position: absolute;
   margin-top: 10px;
   right: 24%;
-  width: 21%
+  // width: 21%
+  width: 50%
 
   // &:before{
   //   content: "";
@@ -1281,7 +1334,8 @@ h4 {
   // }
 }
 input.form-control.ui-select-search.ng-valid.ng-touched.ng-dirty.ng-valid-parse.ng-empty {
-    width: 100% !important;
+    width: 20% !important;
+    float: right;
 }
 // input{
 //   display: none;
@@ -1517,7 +1571,15 @@ cursor: pointer;
 }
 }
 
+input#focusser-0 {
+    display: none;
+}
 
+.serach-box{
+  .caret{
+    display: none;
+  }
+}
 
 
 /* Start writing sass here */
