@@ -140,6 +140,11 @@ firstapp.directive('autoHeight', function($compile, $parse) {
     }
   };
 });
+firstapp.filter('trusted', ['$sce', function($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}]);
 firstapp.directive('fancyboxBox', function($document) {
   return {
     restrict: 'EA',

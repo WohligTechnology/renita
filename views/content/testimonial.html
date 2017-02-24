@@ -28,13 +28,20 @@
                   <img ng-src="{{item.image|uploadpath}}" alt="">
                 </div>
                 <div class="only-video" ng-if="item.video">
-                  <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
+                  <a class="fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
                     <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="" src="http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg"
                       class="doneLoading" draggable="false">
                     <div class="circle">
                       <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false">
                     </div>
                   </a>
+                  <!-- <iframe id="video" width="420" height="315" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0" frameborder="0" allowfullscreen></iframe>
+                  <div class="video">
+                    <video controls="controls">
+                      <source src="https://www.youtube.com/embed/{{item.video|youtubethumb:true | trusted}}?autoplay=1" type="video/mp4">
+                    </video>
+                  </div> -->
+
                 </div>
               </div>
             </div>

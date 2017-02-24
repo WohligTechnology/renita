@@ -130,6 +130,7 @@ border-bottom: 1px solid #ccc;
     width: 44%;
     bottom: -64%;
     right: 0;
+    z-index: 1;
     input.form-control.ui-select-search.ng-valid.ng-touched.ng-dirty.ng-valid-parse.ng-empty{
       width:54% !important;
       float: none !important;
@@ -1584,7 +1585,12 @@ ui-select-focusser ui-select-offscreen{
   }
 }
 
-
+.dropdown-menu{
+min-width: 271px;
+padding: 5px 12px;
+margin: 0 0 0;
+border-radius: 0;
+}
 /* Start writing sass here */
 
 @import "fancybox-override";

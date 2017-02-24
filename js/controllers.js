@@ -113,6 +113,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
               //  console.log(" $scope.selected ", $scope.selected );
         });
 
+        $scope.gotoSearch=function(){
+              $scope.searchExp = !    $scope.searchExp;
+        }
+
         NavigationService.getAllCategory(function(data) {
             $scope.categories = data.data;
         });
@@ -1057,8 +1061,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.contactForm = {};
                 }, 2000);
 
-            } else {
-                console.log("im false");
+            } else if (!data.value) {
+              if (data.data === 'Please Enter Email ID') {
+                $scope.message = "Please Enter Valid Email ID";
+              }
             }
         })
     }

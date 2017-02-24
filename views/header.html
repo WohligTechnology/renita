@@ -8,10 +8,10 @@
          <div class="collapse navbar-collapse" id="nav-collapse">
             <div ng-include="template.menu" class="template menu"></div>
             <!-- search image -->
-            <div class="serach">
+            <div class="serach" ng-click="gotoSearch();">
                <img src="img/search.png" alt="">
             </div>
-            <div class="dropdown before-triangle">
+            <div class="dropdown before-triangle" ng-if="searchExp">
 
 
 
