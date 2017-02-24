@@ -760,6 +760,9 @@ h4 {
     iframe{
       height: 350px;
     }
+    .blog-iframe {
+      height: 100%;
+    }
 }
 
 .blog-img-front {
@@ -1548,17 +1551,36 @@ ul.myclass {
 .give-height {
     height: 100vh !important;
 }
+
 .book-tab{
   position: fixed;
   right: 65px;
-  bottom: 37px;
-  z-index: 1;
+  bottom: 0;
+  z-index: 11;
     width: 322px;
     transition: width ease 4s;
-  transform: translateY(calc(100% - 0px))
+      @include transition(all 300ms ease);
+}
+.book-tab-sec {
+  right: 400px;
+  &.book-abt{
+    position: absolute;
+bottom: 0;
+right: 65px;
+  }
+}
+.bk-bot {
+  @include transform(translateY(100%));
+}
+.book-tab.touch-down {
+    bottom: 223px;
+}
+footer{
+  position: relative;
 }
 .openbook{
-  transform: translateY(39px);
+  @include transform(translateY(0%));
+
 }
 .book_app{
   font-weight: 600;

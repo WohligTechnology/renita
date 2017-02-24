@@ -281,6 +281,24 @@ firstapp.directive('scrolldown', function($compile, $parse) {
     }
   };
 });
+
+firstapp.directive('touchDown', function($compile, $parse) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      var $element = $(element);
+      $(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 30) {
+      $element.addClass('touch-down');
+   } else {
+     $element.removeClass('touch-down');
+   }
+});
+    }
+  };
+});
+
 firstapp.directive('onlyDigits', function() {
     return {
         require: 'ngModel',
@@ -310,6 +328,20 @@ firstapp.directive('onlyDigits', function() {
     };
 });
 
+
+// firstapp.directive("scrolladdclass", function ($window) {
+//   return function (scope, element, attrs) {
+//     angular.element($window).bind("scroll", function () {
+//       var windowHeight = $( document ).height() - 230;
+//               console.log(windowHeight);
+//       if (this.pageYOffset >= windowHeight) {
+//         element.addClass('addfixed');
+//       } else {
+//         element.removeClass('addfixed');
+//       }
+//     });
+//   };
+// });
 
 // firstapp.filter('uploadpath', function() {
 //     return function(input, width, height, style) {

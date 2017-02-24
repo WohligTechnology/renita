@@ -86,13 +86,22 @@ BLOG
             </div>
          </div>
 
-         <div class="book-tab" ng-class="{'openbook': bookTab}">
-            <div class="book_app text-center" ng-click="bookingFun();">
+
+         <div class="book-tab" ng-click="bookTab=!bookTab;" ng-class="{'openbook hidden': bookTab}"  touch-down>
+           <div class="book_app text-center">
+              BOOK AN APPOINTEMENT
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
+           </div>
+         </div>
+
+         <div class="book-tab bk-bot" ng-class="{'openbook': bookTab}" ng-init="bookTab = false">
+            <div class="book_app text-center" ng-click="bookTab=!bookTab;">
                BOOK AN APPOINTEMENT
                <i class="fa fa-minus" ng-if="bookTab" aria-hidden="true"></i>
                <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
             </div>
-            <div class="bookForm" >
+            <div class="bookForm" ng-if="bookTab">
                <form name="user" ng-submit="submitForm(contactForm)" class="super-form" >
                   <div>
                      <div class="custom-form">
@@ -180,6 +189,7 @@ BLOG
             </div>
 
          </div>
+
 
       </div>
    </div>
