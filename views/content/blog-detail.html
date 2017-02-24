@@ -7,13 +7,13 @@
                 <img src="img/scroll-down.png" alt="Renita">
             </div>
         </div>
-        <div class="head-top hidden-xs" ng-if="!blogHeader.image">
+        <!-- <div class="head-top hidden-xs" ng-if="!blogHeader.image">
           <iframe width="640" height="360" src="https://www.youtube.com/embed/8unGk1Epz10" frameborder="0" allowfullscreen  style="
            width: 100%;
            height: 100vh;">
 
            </iframe>
-        </div>
+        </div> -->
     </section>
     <section class="hidden-lg hidden-md hidden-sm">
         <div class="head-top" ng-if="blogHeader.image">
@@ -22,12 +22,12 @@
                 <img src="img/scroll-down.png" alt="Renita">
             </div>
         </div>
-        <div class="head-top" ng-if="!blogHeader.image">
+        <!-- <div class="head-top" ng-if="!blogHeader.image">
            <iframe width="640" height="360" src="https://www.youtube.com/embed/8unGk1Epz10" frameborder="0" allowfullscreen  style="
            width: 100%;
            height: 100vh;">
              </iframe>
-        </div>
+        </div> -->
     </section>
     <div id="top-scroll"></div>
     <section class="mt50 second">
@@ -35,8 +35,21 @@
             <div class="row mt20">
                 <div class="col-md-8">
                     <div class="blog-left-side">
-                        <div class="blog-img">
+                        <div class="blog-img" ng-if="blog.blog.image && !blog.blog.video">
                             <img ng-src="{{blog.blog.image|serverimage}}" alt="" class="img-responsive">
+                        </div>
+                        <div class="blog-img">
+                          <div ng-if="blog.blog.video">
+                            <a class="various fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{blog.blog.video|youtubethumb:true}}?autoplay=1">
+                              <div class="blog-img relate blog-img-front">
+                                <img ng-src="http://img.youtube.com/vi/{{blog.blog.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100"
+                                  ng-if="blog.blog.video">
+                                  <div class="">
+                                    <img src="img/play.png" alt="" width="45px" class="img-responsive doneLoading" draggable="false">
+                                  </div>
+                              </div>
+                            </a>
+                          </div>
                         </div>
                         <div class="blog-title">
                             <h1 class="color-primary font-bold text-up">{{blog.blog.name}}</h1>

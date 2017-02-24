@@ -9,9 +9,12 @@ var firstapp = angular.module('firstapp', [
   'angulartics.google.analytics'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,$sceDelegateProvider) {
   // for http request with session
   $httpProvider.defaults.withCredentials = true;
+  $sceDelegateProvider.resourceUrlWhitelist([
+  'self',
+  'https://www.youtube.com/embed/**']);
   $stateProvider
     .state('home', {
       url: "/",
@@ -140,11 +143,16 @@ firstapp.directive('autoHeight', function($compile, $parse) {
     }
   };
 });
-firstapp.filter('trusted', ['$sce', function($sce) {
-    return function(url) {
-        return $sce.trustAsResourceUrl(url);
-    };
+firstapp.filter('trusted', ['$sce', function ($sce) {
+ return function (url) {
+   return $sce.trustAsResourceUrl(url);
+ };
 }]);
+// firstapp.filter('trusted', ['$sce', function($sce) {
+//     return function(url) {
+//         return $sce.trustAsResourceUrl(url);
+//     };
+// }]);
 firstapp.directive('fancyboxBox', function($document) {
   return {
     restrict: 'EA',

@@ -987,6 +987,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //  GET BLOG DETAIL
     NavigationService.getOneBlog($state.params.id, function(data) {
         $scope.blog = data.data;
+        console.log("  $scope.blog",  $scope.blog);
         if ($scope.blog.blog.tag == "") {
             $scope.tagmsg = "No Tags.";
         } else {
