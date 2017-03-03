@@ -42,6 +42,13 @@
 }
 }
 @media screen and (max-width: $screen-xs-max) {
+  .book-tab {
+      right: 0;
+      width: 290px;
+    }
+    .book-tab.touch-down {
+      bottom: 629px !important;
+    }
   // accordion for skin page
   .sub-cat{
     li :active{
@@ -298,8 +305,4 @@ width: 100% !important;
     }
 
 }
-.book-tab {
-    right: 0;
-    width: 320px;
-  }
 }

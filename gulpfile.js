@@ -33,7 +33,8 @@ var replacehostTo = "http://wohlig.co.in/demo2/";
 
 var ftpString = "U2FsdGVkX1+biVN325A4sdlYzcJ15z1hRSBMMttkkPsfPkLX/t40MH3sWTtmmGKdM71c1ELu9TAUvrpyzOxcg7+fBreC6vNh5hIlRvkN5JGjHBYsku6fKnz4O52y2nPkm1QzO3sD+jG7HAUtYO/SVg==";
 
-var uploadingFolder = "tingdumb/renita";
+var uploadingFolder = "renita";
+// var uploadingFolder = "tingdumb/renita";
 var password = "";
 
 

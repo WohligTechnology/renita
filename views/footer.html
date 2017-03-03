@@ -87,22 +87,24 @@ BLOG
          </div>
 
 
-         <div class="book-tab" ng-click="bookTab=!bookTab;" ng-class="{'openbook hidden': bookTab}"  touch-down>
-           <div class="book_app text-center">
-              BOOK AN APPOINTEMENT
-              <i class="fa fa-minus" aria-hidden="true"></i>
-              <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
-           </div>
+         <div class="book-tab" ng-click="bookTab=!bookTab;" ng-class="{'openbook hidden': bookTab}" touch-down>
+            <div class="book_app text-center">
+               <!-- BOOK AN APPOINTEMENT -->
+               CONTACT US
+               <i class="fa fa-minus" aria-hidden="true"></i>
+               <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
+            </div>
          </div>
 
          <div class="book-tab bk-bot" ng-class="{'openbook': bookTab}" ng-init="bookTab = false">
             <div class="book_app text-center" ng-click="bookTab=!bookTab;">
-               BOOK AN APPOINTEMENT
+               <!-- BOOK AN APPOINTEMENT -->
+               CONTACT US
                <i class="fa fa-minus" ng-if="bookTab" aria-hidden="true"></i>
                <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
             </div>
             <div class="bookForm" ng-if="bookTab">
-               <form name="user" ng-submit="submitForm(contactForm)" class="super-form" >
+               <form name="user" ng-submit="submitForm(contactForm)" class="super-form">
                   <div>
                      <div class="custom-form">
                         <div class="form-group">
@@ -114,16 +116,17 @@ BLOG
                            <!-- <div class="error-msg" ng-show="user.age.$error.required && user.age.$touched">Please Enter Your Age</div> -->
                         </div>
                         <div class="form-group">
-                           <div class="gender">
-                              <label for="">Gender</label>
-                              <div class="gender-mar">
+                           <!-- <div class="gender"> -->
+                           <!-- <label for="">Gender</label> -->
+                           <!-- <div class="gender-mar">
                                  <input type="radio" name="gender" value="Male" ng-model="contactForm.gender" checked required>Male
                                  <input type="radio" name="gender" value="Female" ng-model="contactForm.gender" required> Female
-                              </div>
+                              </div> -->
+                           <input type="text" class="form-control" name="gender" placeholder="Gender" ng-model="contactForm.gender" required>
 
 
 
-                           </div>
+                           <!-- </div> -->
                         </div>
                         <div class="form-group">
                            <input type="text" class="form-control" name="telephone" placeholder="Mobile Number" ng-model="contactForm.mobile" only-digits required minlength="10" maxlength="10">
@@ -147,20 +150,31 @@ BLOG
 
                         </div>
                         <div class="form-group">
-                           <select name="categorydata" class="form-control" ng-model="contactForm.country" required>
+                           <!-- <select name="categorydata" class="form-control" ng-model="contactForm.country" required>
                               <option ng-selected="true" value="">Select Country</option>
                               <option value="in">INDIA</option>
                               <option value="usa">USA</option>
-                           </select>
+                           </select> -->
                         </div>
                         <div class="form-group">
                            <div class="gender">
                               <label for="">Subject</label>
-                              <div>
-                                 <input type="radio" name="appointment" value="appointment" required ng-model="contactForm.appointment">Request for appointment
-                                 <br/>
-                                 <input type="radio" name="appointment" value="feedback" required ng-model="contactForm.feedback">Feedback/Suggestion</br>
-                                 <input type="radio" name="appointment" value="complaint" required ng-model="contactForm.complaint">Complaint</br>
+                              <div class="label-color">
+                                 <div class="custom-radio">
+                                    <!-- <input type="radio" name="appointment" value="appointment" required ng-model="contactForm.appointment">Request for appointment -->
+                                    <input type="radio" id="option1" name="radio1" ng-model="contactForm.appointment" value="appointment" required>
+                                    <label for="option1"><span></span>Request for appointment</label>
+                                 </div>
+                                 <div class="custom-radio">
+                                    <!-- <input type="radio" name="appointment" value="feedback" required ng-model="contactForm.feedback">-->
+                                    <input type="radio" id="option2" name="radio1" ng-model="contactForm.feedback" value="feedback" required>
+                                    <label for="option2"><span></span>Feedback/Suggestion</label>
+                                 </div>
+                                 <div class="custom-radio">
+                                    <!-- <input type="radio" name="appointment" value="complaint" required ng-model="contactForm.complaint"></br> -->
+                                    <input type="radio" id="option3" name="radio1" value="complaint" required ng-model="contactForm.complaint">
+                                    <label for="option3"><span></span>Complaint</label>
+                                 </div>
                               </div>
 
 
@@ -170,7 +184,10 @@ BLOG
                            </div>
                         </div>
                         <div class="form-group">
-                           <textarea class="form-control" rows="5" cols="50" name="message" placeholder="Message" ng-model="contactForm.message" required></textarea>
+                          <div class="gender">
+                             <label for="">Message</label>
+                           <textarea class="form-control" rows="5" cols="50" name="message" ng-model="contactForm.message" required></textarea>
+                         </div>
                            <!-- <div class="error-msg" ng-show="user.message.$error.required && user.message.$touched">Plaese Enter Your Message</div> -->
 
 
@@ -185,7 +202,7 @@ BLOG
                      </div>
                   </div>
                </form>
-                 <!-- <h3 ng-if="bookingFormComplete">Thank you.</h3> -->
+               <!-- <h3 ng-if="bookingFormComplete">Thank you.</h3> -->
             </div>
 
          </div>
