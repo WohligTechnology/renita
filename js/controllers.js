@@ -109,12 +109,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getnav(function(data) {
             $scope.navigation = data.data;
             // console.log($scope.navigation[0] ,"$scope.navigation[0] ");
-              //  $scope.selected = { value: $scope.navigation[0] };
-              //  console.log(" $scope.selected ", $scope.selected );
+            //  $scope.selected = { value: $scope.navigation[0] };
+            //  console.log(" $scope.selected ", $scope.selected );
         });
 
-        $scope.gotoSearch=function(){
-              $scope.searchExp = !    $scope.searchExp;
+        $scope.gotoSearch = function() {
+            $scope.searchExp = !$scope.searchExp;
         }
 
         NavigationService.getAllCategory(function(data) {
@@ -122,28 +122,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.DoSearch = function(name, id) {
-          console.log("im in do search");
-                if (name && id) {
-                    $state.go('skin', {
-                        name: name,
-                        id: id
-                    });
-                }
-            };
-            $scope.myfun=function(){
-              console.log("im ij");
+            console.log("im in do search");
+            if (name && id) {
+                $state.go('skin', {
+                    name: name,
+                    id: id
+                });
             }
+        };
+        $scope.myfun = function() {
+            console.log("im ij");
+        }
 
 
-            $scope.itemArray = [
-                   {id: 1, name: 'Skin'},
-                   {id: 2, name: 'Hair Loss treatments'},
-                   {id: 3, name: 'scalp'},
-                   {id: 4, name: 'Mommy Derm'},
-                   {id: 5, name: 'Treatments'},
-               ];
+        $scope.itemArray = [{
+            id: 1,
+            name: 'Skin'
+        }, {
+            id: 2,
+            name: 'Hair Loss treatments'
+        }, {
+            id: 3,
+            name: 'scalp'
+        }, {
+            id: 4,
+            name: 'Mommy Derm'
+        }, {
+            id: 5,
+            name: 'Treatments'
+        }, ];
 
-               $scope.selected = { value: $scope.itemArray[0] };
+        $scope.selected = {
+            value: $scope.itemArray[0]
+        };
 
 
 
@@ -167,6 +178,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $('.back-to-top ').fadeOut();
             }
         });
+
+
+        $(document).ready(function() {
+            console.log("im in");
+            $('.maps').click(function() {
+                $('.maps iframe').css("pointer-events", "auto");
+                console.log("im in");
+            });
+
+
+            $(".maps").mouseleave(function() {
+                $('.maps iframe').css("pointer-events", "none");
+            });
+        });
+
+
+
     })
     .controller('BookingCtrl', function($scope, TemplateService, NavigationService) {
 
@@ -987,7 +1015,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //  GET BLOG DETAIL
     NavigationService.getOneBlog($state.params.id, function(data) {
         $scope.blog = data.data;
-        console.log("  $scope.blog",  $scope.blog);
+        console.log("  $scope.blog", $scope.blog);
         if ($scope.blog.blog.tag == "") {
             $scope.tagmsg = "No Tags.";
         } else {
@@ -1063,9 +1091,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }, 2000);
 
             } else if (!data.value) {
-              if (data.data === 'Please Enter Email ID') {
-                $scope.message = "Please Enter Valid Email ID";
-              }
+                if (data.data === 'Please Enter Email ID') {
+                    $scope.message = "Please Enter Valid Email ID";
+                }
             }
         })
     }
