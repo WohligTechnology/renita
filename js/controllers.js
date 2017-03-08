@@ -193,7 +193,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         });
 
-
+$scope.contactForm={};
+$scope.submitForm=function(contactForm){
+  console.log("contactForm",contactForm);
+}
 
     })
     .controller('BookingCtrl', function($scope, TemplateService, NavigationService) {
