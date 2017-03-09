@@ -276,6 +276,8 @@ a {
   .navbar-brand {
     height: 56px;
     padding: 10px 15px;
+    position: relative;
+    z-index: 999;
   }
   .collapse {
     height: 56px;
@@ -1507,7 +1509,7 @@ footer {
   font-weight: 600;
   color: #fff;
   font-family: 'OpenSans-Bold';
-  background-color: #499c83;
+  background-color: darken($brown-color, 40%);
   padding: 10px 20px;
   width: 100%;
   cursor: pointer;
