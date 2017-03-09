@@ -161,7 +161,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('ContactCtrl', function($scope, TemplateService, NavigationService) {
+.controller('ContactCtrl', function($scope, TemplateService, NavigationService,$uibModal,$timeout) {
 
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact");
@@ -193,10 +193,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         });
 
-$scope.contactForm={};
-$scope.submitForm=function(contactForm){
-  console.log("contactForm",contactForm);
+$scope.contactForm = {};
+  $scope.showform=false;
+$scope.submitForm = function(contactForm) {
+    console.log("contactForm", contactForm);
+    NavigationService.booking(contactForm, function(data) {
+        console.log("data", data);
+        if (data.value) {
+            console.log("im true");
+            // $scope.bookingFormComplete= true;
+            $scope.showform=true;
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'views/modal/thankyou.html',
+                backdropClass: "backcolor"
+            });
+            $timeout(function() {
+                $scope.showform=false;
+                $scope.contactForm = {};
+            }, 2000);
+
+        } else if (!data.value) {
+            if (data.data === 'Please Enter Email ID') {
+                $scope.message = "Please Enter Valid Email ID";
+            }
+        }
+    })
 }
+
+
 
     })
     .controller('BookingCtrl', function($scope, TemplateService, NavigationService) {
