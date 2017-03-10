@@ -247,7 +247,7 @@ var navigationservice = angular.module('navigationservice', [])
         booking: function(signupData, callback) {
 
             $http({
-                url: adminurl + 'Booking/saveData',
+                url: adminurl + 'ContactUs/saveData',
                 method: 'POST',
                 withCredentials: true,
                 data: signupData

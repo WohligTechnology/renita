@@ -189,7 +189,7 @@ nav li:hover .dropdown-menu {
   span.btn.btn-default.form-control.ui-select-toggle {
     width: 54%;
     text-align: left;
-    background: #ccc;
+    // background: #ccc;
   }
   .ui-select-search {
     width: 54%;
@@ -1227,6 +1227,7 @@ h4 {
   top: 20px;
   height: 20px;
   width: 20px;
+  cursor: pointer;
   img {
     width: 100%;
   }
@@ -1577,7 +1578,9 @@ ui-select-focusser ui-select-offscreen {
   margin-top: -6px;
   margin-left: 6px;
 }
-
+.ui-select-choices-group{
+  cursor: pointer;
+}
 // .scrolloff{
 //   background: transparent;
 //   position: relative;
