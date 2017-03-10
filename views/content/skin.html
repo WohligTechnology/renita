@@ -47,11 +47,15 @@
                         <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
                            <h1>No Data Found</h1>
                         </div>
-                        <div class="data-main mt15 no-data" ng-bind-html="subCategory.subCatDescription">
-                           <!-- <pre>{{subCategory.subCatDescription.length}}</pre> -->
+                        <div class="data-main mt15" ng-if="subCategory.subCatDescription" ng-bind-html="subCategory.subCatDescription">
+
                         </div>
-                        <div>
-                          <iframe  ng-src="{{'https://www.youtube.com/embed/'+ '8unGk1Epz10' + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen width="100%"  class="blog-iframe iframe-before-after" ></iframe>
+                        <!-- <div class="data-main mt15 no-data" ng-if="subCategory.subCatDescription" ng-bind-html="subCategory.subCatDescription">
+
+                        </div> -->
+
+                        <div ng-if="subCategory.video">
+                          <iframe  ng-src="{{'https://www.youtube.com/embed/'+ subCategory.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen width="100%"  class="blog-iframe iframe-before-after" ></iframe>
 
                         </div>
                      </div>

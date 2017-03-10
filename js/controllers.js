@@ -75,6 +75,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService;
         NavigationService.getnav(function(data) {
             $scope.navigation = data.data;
+            console.log("  $scope.navigation",  $scope.navigation);
         });
     })
     .controller('headerctrl', function($scope, TemplateService, NavigationService, $state) {
@@ -334,6 +335,7 @@ $scope.submitForm = function(contactForm) {
             });
             NavigationService.getSubCat(id, function(data) {
                 $scope.subCategory = data.data;
+                console.log("  $scope.subCategory",  $scope.subCategory);
                 $scope.subCategory.style = {
                     "background-color": $scope.category[0].category.color,
                     "border-color": $scope.category[0].category.color
