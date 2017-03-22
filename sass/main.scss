@@ -351,7 +351,7 @@ a {
           left: -25%;
           margin: 2px 0 0;
           color: $base-color;
-          background-color: #f3f3f3;
+          background-color: #e5ceb2;
           z-index: 15;
           li {
             padding: 10px 15px;
@@ -603,13 +603,13 @@ h4 {
   padding: 8px 15px;
 }
 .blog-box {
-  border-bottom: 1px solid $brand-primary;
+  border-bottom: 1px solid #41240d;
   padding-bottom: 40px;
   margin-bottom: 60px;
 }
 .blog-search {
   .form-control {
-    border: 1px solid $brand-primary;
+    border: 1px solid #41240d;
   }
 }
 .mt20 {
@@ -622,7 +622,7 @@ h4 {
   font-size: 12px;
 }
 .blog-popular-tag {
-  background: #7fc7ff;
+  background: #e5ceb2;;
   padding: 15px 20px 20px 15px;
 }
 .border-btm {
@@ -658,7 +658,7 @@ h4 {
   padding: 16px 0 10px;
 }
 .footer-bottom {
-  background-color: #b1b1b1;
+  background-color: #000;
   padding: 5px 0 0;
 }
 .footer-list {
@@ -1148,7 +1148,8 @@ h4 {
       font-size: 20px;
     }
     padding: 80px;
-    background-color: #0090ff;
+    // background-color: #0090ff;
+    background-color: #e5ceb2;
     .flex-control-nav {
       display: none;
     }
@@ -1624,5 +1625,11 @@ ui-select-focusser ui-select-offscreen {
     width: 100%;
   }
 }
+
+.search{
+  background-color: #41240d !important;
+  border-color: #41240d !important;
+}
+
 @import "fancybox-override";
 @import "mobile";
