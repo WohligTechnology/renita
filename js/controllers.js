@@ -118,9 +118,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //     });
         });
         $.fancybox.close(true);
+        $scope.subCatarr = [];
+        $scope.mainSeracharr=[];
+        $scope.mainCatarr=[];
+        $scope.flattensubCatarr=[];
         NavigationService.getnav(function(data) {
             $scope.navigation = data.data;
             console.log("  $scope.navigation",  $scope.navigation);
+            _.each($scope.navigation,function(key){
+              $scope.mainCatarr.push(key);
+              $scope.subCatarr.push(key.subnav);
+            });
+            _.each($scope.mainCatarr,function(value){
+              value.subCatName = value.name;
+            });
+
+
+
+            console.log($scope.subCatarr,"$scope.subCatarr");
+          $scope.flattensubCatarr = _.flattenDeep($scope.subCatarr);
+          _.each($scope.flattensubCatarr,function(val){
+            val.subCatName1 =val.subCatName ;
+          })
+          console.log("  $scope.flattensubCatarr",  $scope.flattensubCatarr);
+        $scope.mainSeracharr = $scope.mainCatarr.concat($scope.flattensubCatarr );
+        console.log(  $scope.mainSeracharr,"  $scope.mainSeracharr");
             // console.log($scope.navigation[0] ,"$scope.navigation[0] ");
             //  $scope.selected = { value: $scope.navigation[0] };
             //  console.log(" $scope.selected ", $scope.selected );
@@ -134,40 +156,25 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.categories = data.data;
         });
 
-        $scope.DoSearch = function(name, id) {
+        $scope.DoSearch = function(name, id,catid,subcatname) {
             console.log("im in do search");
             if (name && id) {
                 $state.go('skin', {
                     name: name,
                     id: id
                 });
+            }else if (id && catid && subcatname ) {
+              $state.go('subCat', {
+
+                  id: catid,
+                  subcatname:subcatname,
+                  subid :id
+
+              });
+
             }
         };
-        $scope.myfun = function() {
-            console.log("im ij");
-        }
 
-
-        $scope.itemArray = [{
-            id: 1,
-            name: 'Skin'
-        }, {
-            id: 2,
-            name: 'Hair Loss treatments'
-        }, {
-            id: 3,
-            name: 'scalp'
-        }, {
-            id: 4,
-            name: 'Mommy Derm'
-        }, {
-            id: 5,
-            name: 'Treatments'
-        }, ];
-
-        $scope.selected = {
-            value: $scope.itemArray[0]
-        };
 
 
 
