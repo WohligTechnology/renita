@@ -16,18 +16,18 @@
 
 
 
-            <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id,item.selected.category,item.selected.subCatName1);" style="width: 100%;" title="Search cat">
-                <ui-select-match class="serach-box" placeholder="Search...">{{$select.selected.subCatName}}</ui-select-match>
-                <ui-select-choices repeat="item in mainSeracharr | filter: {subCatName :$select.search} |limitTo:5">
-                  <div>
-                      <span ng-bind-html="item.subCatName"></span>
+               <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id,item.selected.category,item.selected.subCatName1);" style="width: 100%;" title="Search cat">
+                  <ui-select-match class="serach-box" placeholder="Search...">{{$select.selected.subCatName}}</ui-select-match>
+                  <ui-select-choices repeat="item in mainSeracharr | filter: {subCatName :$select.search} |limitTo:6">
+                     <div>
+                        <span ng-bind-html="item.subCatName"></span>
 
-                    </div>
+                     </div>
 
-                </ui-select-choices>
-            </ui-select>
+                  </ui-select-choices>
+               </ui-select>
 
-            <!-- <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id);" style="width: 100%;" title="Search cat">
+               <!-- <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id);" style="width: 100%;" title="Search cat">
                 <ui-select-match class="serach-box" placeholder="Search...">{{$select.selected.name}}</ui-select-match>
                 <ui-select-choices repeat="item in navigation | filter: {name:$select.search}">
 
@@ -40,7 +40,7 @@
                 </ui-select-choices>
             </ui-select> -->
 
-    </div>
+            </div>
             <!--End of  search image -->
          </div>
 
