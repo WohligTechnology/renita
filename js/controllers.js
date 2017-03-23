@@ -105,10 +105,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
+        //     $(window).scroll(function() {
+        //         var scroller = $(document).scrollTop();
+        //         var height = 100;
+        //         if (height <= scroller) {
+        //             $('.back-to-top ').fadeIn();
+        //
+        //         } else {
+        //         $('.back-to-top ').fadeOut();
+        //
+        //         }
+        //     });
         });
         $.fancybox.close(true);
         NavigationService.getnav(function(data) {
             $scope.navigation = data.data;
+            console.log("  $scope.navigation",  $scope.navigation);
             // console.log($scope.navigation[0] ,"$scope.navigation[0] ");
             //  $scope.selected = { value: $scope.navigation[0] };
             //  console.log(" $scope.selected ", $scope.selected );

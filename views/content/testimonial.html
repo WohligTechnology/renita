@@ -22,7 +22,7 @@
       <flex-slider flex-slide="item in Testimonial track by $index" prev-text="" next-text="">
         <li>
           <div class="row">
-            <div class="col-md-6 mgt100 col-xs-12">
+            <div class="col-md-2 mgt100 col-xs-12">
               <div class="vid-box">
                 <div class="only-img" ng-if="!item.video && item.image">
                   <img ng-src="{{item.image|uploadpath}}" alt="">
@@ -45,7 +45,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 mgt100 col-xs-12" ng-if="item.video||item.image">
+            <div class="col-md-1"></div>
+            <div class="col-md-9 mgt100 col-xs-12" ng-if="item.video||item.image">
               <div class="text-center">
                 <h4 class="text-left">{{item.name}}</h4>
               </div>
