@@ -200,7 +200,7 @@ firstapp.directive("scroll", function($window) {
   return function(scope, element, attrs) {
     angular.element($window).bind("scroll", function() {
       var windowHeight = $(window).height();
-      if (this.pageYOffset >= windowHeight) {
+      if (this.pageYOffset >= 200) {
         // console.log(windowHeight);
         element.addClass('affix');
       } else {

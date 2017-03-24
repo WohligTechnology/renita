@@ -22,35 +22,26 @@
       <flex-slider flex-slide="item in Testimonial track by $index" prev-text="" next-text="">
         <li>
           <div class="row">
-            <div class="col-md-2 mgt100 col-xs-12">
+            <!--<div class="col-md-2 mgt100 col-xs-12">
               <div class="vid-box">
                 <div class="only-img" ng-if="!item.video && item.image">
                   <img ng-src="{{item.image|uploadpath}}" alt="">
                 </div>
                 <div class="only-video" ng-if="item.video">
-                  <!-- <a class="fancybox.iframe" fancybox-box href="https://www.youtube.com/embed/{{item.video|youtubethumb:true}}?autoplay=1">
-                    <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="" src="http://img.youtube.com/vi/dnmzOqhu62k/sddefault.jpg"
-                      class="doneLoading" draggable="false">
-                    <div class="circle">
-                      <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false">
-                    </div>
-                  </a> -->
-
-
-
-                  <!-- <iframe id="video" width="420" height="315" ng-href="https://www.youtube.com/embed/{{item.video | youtubethumb:true}}?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
+                 
 
                 <iframe  ng-src="{{'https://www.youtube.com/embed/'+ item.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen></iframe>
 
                 </div>
               </div>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-9 mgt100 col-xs-12" ng-if="item.video||item.image">
+            <div class="col-md-1"></div>-->
+            <div class="col-md-12 mgt100 col-xs-12" ng-if="item.video||item.image">
               <div class="text-center">
-                <h4 class="text-left">{{item.name}}</h4>
+                <h4 class="text-center">{{item.name}}</h4>
               </div>
-              <p class="text-justify">{{item.description}}</p>
+              <p class="text-center">{{item.description}}</p>
+              
             </div>
           </div>
           <div class="row" ng-if="!item.video && !item.image">
