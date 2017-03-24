@@ -185,9 +185,10 @@ nav li:hover .dropdown-menu {
   position: absolute;
   width: 44%;
   bottom: -64%;
-  right: 0;
+  right: -120px;
   z-index: 1;
   input.form-control.ui-select-search.ng-valid.ng-touched.ng-dirty.ng-valid-parse.ng-empty {
+    // width: 122% !important;
     width: 54% !important;
     float: none !important;
   }
@@ -204,7 +205,8 @@ nav li:hover .dropdown-menu {
   &:before {
     content: "";
     top: -43px;
-    left: 50%;
+    // left: 50%;
+    right: 110px;
     z-index: 20;
     position: absolute;
     border-left: 10px solid transparent;
@@ -1687,7 +1689,7 @@ ui-select-focusser ui-select-offscreen {
 }
 .btn-second{
 background-color:#41240d;
-border-color: #41240d; 
+border-color: #41240d;
 }
 
 @import "fancybox-override";
