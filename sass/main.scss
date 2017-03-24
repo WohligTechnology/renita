@@ -286,6 +286,7 @@ a {
     .navbar-nav {
       margin: 0;
       padding: 0;
+      margin-left: 15%;
       li {
         position: relative;
         padding: 18px 15px;
@@ -1232,7 +1233,7 @@ background: #e5ceb2;;
 }
 .serach {
   position: absolute;
-  right: 250px;
+  right: 0;
   top: 20px;
   height: 20px;
   width: 20px;
