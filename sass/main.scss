@@ -150,14 +150,16 @@ nav li:hover .dropdown-menu {
     margin-bottom: 0;
     .form-control {
       border: none;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #41240d;
+      // border-bottom: 1px solid #ccc;
     }
     textarea {
-      border: 1px solid #ccc !important;
+      border: 1px solid #41240d !important;
       resize: none;
     }
   }
 }
+
 // .select.searchEnabled{
 //   float: right;
 //   width: 20%;
@@ -657,7 +659,8 @@ background: #e5ceb2;;
   }
 }
 .footer-top {
-  background-color: #252525;
+  background-color: #e5ceb2;
+  // background-color: #252525;
   padding: 16px 0 10px;
 }
 .footer-bottom {
@@ -676,7 +679,8 @@ background: #e5ceb2;;
     li {
       padding: 3px 0;
       a {
-        color: $white;
+        color:#41240d;
+        // color: $white;
         text-transform: uppercase;
       }
     }
@@ -686,12 +690,19 @@ background: #e5ceb2;;
   .form-control {
     height: 28px;
     font-size: 14px;
+    // color: #41240d;
     color: $white;
     background-color: transparent;
+    border-color: #41240d ;
   }
   .btn {
     font-size: 10px;
     border-radius: 4px;
+    color:#41240d;
+    border-color: #41240d ;
+  }
+  span{
+    color: #41240d;
   }
 }
 .quara {
@@ -714,6 +725,9 @@ background: #e5ceb2;;
         line-height: 156%;
       }
     }
+  }
+  span{
+    color: #41240d;
   }
 }
 .pb20 {
@@ -1146,13 +1160,15 @@ background: #e5ceb2;;
 .test-cont {
   .flexslider {
     h4 {
-      color: #fff;
+      color: #41240d;
+      // color: #fff;
       font-family: $font-family-sans-serif;
       font-weight: 600;
       font-size: 25px;
     }
     p {
-      color: #fff;
+      color: #41240d;
+      // color: #fff;
       font-family: $font-family-sans-serif;
       font-weight: 400;
       font-size: 20px;
@@ -1652,5 +1668,21 @@ ui-select-focusser ui-select-offscreen {
       border-color: #41240d;
     }
 }
+
+::-webkit-input-placeholder { /* Chrome */
+  color: red;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: red;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: red;
+
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: red;
+  
+}
+
 @import "fancybox-override";
 @import "mobile";

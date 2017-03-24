@@ -66,7 +66,7 @@ BLOG
                <div class="subscribe">
                   <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
                   <form class="form-inline mt15" ng-submit="subscribe()" ng-if="!formComplete">
-                     <div class="form-group">
+                     <div class="form-group place-holder">
                         <input type="email" class="form-control" id="exampleInputEmail2" ng-model="formData.email" required>
                      </div>
                      <button type="submit" class="btn btn-default mob-min-s">SUBSCRIBE</button>
@@ -107,15 +107,15 @@ BLOG
                <form name="user" ng-submit="submitForm(contactForm)" class="super-form">
                   <div>
                      <div class="custom-form">
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <input type="text" class="form-control" name="name" placeholder="Name" ng-model="contactForm.name" required>
                            <!-- <div class="error-msg" ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name</div> -->
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <input type="text" class="form-control" name="age" placeholder="Age" ng-model="contactForm.age" only-digits required maxlength="2">
                            <!-- <div class="error-msg" ng-show="user.age.$error.required && user.age.$touched">Please Enter Your Age</div> -->
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <!-- <div class="gender"> -->
                            <!-- <label for="">Gender</label> -->
                            <!-- <div class="gender-mar">
@@ -128,38 +128,38 @@ BLOG
 
                            <!-- </div> -->
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <input type="text" class="form-control" name="telephone" placeholder="Mobile Number" ng-model="contactForm.mobile" only-digits required minlength="10" maxlength="10">
                            <!-- <div class="error-msg" ng-show="user.telephone.$error.required && user.telephone.$touched">Please Enter Your Telephone Number</div> -->
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <input type="text" class="form-control" name="alternateContact" placeholder="Alternate Contact Number" ng-model="contactForm.alternateMobile" only-digits  minlength="10" maxlength="10">
                            <!-- <div class="error-msg" ng-show="user.alternateContact.$error.required && user.alternateContact.$touched">Please Enter Your Alternate Contact Number</div> -->
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <input type="email" class="form-control" name="email" placeholder="Email" ng-model="contactForm.email" required>
                            <!-- <div class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email</div> -->
                            <div>{{message}}</div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                           <input type="text" class="form-control" id="country" ng-model="contactForm.country" name="country"  placeholder="Enter Country" aplha-Only required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <input type="text" class="form-control" name="city" placeholder="Enter City" ng-model="contactForm.city" required>
                            <!-- <div class="error-msg" ng-show="user.city.$error.required && user.city.$touched">Please Enter Your City</div> -->
 
 
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <!-- <select name="categorydata" class="form-control" ng-model="contactForm.country" required>
                               <option ng-selected="true" value="">Select Country</option>
                               <option value="in">INDIA</option>
                               <option value="usa">USA</option>
                            </select> -->
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <div class="gender">
                               <label for="">Subject</label>
                               <div class="label-color">
@@ -186,7 +186,7 @@ BLOG
 
                            </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                           <div class="gender">
                              <label for="">Message</label>
                            <textarea class="form-control" rows="5" cols="50" name="message" ng-model="contactForm.message" required></textarea>
@@ -195,7 +195,7 @@ BLOG
 
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group place-holder">
                            <div class="text-center button-sub">
                               <button class="btn btn-primary btn-outline uppercase" type="submit">SUBMIT</button>
                            </div>
