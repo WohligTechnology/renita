@@ -659,7 +659,8 @@ background: #e5ceb2;;
   }
 }
 .footer-top {
-  background-color: #e5ceb2;
+ background-color: #41240d;
+  // background-color: #e5ceb2;
   // background-color: #252525;
   padding: 16px 0 10px;
 }
@@ -679,7 +680,7 @@ background: #e5ceb2;;
     li {
       padding: 3px 0;
       a {
-        color:#41240d;
+        color:#fff;
         // color: $white;
         text-transform: uppercase;
       }
@@ -701,9 +702,9 @@ background: #e5ceb2;;
     color:#41240d;
     border-color: #41240d ;
   }
-  span{
-    color: #41240d;
-  }
+  // span{
+  //   color: #41240d;
+  // }
 }
 .quara {
   img {
@@ -726,9 +727,9 @@ background: #e5ceb2;;
       }
     }
   }
-  span{
-    color: #41240d;
-  }
+  // span{
+  //   color: #41240d;
+  // }
 }
 .pb20 {
   padding-bottom: 20px;
