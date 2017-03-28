@@ -1625,6 +1625,12 @@ ui-select-focusser ui-select-offscreen {
   // p{
   //   padding-right: 80px;
   // }
+  p{
+        font-size: 15px;
+  }
+  h2{
+    font-size:28px;
+  }
 }
 .con-mar{
   margin-top: 53px;
@@ -1661,8 +1667,9 @@ ui-select-focusser ui-select-offscreen {
   a{
     display: inline-block;
   color: #000;
+  // color: #000;
   }
-
+    margin-left: 40px;
 }
 .search {
     color: #fff;
@@ -1683,6 +1690,19 @@ color: $white;
   border-color: $brand-brown;
 color: $white;
 }
+}
+.addr{
+  margin-left: 60px;
+margin-top: -19px;
+color:black;
+}
+.font-addr{
+  font-size: 15px;
+}
+.addr-align{
+  p{
+    margin-top: -22px;  
+  }
 }
 
 @import "fancybox-override";
