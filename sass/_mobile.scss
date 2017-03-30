@@ -209,6 +209,39 @@
 .testimonial-slidetitle{
   padding: 0px 20px;
 }
+
+//CONTACT US TAB
+.super-form{
+  padding: 10px;
+  .button-sub{
+    padding-top: 10px;
+    button{
+      height: auto;
+      font-size: 10px;
+    }
+  }
+  .custom-form .form-group .form-control{
+    height: auto;
+    font-size: 12px;
+  }
+
+  .back-to-top{
+    display: none;
+  }
+
+  .gender{
+    label{
+      font-size: 12px;
+    }
+    .custom-radio input[type="radio"] + label{
+      font-size: 12px;
+    }
+    textarea{
+      height: 70px;
+    }
+  }
+}
+//CONTACT US TAB END
 }
 @media (max-width:480px){
   .navbar {
