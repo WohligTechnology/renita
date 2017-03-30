@@ -28,7 +28,7 @@
                   <img ng-src="{{item.image|uploadpath}}" alt="">
                 </div>
                 <div class="only-video" ng-if="item.video">
-                 
+
 
                 <iframe  ng-src="{{'https://www.youtube.com/embed/'+ item.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen></iframe>
 
@@ -37,11 +37,11 @@
             </div>
             <div class="col-md-1"></div>-->
             <div class="col-md-12 mgt100 col-xs-12" ng-if="item.video||item.image">
-              <div class="text-center">
+              <div class="text-center testimonial-slidetitle">
                 <h4 class="text-center">{{item.name}}</h4>
               </div>
               <p class="text-center">{{item.description}}</p>
-              
+
             </div>
           </div>
           <div class="row" ng-if="!item.video && !item.image">

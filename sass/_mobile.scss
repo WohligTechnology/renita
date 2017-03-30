@@ -8,6 +8,24 @@
 
 @media screen and (max-width: $screen-sm-max) {
 
+  .navbar-nav{
+    float: none;
+  }
+
+  .navbar .collapse .navbar-nav li{
+     padding: 18px 10px;
+  }
+
+  .mobile-ui {
+    .panel-body{
+      padding: 0px 10px;
+    }
+  }
+
+  .head-top .mouse-scrolldown{
+    display: none;
+  }
+
   .mob-min-s{
     text-align: center;
     margin: 10px auto 0;
@@ -175,6 +193,21 @@
 }
 .navbar {
   display: none;
+}
+
+.doctor-box{
+  width: 50%;
+}
+.docs-detail .descp{
+  padding: 0px 30px 20px;
+}
+.test-cont .flexslider .flex-direction-nav{
+   .flex-prev, .flex-next{
+     top: 15%;
+   }
+}
+.testimonial-slidetitle{
+  padding: 0px 20px;
 }
 }
 @media (max-width:480px){

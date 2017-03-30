@@ -385,6 +385,20 @@ a {
     left: 0;
     width: 100%;
     z-index: 9;
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color:transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: $brand-brown;
+      border-radius: 10px;
+      border: 1px solid #fff;
+    }
   }
   .navbar-header {
     h4 {
@@ -436,7 +450,7 @@ a {
   left: 0;
   top: 0;
   bottom: 0;
-  overflow: scroll;
+  overflow-y: auto;
 }
 .icon-bar,
 .sidemenu,
@@ -498,7 +512,7 @@ h4 {
   margin: 0 36px 0 25px;
 }
 .nav-list {
-  padding: 24px 30px 0;
+  padding: 25px 30px;
   li {
     padding: 12px 10px 0;
     font-size: 16px;
@@ -1701,7 +1715,7 @@ color:black;
 }
 .addr-align{
   p{
-    margin-top: -22px;  
+    margin-top: -22px;
   }
 }
 
