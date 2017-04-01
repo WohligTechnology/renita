@@ -1719,5 +1719,13 @@ color:black;
   }
 }
 
+.tempImage{
+  img{
+    display: block;
+max-width: 100%;
+height: auto;
+  }
+}
+
 @import "fancybox-override";
 @import "mobile";
