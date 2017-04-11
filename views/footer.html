@@ -62,7 +62,7 @@ BLOG
             </div>
 
 
-            <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="col-md-3 col-sm-3 col-xs-12  hidden-xs ">
                <div class="subscribe">
                   <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
                   <form class="form-inline mt15" ng-submit="subscribe()" ng-if="!formComplete">
@@ -83,7 +83,41 @@ BLOG
                      <li> <a href="https://www.instagram.com/renderskinhair/?hl=en" target="_blank"> <i class="fa fa-instagram" ></i></a></li>
                   </ul>
                </div>
+               <div class="follow my-list mt15 display-inline follow-logo">
+                 <a href="https://www.realself.com/find/India/Dermatologist/Renita-Lourdhurajan" target="_blank">
+                 <img src="img/renita.png" class="img-responsive" alt="foot-logo"></a>
+                 
+               </div>
 
+            </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 hidden-sm visible-xs hidden-md">
+               
+            
+               <div class="follow my-list mt15 display-inline follow-logo">
+                 <a href="https://www.realself.com/find/India/Dermatologist/Renita-Lourdhurajan" target="_blank">
+                 <img src="img/renita.png" class="img-responsive" alt="foot-logo"></a>
+                 
+               </div>
+               <div class="subscribe">
+                  <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
+                  <form class="form-inline mt15" ng-submit="subscribe()" ng-if="!formComplete">
+                     <div class="form-group place-holder">
+                        <input type="email" class="form-control" id="exampleInputEmail2" ng-model="formData.email" required>
+                     </div>
+                     <button type="submit" class="btn btn-default mob-min-s">SUBSCRIBE</button>
+                  </form>
+                  <div ng-if="formComplete" class="color-white">Thank you for Subscribing.</div>
+                  <div ng-if="emailExist" class="color-white">Email Already Exist</div>
+               </div>
+   <div class="follow my-list mt15 display-inline">
+                  <span class="color-white">Follow us on</span>
+                  <ul class="padding0 color-base mt10">
+                     <li> <a href="https://www.facebook.com/Dr.RenitaRajanClinic/" target="_blank"> <i class="fa fa-facebook"></i></a></li>
+                     <li> <a href="https://plus.google.com/116418772137896039065" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                     <li> <a href="https://twitter.com/DrRenitaRajan" target="_blank">  <i class="fa fa-twitter"></i></a></li>
+                     <li> <a href="https://www.instagram.com/renderskinhair/?hl=en" target="_blank"> <i class="fa fa-instagram" ></i></a></li>
+                  </ul>
+               </div>
             </div>
          </div>
 

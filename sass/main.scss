@@ -1727,5 +1727,15 @@ height: auto;
   }
 }
 
+.follow-logo{
+    width: 105px;
+    height: auto;
+    vertical-align: top;
+    margin-left: 10px;
+    img{
+      width: 100%;
+    }
+}
+
 @import "fancybox-override";
 @import "mobile";

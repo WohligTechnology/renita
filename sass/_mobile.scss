@@ -60,6 +60,11 @@
 }
 }
 @media screen and (max-width: $screen-xs-max) {
+
+  .follow-logo{
+    display: block;
+    margin: 0;
+  }
   .book-tab {
       right: 0;
       width: 290px;
