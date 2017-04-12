@@ -239,7 +239,14 @@ $scope.submitForm = function(contactForm) {
             }
         }
     })
+
 }
+// $scope.scrollDownMap = function(){
+    
+// $('html,body').animate({
+//             scrollTop: $(".contact-form").outerHeight()
+//           },'slow');
+// };
 
 
 
@@ -269,6 +276,14 @@ $scope.submitForm = function(contactForm) {
                 $('.back-to-top ').fadeOut();
             }
         });
+//         $scope.scrollDownMap = function(){
+    
+// $('html,body').animate({
+//             scrollTop: $(".second").offset().top
+//           },'slow');
+// };
+
+
     })
     .controller('TestimonialCtrl', function($scope, TemplateService, NavigationService) {
 

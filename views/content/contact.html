@@ -16,14 +16,14 @@
     </div>
   </section>
   <div id="top-scroll"></div>
-
-<div ng-if="!showform">
+  
+<div ng-if="!showform" >
   <div class="container">
   <div class="row">
-    <div class=" col-md-8 con-mar">
-  <form class="form-horizontal contact-form" ng-submit="submitForm(contactForm);">
+    <div class=" col-md-8">
+  <form class="form-horizontal contact-form second pt100" ng-submit="submitForm(contactForm);">
     <div class="form-group">
-     <label class="control-label col-sm-3" for="email">Name</label>
+     <label class="control-label col-sm-3 " for="email">Name</label>
      <div class="col-sm-9">
      <input type="text" class="form-control" id="name" ng-model="contactForm.name" aplha-Only required>
    </div>
@@ -69,7 +69,7 @@
 <label class="control-label col-md-3" for="city">City</label>
 <div class="col-sm-9">
   <input type="text" class="form-control" id="city" ng-model="contactForm.city" aplha-Only required>
-</div>
+</div> 
 </div>
 <div class="form-group">
 <label class="control-label col-md-3" for="subject">Subject</label>
@@ -96,6 +96,7 @@
 </div>
 
   </form>
+   
 </div>
 <div class="col-md-4">
   <div class="con-padd">
@@ -128,7 +129,7 @@
 </div>
 </div>
 </div>
- <section class="second mt50">
+ <section class=" mt50">
     <div class="container">
       <div class="row mt20">
         <div class="col-md-12">

@@ -600,6 +600,9 @@ h4 {
 .mt50 {
   margin-top: 50px;
 }
+.pt100{
+  padding-top: 100px;
+}
 .mt30 {
   margin-top: 30px;
 }
@@ -1635,7 +1638,7 @@ ui-select-focusser ui-select-offscreen {
     margin-top: 10px;
 }
 .con-padd{
-  padding: 28px;
+  padding: 70px 28px 28px 28px;
   // p{
   //   padding-right: 80px;
   // }
