@@ -106,7 +106,7 @@
                   </div>
                </div>
                <div class="clearfix"></div>
-               <div class="related-blog mt30 pb60" ng-if="blog.related">
+               <div class="related-blog mt30 pb60 pointer" ng-if="blog.related">
                   <h3 class="color-base font-bold text-up">related Post</h3>
                   <div class="row">
                      <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="related in blog.related" ui-sref="blog-detail({'id':related._id})">
@@ -133,7 +133,7 @@
                      <div ng-if="popular.length === 0">
                         <h4 class="text-center">{{popularmsg}}</h4>
                      </div>
-                     <div class="row mt20" ng-repeat="item in popular | filter:searchText" ui-sref="blog-detail({'id':item._id})">
+                     <div class="row mt20 pointer" ng-repeat="item in popular | filter:searchText" ui-sref="blog-detail({'id':item._id})" >
                         <div class="col-md-3 col-xs-3">
                            <div class="p-img-box">
                               <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">

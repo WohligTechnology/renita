@@ -95,7 +95,7 @@
               <div ng-if="post.length === 0">
                 <h4 class="text-center">{{popularmsg}}</h4>
               </div>
-              <div class="row mt20" ng-repeat="item in post track by $index">
+              <div class="row mt20 pointer" ng-repeat="item in post track by $index"  ui-sref="blog-detail({'id':item._id})">
                 <div class="col-md-3 col-xs-3">
                   <div class="p-img-box">
                     <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
