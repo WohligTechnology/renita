@@ -242,7 +242,7 @@ $scope.submitForm = function(contactForm) {
 
 }
 // $scope.scrollDownMap = function(){
-    
+
 // $('html,body').animate({
 //             scrollTop: $(".contact-form").outerHeight()
 //           },'slow');
@@ -277,7 +277,7 @@ $scope.submitForm = function(contactForm) {
             }
         });
 //         $scope.scrollDownMap = function(){
-    
+
 // $('html,body').animate({
 //             scrollTop: $(".second").offset().top
 //           },'slow');
@@ -1058,12 +1058,14 @@ $scope.submitForm = function(contactForm) {
 
     })
 
-.controller('BlogDeatilCtrl', function($scope, TemplateService, NavigationService, $state) {
+.controller('BlogDeatilCtrl', function($scope, TemplateService, NavigationService, $state,$location) {
 
     $scope.template = TemplateService.changecontent("blog-detail");
     $scope.menutitle = NavigationService.makeactive("Blog Detail");
     TemplateService.title = $scope.menutitle;
     // $scope.navigation = NavigationService.getnav();
+      $scope.myUrl = $location.absUrl();
+    
     $scope.popularmsg = "Loading...";
     $scope.tagmsg = "Loading...";
     $(window).scroll(function() {

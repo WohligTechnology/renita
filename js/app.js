@@ -343,6 +343,9 @@ firstapp.directive('aplhaOnly', function() {
         }
     };
 });
+firstapp.filter('urlEncode', [function() {
+    return window.encodeURIComponent;
+}]);
 
 
 // firstapp.directive("scrolladdclass", function ($window) {
