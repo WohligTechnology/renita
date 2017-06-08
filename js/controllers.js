@@ -990,8 +990,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tagId = [];
 
         $scope.loadnotification = function(pageno) {
-            NavigationService.getAllBlog(pageno, $scope.search.search, $scope.tagId, function(data) {
 
+            NavigationService.getAllBlog(pageno, $scope.search.search, $scope.tagId, function(data) {
                 _.each(data.data.data, function(n) {
                     $scope.blog.push(n);
                 })
@@ -1019,22 +1019,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.pagenumber = 1;
             $scope.tagId = [];
             $scope.blog = [];
-
-            $state.go('blog', {
-                id: id
-            })
-            $scope.tagId.push(id);
             $scope.shouldscroll = false;
-            console.log("  $scope.tagId", $scope.tagId);
-            $scope.loadnotification(1);
+              $scope.tagId.push(id);
+              $scope.loadnotification(1);
 
-        }
-        if ($stateParams.id) {
-            $scope.tagId = [];
-            $scope.blog = [];
-            $scope.gotoTagFun($stateParams.id);
 
-        }
+            // $state.go('blog', {
+            //     id: id
+            // })
+          }
+        // if ($stateParams.id) {
+        //   $scope.gotoTagFun($stateParams.id);
+        // }
         //  SEARCH BLOG
         $scope.doSearch = function() {
             $scope.pagenumber = 1;

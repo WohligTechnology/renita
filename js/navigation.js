@@ -66,7 +66,7 @@ var navigationservice = angular.module('navigationservice', [])
         getAllBlog: function(pagenumber, search,tagId, callback) {
           console.log("tagId",tagId);
             $http({
-                url: adminurl1 + 'blog/getBlogByTags',
+                url: adminurl + 'blog/getBlogByTags',
                 // url: adminurl + 'blog/getLimited',
                 method: 'POST',
                 data: {
