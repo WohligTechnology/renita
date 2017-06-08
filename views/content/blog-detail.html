@@ -179,7 +179,7 @@
                      </div>
                      <div class="all-tags my-list mt20">
                         <ul class="padding0 font-ralway text-up color-base">
-                           <li ng-repeat="tag in blog.blog.tags" ui-sref="blog">
+                           <li ng-repeat="tag in blog.blog.tags" ui-sref="blog({id:tag._id})">
                               <span>{{tag.name}}</span>
                            </li>
                         </ul>

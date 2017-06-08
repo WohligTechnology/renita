@@ -87,10 +87,15 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
       controller: 'BlogDeatilCtrl'
     })
     .state('blog', {
-      url: "/blog",
+      url: "/blog/:id",
       templateUrl: "views/template.html",
       controller: 'BlogCtrl'
-    });
+    })
+    // .state('blogsss', {
+    //   url: "/blog/:id",
+    //   templateUrl: "views/template.html",
+    //   controller: 'BlogCtrl'
+    // });
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
 });

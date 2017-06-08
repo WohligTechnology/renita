@@ -1,6 +1,7 @@
 
 // var adminurl = "http://www.wohlig.co.in/renitabackend/";
 var adminurl = "http://104.155.129.33:86/";
+var adminurl1 = "http://localhost:1337/";
 // var bookingUrl ="http://192.168.0.8:1337/"
 
 var imgurl = adminurl + "upload/";
@@ -62,18 +63,29 @@ var navigationservice = angular.module('navigationservice', [])
                 }
             }).success(callback);
         }, // GET ALL BLOG BY JAGRUTI
-        getAllBlog: function(pagenumber, search, callback) {
+        getAllBlog: function(pagenumber, search,tagId, callback) {
+          console.log("tagId",tagId);
             $http({
-                url: adminurl + 'blog/getLimited',
+                url: adminurl1 + 'blog/getBlogByTags',
+                // url: adminurl + 'blog/getLimited',
                 method: 'POST',
                 data: {
                     "pagesize": 2,
                     "pagenumber": pagenumber,
-                    "search": search
+                    "search": search,
+                    "tagId":tagId
                 },
                 withCredentials: true
             }).success(callback);
         },
+        // getBlogByTags: function(constraintsForTags, callback) {
+        //     $http({
+        //         url: adminurl1 + 'Blog/getBlogByTags',
+        //         method: 'POST',
+        //         data:constraintsForTags,
+        //         withCredentials: true
+        //     }).success(callback);
+        // },
         getPostTags: function(callback) {
             $http({
                 url: adminurl + 'blog/getPostTags',

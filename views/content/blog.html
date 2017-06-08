@@ -118,8 +118,8 @@
                   <h4 class="text-center">{{tagmsg}}</h4>
                 </div>
                 <ul class="padding0 font-ralway text-up color-base">
-                  <li ng-repeat="tag in tags" ng-show="t.showTag || $index< 15">
-                    <span>{{tag.name}}</span>
+                  <li ng-repeat="tag in tags" ng-show="t.showTag || $index< 15" ng-click="gotoTagFun(tag._id)">
+                    <span >{{tag.name}}</span>
                   </li>
                 </ul>
                 <div class="view-more mt30" ng-if="tags.length>15">
