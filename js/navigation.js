@@ -1,6 +1,6 @@
 
 // var adminurl = "http://www.wohlig.co.in/renitabackend/";
-var adminurl = "http://104.155.129.33:86/";
+var adminurl = "http://35.187.236.240:86/";
 var adminurl1 = "http://localhost:1337/";
 // var bookingUrl ="http://192.168.0.8:1337/"
 
