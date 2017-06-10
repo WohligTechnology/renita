@@ -22,6 +22,13 @@
   <div id="top-scroll"></div>
   <section class="pt100 second">
     <div class="container">
+      <div>
+        <p>
+          Filter by: <span class="tagFilter" ng-if="filter != null">
+            {{filter}}
+          </span> <span ng-if="filter != null" class="clearFilter" ng-click="clearFilter()">Clear Filter</span>
+        </p>
+      </div>
       <div class="row mt20">
         <div class="col-md-8">
           <div class="blog-left-side">
@@ -32,10 +39,11 @@
               <div class="col-md-6" ng-repeat="item in blog track by $index">
                 <div class="blog-box">
 
-                  <div ng-if="item.video"  class="blog-img relate blog-img-front">
-                      <iframe  ng-src="{{'https://www.youtube.com/embed/'+ item.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen width="100%" class="blog-iframe"></iframe>
+                  <div ng-if="item.video" class="blog-img relate blog-img-front">
+                    <iframe ng-src="{{'https://www.youtube.com/embed/'+ item.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen
+                      width="100%" class="blog-iframe"></iframe>
 
-                        <!-- <img src="img/play.png" alt="" width="35px" class="img-responsive doneLoading" draggable="false" ng-if="item.video"> -->
+                    <!-- <img src="img/play.png" alt="" width="35px" class="img-responsive doneLoading" draggable="false" ng-if="item.video"> -->
 
                   </div>
 
@@ -95,7 +103,7 @@
               <div ng-if="post.length === 0">
                 <h4 class="text-center">{{popularmsg}}</h4>
               </div>
-              <div class="row mt20 pointer" ng-repeat="item in post track by $index"  ui-sref="blog-detail({'id':item._id})">
+              <div class="row mt20 pointer" ng-repeat="item in post track by $index" ui-sref="blog-detail({'id':item._id})">
                 <div class="col-md-3 col-xs-3">
                   <div class="p-img-box">
                     <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
@@ -118,8 +126,8 @@
                   <h4 class="text-center">{{tagmsg}}</h4>
                 </div>
                 <ul class="padding0 font-ralway text-up color-base">
-                  <li ng-repeat="tag in tags" ng-show="t.showTag || $index< 15" ng-click="gotoTagFun(tag._id)">
-                    <span >{{tag.name}}</span>
+                  <li ng-repeat="tag in tags" ng-show="t.showTag || $index< 15" ng-click="gotoTagFun(tag)">
+                    <span>{{tag.name}}</span>
                   </li>
                 </ul>
                 <div class="view-more mt30" ng-if="tags.length>15">

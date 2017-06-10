@@ -1,16 +1,16 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar', 'ui.select'])
 
-.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    .config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
     }])
-    .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
 
         $scope.template = TemplateService.changecontent("home");
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
 
-        NavigationService.getHomeslider(function(data) {
+        NavigationService.getHomeslider(function (data) {
             $scope.Homeslider = data.data;
             console.log("Homeslider", $scope.Homeslider);
             // _.each($scope.Homeslider,function(key){
@@ -71,14 +71,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             link: "vitiligo"
         }];
     })
-    .controller('navCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('navCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-        NavigationService.getnav(function(data) {
+        NavigationService.getnav(function (data) {
             $scope.navigation = data.data;
             console.log("  $scope.navigation", $scope.navigation);
         });
     })
-    .controller('headerctrl', function($scope, TemplateService, NavigationService, $state) {
+    .controller('headerctrl', function ($scope, TemplateService, NavigationService, $state) {
         $scope.template = TemplateService;
         var get = false;
         $scope.oneAtATime = true;
@@ -88,7 +88,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             isFirstDisabled: false
         };
         $scope.getslide = "menu-out";
-        $scope.getNav = function() {
+        $scope.getNav = function () {
             if ($scope.getslide == "menu-in") {
                 $scope.getslide = "menu-out";
                 $scope.onebar = "";
@@ -103,7 +103,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.buttonpos = "hidden";
             }
         };
-        $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
             //     $(window).scroll(function() {
             //         var scroller = $(document).scrollTop();
@@ -122,14 +122,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.mainSeracharr = [];
         $scope.mainCatarr = [];
         $scope.flattensubCatarr = [];
-        NavigationService.getnav(function(data) {
+        NavigationService.getnav(function (data) {
             $scope.navigation = data.data;
             console.log("  $scope.navigation", $scope.navigation);
-            _.each($scope.navigation, function(key) {
+            _.each($scope.navigation, function (key) {
                 $scope.mainCatarr.push(key);
                 $scope.subCatarr.push(key.subnav);
             });
-            _.each($scope.mainCatarr, function(value) {
+            _.each($scope.mainCatarr, function (value) {
                 value.subCatName = value.name;
             });
 
@@ -137,7 +137,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             console.log($scope.subCatarr, "$scope.subCatarr");
             $scope.flattensubCatarr = _.flattenDeep($scope.subCatarr);
-            _.each($scope.flattensubCatarr, function(val) {
+            _.each($scope.flattensubCatarr, function (val) {
                 val.subCatName1 = val.subCatName;
             })
             console.log("  $scope.flattensubCatarr", $scope.flattensubCatarr);
@@ -148,15 +148,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             //  console.log(" $scope.selected ", $scope.selected );
         });
 
-        $scope.gotoSearch = function() {
+        $scope.gotoSearch = function () {
             $scope.searchExp = !$scope.searchExp;
         }
 
-        NavigationService.getAllCategory(function(data) {
+        NavigationService.getAllCategory(function (data) {
             $scope.categories = data.data;
         });
 
-        $scope.DoSearch = function(name, id, catid, subcatname) {
+        $scope.DoSearch = function (name, id, catid, subcatname) {
             console.log("im in do search");
             if (name && id) {
                 $state.go('skin', {
@@ -181,17 +181,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('ContactCtrl', function($scope, TemplateService, NavigationService, $uibModal, $timeout) {
+    .controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $uibModal, $timeout) {
 
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
 
-        NavigationService.getHeaderContact(function(data) {
+        NavigationService.getHeaderContact(function (data) {
             $scope.conatctHeader = data.data;
         })
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -200,48 +200,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             console.log("im in");
-            $('.maps').click(function() {
+            $('.maps').click(function () {
                 $('.maps iframe').css("pointer-events", "auto");
                 console.log("im in");
             });
 
 
-            $(".maps").mouseleave(function() {
+            $(".maps").mouseleave(function () {
                 $('.maps iframe').css("pointer-events", "none");
             });
         });
 
         $scope.contactForm = {};
         $scope.showform = false;
-        $scope.submitForm = function(contactForm) {
-                console.log("contactForm", contactForm);
-                NavigationService.booking(contactForm, function(data) {
-                    console.log("data", data);
-                    if (data.value) {
-                        console.log("im true");
-                        // $scope.bookingFormComplete= true;
-                        $scope.showform = true;
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/thankyou.html',
-                            backdropClass: "backcolor"
-                        });
-                        $timeout(function() {
-                            $scope.showform = false;
-                            $scope.contactForm = {};
-                        }, 2000);
+        $scope.submitForm = function (contactForm) {
+            console.log("contactForm", contactForm);
+            NavigationService.booking(contactForm, function (data) {
+                console.log("data", data);
+                if (data.value) {
+                    console.log("im true");
+                    // $scope.bookingFormComplete= true;
+                    $scope.showform = true;
+                    $uibModal.open({
+                        animation: true,
+                        templateUrl: 'views/modal/thankyou.html',
+                        backdropClass: "backcolor"
+                    });
+                    $timeout(function () {
+                        $scope.showform = false;
+                        $scope.contactForm = {};
+                    }, 2000);
 
-                    } else if (!data.value) {
-                        if (data.data === 'Please Enter Email ID') {
-                            $scope.message = "Please Enter Valid Email ID";
-                        }
+                } else if (!data.value) {
+                    if (data.data === 'Please Enter Email ID') {
+                        $scope.message = "Please Enter Valid Email ID";
                     }
-                })
+                }
+            })
 
-            }
-            // $scope.scrollDownMap = function(){
+        }
+        // $scope.scrollDownMap = function(){
 
         // $('html,body').animate({
         //             scrollTop: $(".contact-form").outerHeight()
@@ -251,7 +251,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('BookingCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('BookingCtrl', function ($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("booking");
         $scope.menutitle = NavigationService.makeactive("Booking");
@@ -260,16 +260,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('AboutUsCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('AboutUsCtrl', function ($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("about-us");
         $scope.menutitle = NavigationService.makeactive("About Us");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
-        NavigationService.getHeaderAbout(function(data) {
+        NavigationService.getHeaderAbout(function (data) {
             $scope.headerAbout = data.data;
         })
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -285,18 +285,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('TestimonialCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('TestimonialCtrl', function ($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("testimonial");
         $scope.menutitle = NavigationService.makeactive("Testimonial");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
 
-        NavigationService.getHeaderTestimonial(function(data) {
+        NavigationService.getHeaderTestimonial(function (data) {
             $scope.testimonialHeader = data.data;
 
         });
-        NavigationService.getTestimonial(function(data) {
+        NavigationService.getTestimonial(function (data) {
             $scope.Testimonial = data.data;
 
         })
@@ -309,17 +309,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
         }];
     })
-    .controller('TeamCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('TeamCtrl', function ($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("team");
         $scope.menutitle = NavigationService.makeactive("Team");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
-        NavigationService.getHeaderTeam(function(data) {
+        NavigationService.getHeaderTeam(function (data) {
             $scope.teamHeader = data.data;
 
         })
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -328,12 +328,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     })
 
-.controller('SkinCtrl', function($scope, TemplateService, NavigationService, $stateParams, $timeout, $state) {
+    .controller('SkinCtrl', function ($scope, TemplateService, NavigationService, $stateParams, $timeout, $state) {
         $scope.template = TemplateService.changecontent("skin");
         $scope.menutitle = NavigationService.makeactive("Skin");
         TemplateService.title = $scope.menutitle;
 
-        NavigationService.getCatByName($stateParams.id, function(data) {
+        NavigationService.getCatByName($stateParams.id, function (data) {
             if (data.data != '' && data.value) {
                 $scope.category = data.data;
                 console.log("    $scope.category", $scope.category);
@@ -347,7 +347,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 // $state.go('home');
             }
         });
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -355,11 +355,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
 
-        $scope.onOver = function(indexid) {
+        $scope.onOver = function (indexid) {
 
         }
-        $scope.tabActive = function(id, indexid, item) {
-            _.each($scope.category, function(key) {
+        $scope.tabActive = function (id, indexid, item) {
+            _.each($scope.category, function (key) {
                 if (key._id == id) {
                     key.activetab = true;
                 } else {
@@ -367,7 +367,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
                 }
             });
-            NavigationService.getSubCat(id, function(data) {
+            NavigationService.getSubCat(id, function (data) {
                 $scope.subCategory = data.data;
                 console.log("  $scope.subCategory", $scope.subCategory);
                 $scope.subCategory.style = {
@@ -380,7 +380,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
 
                 $scope.subCatid = id;
-                _.each($scope.category, function(key) {
+                _.each($scope.category, function (key) {
                     key.style = {};
                     key.stylea = {};
                     if (key._id == id) {
@@ -418,7 +418,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.classg = '';
         $scope.classh = '';
 
-        $scope.tabchange = function(tab, a, id) {
+        $scope.tabchange = function (tab, a, id) {
             $scope.tab = tab;
             if (a == 1) {
                 $scope.classa = "active-tab";
@@ -577,14 +577,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('PrivacyCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('PrivacyCtrl', function ($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("privacy");
         $scope.menutitle = NavigationService.makeactive("Privacy");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -592,7 +592,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
     })
-    .controller('VitiligoCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('VitiligoCtrl', function ($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("vitiligo");
         $scope.menutitle = NavigationService.makeactive("Vitiligo");
@@ -603,7 +603,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.classv = '';
 
 
-        $scope.tabchanges = function(tabs, a) {
+        $scope.tabchanges = function (tabs, a) {
             $scope.tabs = tabs;
             if (a == 1) {
 
@@ -617,7 +617,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         };
     })
-    .controller('BeforeCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('BeforeCtrl', function ($scope, TemplateService, NavigationService) {
 
         $scope.template = TemplateService.changecontent("before");
         $scope.menutitle = NavigationService.makeactive("Before & After");
@@ -639,22 +639,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //     $scope.headerBefore = data.data;
         //
         // })
-        NavigationService.getheaderBefore(function(data) {
+        NavigationService.getheaderBefore(function (data) {
             $scope.headerBefore = data.data;
         })
 
-        NavigationService.getAllBefore(function(data) {
+        NavigationService.getAllBefore(function (data) {
             $scope.before = data.data;
             $scope.tabActive($scope.before[0]._id, 0);
         })
 
-        $scope.tabActive = function(id, indexid) {
+        $scope.tabActive = function (id, indexid) {
             $scope.subCatid = id;
-            _.each($scope.before, function(key) {
+            _.each($scope.before, function (key) {
                 key.activetab = false;
             });
             $scope.before[indexid].activetab = true;
-            NavigationService.getOnebeforeafter(id, function(data) {
+            NavigationService.getOnebeforeafter(id, function (data) {
                 $scope.subCategoryBefore = data.data;
 
             })
@@ -662,7 +662,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -670,7 +670,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
 
-        $scope.tabchanges = function(tabs, a) {
+        $scope.tabchanges = function (tabs, a) {
             $scope.tabs = tabs;
             if (a == 1) {
 
@@ -797,15 +797,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         };
     })
-    .controller('ClinicPolicyCtrl', function($scope, TemplateService, NavigationService) {
+    .controller('ClinicPolicyCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("clinic-policy");
         $scope.menutitle = NavigationService.makeactive("clinic-policy");
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
-        NavigationService.getClinicPolicy(function(data) {
+        NavigationService.getClinicPolicy(function (data) {
             $scope.clinicPolicy = data.data;
         });
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -813,7 +813,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
     })
-    .controller('ConsultantCtrl', function($scope, TemplateService, NavigationService, $uibModal, $timeout) {
+    .controller('ConsultantCtrl', function ($scope, TemplateService, NavigationService, $uibModal, $timeout) {
 
         $scope.template = TemplateService.changecontent("consultant");
         $scope.menutitle = NavigationService.makeactive("Consultant");
@@ -825,15 +825,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         var slides = $scope.slides = [];
         var currIndex = 0;
 
-        NavigationService.getAllDoctor(function(data) {
+        NavigationService.getAllDoctor(function (data) {
             $scope.doctor = data.data;
 
         });
 
-        NavigationService.getHeaderDoctor(function(data) {
+        NavigationService.getHeaderDoctor(function (data) {
             $scope.doctorHeader = data.data;
         });
-        NavigationService.getDoctorSlider(function(data) {
+        NavigationService.getDoctorSlider(function (data) {
             $scope.doctorSlider = data.data;
             $scope.allDocs = _.cloneDeep($scope.doctorSlider);
         });
@@ -920,17 +920,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //   spl: "(Dermatologist)",
         //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
         // }]
-        $scope.nextDoctor = function() {
+        $scope.nextDoctor = function () {
             var newarr = $scope.allDocs;
             var startArr = _.slice(newarr, 0, 1);
             var endArr = _.slice(newarr, 1);
             $scope.allDocs = _.union(endArr, startArr);
-            _.each($scope.allDocs, function(key) {
+            _.each($scope.allDocs, function (key) {
                 key.active = false;
             });
             $scope.allDocs[0].active = true;
         };
-        $scope.reAssemble = function(index, inSlider) {
+        $scope.reAssemble = function (index, inSlider) {
             if (inSlider) {
                 $scope.doctorSliders = $scope.allDocs;
             } else {
@@ -940,7 +940,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             var endArr = _.slice($scope.doctorSliders, index);
             $scope.allDocs = _.union(endArr, startArr);
         };
-        $scope.openModal = function(index) {
+        $scope.openModal = function (index) {
             $scope.reAssemble(index, false);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
@@ -952,7 +952,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         };
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -960,24 +960,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
     })
-    .controller('BlogCtrl', function($scope, TemplateService, NavigationService, $stateParams, $state) {
+    .controller('BlogCtrl', function ($scope, TemplateService, NavigationService, $stateParams, $state) {
 
         $scope.template = TemplateService.changecontent("blog");
         $scope.menutitle = NavigationService.makeactive("Blog");
+        $scope.filter = null;
         TemplateService.title = $scope.menutitle;
         // $scope.navigation = NavigationService.getnav();
         $scope.blogmsg = "Loading...";
         $scope.popularmsg = "Loading...";
         $scope.tagmsg = "Loading...";
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
                 $('.back-to-top ').fadeOut();
             }
         });
-
 
 
         // GET ALL BLOG BY JAGRUTI
@@ -989,10 +989,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.search.search = "";
         $scope.tagId = [];
 
-        $scope.loadnotification = function(pageno) {
+        $scope.loadnotification = function (pageno) {
 
-            NavigationService.getAllBlog(pageno, $scope.search.search, $scope.tagId, function(data) {
-                _.each(data.data.data, function(n) {
+            NavigationService.getAllBlog(pageno, $scope.search.search, $scope.tagId, function (data) {
+                _.each(data.data.data, function (n) {
                     $scope.blog.push(n);
                 })
 
@@ -1012,27 +1012,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.loadnotification(1);
 
-        $scope.loadMore = function() {
+        $scope.loadMore = function () {
             $scope.loadnotification(++$scope.pagenumber);
         };
-        $scope.gotoTagFun = function(id) {
+
+        //code by nilesh
+        $scope.clearFilter = function () {
+            $scope.filter = null;
+        };
+
+        $scope.gotoTagFun = function (value) {
             $scope.pagenumber = 1;
             $scope.tagId = [];
             $scope.blog = [];
+            $scope.filter = value.name;
             $scope.shouldscroll = false;
-              $scope.tagId.push(id);
-              $scope.loadnotification(1);
+            $scope.tagId.push(value.id);
+            $scope.loadnotification(1);
 
 
             // $state.go('blog', {
             //     id: id
             // })
-          }
+        }
         // if ($stateParams.id) {
         //   $scope.gotoTagFun($stateParams.id);
         // }
         //  SEARCH BLOG
-        $scope.doSearch = function() {
+        $scope.doSearch = function () {
             $scope.pagenumber = 1;
             $scope.blog = [];
             // $scope.tagId=[];
@@ -1043,7 +1050,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //  POPULAR POST AND TAGS
         $scope.post = [];
         $scope.tags = [];
-        NavigationService.getPostTags(function(data) {
+        NavigationService.getPostTags(function (data) {
             $scope.post = data.data.popularposts;
             $scope.tags = data.data.tags;
             if ($scope.post == '') {
@@ -1060,14 +1067,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // GET ALL BLOG BY JAGRUTI
         $scope.t = {};
         $scope.t.showTag = false;
-        $scope.showTag = function(flag) {
+        $scope.showTag = function (flag) {
             $scope.t.showTag = flag;
         };
 
-        NavigationService.getHeaderBlog(function(data) {
+        NavigationService.getHeaderBlog(function (data) {
             $scope.blogHeader = data.data;
         })
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
             } else {
@@ -1136,137 +1143,137 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('BlogDeatilCtrl', function($scope, TemplateService, NavigationService, $state, $location) {
+    .controller('BlogDeatilCtrl', function ($scope, TemplateService, NavigationService, $state, $location) {
 
-    $scope.template = TemplateService.changecontent("blog-detail");
-    $scope.menutitle = NavigationService.makeactive("Blog Detail");
-    TemplateService.title = $scope.menutitle;
-    // $scope.navigation = NavigationService.getnav();
-    $scope.myUrl = $location.absUrl();
+        $scope.template = TemplateService.changecontent("blog-detail");
+        $scope.menutitle = NavigationService.makeactive("Blog Detail");
+        TemplateService.title = $scope.menutitle;
+        // $scope.navigation = NavigationService.getnav();
+        $scope.myUrl = $location.absUrl();
 
-    $scope.popularmsg = "Loading...";
-    $scope.tagmsg = "Loading...";
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 500) {
-            $('.back-to-top ').fadeIn();
-        } else {
-            $('.back-to-top ').fadeOut();
-        }
-    });
-    //  BLOG DETAIL BY JAGRUTI
-    $scope.popular = [];
-    $scope.blog = [];
-    //  GET BLOG DETAIL
-    NavigationService.getOneBlog($state.params.id, function(data) {
-        $scope.blog = data.data;
-        console.log("  $scope.blog", $scope.blog);
-        if ($scope.blog.blog.tag) {
-            if ($scope.blog.blog.tag == "") {
-                $scope.tagmsg = "No Tags.";
+        $scope.popularmsg = "Loading...";
+        $scope.tagmsg = "Loading...";
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
             } else {
-                $scope.tagmsg = "";
+                $('.back-to-top ').fadeOut();
             }
-        }
+        });
+        //  BLOG DETAIL BY JAGRUTI
+        $scope.popular = [];
+        $scope.blog = [];
+        //  GET BLOG DETAIL
+        NavigationService.getOneBlog($state.params.id, function (data) {
+            $scope.blog = data.data;
+            console.log("  $scope.blog", $scope.blog);
+            if ($scope.blog.blog.tag) {
+                if ($scope.blog.blog.tag == "") {
+                    $scope.tagmsg = "No Tags.";
+                } else {
+                    $scope.tagmsg = "";
+                }
+            }
 
-    });
-    //  GET POPULAR POST
-    NavigationService.getPopularPosts(function(data) {
-        $scope.popular = data.data;
-        if ($scope.popular == "") {
-            $scope.popularmsg = "No Popular Post.";
-        } else {
-            $scope.popularmsg = "";
-        }
-    });
-    //  BLOG DETAIL BY JAGRUTI
-    NavigationService.getHeaderBlog(function(data) {
-        $scope.blogHeader = data.data;
+        });
+        //  GET POPULAR POST
+        NavigationService.getPopularPosts(function (data) {
+            $scope.popular = data.data;
+            if ($scope.popular == "") {
+                $scope.popularmsg = "No Popular Post.";
+            } else {
+                $scope.popularmsg = "";
+            }
+        });
+        //  BLOG DETAIL BY JAGRUTI
+        NavigationService.getHeaderBlog(function (data) {
+            $scope.blogHeader = data.data;
+        })
+
     })
 
-})
+    .controller('footerctrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal, $timeout) {
+        $scope.template = TemplateService;
+        NavigationService.getAllCategory(function (data) {
+            $scope.footer = data.data;
+        });
 
-.controller('footerctrl', function($scope, TemplateService, NavigationService, $timeout, $uibModal, $timeout) {
-    $scope.template = TemplateService;
-    NavigationService.getAllCategory(function(data) {
-        $scope.footer = data.data;
-    });
-
-    $scope.formData = {};
-    $scope.formComplete = false;
-    $scope.emailExist = false;
-    $scope.subscribe = function(formData) {
-        if ($scope.formData) {
-            NavigationService.subscribe($scope.formData, function(data) {
-                if (data.value === true) {
-                    $scope.formComplete = true;
-                    $scope.emailExist = false;
-                    $timeout(function() {
-                        $scope.formComplete = false;
+        $scope.formData = {};
+        $scope.formComplete = false;
+        $scope.emailExist = false;
+        $scope.subscribe = function (formData) {
+            if ($scope.formData) {
+                NavigationService.subscribe($scope.formData, function (data) {
+                    if (data.value === true) {
+                        $scope.formComplete = true;
                         $scope.emailExist = false;
-                        $scope.formData = {};
+                        $timeout(function () {
+                            $scope.formComplete = false;
+                            $scope.emailExist = false;
+                            $scope.formData = {};
+                        }, 2000);
+
+                    } else if (data.value === false) {
+                        $scope.emailExist = true;
+                    }
+                })
+
+            }
+        }
+
+        $scope.bookingFun = function () {
+            $scope.bookTab = !$scope.bookTab;
+            console.log("im in");
+        };
+        $scope.contactForm = {};
+        $scope.submitForm = function (contactForm) {
+            console.log("contactForm", contactForm);
+            NavigationService.booking(contactForm, function (data) {
+                console.log("data", data);
+                if (data.value) {
+                    console.log("im true");
+                    // $scope.bookingFormComplete= true;
+                    // $scope.bookTab=false;
+                    $uibModal.open({
+                        animation: true,
+                        templateUrl: 'views/modal/thankyou.html',
+                        backdropClass: "backcolor"
+                    });
+                    $timeout(function () {
+                        $scope.bookTab = false;
+                        $scope.contactForm = {};
                     }, 2000);
 
-                } else if (data.value === false) {
-                    $scope.emailExist = true;
+                } else if (!data.value) {
+                    if (data.data === 'Please Enter Email ID') {
+                        $scope.message = "Please Enter Valid Email ID";
+                    }
                 }
             })
-
         }
-    }
 
-    $scope.bookingFun = function() {
-        $scope.bookTab = !$scope.bookTab;
-        console.log("im in");
-    };
-    $scope.contactForm = {};
-    $scope.submitForm = function(contactForm) {
-        console.log("contactForm", contactForm);
-        NavigationService.booking(contactForm, function(data) {
-            console.log("data", data);
-            if (data.value) {
-                console.log("im true");
-                // $scope.bookingFormComplete= true;
-                // $scope.bookTab=false;
-                $uibModal.open({
-                    animation: true,
-                    templateUrl: 'views/modal/thankyou.html',
-                    backdropClass: "backcolor"
-                });
-                $timeout(function() {
-                    $scope.bookTab = false;
-                    $scope.contactForm = {};
-                }, 2000);
+    })
 
-            } else if (!data.value) {
-                if (data.data === 'Please Enter Email ID') {
-                    $scope.message = "Please Enter Valid Email ID";
-                }
-            }
-        })
-    }
+    .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
 
-})
+        $scope.changeLanguage = function () {
 
-.controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
-
-    $scope.changeLanguage = function() {
-
-        if (!$.jStorage.get("language")) {
-            $translate.use("hi");
-            $.jStorage.set("language", "hi");
-        } else {
-            if ($.jStorage.get("language") == "en") {
+            if (!$.jStorage.get("language")) {
                 $translate.use("hi");
                 $.jStorage.set("language", "hi");
             } else {
-                $translate.use("en");
-                $.jStorage.set("language", "en");
+                if ($.jStorage.get("language") == "en") {
+                    $translate.use("hi");
+                    $.jStorage.set("language", "hi");
+                } else {
+                    $translate.use("en");
+                    $.jStorage.set("language", "en");
+                }
             }
-        }
-        //  $rootScope.$apply();
-    };
+            //  $rootScope.$apply();
+        };
 
 
-})
+    })
 
 ;
