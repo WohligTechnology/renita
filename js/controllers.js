@@ -1019,6 +1019,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //code by nilesh
         $scope.clearFilter = function () {
             $scope.filter = null;
+            $state.reload();
         };
 
         $scope.gotoTagFun = function (value) {
