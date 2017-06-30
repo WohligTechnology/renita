@@ -1028,7 +1028,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.blog = [];
             $scope.filter = value.name;
             $scope.shouldscroll = false;
-            $scope.tagId.push(value.id);
+            $scope.tagId.push(value._id);
+            console.log("$scope.tagId.push", $scope.tagId, value);
             $scope.loadnotification(1);
 
 
