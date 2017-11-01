@@ -3,7 +3,7 @@
 
 <head ng-controller="headerctrl">
   <meta charset="utf-8">
-  <!-- <base href="http://wohlig.co.in/angularframework/"> -->
+  <base href="/">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,15 +47,17 @@
 <body>
 
   <div class="repeated-item" ui-view></div>
-  <script>
-    (fun, s, o, g, r, a,  ) i[' oo gl e
-    AnalyticsObject']=r;i[r]=i [ r] ||fu n ctio n( ){
-    [].q || [].pus h(aguments)},
-    i[r].l =   *        new Da t e ()a= s.creat e E lement(o),
-      s.m entsByTagName(o)[0]; a.async = 1;. src = g;  .are n tN ode.insertBefore(a, m) 
-  		}) (wi  o cument, 'script', '//www.go ogle-analytics.com/analytics.js', 'g a');
-    ('    e', 'UA-77872125-3', { 'cookieDomain': 'none' });
-  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-73461827-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-77872125-3');
+</script>
+
+ 
 </body>
 
 </html>
