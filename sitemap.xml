@@ -1,79 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-<loc>http://renitarajan.com/#/</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority></url>
-<url>
-<loc>http://renitarajan.com/#/category/Shape/59f6fabf1f936c215273632e</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/category/Skin/57a994734639006667c61e6f</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/category/Hair%20and%20Scalp/57ac6b71e52b52620839dbf9</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/category/Body/57ac6b7ae52b52620839dbfa</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/category/Treatments/57ac6b8ee52b52620839dbfc</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/category/Mommy%20Derm/57ac6b98e52b52620839dbfd</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/about-us</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/team</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/consultant</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/before-after</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/testimonial</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/blog</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>http://renitarajan.com/#/clinic-policy</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-</url>
 
 <url>
-<loc>http://renitarajan.com/#/contact</loc>
-<changefreq>monthly</changefreq>
-<priority>1.0</priority>
+  <loc>http://renitarajan.com/</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/category/RenderShape/59f6fabf1f936c215273632e</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/category/Skin/57a994734639006667c61e6f</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/category/Hair%20and%20Scalp/57ac6b71e52b52620839dbf9</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/category/Body/57ac6b7ae52b52620839dbfa</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/category/Treatments/57ac6b8ee52b52620839dbfc</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/category/Mommy%20Derm/57ac6b98e52b52620839dbfd</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/about-us</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/team</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/consultant</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/before-after</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/testimonial</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/blog</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/clinic-policy</loc>
+</url>
+<url>
+  <loc>http://renitarajan.com/contact</loc>
 </url>
 </urlset>
