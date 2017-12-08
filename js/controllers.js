@@ -1180,7 +1180,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             ga('send', {
                 hitType: 'pageview',
-                page: $scope.blog.blog.name
+                page: '/blog-detail/'
+            });
+            
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'Blogs',
+                eventAction: 'Cick',
+                eventLabel: $scope.blog.blog.name
             });
 
         });
