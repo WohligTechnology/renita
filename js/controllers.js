@@ -1177,6 +1177,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             }
 
+
+            ga('send', {
+                hitType: 'pageview',
+                page: $scope.blog.blog.name
+            });
+
         });
         //  GET POPULAR POST
         NavigationService.getPopularPosts(function (data) {
@@ -1278,4 +1284,4 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-;
+    ;
