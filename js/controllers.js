@@ -960,7 +960,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
     })
-    .controller('BlogCtrl', function ($scope, TemplateService, NavigationService, $stateParams, $state) {
+    .controller('BlogCtrl', function ($scope, TemplateService, NavigationService, $stateParams, $state,$analytics ) {
 
         $scope.template = TemplateService.changecontent("blog");
         $scope.menutitle = NavigationService.makeactive("Blog");
@@ -978,7 +978,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $('.back-to-top ').fadeOut();
             }
         });
-
+        $scope.analyticalCodeBlog = function (data) {
+            console.log("name",data);
+            $analytics.eventTrack('Blog View', {
+                label: "data"
+            });
+        }; 
 
         // GET ALL BLOG BY JAGRUTI
         // BLOG PAGINATION
@@ -1182,6 +1187,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $analytics.eventTrack('Confirm basket', {
             label: $scope.blog.blog.name
         });
+         $analytics.pageTrack('$scope.blog.blog.name');
         // ga('send', {
         //     hitType: 'pageview',
         //     page: '/blog-detail/'
@@ -1195,12 +1201,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // });
 
     });
-    $scope.analyticalCodeBlog = function () {
-        $analytics.eventTrack('Blog View', {
-            label: "demo"
-        });
-    };
-    $scope.analyticalCodeBlog();
+
+
 
 
     //  GET POPULAR POST
