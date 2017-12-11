@@ -9,12 +9,16 @@ var firstapp = angular.module('firstapp', [
   'angulartics.google.analytics'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,$sceDelegateProvider) {
+firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $sceDelegateProvider, $analyticsProvider) {
   // for http request with session
   $httpProvider.defaults.withCredentials = true;
+  $analyticsProvider.firstPageview(true); /* Records pages that don't use $state or $route */
+  $analyticsProvider.withAutoBase(true); /* Records full path */
+  $analyticsProvider.trackStates(true);
   $sceDelegateProvider.resourceUrlWhitelist([
-  'self',
-  'https://www.youtube.com/embed/**']);
+    'self',
+    'https://www.youtube.com/embed/**'
+  ]);
   $stateProvider
     .state('home', {
       url: "/",
@@ -101,16 +105,16 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
 });
 
 
-firstapp.directive('img', function($compile, $parse) {
+firstapp.directive('img', function ($compile, $parse) {
   return {
     restrict: 'E',
     replace: false,
-    link: function($scope, element, attrs) {
+    link: function ($scope, element, attrs) {
       var $element = $(element);
       if (!attrs.noloading) {
         $element.after("<img src='img/loading.gif' class='loading' />");
         var $loading = $element.next(".loading");
-        $element.load(function() {
+        $element.load(function () {
           $loading.remove();
           $(this).addClass("doneLoading");
         });
@@ -120,28 +124,28 @@ firstapp.directive('img', function($compile, $parse) {
     }
   };
 });
-firstapp.directive('autoHeightfixed', function($compile, $parse) {
+firstapp.directive('autoHeightfixed', function ($compile, $parse) {
   return {
     restrict: 'EA',
     replace: false,
-    link: function($scope, element, attrs) {
+    link: function ($scope, element, attrs) {
       var $element = $(element);
       var windowHeight = $(window).height();
-      var addHeight = function() {
+      var addHeight = function () {
         $element.css("height", windowHeight);
       };
       addHeight();
     }
   };
 });
-firstapp.directive('autoHeight', function($compile, $parse) {
+firstapp.directive('autoHeight', function ($compile, $parse) {
   return {
     restrict: 'EA',
     replace: false,
-    link: function($scope, element, attrs) {
+    link: function ($scope, element, attrs) {
       var $element = $(element);
       var windowHeight = $(window).height();
-      var addHeight = function() {
+      var addHeight = function () {
         $element.css("min-height", windowHeight);
       };
       addHeight();
@@ -149,20 +153,20 @@ firstapp.directive('autoHeight', function($compile, $parse) {
   };
 });
 firstapp.filter('trusted', ['$sce', function ($sce) {
- return function (url) {
-   return $sce.trustAsResourceUrl(url);
- };
+  return function (url) {
+    return $sce.trustAsResourceUrl(url);
+  };
 }]);
 // firstapp.filter('trusted', ['$sce', function($sce) {
 //     return function(url) {
 //         return $sce.trustAsResourceUrl(url);
 //     };
 // }]);
-firstapp.directive('fancyboxBox', function($document) {
+firstapp.directive('fancyboxBox', function ($document) {
   return {
     restrict: 'EA',
     replace: false,
-    link: function(scope, element, attr) {
+    link: function (scope, element, attr) {
       var $element = $(element);
       var target;
       if (attr.rel) {
@@ -175,9 +179,9 @@ firstapp.directive('fancyboxBox', function($document) {
         openEffect: 'fade',
         closeEffect: 'fade',
         closeBtn: true,
-        autoPlay : false,
-         playSpeed : 3000,
-         loop:true,
+        autoPlay: false,
+        playSpeed: 3000,
+        loop: true,
         helpers: {
           media: {}
         }
@@ -185,25 +189,25 @@ firstapp.directive('fancyboxBox', function($document) {
     }
   };
 });
-firstapp.directive('scrollToItem', function() {
-    return {
-        restrict: 'A',
-        scope: {
-            scrollTo: "@"
-        },
-        link: function(scope, $elm, attr) {
+firstapp.directive('scrollToItem', function () {
+  return {
+    restrict: 'A',
+    scope: {
+      scrollTo: "@"
+    },
+    link: function (scope, $elm, attr) {
 
-            $elm.on('click', function() {
-                $('html,body').animate({
-                    scrollTop: $(scope.scrollTo).offset().top
-                }, "slow");
-            });
-        }
+      $elm.on('click', function () {
+        $('html,body').animate({
+          scrollTop: $(scope.scrollTo).offset().top
+        }, "slow");
+      });
     }
+  }
 });
-firstapp.directive("scroll", function($window) {
-  return function(scope, element, attrs) {
-    angular.element($window).bind("scroll", function() {
+firstapp.directive("scroll", function ($window) {
+  return function (scope, element, attrs) {
+    angular.element($window).bind("scroll", function () {
       var windowHeight = $(window).height();
       if (this.pageYOffset >= 200) {
         // console.log(windowHeight);
@@ -215,13 +219,13 @@ firstapp.directive("scroll", function($window) {
   };
 });
 
-firstapp.config(function($translateProvider) {
+firstapp.config(function ($translateProvider) {
   $translateProvider.translations('en', LanguageEnglish);
   $translateProvider.translations('hi', LanguageHindi);
   $translateProvider.preferredLanguage('en');
 });
-firstapp.filter('serverimage', function() {
-  return function(image) {
+firstapp.filter('serverimage', function () {
+  return function (image) {
     if (image && image !== null) {
 
       return adminurl + "upload/readFile?file=" + image;
@@ -231,8 +235,8 @@ firstapp.filter('serverimage', function() {
   };
 });
 
-firstapp.filter('uploadpath', function() {
-  return function(input, width, height, style) {
+firstapp.filter('uploadpath', function () {
+  return function (input, width, height, style) {
     var other = "";
     if (width && width !== "") {
       other += "&width=" + width;
@@ -248,36 +252,36 @@ firstapp.filter('uploadpath', function() {
     }
   };
 });
-firstapp.filter('youtubethumb', function() {
-    return function(input, onlyid) {
-        if (input) {
-            console.log(input);
-            var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-            console.log(videoid);
-            if (videoid != null) {
-                console.log('tgyuhj', videoid);
-                if (onlyid == false) {
-                    return "http://img.youtube.com/vi/" + videoid[1] + "/hqdefault.jpg";
-                } else if (onlyid == true) {
-                    return videoid[1];
-                }
-            } else {
-                return input;
-                console.log('1 else', input);
-            }
-        } else {
-            return input;
-            console.log('2 else', input);
+firstapp.filter('youtubethumb', function () {
+  return function (input, onlyid) {
+    if (input) {
+      console.log(input);
+      var videoid = input.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+      console.log(videoid);
+      if (videoid != null) {
+        console.log('tgyuhj', videoid);
+        if (onlyid == false) {
+          return "http://img.youtube.com/vi/" + videoid[1] + "/hqdefault.jpg";
+        } else if (onlyid == true) {
+          return videoid[1];
         }
-    };
+      } else {
+        return input;
+        console.log('1 else', input);
+      }
+    } else {
+      return input;
+      console.log('2 else', input);
+    }
+  };
 });
-firstapp.directive('scrolldown', function($compile, $parse) {
+firstapp.directive('scrolldown', function ($compile, $parse) {
   return {
     restrict: 'EA',
     replace: false,
-    link: function($scope, element, attrs) {
+    link: function ($scope, element, attrs) {
       var $element = $(element);
-      $scope.scrollDown = function() {
+      $scope.scrollDown = function () {
         $('html,body').animate({
             scrollTop: $(".second").offset().top
           },
@@ -287,69 +291,69 @@ firstapp.directive('scrolldown', function($compile, $parse) {
   };
 });
 
-firstapp.directive('touchDown', function($compile, $parse) {
+firstapp.directive('touchDown', function ($compile, $parse) {
   return {
     restrict: 'EA',
     replace: false,
-    link: function($scope, element, attrs) {
+    link: function ($scope, element, attrs) {
       var $element = $(element);
-      $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() > $(document).height() - 30) {
-      $element.addClass('touch-down');
-   } else {
-     $element.removeClass('touch-down');
-   }
-});
+      $(window).scroll(function () {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 30) {
+          $element.addClass('touch-down');
+        } else {
+          $element.removeClass('touch-down');
+        }
+      });
     }
   };
 });
 
-firstapp.directive('onlyDigits', function() {
-    return {
-        require: 'ngModel',
-        restrict: 'A',
-        link: function(scope, element, attr, ctrl) {
-            var digits;
+firstapp.directive('onlyDigits', function () {
+  return {
+    require: 'ngModel',
+    restrict: 'A',
+    link: function (scope, element, attr, ctrl) {
+      var digits;
 
-            function inputValue(val) {
-                if (val) {
-                    if (attr.type == "tel") {
-                        digits = val.replace(/[^0-9\+\\]/g, '');
-                    } else {
-                        digits = val.replace(/[^0-9\-\\]/g, '');
-                    }
+      function inputValue(val) {
+        if (val) {
+          if (attr.type == "tel") {
+            digits = val.replace(/[^0-9\+\\]/g, '');
+          } else {
+            digits = val.replace(/[^0-9\-\\]/g, '');
+          }
 
 
-                    if (digits !== val) {
-                        ctrl.$setViewValue(digits);
-                        ctrl.$render();
-                    }
-                    return parseInt(digits, 10);
-                }
-                return undefined;
-            }
-            ctrl.$parsers.push(inputValue);
+          if (digits !== val) {
+            ctrl.$setViewValue(digits);
+            ctrl.$render();
+          }
+          return parseInt(digits, 10);
         }
-    };
+        return undefined;
+      }
+      ctrl.$parsers.push(inputValue);
+    }
+  };
 });
-firstapp.directive('aplhaOnly', function() {
-    return {
-        require: 'ngModel',
-        link: function(scope, element, attr, ngModelCtrl) {
-            function fromUser(text) {
-                var transformedInput = text.replace(/[^a-zA-Z\.\s]/g, '');
-                if (transformedInput !== text) {
-                    ngModelCtrl.$setViewValue(transformedInput);
-                    ngModelCtrl.$render();
-                }
-                return transformedInput;
-            }
-            ngModelCtrl.$parsers.push(fromUser);
+firstapp.directive('aplhaOnly', function () {
+  return {
+    require: 'ngModel',
+    link: function (scope, element, attr, ngModelCtrl) {
+      function fromUser(text) {
+        var transformedInput = text.replace(/[^a-zA-Z\.\s]/g, '');
+        if (transformedInput !== text) {
+          ngModelCtrl.$setViewValue(transformedInput);
+          ngModelCtrl.$render();
         }
-    };
+        return transformedInput;
+      }
+      ngModelCtrl.$parsers.push(fromUser);
+    }
+  };
 });
-firstapp.filter('urlEncode', [function() {
-    return window.encodeURIComponent;
+firstapp.filter('urlEncode', [function () {
+  return window.encodeURIComponent;
 }]);
 
 
