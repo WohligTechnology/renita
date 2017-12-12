@@ -12,9 +12,8 @@ var firstapp = angular.module('firstapp', [
 firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $sceDelegateProvider, $analyticsProvider) {
   // for http request with session
   $httpProvider.defaults.withCredentials = true;
-  $analyticsProvider.firstPageview(true); /* Records pages that don't use $state or $route */
-  $analyticsProvider.withAutoBase(true); /* Records full path */
-  $analyticsProvider.trackStates(true);
+  // $analyticsProvider.firstPageview(true); /* Records pages that don't use $state or $route */
+  // $analyticsProvider.withAutoBase(true); /* Records full path */
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
     'https://www.youtube.com/embed/**'
