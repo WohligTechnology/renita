@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar', 'ui.select'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper', 'infinite-scroll', 'angular-loading-bar', 'ui.select','angulartics','angulartics.google.analytics'])
 
 .config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
@@ -1160,8 +1160,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 .controller('BlogDeatilCtrl', function ($scope, TemplateService, NavigationService, $state, $location, $analytics) {
 
     $scope.template = TemplateService.changecontent("blog-detail");
-    $scope.menutitle = NavigationService.makeactive("Blog Detail");
-    TemplateService.title = $scope.menutitle;
+    $scope.menutitle = NavigationService.makeactive("Blog");
     // $scope.navigation = NavigationService.getnav();
     $scope.myUrl = $location.absUrl();
 
@@ -1188,11 +1187,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.tagmsg = "";
             }
         }
-        console.log("Blog Detail Name", $scope.blog.blog.name);
-        $analytics.eventTrack('Confirm basket', {
-            label: $scope.blog.blog.name
-        });
-         $analytics.pageTrack('$scope.blog.blog.name');
+            TemplateService.title = $scope.blog.blog.name;
         // ga('send', {
         //     hitType: 'pageview',
         //     page: '/blog-detail/'
