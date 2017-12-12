@@ -977,13 +977,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             } else {
                 $('.back-to-top ').fadeOut();
             }
-        });
-        $scope.analyticalCodeBlog = function (data) {
-            console.log("name",data);
-            $analytics.eventTrack('Blog View', {
-                label: "data"
-            });
-        }; 
+        }); 
 
         // GET ALL BLOG BY JAGRUTI
         // BLOG PAGINATION
@@ -1082,6 +1076,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.blogHeader = data.data;
             console.log("$scope.blogHeader", $scope.blogHeader);
         })
+
         $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
                 $('.back-to-top ').fadeIn();
@@ -1090,6 +1085,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         });
 
+
+
+        //analytic Event Tracking
+        $scope.analyticalCodeBlog = function (data) {
+            console.log("name",data);
+            $analytics.eventTrack('Blog View', {
+                category: 'Blog View',
+                label: "data"
+            });
+        };
 
         // $scope.constraintsForTags={};
         // $scope.constraintsForTags.pagenumber=1;

@@ -5,7 +5,6 @@
       <!-- <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
         <img src="img/scroll-down.png" alt="Renita">
       </div> -->
-
       <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
         <img src="img/scroll-down.png" alt="Renita">
       </div>
@@ -38,17 +37,11 @@
             <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
               <div class="col-md-6" ng-repeat="item in blog track by $index">
                 <div class="blog-box">
-
                   <div ng-if="item.video" class="blog-img relate blog-img-front">
                     <iframe ng-src="{{'https://www.youtube.com/embed/'+ item.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen
                       width="100%" class="blog-iframe"></iframe>
-
                     <!-- <img src="img/play.png" alt="" width="35px" class="img-responsive doneLoading" draggable="false" ng-if="item.video"> -->
-
                   </div>
-
-
-
                   <div ng-if="item.image && !item.video">
                     <div class="blog-img relate blog-img-front">
                       <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video">
@@ -76,10 +69,12 @@
                   </div>
                   <div class="box-footer mt30">
                     <div class="float-left">
-                      <button type="button" name="button" class="text-up outline-btn btn-padding" ng-click="analyticalCodeBlog(item.name)" ui-sref="blog-detail({'id':item._id})">Read More</button>
+                      <button type="button" name="button" class="text-up outline-btn btn-padding" ng-click="analyticalCodeBlog(item.name)" ui-sref="blog-detail({'id':item._id})">
+                        Read More
+                        </button>
                     </div>
                     <div class="float-right color-grey">
-                      <i class="fa fa-eye"></i>{{item.views}}
+                      <i class="fa fa-eye"></i> {{item.views}}
                     </div>
                     <div class="clearfix"></div>
                   </div>
@@ -94,7 +89,9 @@
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search" ng-model="search.search" ng-change="doSearch() ">
                 <span class="input-group-btn" ng-click="doSearch()">
-                           <button class="btn search-btn search" type="button"><i class="fa fa-search"></i></button>
+                           <button class="btn search-btn search" type="button">
+                             <i class="fa fa-search"></i>
+                             </button>
                          </span>
               </div>
             </div>

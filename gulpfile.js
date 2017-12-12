@@ -13,7 +13,7 @@ var jsArray = [
     './bower_components/angular-flexslider/angular-flexslider.js',
     './bower_components/angular-translate/angular-translate.js',
     './bower_components/lodash/lodash.js',
-    './bower_components/angulartics/dist/angulartics.min.js',
+    './bower_components/angulartics/src/angulartics.js',
     './bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
     './bower_components/angular-swiper/dist/angular-swiper.js',
     './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
