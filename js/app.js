@@ -9,7 +9,7 @@ var firstapp = angular.module('firstapp', [
   'angulartics.google.analytics'
 ]);
 
-firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $sceDelegateProvider) {
+firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $sceDelegateProvider, $analyticsProvider) {
   // for http request with session
   $httpProvider.defaults.withCredentials = true;
   $analyticsProvider.firstPageview(true); /* Records pages that don't use $state or $route */
