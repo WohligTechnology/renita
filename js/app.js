@@ -14,6 +14,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $lo
   $httpProvider.defaults.withCredentials = true;
   // $analyticsProvider.firstPageview(true); /* Records pages that don't use $state or $route */
   // $analyticsProvider.withAutoBase(true); /* Records full path */
+  $analyticsProvider.trackStates(true);
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
     'https://www.youtube.com/embed/**'
