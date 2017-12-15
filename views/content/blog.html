@@ -69,7 +69,8 @@
                   </div>
                   <div class="box-footer mt30">
                     <div class="float-left">
-                      <button type="button" name="button" class="text-up outline-btn btn-padding" ng-click="analyticalCodeBlog(item.name)" ui-sref="blog-detail({'id':item._id})">
+                      <button type="button" name="button" class="text-up outline-btn btn-padding" analytics-on analytics-event="Blog View" analytics-category="blog"
+                        analytics-label=data ng-click="analyticalCodeBlog(item.name)" ui-sref="blog-detail({'id':item._id})">
                         Read More
                         </button>
                     </div>
