@@ -1,7 +1,7 @@
 <section scrolldown>
     <section>
         <div class="head-top hidden-xs">
-            <img ng-src="{{doctorHeader.image|uploadpath}}" alt="" class="img-responsive give-height">
+            <img ng-src="{{doctorHeader.image|uploadpath}}" alt="{{doctorHeader.name}}" class="img-responsive give-height">
             <!-- <img ng-src="img/our-team.png" alt="" class="img-responsive"> -->
             <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
                 <img src="img/scroll-down.png" alt="Renita">
@@ -10,7 +10,7 @@
     </section>
     <section class="hidden-lg hidden-md hidden-sm">
         <div class="head-top">
-            <img ng-src="{{doctorHeader.image1|uploadpath}}" alt="" class="img-responsive w100 " auto-heightfixed>
+            <img ng-src="{{doctorHeader.image1|uploadpath}}" alt="{{doctorHeader.name}}" class="img-responsive w100 " auto-heightfixed>
             <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
                 <img src="img/scroll-down.png" alt="Renita">
             </div>
@@ -63,7 +63,7 @@
                                 <div class="doctor-box text-center " ng-click=openModal($index);>
                                     <div class="img-box" ng-click=openModal($index);>
 
-                                        <img ng-src="{{doctor[0].image|uploadpath}}" alt="" class="img-responsive">
+                                        <img ng-src="{{doctor[0].image|uploadpath}}" alt="{{doctor[0].name}}" class="img-responsive">
 
                                     </div>
                                     <div class="docs-detail">

@@ -1,8 +1,8 @@
 <section scrolldown>
    <section>
       <div class="head-top hidden-xs" ng-if="blogHeader.image">
-         <img src="img/blog.jpg" alt="" class="img-responsive" ng-if="!blogHeader.image">
-         <img ng-src="{{blogHeader.image|uploadpath}}" alt="" class="img-responsive give-height" ng-if="blogHeader.image">
+         <img src="img/blog.jpg" alt="Renita blog" class="img-responsive" ng-if="!blogHeader.image">
+         <img ng-src="{{blogHeader.image|uploadpath}}" alt="{{blogHeader.name}}" class="img-responsive give-height" ng-if="blogHeader.image">
          <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
             <img src="img/scroll-down.png" alt="Renita">
          </div>
@@ -17,7 +17,7 @@
    </section>
    <section class="hidden-lg hidden-md hidden-sm">
       <div class="head-top" ng-if="blogHeader.image">
-         <img ng-src="{{blogHeader.image1|uploadpath}}" alt="" class="img-responsive w100 " auto-heightfixed ng-if="blogHeader.image1">
+         <img ng-src="{{blogHeader.image1|uploadpath}}" alt="{{blogHeader.name}}" class="img-responsive w100 " auto-heightfixed ng-if="blogHeader.image1">
          <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
             <img src="img/scroll-down.png" alt="Renita">
          </div>
@@ -36,7 +36,7 @@
             <div class="col-md-8">
                <div class="blog-left-side">
                   <div class="blog-img" ng-if="blog.blog.image && !blog.blog.video">
-                     <img ng-src="{{blog.blog.image|serverimage}}" alt="" class="img-responsive">
+                     <img ng-src="{{blog.blog.image|serverimage}}" alt="{{blog.blog.name}}" class="img-responsive">
                   </div>
 
                   <div class="blog-img" ng-if="blog.blog.video">
@@ -81,14 +81,14 @@
 
                         <div class="social-icon display-inline">
                           <a  ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank">
-                           <img src="img/fb.png" alt="">
+                           <img src="img/fb.png" alt="Renita">
                            </a>
                         </div>
                      </li>
                      <li>
                         <div class="social-icon display-inline">
                           <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank">
-                           <img src="img/twitt.png" alt="">
+                           <img src="img/twitt.png" alt="Renita">
                            </a>
                         </div>
                      </li>
@@ -96,7 +96,7 @@
 
                         <div class="social-icon display-inline">
                           <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank">
-                           <img src="img/google.png" alt="">
+                           <img src="img/google.png" alt="Renita">
                          </a>
                         </div>
                      </li>
@@ -113,7 +113,7 @@
 
 
                           <a ng-href="https://mail.google.com/mail/?view=cm&su=Dr. Renita Rajan&to&body={{myUrl|urlEncode}}" target="_blank" title="Share with Gmail">
-                           <img src="img/mail.png" alt="">
+                           <img src="img/mail.png" alt="Renita">
                            </a>
                         </div>
                      </li>
@@ -194,6 +194,6 @@
          </div>
       </div>
    </section>
-   <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Dharma Productions">
+   <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Renita">
    </div>
 </section>

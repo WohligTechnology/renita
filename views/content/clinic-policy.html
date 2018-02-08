@@ -1,7 +1,7 @@
 <section scrolldown>
   <section>
     <div class="head-top hidden-xs">
-      <img ng-src="{{clinicPolicy.image|uploadpath}}" alt="" class="img-responsive give-height" ng-if="clinicPolicy.image">
+      <img ng-src="{{clinicPolicy.image|uploadpath}}" alt="{{clinicPolicy.name}}" class="img-responsive give-height" ng-if="clinicPolicy.image">
       <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
         <img src="img/scroll-down.png" alt="Renita">
       </div>
@@ -9,7 +9,7 @@
   </section>
   <section class="hidden-lg hidden-md hidden-sm">
     <div class="head-top">
-      <img ng-src="{{clinicPolicy.image1|uploadpath}}" alt="" class="img-responsive w100 " auto-heightfixed ng-if="clinicPolicy.image1">
+      <img ng-src="{{clinicPolicy.image1|uploadpath}}" alt="{{clinicPolicy.name}}" class="img-responsive w100 " auto-heightfixed ng-if="clinicPolicy.image1">
       <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
         <img src="img/scroll-down.png" alt="Renita">
       </div>
@@ -120,6 +120,6 @@
       </div>
     </div>
   </section>
-  <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Dharma Productions">
+  <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="img/top-scroll.png" alt="Renita">
   </div>
 </section>
