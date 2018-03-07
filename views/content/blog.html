@@ -27,6 +27,16 @@
             {{filter}}
           </span> <span ng-if="filter != null" class="clearFilter" ng-click="clearFilter()">Clear Filter</span>
         </p>
+        <div class="blog-search hidden-md hidden-sm hidden-lg" >
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="search.search" ng-change="doSearch() ">
+            <span class="input-group-btn" ng-click="doSearch()">
+                       <button class="btn search-btn search" type="button">
+                         <i class="fa fa-search"></i>
+                         </button>
+                     </span>
+          </div>
+        </div>
       </div>
       <div class="row mt20">
         <div class="col-md-8">
@@ -86,7 +96,7 @@
         </div>
         <div class="col-md-4">
           <div class="blog-right-side">
-            <div class="blog-search">
+            <div class="blog-search hidden-xs">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search" ng-model="search.search" ng-change="doSearch() ">
                 <span class="input-group-btn" ng-click="doSearch()">
