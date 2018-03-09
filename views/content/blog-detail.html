@@ -121,14 +121,12 @@
                         </ul>
                     </div>
                     <div class="clearfix"></div>
-                    <!-- <div class="blog-pagination mt20">
-                  <div class="float-left">
-                     <button type="button" name="button" class="text-up outline-btn btn-padding">Previous Post</button>
-                  </div>
-                  <div class="float-right">
-                     <button type="button" name="button" class="text-up outline-btn btn-padding">Next Post</button>
-                  </div>
-               </div> -->
+                    <div class="float-left">
+                        <button type="button" name="button" ng-click="prevBlog(blog.blog.date)" class="text-up outline-btn btn-padding">Previous Post</button>
+                    </div>
+                    <div class="float-right">
+                        <button type="button" name="button" ng-click="nextBlog(blog.blog.date)" class="text-up outline-btn btn-padding">Next Post</button>
+                    </div>
                     <div class="clearfix"></div>
                     <div class="related-blog mt30 pb60 pointer" ng-if="blog.related">
                         <h3 class="color-base font-bold text-up">related Post</h3>
