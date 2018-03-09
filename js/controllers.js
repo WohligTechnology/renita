@@ -1159,167 +1159,168 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     .controller('BlogDeatilCtrl', function ($scope, TemplateService, NavigationService, $state, $location, $analytics) {
 
-            $scope.template = TemplateService.changecontent("blog-detail");
-            $scope.menutitle = NavigationService.makeactive("Blog");
-            // $scope.navigation = NavigationService.getnav();
-            $scope.myUrl = $location.absUrl();
+        $scope.template = TemplateService.changecontent("blog-detail");
+        $scope.menutitle = NavigationService.makeactive("Blog");
+        // $scope.navigation = NavigationService.getnav();
+        $scope.myUrl = $location.absUrl();
 
-            $scope.popularmsg = "Loading...";
-            $scope.tagmsg = "Loading...";
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 500) {
-                    $('.back-to-top ').fadeIn();
+        $scope.popularmsg = "Loading...";
+        $scope.tagmsg = "Loading...";
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 500) {
+                $('.back-to-top ').fadeIn();
+            } else {
+                $('.back-to-top ').fadeOut();
+            }
+        });
+        //  BLOG DETAIL BY JAGRUTI
+        $scope.popular = [];
+        $scope.blog = [];
+        //  GET BLOG DETAIL
+        NavigationService.getOneBlog($state.params.id, function (data) {
+            $scope.blog = data.data;
+            console.log("  $scope.blog", $scope.blog);
+            if ($scope.blog.blog.tag) {
+                if ($scope.blog.blog.tag == "") {
+                    $scope.tagmsg = "No Tags.";
                 } else {
-                    $('.back-to-top ').fadeOut();
+                    $scope.tagmsg = "";
+                }
+            }
+            TemplateService.title = $scope.blog.blog.name;
+            // ga('send', {
+            //     hitType: 'pageview',
+            //     page: '/blog-detail/'
+            // });
+
+            // ga('send', {
+            //     hitType: 'event',
+            //     eventCategory: 'Blogs',
+            //     eventAction: 'Cick',
+            //     eventLabel: $scope.blog.blog.name
+            // });
+
+        });
+
+        $scope.prevBlog = function (blogDate) {
+            console.log("im in prevBlog");
+            NavigationService.getPrevBlog(blogDate, function (data) {
+                $scope.blog = data.data;
+                console.log(" $scope.blog", $scope.blog);
+                $state.go('blog-detail', {
+                    id: $scope.blog
+                })
+            });
+        };
+        $scope.nextBlog = function (blogDate) {
+            console.log("im in nextBlog");
+            NavigationService.getNextBlog(blogDate, function (data) {
+                $scope.blog = data.data;
+                console.log(" $scope.blog", $scope.blog);
+                $state.go('blog-detail', {
+                    id: $scope.blog
+                })
+            });
+
+
+            //  GET POPULAR POST
+            NavigationService.getPopularPosts(function (data) {
+                $scope.popular = data.data;
+                if ($scope.popular == "") {
+                    $scope.popularmsg = "No Popular Post.";
+                } else {
+                    $scope.popularmsg = "";
                 }
             });
             //  BLOG DETAIL BY JAGRUTI
-            $scope.popular = [];
-            $scope.blog = [];
-            //  GET BLOG DETAIL
-            NavigationService.getOneBlog($state.params.id, function (data) {
-                $scope.blog = data.data;
-                console.log("  $scope.blog", $scope.blog);
-                if ($scope.blog.blog.tag) {
-                    if ($scope.blog.blog.tag == "") {
-                        $scope.tagmsg = "No Tags.";
-                    } else {
-                        $scope.tagmsg = "";
-                    }
-                }
-                TemplateService.title = $scope.blog.blog.name;
-                // ga('send', {
-                //     hitType: 'pageview',
-                //     page: '/blog-detail/'
-                // });
-
-                // ga('send', {
-                //     hitType: 'event',
-                //     eventCategory: 'Blogs',
-                //     eventAction: 'Cick',
-                //     eventLabel: $scope.blog.blog.name
-                // });
-
-            });
-
-            $scope.prevBlog = function (blogDate) {
-                console.log("im in prevBlog");
-                NavigationService.getPrevBlog(blogDate, function (data) {
-                    $scope.blog = data.data;
-                    console.log(" $scope.blog", $scope.blog);
-                    $state.go('blog-detail', {
-                        id: $scope.blog
-                    })
-                });
-            };
-            $scope.nextBlog = function (blogDate) {
-                console.log("im in nextBlog");
-                NavigationService.getNextBlog(blogDate, function (data) {
-                    $scope.blog = data.data;
-                    console.log(" $scope.blog", $scope.blog);
-                    $state.go('blog-detail', {
-                        id: $scope.blog
-                    })
-                });
-
-
-                //  GET POPULAR POST
-                NavigationService.getPopularPosts(function (data) {
-                    $scope.popular = data.data;
-                    if ($scope.popular == "") {
-                        $scope.popularmsg = "No Popular Post.";
-                    } else {
-                        $scope.popularmsg = "";
-                    }
-                });
-                //  BLOG DETAIL BY JAGRUTI
-                NavigationService.getHeaderBlog(function (data) {
-                    $scope.blogHeader = data.data;
-                })
+            NavigationService.getHeaderBlog(function (data) {
+                $scope.blogHeader = data.data;
             })
+        }
+    })
 
-        .controller('footerctrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
-            $scope.template = TemplateService;
-            NavigationService.getAllCategory(function (data) {
-                $scope.footer = data.data;
-            });
+    .controller('footerctrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
+        $scope.template = TemplateService;
+        NavigationService.getAllCategory(function (data) {
+            $scope.footer = data.data;
+        });
 
-            $scope.formData = {};
-            $scope.formComplete = false;
-            $scope.emailExist = false;
-            $scope.subscribe = function (formData) {
-                if ($scope.formData) {
-                    NavigationService.subscribe($scope.formData, function (data) {
-                        if (data.value === true) {
-                            $scope.formComplete = true;
-                            $scope.emailExist = false;
-                            $timeout(function () {
-                                $scope.formComplete = false;
-                                $scope.emailExist = false;
-                                $scope.formData = {};
-                            }, 2000);
-
-                        } else if (data.value === false) {
-                            $scope.emailExist = true;
-                        }
-                    })
-
-                }
-            }
-
-            $scope.bookingFun = function () {
-                $scope.bookTab = !$scope.bookTab;
-                // console.log("im in");
-            };
-            $scope.contactForm = {};
-            $scope.submitForm = function (contactForm) {
-                // console.log("contactForm", contactForm);
-                NavigationService.booking(contactForm, function (data) {
-                    // console.log("data", data);
-                    if (data.value) {
-                        // console.log("im true");
-                        // $scope.bookingFormComplete= true;
-                        // $scope.bookTab=false;
-                        $uibModal.open({
-                            animation: true,
-                            templateUrl: 'views/modal/thankyou.html',
-                            backdropClass: "backcolor"
-                        });
+        $scope.formData = {};
+        $scope.formComplete = false;
+        $scope.emailExist = false;
+        $scope.subscribe = function (formData) {
+            if ($scope.formData) {
+                NavigationService.subscribe($scope.formData, function (data) {
+                    if (data.value === true) {
+                        $scope.formComplete = true;
+                        $scope.emailExist = false;
                         $timeout(function () {
-                            $scope.bookTab = false;
-                            $scope.contactForm = {};
+                            $scope.formComplete = false;
+                            $scope.emailExist = false;
+                            $scope.formData = {};
                         }, 2000);
 
-                    } else if (!data.value) {
-                        if (data.data === 'Please Enter Email ID') {
-                            $scope.message = "Please Enter Valid Email ID";
-                        }
+                    } else if (data.value === false) {
+                        $scope.emailExist = true;
                     }
                 })
+
             }
+        }
 
-        })
+        $scope.bookingFun = function () {
+            $scope.bookTab = !$scope.bookTab;
+            // console.log("im in");
+        };
+        $scope.contactForm = {};
+        $scope.submitForm = function (contactForm) {
+            // console.log("contactForm", contactForm);
+            NavigationService.booking(contactForm, function (data) {
+                // console.log("data", data);
+                if (data.value) {
+                    // console.log("im true");
+                    // $scope.bookingFormComplete= true;
+                    // $scope.bookTab=false;
+                    $uibModal.open({
+                        animation: true,
+                        templateUrl: 'views/modal/thankyou.html',
+                        backdropClass: "backcolor"
+                    });
+                    $timeout(function () {
+                        $scope.bookTab = false;
+                        $scope.contactForm = {};
+                    }, 2000);
 
-        .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
+                } else if (!data.value) {
+                    if (data.data === 'Please Enter Email ID') {
+                        $scope.message = "Please Enter Valid Email ID";
+                    }
+                }
+            })
+        }
 
-            $scope.changeLanguage = function () {
+    })
 
-                if (!$.jStorage.get("language")) {
+    .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
+
+        $scope.changeLanguage = function () {
+
+            if (!$.jStorage.get("language")) {
+                $translate.use("hi");
+                $.jStorage.set("language", "hi");
+            } else {
+                if ($.jStorage.get("language") == "en") {
                     $translate.use("hi");
                     $.jStorage.set("language", "hi");
                 } else {
-                    if ($.jStorage.get("language") == "en") {
-                        $translate.use("hi");
-                        $.jStorage.set("language", "hi");
-                    } else {
-                        $translate.use("en");
-                        $.jStorage.set("language", "en");
-                    }
+                    $translate.use("en");
+                    $.jStorage.set("language", "en");
                 }
-                //  $rootScope.$apply();
-            };
+            }
+            //  $rootScope.$apply();
+        };
 
 
-        })
+    })
 
-        ;
+;
